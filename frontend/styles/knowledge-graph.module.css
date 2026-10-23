@@ -1,0 +1,6 @@
+.graphWrap { overflow: auto; margin: 24px 0; border: 1px solid #e4ece6; border-radius: 18px; background: linear-gradient(135deg, #fcfdfb, #f7faf6); }
+.graphWrap svg { display: block; width: 100%; min-width: 650px; }
+.records { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 20px; }
+.records article { padding: 18px; background: #f6f9f4; border-radius: 12px; }
+.records small { display: block; color: #5a7063; margin-top: 5px; }
+.raw { max-height: 300px; overflow: auto; font-size: .75rem; padding: 18px; background: #f2f5f0; border-radius: 12px; margin-top: 18px; }

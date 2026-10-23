@@ -1,0 +1,267 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Decorative circles from Fluention speechassistant */
+.yellowCircle {
+  position: absolute;
+  top: 130px;
+  left: 22%;
+  width: 170px;
+  height: 170px;
+  background-color: #FF6225;
+  border-radius: 50%;
+  z-index: 0;
+  opacity: 0.9;
+}
+
+.orangeCircle {
+  position: absolute;
+  top: 170px;
+  left: 15%;
+  width: 170px;
+  height: 170px;
+  background-color: #FFC525;
+  border-radius: 50%;
+  z-index: 0;
+  opacity: 0.9;
+}
+
+.whiteCover1 {
+  position: absolute;
+  top: 215px;
+  left: 19%;
+  width: 170px;
+  height: 170px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.whiteCover2 {
+  position: absolute;
+  top: 195px;
+  left: 25%;
+  width: 170px;
+  height: 170px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 130px 20px 80px 20px;
+  position: relative;
+  z-index: 10;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.userWelcomeBar {
+  background: #FFFDF8;
+  border: 1.5px solid #FFC525;
+  border-radius: 20px;
+  padding: 18px 28px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+  box-shadow: 0 4px 15px rgba(255, 197, 37, 0.12);
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.userInfo h2 {
+  font-size: 1.4rem;
+  color: #1E2022;
+  margin-bottom: 4px;
+}
+
+.userInfo p {
+  font-size: 0.9rem;
+  color: #6C757D;
+  margin: 0;
+}
+
+.userStats {
+  display: flex;
+  gap: 20px;
+}
+
+.statPill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid #E2E8F0;
+  padding: 8px 16px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1E2022;
+}
+
+.statHighlight {
+  color: #FF6225;
+  font-weight: 700;
+}
+
+.titleContainer {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1E2022;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #555A60;
+}
+
+/* 4 Boxes Grid — Fluention Layout */
+.boxContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 40px;
+}
+
+.box {
+  background: #ffffff;
+  border: 2px solid #FFC525;
+  border-radius: 20px;
+  padding: 30px 25px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(255, 98, 37, 0.15);
+  border-color: #FF6225;
+}
+
+.boxTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.boxIcon {
+  font-size: 2.2rem;
+}
+
+.boxTag {
+  background-color: #FFEFC2;
+  color: #D35400;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.boxTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1E2022;
+  margin-bottom: 8px;
+}
+
+.boxDesc {
+  font-size: 0.92rem;
+  color: #6C757D;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.boxAction {
+  color: #FF6225;
+  font-weight: 700;
+  font-size: 0.92rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 15px;
+}
+
+/* Quick Action Strip */
+.quickStrip {
+  background: linear-gradient(135deg, #FF6225, #FF9525);
+  border-radius: 20px;
+  padding: 24px 30px;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #ffffff;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.quickStripText h3 {
+  color: #ffffff;
+  font-size: 1.25rem;
+  margin-bottom: 4px;
+}
+
+.quickStripText p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+.quickBtn {
+  background-color: #ffffff;
+  color: #FF6225;
+  font-weight: 700;
+  padding: 10px 24px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.quickBtn:hover {
+  background-color: #FFFDF8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .boxContainer {
+    grid-template-columns: 1fr;
+  }
+  .title {
+    font-size: 2rem;
+  }
+}

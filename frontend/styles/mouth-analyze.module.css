@@ -1,0 +1,228 @@
+/* header start */
+
+.container {
+    text-align: center;
+  }
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 20px 17px 30px; /* top right bottom left */
+    height: 30px; /* Set fixed height */
+    background-color: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); /* Drop Shadow */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+  }
+  
+  .navLinks a {
+    font-size: 1rem; /* Increase from 1rem to 1.2rem */
+    white-space: nowrap;
+    text-decoration: none;
+    font-weight: normal;
+    color: black;
+  }
+  
+  .navLinks {
+    list-style: none;
+    display: flex;
+    flex: 1;  /* Make sure items spread evenly */
+    justify-content: space-evenly; /* Spread items evenly */
+    align-items: center;
+    font-size: 1rem;
+  }
+  
+  .auth a {
+    white-space: nowrap;
+    text-decoration: none; /* Removes underline */
+    font-weight: normal; /* Removes boldness */
+    color: black; /* Matches other links */
+  }
+  
+  .auth {
+    margin-left: 50px; /* Keeps spacing */
+    padding-right: -30px;
+  }
+  
+  .navLinks li {
+    font-size: 1rem;
+  }
+  
+  /* header finish */
+  
+  /* Page Title */
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 120px; /* Adjust spacing below navbar */
+  }
+  
+  /* Exercise Instructions */
+  .exerciseContainer {
+    text-align: center;
+    background: #FFC525;
+    padding: 30px;
+    border-radius: 15px;
+    width: 700px;
+    margin: 20px auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .exerciseText {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Video Styling */
+  .exampleVideo {
+    width: 640px;
+    height: 360px;
+    border-radius: 10px;
+    border: 3px solid #FF9525;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Camera Feed Section */
+  .cameraContainer {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .cameraTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Camera Box */
+  .cameraBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 500px;
+    background: #FFC525;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin: auto;
+    margin-bottom: 100px;
+  }
+  
+  /* Video Feed */
+  .videoFeed {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+  }
+  /* footer start */
+  
+  .footer {
+    background-color: #FFEFC2; /* Light beige */
+    color: black;
+    padding: 40px 0;
+    text-align: center;
+    font-size: 1rem;
+  }
+  
+  /* Center Logo */
+  .footerLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Footer Links Section */
+  .footerLinks {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+  }
+  
+  /* Individual Footer Columns */
+  .footerColumn {
+    text-align: left;
+    min-width: 200px;
+  }
+  
+  .footerColumn h4 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .footerColumn ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footerColumn li {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+  }
+  
+  /* Copyright Section */
+  .footerCopyright {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    padding-top: 10px;
+    font-size: 0.9rem;
+  }
+  
+  /* Fix Logo Contrast */
+  .footerLogo img {
+    width: 170px;  /* Adjust width */
+    height: auto;  /* Maintain aspect ratio */
+    filter: brightness(1.2); /* Keep logo visible */
+  }
+  
+  /* footer finish */
+  
+  .videoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #FFEFC2;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    margin: 20px auto;
+  }
+  
+  /* ✅ Adjust Video Size to Fit the Grey Box */
+  .video {
+    width: 100%; /* Make the video responsive */
+    max-width: 700px; /* Set max width to match the grey box */
+    height: 400px; /* Set fixed height to match the grey box */
+    border-radius: 10px;
+    border: 3px solid #FF9525;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    background: #ddd; /* ✅ Keep the grey placeholder effect */
+  }
+  
+  .nextButton {
+    padding: 12px 24px;
+    background-color: #FFC525;
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+    transition: background 0.3s ease;
+  }
+  
+  .nextButton:hover {
+    background-color: #FFB400;
+  }
+  

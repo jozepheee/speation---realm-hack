@@ -1,0 +1,251 @@
+/* header start */
+
+.container {
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 20px 17px 30px; /* top right bottom left */
+  height: 30px; /* Set fixed height */
+  background-color: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); /* Drop Shadow */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.navLinks a {
+  font-size: 1rem; /* Increase from 1rem to 1.2rem */
+  white-space: nowrap;
+  text-decoration: none;
+  font-weight: normal;
+  color: black;
+}
+
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  flex: 1;  /* Make sure items spread evenly */
+  justify-content: space-evenly; /* Spread items evenly */
+  align-items: center;
+  font-size: 1rem;
+}
+
+.auth a {
+  white-space: nowrap;
+  text-decoration: none; /* Removes underline */
+  font-weight: normal; /* Removes boldness */
+  color: black; /* Matches other links */
+}
+
+.auth {
+  margin-left: 50px; /* Keeps spacing */
+  padding-right: -30px;
+}
+
+
+.navLinks li {
+  font-size: 1rem;
+}
+
+/* header finish */
+
+/* Default White Fixed Container */
+/* Default White Fixed Container */
+.fixedContainer {
+  background: white;
+  max-width: 800px;
+  margin: 100px auto;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease-in-out;
+}
+
+/* Green Background for Correct Answer */
+.correctContainer {
+  background: #DFFFD6 !important; /* Light Green */
+  max-width: 800px;
+  margin: 100px auto;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease-in-out;
+}
+
+/* Red Background for Incorrect Answer */
+.incorrectContainer {
+  background: #FFD6D6 !important; /* Light Red */
+  max-width: 800px;
+  margin: 100px auto;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease-in-out;
+}
+
+/* Title */
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Game Box */
+.gameBox {
+  border: 2px solid #FFC525;
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Word Button */
+.wordContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.wordButton {
+  background: #FFC525;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.wordButton:hover {
+  background: #FFB400;
+  transform: scale(1.05);
+}
+
+/* Play Button */
+.playButton {
+  background: #FF6225;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.playButton:hover {
+  background: #E04D1A;
+  transform: scale(1.1);
+}
+
+/* Mic Button */
+.recordButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out; /* Smooth fade */
+}
+
+/* When recording, the mic blinks */
+.micBlink {
+  animation: blink 1s infinite;
+}
+
+/* Blinking Animation */
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+/* Feedback Bar */
+.feedbackBar {
+  width: 80%;
+  height: 15px;
+  background: #ddd;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+/* footer start */
+
+.footer {
+  background-color: #FFEFC2; /* Light beige */
+
+  color: black;
+  padding: 40px 0;
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* Center Logo */
+.footerLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Footer Links Section */
+.footerLinks {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+/* Individual Footer Columns */
+.footerColumn {
+  text-align: left;
+  min-width: 200px;
+}
+
+.footerColumn h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footerColumn ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footerColumn li {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+/* Copyright Section */
+.footerCopyright {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  padding-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* Fix Logo Contrast */
+.footerLogo img {
+  width: 170px;  /* Adjust width */
+  height: auto;  /* Maintain aspect ratio */
+  filter: brightness(1.2); /* Keep logo visible */
+}
+
+/* footer finish */
+

@@ -1,0 +1,471 @@
+/* header start */
+
+.container {
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 20px 17px 30px; /* top right bottom left */
+  height: 30px; /* Set fixed height */
+  background-color: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); /* Drop Shadow */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.navLinks a {
+  font-size: 1rem; /* Increase from 1rem to 1.2rem */
+  white-space: nowrap;
+  text-decoration: none;
+  font-weight: normal;
+  color: black;
+}
+
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  flex: 1;  /* Make sure items spread evenly */
+  justify-content: space-evenly; /* Spread items evenly */
+  align-items: center;
+  font-size: 1rem;
+}
+
+.auth a {
+  white-space: nowrap;
+  text-decoration: none; /* Removes underline */
+  font-weight: normal; /* Removes boldness */
+  color: black; /* Matches other links */
+}
+
+.auth {
+  margin-left: 50px; /* Keeps spacing */
+  padding-right: -30px;
+}
+
+
+.navLinks li {
+  font-size: 1rem;
+}
+
+/* header finish */
+
+.hero {
+  position: relative;
+  background-color: #fff; /* White background */
+  min-height: 600px; /* Increase height */
+  margin-top: 80px; /* Push down below the fixed header */
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.heroText {
+  font-weight: normal; /* Removes bold */
+  font-size: 2.7rem; /* Adjust size as needed */
+  line-height: 1.2; /* Improves readability */
+  text-align: center;
+  margin-bottom: 10px;
+  position: absolute; /* Allows overlapping */
+  top: 310px; /* Adjust the vertical position */
+  left: 50%;
+  transform: translate(-50%, -40%); /* Center text but move slightly lower */
+  z-index: 2; /* Ensure it's above the background circle */
+}
+
+.heroText span {
+  display: block;
+}
+
+
+.heroText .line1 {
+  display: block;
+  position: relative;
+
+}
+
+
+
+/* Large Yellow Circle */
+.hero .yellowCircle {
+  position: absolute;
+  top: 175px; /* Adjust vertical position */
+  right: 25%; /* Center horizontally */
+  width: 150px; /* Adjust the size */
+  height: 150px;
+  background-color: #FF6225;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+/* Small Orange Circle (Slightly Overlapping) */
+.hero .orangeCircle {
+  position: absolute;
+  top: 210px;
+  right: 17.5%;
+  width: 150px;
+  height: 150px;
+  background-color: #FFC525;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+/* White Circles to Create Cutout Effect */
+.hero .whiteCover1 {
+  position: absolute;
+  top: 250px;
+  right: 22%;
+  width: 150px;
+  height: 150px;
+  background-color: #fff;
+  border-radius: 50%;
+  z-index: 0; /* Make sure it's above the colored circles */
+}
+
+.hero .whiteCover2 {
+  position: absolute;
+  top: 230px;
+  right: 28%;
+  width: 150px;
+  height: 150px;
+  background-color: #fff;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.hero .lowerOrangeCircle {
+  position: absolute;
+  top: 300px; /* Adjust vertical position */
+  left: 21.5%; /* Center horizontally */
+  width: 150px; /* Adjust the size */
+  height: 150px;
+  background-color: #FF9525;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.hero .lowerWhiteCircle {
+  position: absolute;
+  top: 280px;
+  left: 26.5%;
+  width: 150px;
+  height: 150px;
+  background-color: #fff;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+
+/* Understanding Language Disorders Section */
+.languageDisorderSection {
+  max-width: 1000px;
+  margin: 100px auto;
+  text-align: center;
+  position: relative;
+  padding: 50px;
+  background: white;
+}
+
+.sectionTitle {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 20px;
+}
+
+/* The white box with the orange border */
+.descriptionBox {
+  border: 2px solid #FF6225;
+  border-radius: 15px;
+  padding: 40px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: black;
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Section Container */
+.languageDisorders {
+  max-width: 900px;
+  margin: 60px auto; /* Centering and spacing */
+  padding: 40px;
+  background: white;
+  text-align: left;
+}
+
+/* Section Title */
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+/* Individual Disorder Blocks */
+.disorder {
+  margin-bottom: 40px;
+}
+
+/* Disorder Titles */
+.disorderTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.disorderTitle a {
+  text-decoration: underline;
+  color: black;
+}
+
+/* Paragraph Text */
+.disorder p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Bullet Points */
+.disorder ul {
+  padding-left: 20px;
+}
+
+.disorder li {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+
+
+/* Causes Section Container */
+.causesSection {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 40px;
+  text-align: center;
+}
+
+/* Section Title */
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* Causes Container */
+.causesContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Circles */
+.circle {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Orange Border Circles */
+.orangeBorder {
+  border: 2px solid #FF6225;
+}
+
+/* Yellow Border Circles */
+.yellowBorder {
+  border: 2px solid #FFC525;
+}
+
+/* Causes Titles */
+.causesTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.causesTitle a {
+  text-decoration: underline;
+  color: black;
+}
+
+/* List Styling */
+.circle ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.circle li {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+
+/* Impact Section */
+.impactSection {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 40px;
+  text-align: center;
+}
+
+/* Section Title */
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Section Description */
+.impactDescription {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+/* Impact Container (Two Boxes) */
+.impactContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Individual Impact Boxes */
+.impactBox {
+  width: 100%;
+  max-width: 800px;
+  border: 2px solid #FFC525;
+  border-radius: 15px;
+  padding: 30px;
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.5;
+  position: relative;
+}
+
+/* Left Box (Children) */
+.leftBox::before {
+  content: "Children & Students";
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  background: white;
+  padding: 5px 15px;
+  font-weight: bold;
+  color: black;
+}
+
+/* Right Box (Adults) */
+.rightBox::before {
+  content: "Adults";
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  background: white;
+  padding: 5px 15px;
+  font-weight: bold;
+  color: black;
+}
+
+/* List Styling */
+.impactBox ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.impactBox li {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+
+
+/* footer start */
+
+.footer {
+  background-color: #FFEFC2; /* Light beige */
+
+  color: black;
+  padding: 40px 0;
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* Center Logo */
+.footerLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Footer Links Section */
+.footerLinks {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+/* Individual Footer Columns */
+.footerColumn {
+  text-align: left;
+  min-width: 200px;
+}
+
+.footerColumn h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footerColumn ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footerColumn li {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+/* Copyright Section */
+.footerCopyright {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  padding-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* Fix Logo Contrast */
+.footerLogo img {
+  width: 170px;  /* Adjust width */
+  height: auto;  /* Maintain aspect ratio */
+  filter: brightness(1.2); /* Keep logo visible */
+}
+
+/* footer finish */
+

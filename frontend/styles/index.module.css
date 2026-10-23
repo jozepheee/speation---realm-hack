@@ -1,0 +1,627 @@
+/* ── Reset & Base ──────────────────────────────────────────────── */
+.page {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #fff;
+  color: #1A202C;
+  min-height: 100vh;
+}
+
+/* ── HERO ──────────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 24px 80px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #FFFBF5 0%, #FFF7ED 50%, #FFF3E0 100%);
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bgOrb1 {
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,197,37,0.25) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.bgOrb2 {
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255,98,37,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,197,37,0.18);
+  border: 1px solid rgba(255,197,37,0.5);
+  border-radius: 999px;
+  padding: 6px 18px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #92400E;
+  letter-spacing: 0.02em;
+}
+
+.badgeDot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: #FF6225;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.6; transform: scale(1.3); }
+}
+
+.heroTitle {
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #0F172A;
+  margin: 0;
+}
+
+.heroGradient {
+  background: linear-gradient(135deg, #FF6225 0%, #FFC525 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroSub {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #475569;
+  max-width: 640px;
+  margin: 0;
+}
+
+.heroSub em {
+  font-style: normal;
+  color: #FF6225;
+  font-weight: 600;
+}
+
+.heroCTAs {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ctaPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #FF6225 0%, #FF9525 100%);
+  color: #fff;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  box-shadow: 0 6px 24px rgba(255,98,37,0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ctaPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(255,98,37,0.45);
+}
+
+.ctaSecondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 28px;
+  background: rgba(255,255,255,0.9);
+  border: 1.5px solid #E2E8F0;
+  color: #1A202C;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.ctaSecondary:hover {
+  border-color: #FF6225;
+  background: #fff;
+}
+
+/* Score card in hero */
+.scoreCard {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255,197,37,0.3);
+  border-radius: 20px;
+  padding: 24px 32px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 16px 48px rgba(255,98,37,0.1);
+  text-align: left;
+}
+
+.scoreCardHeader {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #64748B;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.scoreCardLive { color: #22C55E; }
+
+.scoreCardValue {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #0F172A;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.scoreCardUnit {
+  font-size: 1rem;
+  color: #94A3B8;
+  font-weight: 400;
+}
+
+.scoreCardBar {
+  height: 8px;
+  background: #F1F5F9;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.scoreCardFill {
+  height: 100%;
+  background: linear-gradient(90deg, #FF6225, #FFC525);
+  border-radius: 999px;
+  transition: width 1s ease;
+}
+
+.scoreCardStreak {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #92400E;
+  margin-top: 4px;
+}
+
+/* Demo card for logged-out users */
+.scoreCardDemo {
+  width: 100%;
+  max-width: 440px;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(12px);
+  border: 1px dashed rgba(255,197,37,0.5);
+  border-radius: 20px;
+  padding: 28px 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+}
+
+.scoreCardDemoText {
+  font-size: 0.92rem;
+  color: #64748B;
+  line-height: 1.6;
+}
+
+.scoreCardDemoLink {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #FF6225;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.scoreCardDemoLink:hover {
+  border-color: #FF6225;
+}
+
+/* ── HOW IT WORKS ──────────────────────────────────────────────── */
+.howSection {
+  padding: 100px 24px;
+  text-align: center;
+  background: #FAFAFA;
+}
+
+.sectionLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #FF6225;
+  margin-bottom: 12px;
+}
+
+.sectionTitle {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #0F172A;
+  margin: 0 0 16px;
+}
+
+.sectionSub {
+  font-size: 1.05rem;
+  color: #64748B;
+  max-width: 580px;
+  margin: 0 auto 60px;
+  line-height: 1.7;
+}
+
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.stepCard {
+  background: #fff;
+  border: 1px solid #E8EEF4;
+  border-radius: 20px;
+  padding: 32px 24px;
+  text-align: left;
+  position: relative;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.stepCard:hover {
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+  transform: translateY(-3px);
+}
+
+.stepNum {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #CBD5E0;
+  margin-bottom: 12px;
+}
+
+.stepIcon {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.stepCard h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin: 0 0 10px;
+}
+
+.stepCard p {
+  font-size: 0.9rem;
+  color: #64748B;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── FEATURES ──────────────────────────────────────────────────── */
+.featuresSection {
+  padding: 100px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.featureRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.featureRowReverse {
+  direction: rtl;
+}
+
+.featureRowReverse > * {
+  direction: ltr;
+}
+
+.featureTag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #FF6225;
+  margin-bottom: 12px;
+}
+
+.featureText h2 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #0F172A;
+  margin: 0 0 16px;
+  line-height: 1.2;
+}
+
+.featureText p {
+  font-size: 0.98rem;
+  color: #64748B;
+  line-height: 1.75;
+  margin: 0 0 24px;
+}
+
+.featureLink {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #FF6225;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.featureLink:hover {
+  border-color: #FF6225;
+}
+
+/* Buddy demo card */
+.buddyCard {
+  background: #fff;
+  border: 1px solid #E8EEF4;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.buddyAvatar {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
+  border: 2px solid rgba(255,197,37,0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+
+.buddyBubble {
+  background: linear-gradient(135deg, #FFF8F0, #FFF3E0);
+  border: 1px solid rgba(255,197,37,0.3);
+  border-radius: 16px;
+  padding: 16px 20px;
+  font-size: 0.9rem;
+  color: #374151;
+  line-height: 1.65;
+  font-style: italic;
+}
+
+.buddyMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: #94A3B8;
+}
+
+.buddyOnline {
+  color: #22C55E;
+  font-weight: 600;
+}
+
+/* Feedback illustration card */
+.feedbackCard {
+  background: #fff;
+  border: 1px solid #E8EEF4;
+  border-radius: 20px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.06);
+}
+
+.feedbackRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.feedbackLabel {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #374151;
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.feedbackBar {
+  flex: 1;
+  height: 8px;
+  background: #F1F5F9;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.feedbackFill {
+  height: 100%;
+  background: linear-gradient(90deg, #FF6225, #FFC525);
+  border-radius: 999px;
+}
+
+.feedbackVal {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0F172A;
+  width: 28px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.feedbackNote {
+  font-size: 0.72rem;
+  color: #94A3B8;
+  line-height: 1.5;
+  border-top: 1px solid #F1F5F9;
+  padding-top: 16px;
+  font-style: italic;
+}
+
+/* ── STEPS / MODULES ───────────────────────────────────────────── */
+.stepsSection {
+  padding: 100px 24px;
+  background: #FAFAFA;
+  text-align: center;
+}
+
+.modulesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.moduleCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid #E8EEF4;
+  border-radius: 20px;
+  padding: 28px;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.2s, transform 0.2s, border-color 0.2s;
+}
+
+.moduleCard:hover {
+  box-shadow: 0 12px 40px rgba(255,98,37,0.1);
+  border-color: rgba(255,98,37,0.3);
+  transform: translateY(-3px);
+}
+
+.moduleNum {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: #CBD5E0;
+}
+
+.moduleCard h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0F172A;
+  margin: 0;
+}
+
+.moduleCard p {
+  font-size: 0.87rem;
+  color: #64748B;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+.moduleArrow {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #FF6225;
+}
+
+/* ── CTA SECTION ───────────────────────────────────────────────── */
+.ctaSection {
+  padding: 100px 24px;
+  background: linear-gradient(135deg, #FF6225 0%, #FF9525 60%, #FFC525 100%);
+  text-align: center;
+  color: #fff;
+}
+
+.ctaSection h2 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  margin: 0 0 16px;
+  letter-spacing: -0.02em;
+}
+
+.ctaSection p {
+  font-size: 1.05rem;
+  opacity: 0.9;
+  margin: 0 0 40px;
+}
+
+.ctaPrimaryLarge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 40px;
+  background: #fff;
+  color: #FF6225;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 1.05rem;
+  text-decoration: none;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ctaPrimaryLarge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+}
+
+/* ── RESPONSIVE ─────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .featureRow, .featureRowReverse {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+
+  .heroCTAs { flex-direction: column; align-items: center; }
+  .scoreCard { max-width: 100%; }
+}
