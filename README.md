@@ -256,17 +256,6 @@ Open `http://localhost:3100`. Use learner permissions to configure cloud process
 
 </details>
 
-## Credits
-
-Speation combines original application work with existing libraries and adapted reference material. **The bakery experience is adapted from The Speakery**, including upstream interface/artwork and teaching material. Speation's integration adds scoped application behaviour, authenticated recording and assessment handling; it is not presented as artwork or a game invented entirely from scratch.
-
-Upstream components retain their original authorship and applicable terms. This README does not grant a new licence over third-party code, artwork, voices or datasets.
-
----
-
-<div align="center">
-
-**A message expressed. A useful next step. Evidence that stays connected.**
 
 Speation · Joseph Geo Malayil · LUMOS
 
