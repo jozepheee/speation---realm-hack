@@ -1,0 +1,84 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production build
+.next/
+out/
+build/
+dist/
+
+# Environment files & Secrets
+.env.development
+.env.test
+.env.production
+*.env
+backend/.env
+!*.env.example
+.env
+frontend/.env.local
+.env.runtime
+backend/.env.runtime
+frontend/.env.development.local
+frontend/.env.production.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# Databases & local storage
+*.db
+*.sqlite
+*.sqlite3
+backend/neuronudge.db
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Downloaded datasets, model caches, and training runtime
+.runtime-deps/
+data/
+tmp/
+artifacts/
+.pytest_cache/
+private-audio/
+
+/private-training/
+/artifacts/personal-asr/
+
+/.venv-reference/
+
+/data/gopt-reference/
+
+/data/speechocean-validation/
+/research-data/
+
+# Import exclusions
+*.md
+*.mdx
+*.markdown
+[Rr][Ee][Aa][Dd][Mm][Ee]*
+/outputs/
+/docs/
+*.key
+*.pfx
+*.p12
+
+# Database setup is managed separately
+/supabase/migrations/
+/backend/scripts/*migration*.py

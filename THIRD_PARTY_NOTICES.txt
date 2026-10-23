@@ -1,0 +1,7 @@
+Speation third-party integration notices
+
+Bakery screens, artwork and scoped styles originate from Speakery. Reuse was authorised by the project owner; original authors retain authorship.
+
+The face-tracking runtime licence is retained at frontend/public/face-tracking/LICENSE.
+
+Other upstream project and library names in code identify dependencies, integrations or research references, not original Speation authorship. Their respective licence and model/data terms continue to apply.
