@@ -1,0 +1,2156 @@
+/* The Speakery styles. Colors match "The Speakery Art Kit". */
+
+.bakery-page {
+  --cream: #fcf4ea;
+  --paper: #fffdf9;
+  --plum: #3b2350;
+  --plum-soft: #6b5878;
+  --purple: #7c4dDB;
+  --purple-deep: #5b33ae;
+  --lavender: #e2cffd;
+  --lavender-deep: #c7aaf5;
+  --lilac: #f1e8ff;
+  --line: #ecdcc6;
+  --wood-text: #5a3a1e;
+  --sun: #ffc23d;
+  --pink: #f06d8a;
+
+  --font-display: 'Fredoka', 'Nunito', system-ui, sans-serif;
+  --font-body: 'Nunito', system-ui, sans-serif;
+
+  /* Scene layout */
+  --counter-h: 28dvh;
+  --dragon-w: clamp(220px, 25vw, 380px);
+  --dragon-x: 7vw;
+  --side-left: calc(var(--dragon-x) + var(--dragon-w) + 1vw);
+}
+
+.bakery-page *,
+.bakery-page *::before,
+.bakery-page *::after {
+  box-sizing: border-box;
+}
+
+.bakery-page,
+.bakery-page {
+  margin: 0;
+  background: var(--cream);
+  color: var(--plum);
+  font-family: var(--font-body);
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.bakery-page h1,
+.bakery-page p {
+  margin: 0;
+}
+
+.bakery-page button {
+  font: inherit;
+  color: inherit;
+}
+
+.bakery-page :focus-visible {
+  outline: 4px solid var(--plum);
+  outline-offset: 4px;
+}
+
+/* ---------- Scene layers: wall, dragon, counter, game UI ---------- */
+
+.bakery-page .scene {
+  position: relative;
+  height: 100dvh;
+  min-height: 580px;
+  overflow: hidden;
+  animation: screen-in 280ms ease-out;
+}
+
+@keyframes screen-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.bakery-page .scene__wall {
+  position: absolute;
+  inset: 0;
+  background: url('/bakery/assets/backgrounds/bg-kitchen.svg') center 70% / cover no-repeat var(--cream);
+}
+
+/* Practice uses the same kitchen, softly blurred, so the card stands out. */
+.bakery-page .scene--calm .scene__wall {
+  inset: -24px;
+  filter: blur(7px) saturate(0.9);
+  opacity: 0.75;
+}
+
+.bakery-page .scene__counter {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 2;
+  height: var(--counter-h);
+  background: url('/bakery/assets/backgrounds/bg-counter.svg') center top / cover no-repeat #e2b886;
+}
+
+.bakery-page .scene__dragon {
+  position: absolute;
+  z-index: 1;
+  left: var(--dragon-x);
+  bottom: var(--counter-h);
+  width: var(--dragon-w);
+  /* Sink the dragon behind the counter so he peeks over it. */
+  translate: 0 34%;
+}
+
+.bakery-page .scene--dragon-center .scene__dragon {
+  left: 50%;
+  translate: -50% 30%;
+  --dragon-w: clamp(240px, 28vw, 420px);
+}
+
+.bakery-page .scene__ui {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.bakery-page .scene__ui > * {
+  pointer-events: auto;
+}
+
+/* The dragon's little speech bubble, up by his head. */
+.bakery-page .dragon-says {
+  position: absolute;
+  top: 2%;
+  left: 74%;
+  z-index: 4;
+  padding: 10px 18px;
+  border-radius: 22px 22px 22px 6px;
+  background: var(--paper);
+  box-shadow: 0 5px 0 var(--line);
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.7vw, 1.4rem);
+  font-weight: 600;
+  white-space: nowrap;
+  animation: pop-in 380ms cubic-bezier(0.3, 1.6, 0.6, 1);
+}
+
+@keyframes pop-in {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+}
+
+.bakery-page .scene--calm .dragon-says {
+  top: -20%;
+  left: 0;
+  max-width: 95%;
+  white-space: normal;
+}
+
+/* ---------- Regions on top of the scene ---------- */
+
+/* Big title at the top center */
+.bakery-page .headline {
+  position: absolute;
+  top: clamp(64px, 9dvh, 92px);
+  left: 50%;
+  translate: -50% 0;
+  width: min(900px, 92vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+
+.bakery-page .headline__small {
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  font-weight: 800;
+  color: var(--plum-soft);
+}
+
+.bakery-page .headline__row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.bakery-page .headline__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.6vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+/* Space between the headline and the counter, beside the dragon */
+.bakery-page .center-zone {
+  position: absolute;
+  top: clamp(170px, 26dvh, 230px);
+  bottom: calc(var(--counter-h) + 2dvh);
+  left: var(--side-left);
+  right: 4vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.bakery-page .center-zone > * {
+  pointer-events: auto;
+}
+
+.bakery-page .center-zone--right {
+  justify-content: flex-end;
+  padding-right: 4vw;
+}
+
+.bakery-page .center-zone--top {
+  align-items: flex-start;
+  bottom: auto;
+}
+
+/* Something sitting on the counter top, center stage */
+.bakery-page .on-counter {
+  position: absolute;
+  left: 52%;
+  bottom: calc(var(--counter-h) - 4.5dvh);
+  width: clamp(200px, 28vw, 360px);
+  aspect-ratio: 1;
+  translate: -50% 0;
+}
+
+.bakery-page .treat__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.bakery-page .on-counter--pop .treat__img {
+  animation: treat-pop 520ms cubic-bezier(0.3, 1.7, 0.6, 1);
+}
+
+@keyframes treat-pop {
+  0% {
+    transform: scale(0.75);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* The front of the counter, where the main button or mic goes */
+.bakery-page .counter-front {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: var(--counter-h);
+  padding: 4dvh 16px 3dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.bakery-page .counter-hint {
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: rgba(255, 253, 249, 0.9);
+  color: var(--wood-text);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+/* Little card on the right showing the order */
+.bakery-page .order-card {
+  position: absolute;
+  right: 5vw;
+  bottom: calc(var(--counter-h) + 4dvh);
+  width: clamp(110px, 12vw, 170px);
+  aspect-ratio: 1;
+  padding: 12px;
+  border-radius: 28px;
+  background: rgba(255, 253, 249, 0.92);
+  box-shadow: 0 6px 0 var(--line);
+}
+
+.bakery-page .order-card .art {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ---------- Buttons ---------- */
+
+.bakery-page .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 72px;
+  padding: 0 40px;
+  border: none;
+  border-radius: 999px;
+  background: var(--lavender);
+  color: #331a63;
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 6px 0 var(--lavender-deep);
+  transition: transform 90ms ease, box-shadow 90ms ease;
+}
+
+.bakery-page .btn:active:not(:disabled) {
+  transform: translateY(4px) scale(0.98, 0.96);
+  box-shadow: 0 2px 0 var(--lavender-deep);
+}
+
+.bakery-page .btn:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.bakery-page .btn--xl {
+  min-height: 88px;
+  padding: 0 56px;
+  font-size: 2.3rem;
+}
+
+.bakery-page .btn--strong {
+  background: var(--purple);
+  color: #fff;
+  box-shadow: 0 6px 0 var(--purple-deep);
+}
+
+.bakery-page .btn--strong:active:not(:disabled) {
+  box-shadow: 0 2px 0 var(--purple-deep);
+}
+
+.bakery-page .btn--link {
+  min-height: 44px;
+  padding: 0 16px;
+  background: none;
+  box-shadow: none;
+  color: var(--wood-text);
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.bakery-page .btn--link:active:not(:disabled) {
+  box-shadow: none;
+}
+
+.bakery-page .icon-btn {
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border: none;
+  border-radius: 50%;
+  background: #fff3e2;
+  color: #6b4a2e;
+  cursor: pointer;
+  box-shadow: 0 4px 0 var(--line);
+  transition: transform 90ms ease, box-shadow 90ms ease;
+}
+
+.bakery-page .icon-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 var(--line);
+}
+
+.bakery-page .icon-btn--speak {
+  background: var(--lilac);
+  color: var(--purple-deep);
+  box-shadow: 0 4px 0 #dccafa;
+}
+
+/* ---------- Top bar ---------- */
+
+.bakery-page .topbar {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 56px 1fr 56px;
+  align-items: center;
+  padding: 14px clamp(14px, 3vw, 32px);
+  pointer-events: none;
+}
+
+.bakery-page .topbar > * {
+  pointer-events: auto;
+}
+
+.bakery-page .progress {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bakery-page .progress li {
+  width: 34px;
+  height: 12px;
+  border-radius: 6px;
+  background: #ece2f6;
+  transition: width 300ms ease;
+}
+
+.bakery-page .progress li.is-done {
+  background: var(--purple);
+}
+
+.bakery-page .progress li.is-now {
+  width: 56px;
+  background: #b998f3;
+}
+
+/* ---------- Start screen ---------- */
+
+.bakery-page .hero {
+  position: absolute;
+  top: clamp(70px, 10dvh, 110px);
+  left: 50%;
+  translate: -50% 0;
+  width: min(900px, 92vw);
+  text-align: center;
+}
+
+.bakery-page .hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(3.4rem, 9vw, 7rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--plum);
+}
+
+.bakery-page .hero__tagline {
+  margin-top: 10px;
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  font-weight: 800;
+  color: var(--plum-soft);
+}
+
+/* ---------- Pick a sound ---------- */
+
+.bakery-page .sound-cards {
+  display: flex;
+  justify-content: center;
+  gap: clamp(10px, 1.6vw, 20px);
+}
+
+.bakery-page .sound-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  width: clamp(110px, 15vw, 190px);
+  padding: 14px 10px 16px;
+  border: 4px solid transparent;
+  border-radius: 30px;
+  background: var(--paper);
+  cursor: pointer;
+  box-shadow: 0 6px 0 var(--line);
+  transition: transform 120ms ease;
+}
+
+.bakery-page .sound-card:active {
+  transform: translateY(4px);
+}
+
+.bakery-page .sound-card.is-selected {
+  border-color: var(--purple);
+  background: #f8f3ff;
+  box-shadow: 0 6px 0 #d6c4fa;
+}
+
+.bakery-page .sound-card__icon {
+  width: clamp(64px, 8vw, 96px);
+  height: clamp(64px, 8vw, 96px);
+  object-fit: contain;
+}
+
+.bakery-page .sound-card__letter {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5.5vw, 4.4rem);
+  font-weight: 700;
+  line-height: 0.95;
+}
+
+.bakery-page .sound-card.is-selected .sound-card__letter {
+  color: var(--purple);
+}
+
+.bakery-page .sound-card__example {
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  font-weight: 800;
+  color: var(--plum-soft);
+}
+
+.bakery-page .sound-card__check {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--purple);
+  color: #fff;
+}
+
+/* ---------- Order ticket ---------- */
+
+.bakery-page .ticket {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: min(340px, 100%);
+  padding: 30px 24px 22px;
+  border-radius: 28px;
+  background: var(--paper);
+  box-shadow: 0 8px 0 var(--line);
+  rotate: 2deg;
+  animation: ticket-in 520ms cubic-bezier(0.3, 1.5, 0.6, 1);
+}
+
+@keyframes ticket-in {
+  from {
+    translate: 0 -40px;
+    rotate: -6deg;
+    opacity: 0;
+  }
+}
+
+.bakery-page .ticket__pin {
+  position: absolute;
+  top: -14px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--purple);
+  box-shadow: 0 4px 0 var(--purple-deep);
+}
+
+.bakery-page .ticket__title {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--purple-deep);
+}
+
+.bakery-page .ticket__treat {
+  width: clamp(130px, 16vw, 190px);
+  height: clamp(130px, 16vw, 190px);
+  object-fit: contain;
+}
+
+.bakery-page .ticket__line {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* ---------- Placeholder for missing art ---------- */
+
+.bakery-page .art-placeholder {
+  display: grid;
+  place-items: center;
+  padding: 8px;
+  border: 3px dashed #d9c3a3;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.6);
+  color: #7a5e40;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Microphone ---------- */
+
+.bakery-page .mic {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  column-gap: 14px;
+  row-gap: 4px;
+}
+
+.bakery-page .mic__button {
+  display: grid;
+  place-items: center;
+  width: clamp(92px, 12dvh, 112px);
+  height: clamp(92px, 12dvh, 112px);
+  border: 6px solid #fff;
+  border-radius: 50%;
+  background: var(--purple);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 6px 0 var(--purple-deep);
+  transition: transform 90ms ease, box-shadow 90ms ease;
+}
+
+.bakery-page .mic__button:active:not(:disabled) {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 var(--purple-deep);
+}
+
+.bakery-page .mic__button:disabled {
+  cursor: default;
+}
+
+.bakery-page .mic--listening .mic__button {
+  animation: mic-pulse 1.2s ease-out infinite;
+}
+
+@keyframes mic-pulse {
+  0% {
+    box-shadow: 0 6px 0 var(--purple-deep), 0 0 0 0 rgba(124, 77, 219, 0.5);
+  }
+  100% {
+    box-shadow: 0 6px 0 var(--purple-deep), 0 0 0 28px rgba(124, 77, 219, 0);
+  }
+}
+
+.bakery-page .mic__wave {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 60px;
+}
+
+.bakery-page .mic__wave:first-child {
+  justify-content: flex-end;
+}
+
+.bakery-page .mic__wave span {
+  width: 7px;
+  height: 12px;
+  border-radius: 4px;
+  background: #fff8ee;
+  opacity: 0.7;
+}
+
+.bakery-page .mic--listening .mic__wave span {
+  background: var(--purple);
+  opacity: 0.9;
+  animation: wave 0.8s ease-in-out infinite alternate;
+  animation-delay: calc(var(--i) * -0.13s);
+}
+
+@keyframes wave {
+  from {
+    transform: scaleY(0.6);
+  }
+  to {
+    transform: scaleY(3.6);
+  }
+}
+
+.bakery-page .mic__label {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--wood-text);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+/* ---------- Messages ---------- */
+
+.bakery-page .notice {
+  max-width: 540px;
+  padding: 12px 18px;
+  border: 2px solid #f1d9a6;
+  border-radius: 18px;
+  background: #fffaf0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.bakery-page .target-letter {
+  color: var(--purple);
+  text-decoration: underline;
+  text-decoration-thickness: 0.09em;
+  text-underline-offset: 0.12em;
+}
+
+.bakery-page .icon-btn--turtle {
+  background: #e3f3d8;
+  box-shadow: 0 4px 0 #c3e2ad;
+}
+
+.bakery-page .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* "Now you try! Say 'see'" pill, sitting on the counter edge */
+.bakery-page .practice-target {
+  position: absolute;
+  left: 50%;
+  bottom: calc(var(--counter-h) + 10px);
+  translate: -50% 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: min(640px, 94vw);
+  padding: 6px 8px 6px 20px;
+  border-radius: 999px;
+  background: var(--purple);
+  color: #fff;
+  box-shadow: 0 5px 0 var(--purple-deep);
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.bakery-page .practice-target:has(> span:only-child) {
+  white-space: normal;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.bakery-page .practice-target__label {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.bakery-page .practice-target__say {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.bakery-page .practice-target .target-letter {
+  color: #ffd15c;
+}
+
+.bakery-page .practice-target .icon-btn {
+  width: 46px;
+  height: 46px;
+}
+
+/* ---------- Grown-up help ---------- */
+
+.bakery-page .grownup-link {
+  position: absolute;
+  right: clamp(10px, 2vw, 24px);
+  bottom: 10px;
+  min-height: 44px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 253, 249, 0.85);
+  color: var(--wood-text);
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.bakery-page .grownup-link--highlight {
+  background: var(--paper);
+  color: var(--purple-deep);
+  box-shadow: 0 0 0 4px var(--lavender-deep);
+  animation: help-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes help-pulse {
+  50% {
+    box-shadow: 0 0 0 9px rgba(199, 170, 245, 0.45);
+  }
+}
+
+.bakery-page .grownup-dialog {
+  width: min(440px, 92vw);
+  padding: 26px 26px 18px;
+  border: none;
+  border-radius: 28px;
+  background: var(--paper);
+  color: var(--plum);
+  text-align: center;
+  box-shadow: 0 10px 0 var(--line);
+}
+
+.bakery-page .grownup-dialog[open] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.bakery-page .grownup-dialog::backdrop {
+  background: rgba(59, 35, 80, 0.45);
+}
+
+.bakery-page .grownup-dialog h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.bakery-page .grownup-dialog p {
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--plum-soft);
+}
+
+.bakery-page .hold-btn {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  min-height: 64px;
+  border: none;
+  border-radius: 999px;
+  background: var(--lilac);
+  color: var(--purple-deep);
+  font-size: 1.1rem;
+  font-weight: 800;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+
+.bakery-page .hold-btn__fill {
+  position: absolute;
+  inset: 0;
+  background: var(--lavender-deep);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.bakery-page .hold-btn.is-holding .hold-btn__fill {
+  transform: scaleX(1);
+  transition: transform var(--hold-ms) linear;
+}
+
+.bakery-page .hold-btn__label {
+  position: relative;
+}
+
+/* ---------- Sound guide: mouth picture + steps table ---------- */
+
+.bakery-page .center-zone--guide {
+  top: clamp(150px, 21dvh, 190px);
+  bottom: calc(var(--counter-h) + 76px);
+  left: max(var(--side-left), 30vw);
+}
+
+.bakery-page .sound-guide {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2vw, 26px);
+  width: min(860px, 100%);
+  max-height: 100%;
+  padding: clamp(12px, 1.8dvh, 20px) clamp(14px, 1.8vw, 24px);
+  border-radius: 32px;
+  background: var(--paper);
+  box-shadow: 0 6px 0 #dccafa;
+  animation: pop-in 380ms cubic-bezier(0.3, 1.4, 0.6, 1);
+}
+
+.bakery-page .sound-guide__picture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+  width: clamp(170px, 24vw, 300px);
+}
+
+.bakery-page .mouth-diagram,
+.english-sound-guide .mouth-diagram {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.bakery-page .mouth-diagram__ring {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ring-pulse 1.4s ease-out infinite;
+}
+
+@keyframes ring-pulse {
+  from {
+    transform: scale(0.7);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.bakery-page .mouth-diagram__air {
+  stroke-dasharray: 10 8;
+  animation: air-flow 0.8s linear infinite;
+}
+
+@keyframes air-flow {
+  to {
+    stroke-dashoffset: -36;
+  }
+}
+
+.bakery-page .mouth-diagram__pop,
+.bakery-page .mouth-diagram__hum {
+  animation: pop-fade 1.2s ease-in-out infinite;
+}
+
+@keyframes pop-fade {
+  50% {
+    opacity: 0.25;
+  }
+}
+
+.bakery-page .sound-guide__listen {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 18px;
+  border: none;
+  border-radius: 999px;
+  background: var(--lilac);
+  color: var(--purple-deep);
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #dccafa;
+}
+
+.bakery-page .sound-guide__listen:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #dccafa;
+}
+
+.bakery-page .guide-table {
+  flex: 1;
+  min-width: 0;
+  border-collapse: separate;
+  border-spacing: 0 6px;
+  font-size: clamp(0.95rem, 1.35vw, 1.12rem);
+  line-height: 1.3;
+}
+
+.bakery-page .guide-table th,
+.bakery-page .guide-table td {
+  padding: 8px 10px;
+  background: #fff6ea;
+  vertical-align: middle;
+}
+
+.bakery-page .guide-table th {
+  width: 7.5em;
+  border-radius: 16px 0 0 16px;
+  font-family: var(--font-display);
+  font-size: 1.1em;
+  font-weight: 600;
+  text-align: left;
+  white-space: nowrap;
+  color: var(--purple-deep);
+}
+
+.bakery-page .guide-table td {
+  font-weight: 700;
+}
+
+.bakery-page .guide-table__num {
+  display: inline-grid;
+  place-items: center;
+  width: 1.6em;
+  height: 1.6em;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: var(--purple);
+  color: #fff;
+  font-size: 0.8em;
+}
+
+.bakery-page .guide-table__hear {
+  width: 1%;
+  border-radius: 0 16px 16px 0;
+}
+
+.bakery-page .guide-table__hear .icon-btn {
+  width: 44px;
+  height: 44px;
+}
+
+/* ---------- Finish: give the treat ---------- */
+
+.bakery-page .give {
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.bakery-page .give .treat__img {
+  transition: transform 150ms ease;
+  animation: treat-pop 600ms cubic-bezier(0.3, 1.7, 0.6, 1);
+}
+
+.bakery-page .give:hover .treat__img,
+.bakery-page .give:focus-visible .treat__img {
+  transform: scale(1.05) rotate(-3deg);
+}
+
+.bakery-page .sparkles svg {
+  position: absolute;
+  fill: var(--sun);
+  animation: twinkle 1.8s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    transform: scale(0.6) rotate(0deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1) rotate(20deg);
+    opacity: 1;
+  }
+}
+
+/* ---------- The dragon ---------- */
+
+.bakery-page .dragon {
+  position: relative;
+  width: 100%;
+}
+
+.bakery-page .dragon__body {
+  position: relative;
+  transform-origin: 50% 100%;
+}
+
+.bakery-page .dragon__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.bakery-page .dragon__face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Blink every few seconds */
+.bakery-page .dragon__blink {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: blink 4.6s infinite;
+}
+
+@keyframes blink {
+  0%,
+  93%,
+  100% {
+    transform: scaleY(1);
+  }
+  95% {
+    transform: scaleY(0.1);
+  }
+}
+
+.bakery-page .dragon__thought {
+  position: absolute;
+  top: -6%;
+  left: 60%;
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--purple);
+  animation: thought 900ms cubic-bezier(0.3, 1.6, 0.6, 1);
+}
+
+@keyframes thought {
+  from {
+    transform: translateY(20px) scale(0.4) rotate(-20deg);
+    opacity: 0;
+  }
+}
+
+.bakery-page .dragon--idle .dragon__body {
+  animation: bob 3s ease-in-out infinite;
+}
+
+.bakery-page .dragon--listening .dragon__body {
+  animation: lean 1.6s ease-in-out infinite;
+}
+
+.bakery-page .dragon--cheer .dragon__body {
+  animation: hop 0.55s cubic-bezier(0.3, 0, 0.5, 1) 3;
+}
+
+.bakery-page .dragon--confused .dragon__body {
+  animation: tilt 0.5s ease-out forwards;
+}
+
+.bakery-page .dragon--encourage .dragon__body {
+  animation: sway 2.4s ease-in-out infinite;
+}
+
+.bakery-page .dragon--yum .dragon__body {
+  animation: wiggle 0.9s ease-in-out infinite;
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0) scale(1, 1);
+  }
+  50% {
+    transform: translateY(-8px) scale(0.99, 1.01);
+  }
+}
+
+@keyframes lean {
+  0%,
+  100% {
+    transform: rotate(-3deg) translateY(-6px);
+  }
+  50% {
+    transform: rotate(-5deg) translateY(-10px);
+  }
+}
+
+@keyframes hop {
+  0% {
+    transform: translateY(0) scale(1.06, 0.92);
+  }
+  45% {
+    transform: translateY(-14%) scale(0.96, 1.05);
+  }
+  100% {
+    transform: translateY(0) scale(1, 1);
+  }
+}
+
+@keyframes tilt {
+  to {
+    transform: rotate(7deg) translateY(-4px);
+  }
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0) scale(1);
+  }
+  25% {
+    transform: rotate(-4deg) scale(1.02);
+  }
+  75% {
+    transform: rotate(4deg) scale(1.02);
+  }
+}
+
+.bakery-page .hearts {
+  position: absolute;
+  top: -10%;
+  left: 20%;
+  width: 70%;
+  height: 40%;
+}
+
+.bakery-page .hearts span {
+  position: absolute;
+  bottom: 0;
+  width: 24px;
+  height: 24px;
+  background: var(--pink);
+  transform: rotate(-45deg);
+  animation: heart-float 2.2s ease-out infinite;
+}
+
+.bakery-page .hearts span::before,
+.bakery-page .hearts span::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--pink);
+}
+
+.bakery-page .hearts span::before {
+  top: -12px;
+  left: 0;
+}
+
+.bakery-page .hearts span::after {
+  top: 0;
+  left: 12px;
+}
+
+.bakery-page .hearts span:nth-child(2) {
+  left: 45%;
+  animation-delay: 0.7s;
+  scale: 0.75;
+}
+
+.bakery-page .hearts span:nth-child(3) {
+  left: 85%;
+  animation-delay: 1.4s;
+  scale: 0.6;
+}
+
+@keyframes heart-float {
+  0% {
+    translate: 0 0;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    translate: 0 -140px;
+    opacity: 0;
+  }
+}
+
+/* ---------- Testing panel (only with ?debug in the address) ---------- */
+
+.bakery-page .debug {
+  position: fixed;
+  right: 10px;
+  top: 76px;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 280px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(30, 20, 40, 0.88);
+  color: #fff;
+  font: 600 13px/1.4 ui-monospace, monospace;
+}
+
+/* ---------- Phones held upright ---------- */
+
+@media (max-aspect-ratio: 4/5) {
+  .bakery-page {
+    --counter-h: 25dvh;
+    --dragon-w: 40vw;
+    --dragon-x: 2vw;
+    --side-left: 4vw;
+  }
+
+  .bakery-page .scene--dragon-center .scene__dragon {
+    --dragon-w: 58vw;
+  }
+
+  .bakery-page .scene__dragon {
+    translate: 0 30%;
+  }
+
+  .bakery-page .dragon-says {
+    left: 55%;
+    top: -14%;
+    font-size: 1rem;
+  }
+
+  .bakery-page .center-zone {
+    top: clamp(190px, 25dvh, 230px);
+    bottom: calc(var(--counter-h) + 22dvh);
+  }
+
+  .bakery-page .center-zone--right {
+    justify-content: center;
+    padding-right: 0;
+    bottom: calc(var(--counter-h) + 12dvh);
+  }
+
+  .bakery-page .on-counter {
+    left: auto;
+    right: 3vw;
+    translate: 0 0;
+    width: 50vw;
+  }
+
+  .bakery-page .order-card {
+    display: none;
+  }
+
+  .bakery-page .sound-card {
+    width: 28vw;
+  }
+
+  .bakery-page .ticket {
+    padding: 24px 18px 16px;
+  }
+
+  .bakery-page .ticket__treat {
+    width: 110px;
+    height: 110px;
+  }
+
+  .bakery-page .btn {
+    min-height: 64px;
+    font-size: 1.5rem;
+    padding: 0 30px;
+  }
+
+  .bakery-page .btn--xl {
+    min-height: 76px;
+    font-size: 1.9rem;
+  }
+
+  .bakery-page .mic__wave {
+    display: none;
+  }
+
+  .bakery-page .mic {
+    grid-template-columns: auto;
+  }
+
+  .bakery-page .center-zone--guide {
+    top: clamp(140px, 17dvh, 170px);
+    left: 3vw;
+    right: 3vw;
+    bottom: calc(var(--counter-h) + 68px);
+  }
+
+  .bakery-page .practice-target {
+    padding-left: 14px;
+    gap: 8px;
+  }
+
+  /* On phones the corner by the mic is crowded, so grown-up help moves to the top. */
+  .bakery-page .grownup-link {
+    top: 20px;
+    bottom: auto;
+  }
+
+  .bakery-page .practice-target__label {
+    font-size: 0.85rem;
+  }
+
+  .bakery-page .practice-target__say {
+    font-size: 1.3rem;
+  }
+
+  .bakery-page .sound-guide {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    overflow-y: auto;
+  }
+
+  .bakery-page .scene--calm {
+    --counter-h: 19dvh;
+  }
+
+  .bakery-page .scene--calm .counter-front {
+    padding: 10px 16px;
+  }
+
+  .bakery-page .sound-guide__picture {
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .bakery-page .sound-guide__picture .mouth-diagram {
+    width: min(48vw, 190px);
+  }
+
+  .bakery-page .sound-guide__listen {
+    flex-direction: column;
+    gap: 2px;
+    padding: 8px 12px;
+    border-radius: 18px;
+    font-size: 0.85rem;
+  }
+
+  .bakery-page .guide-table {
+    width: 100%;
+    font-size: 0.92rem;
+    border-spacing: 0 4px;
+  }
+
+  .bakery-page .guide-table th {
+    width: auto;
+    padding: 6px 8px;
+  }
+
+  .bakery-page .guide-table td {
+    padding: 6px 8px;
+  }
+
+  .bakery-page .guide-table__num {
+    display: none;
+  }
+}
+
+/* ---------- Less motion for people who ask for it ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .bakery-page *,
+  .bakery-page *::before,
+  .bakery-page *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Mirror mode: a round hand mirror that shows the camera, flipped. */
+.bakery-page .mirror {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+}
+
+.bakery-page .mirror__glass {
+  position: relative;
+  width: min(100%, 30dvh, 300px);
+  aspect-ratio: 1;
+  border: 10px solid var(--purple);
+  border-radius: 50%;
+  overflow: hidden;
+  background: radial-gradient(circle at 35% 30%, #ffffff, var(--lilac) 70%);
+  box-shadow:
+    0 6px 0 var(--purple-deep),
+    inset 0 0 0 4px #c9b3f5;
+  animation: pop-in 380ms cubic-bezier(0.3, 1.4, 0.6, 1);
+}
+
+.bakery-page .mirror__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Flip it, so moving left looks like moving left, like a real mirror. */
+  transform: scaleX(-1);
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.bakery-page .mirror__glass--on .mirror__video {
+  opacity: 1;
+}
+
+.bakery-page .mirror__shine {
+  position: absolute;
+  top: 10%;
+  left: 14%;
+  width: 22%;
+  height: 10%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  transform: rotate(-30deg);
+  pointer-events: none;
+}
+
+.bakery-page .mirror__note {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 18%;
+  color: var(--purple-deep);
+  font-weight: 800;
+  text-align: center;
+}
+
+.bakery-page .mirror__note--problem {
+  font-size: 0.9rem;
+}
+
+.bakery-page .mirror__caption {
+  color: var(--purple-deep);
+  font-size: 0.85rem;
+  font-weight: 700;
+  opacity: 0.8;
+  text-align: center;
+}
+
+.bakery-page .sound-guide__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.bakery-page .sound-guide__buttons .sound-guide__listen {
+  padding: 0 14px;
+  white-space: nowrap;
+}
+
+.bakery-page .sound-guide__listen[aria-pressed='true'] {
+  background: var(--purple);
+  color: #fff;
+  box-shadow: 0 4px 0 var(--purple-deep);
+}
+
+@media (max-aspect-ratio: 4/5) {
+  .bakery-page .sound-guide__buttons {
+    flex-direction: column;
+  }
+
+  .bakery-page .mirror__glass {
+    width: min(70vw, 30dvh);
+    border-width: 7px;
+  }
+
+  .bakery-page .mirror__caption {
+    font-size: 0.75rem;
+  }
+}
+
+/* A step's Rive animation sits exactly on top of the treat picture. */
+.bakery-page .on-counter {
+  isolation: isolate;
+}
+
+.bakery-page .treat-anim {
+  position: absolute;
+  inset: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.bakery-page .treat-anim canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.bakery-page .treat-anim--playing {
+  visibility: visible;
+}
+
+.bakery-page .treat__img--under-animation {
+  visibility: hidden;
+}
+
+/* The treat shelf: three spots on a wooden plank. */
+.bakery-page .treat-shelf {
+  width: min(560px, 92vw);
+  padding: 18px 18px 0;
+  border-radius: 32px 32px 18px 18px;
+  background: var(--paper);
+  box-shadow: 0 6px 0 var(--line);
+  animation: pop-in 380ms cubic-bezier(0.3, 1.4, 0.6, 1);
+}
+
+.bakery-page .treat-shelf__row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(8px, 2vw, 20px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bakery-page .treat-shelf__spot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.bakery-page .treat-shelf__treat {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.bakery-page .treat-shelf__treat .art {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Not baked yet: a soft, faded outline of the treat. */
+.bakery-page .treat-shelf__spot--empty .art {
+  filter: grayscale(1) brightness(1.3);
+  opacity: 0.3;
+}
+
+.bakery-page .treat-shelf__spot--new .treat-shelf__treat {
+  animation: shelf-drop 700ms cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+
+@keyframes shelf-drop {
+  0% {
+    transform: translateY(-60%) scale(0.6);
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    transform: none;
+  }
+}
+
+.bakery-page .treat-shelf__count {
+  position: absolute;
+  right: 0;
+  bottom: 4%;
+  min-width: 2.2em;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--purple);
+  color: #fff;
+  font-weight: 800;
+  text-align: center;
+  box-shadow: 0 3px 0 var(--purple-deep);
+}
+
+.bakery-page .treat-shelf__tag {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--lilac);
+  color: var(--purple-deep);
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.bakery-page .treat-shelf__spot--empty .treat-shelf__tag {
+  opacity: 0.5;
+}
+
+.bakery-page .treat-shelf__plank {
+  height: 22px;
+  margin: 10px -18px 0;
+  border-radius: 8px;
+  background: linear-gradient(#e2b886, #cf9f6b);
+  box-shadow: 0 6px 0 #b8875a;
+}
+
+.bakery-page .shelf-ribbon {
+  margin: 0 0 12px;
+  padding: 8px 20px;
+  border-radius: 999px;
+  background: var(--sun, #ffd66b);
+  color: #5a3a00;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bakery-page .treat-shelf__spot--new .treat-shelf__treat {
+    animation: none;
+  }
+}
+
+.bakery-page .center-zone--shelf {
+  flex-direction: column;
+}
+
+@media (max-aspect-ratio: 4/5) {
+  .bakery-page .treat-shelf {
+    padding: 12px 12px 0;
+  }
+
+  .bakery-page .treat-shelf__plank {
+    margin: 8px -12px 0;
+    height: 16px;
+  }
+
+  .bakery-page .treat-shelf__tag {
+    width: 32px;
+    height: 32px;
+    font-size: 1.1rem;
+  }
+
+  .bakery-page .shelf-ribbon {
+    margin-bottom: 8px;
+    padding: 6px 14px;
+    font-size: 1rem;
+  }
+}
+
+/* "Feed the dragon": a treat bobs in the air, then flies into the dragon's mouth. */
+.bakery-page .feed-progress {
+  margin-top: 10px;
+}
+
+.bakery-page .feed-stage {
+  position: absolute;
+  top: clamp(190px, 27dvh, 250px);
+  bottom: calc(var(--counter-h) + 2dvh);
+  left: var(--side-left);
+  right: 4vw;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.bakery-page .feed-treat {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: clamp(150px, 20vw, 240px);
+}
+
+.bakery-page .feed-treat__img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+.bakery-page .feed-treat__word {
+  padding: 6px 22px;
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink, #331a63);
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  box-shadow: 0 5px 0 var(--line);
+}
+
+/* Floats in from above, then bobs gently. */
+.bakery-page .feed-treat--float {
+  animation:
+    feed-arrive 700ms cubic-bezier(0.3, 1.4, 0.6, 1),
+    feed-bob 2.6s ease-in-out 700ms infinite;
+}
+
+@keyframes feed-arrive {
+  from {
+    transform: translateY(-40dvh) scale(0.7);
+    opacity: 0;
+  }
+}
+
+@keyframes feed-bob {
+  50% {
+    transform: translateY(-12px) rotate(-3deg);
+  }
+}
+
+/* Flies into the dragon's mouth (the screen sets --to-x and --to-y). */
+.bakery-page .feed-treat--eaten {
+  animation: feed-eaten 650ms cubic-bezier(0.5, 0, 0.8, 0.6) forwards;
+}
+
+.bakery-page .feed-treat--eaten .feed-treat__word {
+  opacity: 0;
+  transition: opacity 150ms ease;
+}
+
+@keyframes feed-eaten {
+  30% {
+    transform: translateY(-30px) scale(1.08);
+  }
+  100% {
+    transform: translate(var(--to-x), var(--to-y)) scale(0.15);
+    opacity: 0.2;
+  }
+}
+
+/* Floats gently up and away, to come back later. */
+.bakery-page .feed-treat--away {
+  animation: feed-away 600ms ease-in forwards;
+}
+
+@keyframes feed-away {
+  to {
+    transform: translateY(-45dvh) rotate(8deg);
+    opacity: 0;
+  }
+}
+
+.bakery-page .feed-score {
+  padding: 18px 30px;
+  border-radius: 28px;
+  background: var(--paper);
+  color: #331a63;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+  text-align: center;
+  box-shadow: 0 6px 0 var(--line);
+  animation: pop-in 380ms cubic-bezier(0.3, 1.4, 0.6, 1);
+}
+
+.bakery-page .feed-score strong {
+  color: var(--purple);
+}
+
+@media (max-aspect-ratio: 4/5) {
+  .bakery-page .feed-stage {
+    left: 4vw;
+    bottom: calc(var(--counter-h) + 24dvh);
+  }
+
+  .bakery-page .feed-treat {
+    width: min(42vw, 180px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bakery-page .feed-treat--float {
+    animation: none;
+  }
+}
+
+/* The grown-up corner: a calm, readable page (no bakery scene). */
+.bakery-page .grownups {
+  min-height: 100dvh;
+  padding: 84px 16px 48px;
+  background: var(--cream);
+  animation: screen-in 280ms ease-out;
+}
+
+.bakery-page .grownups__page {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: min(960px, 100%);
+  margin: 0 auto;
+}
+
+.bakery-page .grownups__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.bakery-page .grownups__header .btn {
+  min-height: 52px;
+  padding: 0 24px;
+  font-size: 1.15rem;
+}
+
+.bakery-page .grownups__kicker {
+  color: var(--plum-soft);
+  font-size: 0.95rem;
+}
+
+.bakery-page .grownups h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 700;
+}
+
+.bakery-page .grownups__h2 {
+  margin: 10px 0 0;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.bakery-page .grownups__note {
+  max-width: 70ch;
+  color: var(--plum-soft);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.bakery-page .gu-card {
+  padding: 18px 20px;
+  border-radius: 22px;
+  background: var(--paper);
+  box-shadow: 0 5px 0 var(--line);
+}
+
+.bakery-page .gu-glance {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.bakery-page .gu-glance__label {
+  display: block;
+  color: var(--plum-soft);
+  font-size: 0.95rem;
+}
+
+.bakery-page .gu-glance__value {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.bakery-page .gu-tip {
+  padding: 14px 18px;
+  border-left: 6px solid var(--purple);
+  border-radius: 14px;
+  background: var(--lilac);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.bakery-page .gu-sounds {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.bakery-page .gu-sound--focus {
+  box-shadow:
+    0 0 0 3px var(--purple),
+    0 5px 0 var(--purple-deep);
+}
+
+.bakery-page .gu-sound__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.bakery-page .gu-sound__icon {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.bakery-page .gu-sound h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.bakery-page .gu-sound h3 span {
+  color: var(--plum-soft);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.bakery-page .gu-badge {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--purple);
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.bakery-page .gu-sound__empty {
+  color: var(--plum-soft);
+}
+
+.bakery-page .gu-stats {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 14px;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.bakery-page .gu-stats dt {
+  color: var(--plum-soft);
+  font-weight: 700;
+}
+
+.bakery-page .gu-stats dd {
+  margin: 0;
+  font-weight: 800;
+}
+
+.bakery-page .gu-small {
+  color: var(--plum-soft);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.bakery-page .gu-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.bakery-page .gu-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 18px;
+  border: 2px solid var(--lavender-deep);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--plum-soft);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.bakery-page .gu-toggle__dot {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--lavender-deep);
+  border-radius: 50%;
+  background: #fff;
+}
+
+.bakery-page .gu-toggle--on {
+  border-color: var(--purple);
+  background: var(--lilac);
+  color: var(--plum);
+}
+
+.bakery-page .gu-toggle--on .gu-toggle__dot {
+  border-color: var(--purple);
+  background: var(--purple) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center / 70% no-repeat;
+}
+
+.bakery-page .gu-resources {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bakery-page .gu-resources li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.bakery-page .gu-resources a {
+  color: var(--purple-deep);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.bakery-page .gu-resources__source {
+  color: var(--plum-soft);
+  font-size: 0.85rem;
+}
+
+.bakery-page .gu-privacy {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-weight: 600;
+}
+
+/* The math check before the grown-up corner */
+.bakery-page .gate-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.bakery-page .gate-form label {
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.bakery-page .gate-input {
+  width: 8ch;
+  min-height: 56px;
+  border: 3px solid var(--lavender-deep);
+  border-radius: 16px;
+  font: inherit;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.bakery-page .gate-input:focus {
+  border-color: var(--purple);
+  outline: none;
+}
+
+.bakery-page .gate-wrong {
+  color: var(--plum-soft);
+}
+
+/* The small, tucked-away button on the start screen */
+.bakery-page .corner-grownups {
+  position: absolute;
+  top: 18px;
+  right: clamp(14px, 3vw, 32px);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 0 14px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 253, 249, 0.7);
+  color: var(--wood-text);
+  font-size: 0.85rem;
+  font-weight: 800;
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+.bakery-page .corner-grownups:hover,
+.bakery-page .corner-grownups:focus-visible {
+  opacity: 1;
+}
+.bakery-page .bakery-exit{position:fixed;left:12px;bottom:12px;z-index:200;background:#fffdf9;color:#3b2350;padding:9px 14px;border-radius:24px;text-decoration:none;font:700 14px Nunito,system-ui;box-shadow:0 2px 8px #0002}
+.bakery-page .bakery-service-error{position:fixed;z-index:210;bottom:65px;left:10%;right:10%;background:#fffdf9;border:2px solid #7c4ddb;border-radius:18px;padding:16px;text-align:center}

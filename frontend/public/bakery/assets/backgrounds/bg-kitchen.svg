@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <!-- Stand-in bakery wall in the art kit style. Replace with bg-kitchen.png when the final art is ready. -->
+  <rect width="1920" height="1080" fill="#fcf4ea"/>
+
+  <!-- soft alcove -->
+  <path d="M360 1080 L360 430 Q360 160 640 150 L1290 150 Q1570 160 1570 430 L1570 1080 Z" fill="#f7e8d5"/>
+
+  <!-- backsplash tiles -->
+  <g fill="#f3e2cc">
+    <rect x="360" y="640" width="1210" height="440"/>
+  </g>
+  <g stroke="#ecd5b9" stroke-width="4">
+    <path d="M360 700 H1570 M360 760 H1570 M360 820 H1570 M360 880 H1570"/>
+    <path d="M420 640 V700 M540 640 V700 M660 640 V700 M780 640 V700 M900 640 V700 M1020 640 V700 M1140 640 V700 M1260 640 V700 M1380 640 V700 M1500 640 V700"/>
+    <path d="M480 700 V760 M600 700 V760 M720 700 V760 M840 700 V760 M960 700 V760 M1080 700 V760 M1200 700 V760 M1320 700 V760 M1440 700 V760"/>
+    <path d="M420 760 V820 M540 760 V820 M660 760 V820 M780 760 V820 M900 760 V820 M1020 760 V820 M1140 760 V820 M1260 760 V820 M1380 760 V820 M1500 760 V820"/>
+    <path d="M480 820 V880 M600 820 V880 M720 820 V880 M840 820 V880 M960 820 V880 M1080 820 V880 M1200 820 V880 M1320 820 V880 M1440 820 V880"/>
+  </g>
+
+  <!-- bunting -->
+  <path d="M0 70 Q480 150 960 90 Q1440 30 1920 110" fill="none" stroke="#e2c3a0" stroke-width="4"/>
+  <g>
+    <path d="M90 92 L150 101 L114 152 Z" fill="#f6cfd6"/>
+    <path d="M250 112 L310 117 L276 168 Z" fill="#cde6f2"/>
+    <path d="M410 122 L470 123 L440 176 Z" fill="#fbe3a6"/>
+    <path d="M570 124 L630 120 L604 174 Z" fill="#d8c8f4"/>
+    <path d="M730 116 L790 110 L766 164 Z" fill="#cfe7c2"/>
+    <path d="M1130 74 L1190 69 L1164 122 Z" fill="#f6cfd6"/>
+    <path d="M1290 64 L1350 64 L1324 116 Z" fill="#cde6f2"/>
+    <path d="M1450 66 L1510 72 L1478 122 Z" fill="#fbe3a6"/>
+    <path d="M1610 78 L1670 87 L1634 136 Z" fill="#d8c8f4"/>
+    <path d="M1770 96 L1830 106 L1792 152 Z" fill="#cfe7c2"/>
+  </g>
+
+  <!-- window -->
+  <path d="M60 790 L60 360 Q60 190 240 190 Q420 190 420 360 L420 790 Z" fill="#f2d8b8"/>
+  <path d="M88 770 L88 368 Q88 218 240 218 Q392 218 392 368 L392 770 Z" fill="#d4ebf5"/>
+  <path d="M88 560 L392 560 L392 770 L88 770 Z" fill="#e3f2f7"/>
+  <g fill="#ffffff" opacity="0.9">
+    <ellipse cx="170" cy="330" rx="46" ry="20"/>
+    <ellipse cx="206" cy="318" rx="34" ry="22"/>
+    <ellipse cx="310" cy="420" rx="38" ry="16"/>
+  </g>
+  <g>
+    <ellipse cx="140" cy="720" rx="110" ry="120" fill="#b7daa3"/>
+    <ellipse cx="320" cy="700" rx="120" ry="140" fill="#a6cf90"/>
+    <ellipse cx="230" cy="760" rx="110" ry="80" fill="#c4e2b2"/>
+  </g>
+  <rect x="232" y="218" width="16" height="552" fill="#f2d8b8"/>
+  <rect x="88" y="500" width="304" height="16" fill="#f2d8b8"/>
+  <rect x="40" y="784" width="400" height="30" rx="10" fill="#e8c69e"/>
+  <rect x="40" y="808" width="400" height="10" fill="#d9b085"/>
+
+  <!-- potted herb on the sill -->
+  <path d="M120 784 L132 730 L198 730 L210 784 Z" fill="#e9a889"/>
+  <rect x="126" y="724" width="78" height="14" rx="6" fill="#dc9373"/>
+  <g fill="#8fc274">
+    <ellipse cx="146" cy="700" rx="18" ry="34" transform="rotate(-20 146 700)"/>
+    <ellipse cx="184" cy="696" rx="18" ry="36" transform="rotate(18 184 696)"/>
+    <ellipse cx="166" cy="684" rx="16" ry="38" fill="#74ae5d"/>
+  </g>
+
+  <!-- pendant lamps -->
+  <g>
+    <rect x="757" y="0" width="6" height="40" fill="#cdb89f"/>
+    <circle cx="760" cy="120" r="90" fill="#ffe7b0" opacity="0.35"/>
+    <path d="M700 100 Q700 40 760 40 Q820 40 820 100 Z" fill="#f2c39a"/>
+    <rect x="696" y="94" width="128" height="12" rx="6" fill="#e3ab7c"/>
+    <circle cx="760" cy="112" r="14" fill="#fff4d6"/>
+    <rect x="1177" y="0" width="6" height="14" fill="#cdb89f"/>
+    <circle cx="1180" cy="90" r="90" fill="#ffe7b0" opacity="0.35"/>
+    <path d="M1120 70 Q1120 10 1180 10 Q1240 10 1240 70 Z" fill="#c9b3f2"/>
+    <rect x="1116" y="64" width="128" height="12" rx="6" fill="#b39ae8"/>
+    <circle cx="1180" cy="82" r="14" fill="#fff4d6"/>
+  </g>
+
+  <!-- shelf -->
+  <rect x="560" y="400" width="520" height="26" rx="8" fill="#e5be90"/>
+  <rect x="560" y="420" width="520" height="10" fill="#d3a574"/>
+  <path d="M610 430 L650 430 L610 480 Z M990 430 L1030 430 L1030 480 Z" fill="#d3a574"/>
+  <!-- sprinkle jar -->
+  <rect x="600" y="290" width="86" height="110" rx="18" fill="#f5f0ea"/>
+  <rect x="596" y="276" width="94" height="22" rx="8" fill="#e2b98a"/>
+  <g>
+    <rect x="618" y="340" width="16" height="6" rx="3" fill="#f28ca6" transform="rotate(30 626 343)"/>
+    <rect x="648" y="356" width="16" height="6" rx="3" fill="#7ec4f0" transform="rotate(-20 656 359)"/>
+    <rect x="626" y="372" width="16" height="6" rx="3" fill="#ffd15c" transform="rotate(60 634 375)"/>
+    <rect x="656" y="326" width="16" height="6" rx="3" fill="#b79cf0" transform="rotate(-50 664 329)"/>
+    <rect x="644" y="382" width="16" height="6" rx="3" fill="#9fd48a" transform="rotate(10 652 385)"/>
+  </g>
+  <!-- flour jar -->
+  <rect x="706" y="318" width="74" height="82" rx="16" fill="#fbefc9"/>
+  <rect x="702" y="306" width="82" height="18" rx="7" fill="#e2b98a"/>
+  <!-- bowls -->
+  <path d="M806 372 Q806 400 850 400 Q894 400 894 372 Z" fill="#f6cfd6"/>
+  <path d="M812 350 Q812 374 850 374 Q888 374 888 350 Z" fill="#ffffff"/>
+  <!-- plant with ivy -->
+  <path d="M930 400 L942 350 L1010 350 L1022 400 Z" fill="#e9a889"/>
+  <rect x="936" y="344" width="80" height="14" rx="6" fill="#dc9373"/>
+  <g fill="#8fc274">
+    <ellipse cx="952" cy="318" rx="20" ry="32" transform="rotate(-30 952 318)"/>
+    <ellipse cx="1002" cy="314" rx="20" ry="34" transform="rotate(26 1002 314)"/>
+    <ellipse cx="978" cy="300" rx="18" ry="38" fill="#74ae5d"/>
+  </g>
+  <path d="M1016 356 Q1060 420 1046 520 Q1040 580 1058 640" fill="none" stroke="#74ae5d" stroke-width="5"/>
+  <g fill="#8fc274">
+    <ellipse cx="1040" cy="400" rx="16" ry="11" transform="rotate(40 1040 400)"/>
+    <ellipse cx="1058" cy="440" rx="16" ry="11" transform="rotate(-30 1058 440)"/>
+    <ellipse cx="1042" cy="486" rx="16" ry="11" transform="rotate(40 1042 486)"/>
+    <ellipse cx="1052" cy="532" rx="16" ry="11" transform="rotate(-30 1052 532)"/>
+    <ellipse cx="1044" cy="580" rx="16" ry="11" transform="rotate(40 1044 580)"/>
+    <ellipse cx="1060" cy="624" rx="14" ry="10" transform="rotate(-30 1060 624)"/>
+  </g>
+
+  <!-- chalkboard -->
+  <rect x="1150" y="300" width="300" height="230" rx="14" fill="#d9ae7e"/>
+  <rect x="1168" y="318" width="264" height="194" rx="6" fill="#4b4d4a"/>
+  <text x="1300" y="384" text-anchor="middle" font-family="Chalkboard SE, Comic Sans MS, Arial Rounded MT Bold, sans-serif" font-size="44" font-weight="700" fill="#ece8df" letter-spacing="3">BAKERY</text>
+  <g fill="none" stroke="#ece8df" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+    <path d="M1272 452 L1328 452 L1320 490 L1280 490 Z"/>
+    <path d="M1268 452 Q1266 424 1300 422 Q1334 424 1332 452"/>
+    <path d="M1292 422 Q1300 404 1312 412"/>
+    <path d="M1212 470 q8 -10 16 0 q8 -10 16 0 l-16 16 z"/>
+    <path d="M1356 470 q8 -10 16 0 q8 -10 16 0 l-16 16 z"/>
+  </g>
+
+  <!-- display oven with treats -->
+  <path d="M1620 1080 L1620 420 Q1620 250 1790 250 Q1960 250 1960 420 L1960 1080 Z" fill="#e7e0d8"/>
+  <path d="M1652 1080 L1652 430 Q1652 286 1790 286 Q1928 286 1928 430 L1928 1080 Z" fill="#f4efe9"/>
+  <g fill="#d8cbbe">
+    <rect x="1652" y="500" width="276" height="14"/>
+    <rect x="1652" y="680" width="276" height="14"/>
+  </g>
+  <!-- loaves -->
+  <g>
+    <ellipse cx="1720" cy="480" rx="52" ry="26" fill="#d99c58"/>
+    <ellipse cx="1712" cy="470" rx="40" ry="14" fill="#e8b878"/>
+    <ellipse cx="1840" cy="480" rx="52" ry="26" fill="#d99c58"/>
+    <ellipse cx="1832" cy="470" rx="40" ry="14" fill="#e8b878"/>
+  </g>
+  <!-- mini cupcakes -->
+  <g>
+    <path d="M1694 664 L1746 664 L1740 640 L1700 640 Z" fill="#f4bc6a"/>
+    <ellipse cx="1720" cy="636" rx="30" ry="18" fill="#fff7ea"/>
+    <circle cx="1720" cy="616" r="8" fill="#e8506a"/>
+    <path d="M1794 664 L1846 664 L1840 640 L1800 640 Z" fill="#f4bc6a"/>
+    <ellipse cx="1820" cy="636" rx="30" ry="18" fill="#f6cfd6"/>
+    <circle cx="1820" cy="616" r="8" fill="#e8506a"/>
+    <path d="M1880 664 L1928 664 L1928 640 L1886 640 Z" fill="#f4bc6a"/>
+    <ellipse cx="1912" cy="636" rx="28" ry="18" fill="#d8c8f4"/>
+  </g>
+</svg>
