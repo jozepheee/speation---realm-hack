@@ -1,0 +1,44 @@
+server {
+    listen 80;
+    server_name ${SPEATION_PUBLIC_HOST};
+    return 308 https://${SPEATION_PUBLIC_HOST}$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name ${SPEATION_PUBLIC_HOST};
+    ssl_certificate /etc/nginx/tls/fullchain.pem;
+    ssl_certificate_key /etc/nginx/tls/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    client_max_body_size 21M;
+    add_header Strict-Transport-Security "max-age=31536000" always;
+    add_header X-Content-Type-Options nosniff always;
+    add_header Referrer-Policy strict-origin-when-cross-origin always;
+    add_header Permissions-Policy 'camera=(self), microphone=(self), geolocation=()' always;
+    # Avoid putting recovery tokens, messages or recording IDs in access logs.
+    access_log off;
+
+    location /api/ {
+        proxy_pass http://backend:8000/;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-Proto https;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_http_version 1.1;
+        proxy_read_timeout 300s;
+        proxy_cache off;
+        proxy_hide_header Cache-Control;
+        add_header Cache-Control "private, no-store" always;
+        # Repeat security headers because add_header inheritance stops here.
+        add_header Strict-Transport-Security "max-age=31536000" always;
+        add_header X-Content-Type-Options nosniff always;
+        add_header Referrer-Policy strict-origin-when-cross-origin always;
+    }
+
+    location / {
+        proxy_pass http://frontend:3000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-Proto https;
+        proxy_set_header X-Forwarded-For $remote_addr;
+        proxy_http_version 1.1;
+    }
+}

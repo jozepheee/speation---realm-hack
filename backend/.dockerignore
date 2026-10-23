@@ -1,0 +1,10 @@
+**/__pycache__
+.env
+.env.*
+!.env.example
+*.db
+*.sqlite*
+private-audio
+static/*.mp3
+static/*.wav
+tests

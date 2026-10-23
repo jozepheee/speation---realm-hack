@@ -1,0 +1,14 @@
+# Independent local graph service; no shared databases or public port binding.
+# Production: provision authentication, trusted TLS and monitored backups before
+# enrolling participants; MEMGRAPH_URI must use bolt+s:// in production mode.
+services:
+  memgraph:
+    image: memgraph/memgraph:3.13.1
+    ports:
+      - "127.0.0.1:7688:7687"
+    volumes:
+      - neuronudge_memgraph:/var/lib/memgraph
+    command: ["--telemetry-enabled=false"]
+    restart: unless-stopped
+volumes:
+  neuronudge_memgraph:
