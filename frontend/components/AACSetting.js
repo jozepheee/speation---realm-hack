@@ -1,0 +1,3 @@
+import {useState} from 'react';
+import useAAC from '../hooks/useAAC';
+export default function AACSetting(){const {enabled,setEnabled}=useAAC(),[error,setError]=useState('');return <section lang="en" translate="no" aria-label="AAC settings"><h3>AAC</h3><label><input type="checkbox" checked={enabled} onChange={event=>{try{setEnabled(event.target.checked);setError('');}catch(err){setError(err.message);}}}/> Show AAC communication tools</label><p>Symbols, personal phrases and speech output. Off by default. This account’s choice is saved on this browser; switching it off does not delete saved phrases.</p>{error&&<p role="alert">{error}</p>}</section>;}

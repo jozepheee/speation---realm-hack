@@ -1,0 +1,7 @@
+.composer { flex-shrink: 0; max-height: 210px; overflow: auto; margin: 12px 0; padding: 12px; border: 1px solid #ccdcd2; border-radius: 14px; background: #f6faf6; color: #365448; text-align: left; }
+.composer summary { cursor: pointer; font-size: .9rem; }
+.composer p { font-size: .8rem; margin: 10px 0; }
+.phrases { display: flex; flex-wrap: wrap; gap: 8px; }
+.phrases button { display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 10px 14px; border: 1px solid #bfd1c3; border-radius: 12px; background: white; color: #365448; font: inherit; font-size: .9rem; cursor: pointer; }
+.phrases button:disabled { opacity: .5; cursor: default; }
+.phrases button:focus-visible, .composer summary:focus-visible { outline: 3px solid #356d52; outline-offset: 3px; }
