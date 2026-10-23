@@ -100,7 +100,7 @@ def get_chroma_client():
 def get_collections():
     global _clinical_kb_col, _user_memory_col
     client = get_chroma_client()
-
+    
     if _clinical_kb_col is None:
         _clinical_kb_col = client.get_or_create_collection(
             name="clinical_speech_knowledge",
@@ -130,7 +130,7 @@ def retrieve_rag_context(user_id: str, query: str, n_results: int = 2) -> Dict[s
     """
     try:
         kb_col, mem_col = get_collections()
-
+        
         # 1. Query clinical knowledge
         kb_results = kb_col.query(
             query_texts=[query],
@@ -170,21 +170,21 @@ def store_conversation_memory(
     try:
         _, mem_col = get_collections()
         doc_id = f"mem_{user_id}_{uuid.uuid4().hex[:12]}"
-
+        
         document_text = (
             f"User said: '{user_message}'. "
             f"Speech flow score: {fluency_score:.1f}/100. "
             f"Observation: {notes}. "
             f"Companion replied: '{avatar_reply}'"
         )
-
+        
         metadata = {
             "user_id": str(user_id) if user_id else "guest",
             "fluency_score": float(fluency_score),
             "timestamp": datetime.now(timezone.utc).isoformat(),
             "notes": str(notes)
         }
-
+        
         mem_col.add(
             ids=[doc_id],
             documents=[document_text],

@@ -67,18 +67,3 @@ private-audio/
 
 /data/speechocean-validation/
 /research-data/
-
-# Import exclusions
-*.md
-*.mdx
-*.markdown
-[Rr][Ee][Aa][Dd][Mm][Ee]*
-/outputs/
-/docs/
-*.key
-*.pfx
-*.p12
-
-# Database setup is managed separately
-/supabase/migrations/
-/backend/scripts/*migration*.py

@@ -1,14 +1,23 @@
 """Saved educational targets and actual audio attempts; never an assessed outcome."""
 from sqlalchemy import select
+from types import SimpleNamespace
+from sqlalchemy.orm import load_only
 import uuid
 from models.speech_workflow import LiveCall
 from models.care import AcousticProposal,SpeechRecording,RecordingReview
 from learners.review_evidence import current_review_filter
 
 async def learning_memory(db,learner_id,language):
- calls=(await db.execute(select(LiveCall).where(LiveCall.learner_id==learner_id,LiveCall.language==language,LiveCall.mode.in_(['practice','listen_then_say','transfer']),LiveCall.context['active_practice_target']['expected_text'].as_string().is_not(None)).order_by(LiveCall.created_at.desc()).limit(1))).scalars().all()
+ calls=(await db.execute(select(LiveCall).options(load_only(LiveCall.context)).where(LiveCall.learner_id==learner_id,LiveCall.language==language,LiveCall.mode.in_(['practice','listen_then_say','transfer']),LiveCall.context['active_practice_target']['expected_text'].as_string().is_not(None)).order_by(LiveCall.created_at.desc()).limit(1))).scalars().all()
  target=next((row.context.get('active_practice_target') for row in calls if row.context.get('active_practice_target')),None)
- rows=(await db.execute(select(AcousticProposal,SpeechRecording).join(SpeechRecording,SpeechRecording.id==AcousticProposal.recording_id).where(SpeechRecording.learner_id==learner_id,SpeechRecording.language==language,AcousticProposal.decision!='rejected',AcousticProposal.request['purpose'].as_string()=='maya_coaching').order_by(AcousticProposal.created_at.desc()).limit(20))).all()
+ # Do not transfer frame-level model emissions to render four summary cards.
+ fields=['state','summary','concerns','teaching_plan','source','evidence_source','assessment_scope','assessment_policy']
+ saved=(await db.execute(select(AcousticProposal.id.label('proposal_id'),AcousticProposal.decision,AcousticProposal.model,
+  AcousticProposal.created_at,SpeechRecording.id.label('recording_id'),SpeechRecording.expected_text,
+  *(AcousticProposal.content[key].label(key) for key in fields)).join(SpeechRecording,SpeechRecording.id==AcousticProposal.recording_id).where(SpeechRecording.learner_id==learner_id,SpeechRecording.language==language,AcousticProposal.decision!='rejected',AcousticProposal.request['purpose'].as_string()=='maya_coaching').order_by(AcousticProposal.created_at.desc()).limit(20))).all()
+ rows=[(SimpleNamespace(id=row.proposal_id,decision=row.decision,model=row.model,created_at=row.created_at,
+  request={'purpose':'maya_coaching'},content={key:getattr(row,key) for key in fields if getattr(row,key) is not None}),
+  SimpleNamespace(id=row.recording_id,expected_text=row.expected_text)) for row in saved]
  attempts=[]
  for proposal,record in rows:
   if proposal.request.get('purpose')!='maya_coaching':continue
@@ -17,7 +26,7 @@ async def learning_memory(db,learner_id,language):
   if target and record.expected_text!=target['expected_text']:continue
   if not target:target={'expected_text':record.expected_text,'word':record.expected_text,'sound':'','source':'saved_audio_practice_target'}
   if any(item['recording_id']==str(record.id) for item in attempts):continue
-  attempts.append({'recording_id':str(record.id),'proposal_id':str(proposal.id),'created_at':proposal.created_at.isoformat(),'state':proposal.content.get('state'),'summary':proposal.content.get('summary'),'concerns':proposal.content.get('concerns',[]),'teaching_plan':proposal.content.get('teaching_plan',[]),'source':'unvalidated_audio_practice_hypothesis'})
+  attempts.append({'recording_id':str(record.id),'proposal_id':str(proposal.id),'created_at':proposal.created_at.isoformat(),'state':proposal.content.get('state'),'summary':proposal.content.get('summary'),'concerns':proposal.content.get('concerns',[]),'teaching_plan':proposal.content.get('teaching_plan',[]),'source':proposal.content.get('source','unvalidated_audio_practice_hypothesis'),'evidence_source':proposal.content.get('evidence_source',proposal.model),'assessment_scope':proposal.content.get('assessment_scope'),'assessment_policy':proposal.content.get('assessment_policy')})
   if len(attempts)==4:break
  responses=(calls[0].context.get('lesson') or {}).get('cue_responses',[]) if calls else []
  response_ids=[]

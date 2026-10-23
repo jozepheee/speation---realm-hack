@@ -40,7 +40,9 @@ def summary(turns):
 
 async def inspect_audio(data, duration):
     from learners.acoustic_router import crop
-    from learners.speech_coaching import listen, normalized_phone
+    from learners.azure_pronunciation import assess
+    from learners.pronunciation_reference import target_reference
+    from learners.sound_teaching import provider_concerns,provider_clear
     concerns = []; states = []; models = []
     # Extended rehearsal answers are bounded to three minutes; cover every window.
     for start in range(0, min(180, int(duration) + 1), 20):
@@ -48,27 +50,28 @@ async def inspect_audio(data, duration):
         if end <= start:
             continue
         clip = await run_in_threadpool(crop, data, start, end)
-        result, model = await asyncio.wait_for(listen(clip, {
-            'language': 'en', 'mode': 'conversation', 'expected_text': '',
-            'duration_seconds': end-start, 'rehearsal_unprompted': True,
-        }), timeout=40)
-        states.append(result.state); models.append(model)
-        if result.state != 'tentative_observation':
-            continue
-        for concern in result.concerns:
-            item = concern.model_dump()
+        provider=await asyncio.wait_for(assess(clip,'','en',unscripted=True),timeout=12)
+        models.append('azure_pronunciation_assessment')
+        if not provider or provider.get('state')!='provider_assessment':
+            states.append('insufficient_evidence');continue
+        # Provider words nominate candidates only. The learner must confirm the
+        # intended word before any targeted correction is taught.
+        text=' '.join(word['word'] for word in provider.get('words',[]))[:300]
+        context={'language':'en','duration_seconds':end-start,'expected_text':text,
+            'pronunciation_reference':await run_in_threadpool(target_reference,text,'en'),
+            'dedicated_provider_assessment':provider}
+        suggested=provider_concerns(context)
+        states.append('tentative_observation' if suggested else 'no_clear_difference' if provider_clear(context) else 'insufficient_evidence')
+        for concern in suggested:
+            item = dict(concern)
             if not 0 <= item['start_seconds'] < item['end_seconds'] <= end-start:
                 continue
             if not item['word'].strip() or len(item['word'].split()) != 1:
                 continue
             if item['category'] == 'uncertain':
                 continue
-            if item['category'] == 'substitution' and (
-                not item.get('expected_phone') or not item.get('produced_phone') or
-                normalized_phone(item['expected_phone']) == normalized_phone(item['produced_phone'])):
-                continue
             item.update(start_seconds=start+item['start_seconds'], end_seconds=start+item['end_seconds'],
-                        requires_confirmation=True, source='independent_audio_model_hypothesis')
+                        requires_confirmation=True, source='azure_unscripted_candidate_requires_intent_confirmation')
             concerns.append(item)
     concerns = list({c['word'].casefold(): c for c in concerns}.values())[:6]
     return {'state': 'needs_confirmation' if concerns else 'no_clear_difference' if states and all(s == 'no_clear_difference' for s in states) else 'insufficient_evidence',

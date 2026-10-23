@@ -99,6 +99,8 @@ async def submit_recording(learner_id: uuid.UUID, audio: UploadFile = File(...),
     recognition_mode: Literal['selected_language', 'auto'] = Form('selected_language'),
     dialect: str = Form('unspecified', min_length=1, max_length=80),
     recognize_audio: bool = Form(True),
+    live_call_id: uuid.UUID | None = Form(None),
+    transcript_hint: str = Form('',max_length=2000),
     rehearsal_capture: bool = Form(False),
     visual_articulation: str = Form("", max_length=2000),
     expected_text: str = Form("", max_length=2000), user: User = Depends(get_current_user), db: AsyncSession = Depends(get_db)):
@@ -127,6 +129,9 @@ async def submit_recording(learner_id: uuid.UUID, audio: UploadFile = File(...),
         if existing.quality.get('dialect', 'unspecified') != dialect:
             raise HTTPException(409, 'Attempt ID was used with a different dialect context')
         return recording_data(existing)
+    # Audio decoding/recognition must not occupy a database connection.
+    # Ownership and consent are checked again under the finalization lock below.
+    await db.commit()
     try:
         waveform = await run_in_threadpool(decode_audio, data, **({'max_seconds':180} if rehearsal_capture else {}))
     except InvalidAudioError as error:
@@ -161,6 +166,14 @@ async def submit_recording(learner_id: uuid.UUID, audio: UploadFile = File(...),
     consent = await require_practice_consent(db, learner_id)
     if provider not in ['local_whisper','adapted_english'] and not consent.cloud_processing_allowed:
         raise HTTPException(403, 'Cloud processing permission was withdrawn')
+    live_call=None
+    if live_call_id:
+        from models.speech_workflow import LiveCall
+        live_call=await db.get(LiveCall,live_call_id)
+        if not live_call or live_call.learner_id!=learner_id or learner.owner_id!=user.id:
+            raise HTTPException(404,'Daily conversation not found')
+        if live_call.language!=language or live_call.mode not in ['conversation','daily_moment'] or task!='conversation':
+            raise HTTPException(422,'Daily audio must match the conversation language and mode')
     key = await run_in_threadpool(storage.retain, playback_wav(waveform)) if consent.retain_audio_allowed else None
     record = SpeechRecording(id=uuid.uuid4(), learner_id=learner_id, submitted_by=user.id, attempt_id=attempt_id,
         language=language, task=task, expected_text=expected_text, transcript=transcript, words=words,
@@ -168,6 +181,11 @@ async def submit_recording(learner_id: uuid.UUID, audio: UploadFile = File(...),
         storage_key=key, recognition_model=quality.get('recognition', {}).get('model') if transcript else None,
         recognition_error=error_code, review_status="pending")
     db.add(record)
+    if live_call:
+        from models.speech_workflow import CallRecording
+        from learners.daily_observations import schedule
+        if consent.cloud_processing_allowed and key:schedule(record,live_call.id,transcript_hint)
+        db.add(CallRecording(call_id=live_call.id,recording_id=record.id,linked_by=user.id))
     queue_workflow(db, learner_id, user.id, 'recording', record.id, {'language': language, 'task': task,
         'duration_seconds': record.duration_seconds, 'source': 'recorded_attempt_not_automatic_grade'})
     try:

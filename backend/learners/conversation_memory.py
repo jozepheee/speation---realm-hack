@@ -1,5 +1,6 @@
 """Bounded, learner-scoped retrieval from saved chats and provider call transcripts."""
 from sqlalchemy import select, or_
+from sqlalchemy.orm import load_only
 from models.experience import CompanionTurn
 from models.speech_workflow import LiveCall
 
@@ -11,7 +12,7 @@ async def recall(db, learner_id, mode):
     turns = (await db.execute(select(CompanionTurn).where(CompanionTurn.learner_id==learner_id)
         .where(CompanionTurn.mode.in_(LEARNING) if bucket=='learn' else CompanionTurn.mode.not_in(LEARNING))
         .order_by(CompanionTurn.created_at.desc()).limit(30))).scalars().all()
-    calls = (await db.execute(select(LiveCall).where(LiveCall.learner_id==learner_id)
+    calls = (await db.execute(select(LiveCall).options(load_only(LiveCall.id,LiveCall.mode,LiveCall.transcript,LiveCall.created_at,LiveCall.language,LiveCall.status)).where(LiveCall.learner_id==learner_id)
         .where(LiveCall.mode.in_(LEARNING) if bucket=='learn' else LiveCall.mode.not_in(LEARNING))
         .where(or_(LiveCall.transcript[0]['role'].as_string().is_not(None),LiveCall.status.in_(['finalizing','connected','prepared'])))
         .order_by(LiveCall.created_at.desc()).limit(10))).scalars().all()

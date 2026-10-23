@@ -4,7 +4,7 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { SPEECH_MORPHS, timedVisemes } from '../lib/avatarVisemes';
 
-export default function AvatarCanvas({
+export default function AvatarCanvas({ 
   state = 'idle', // idle | listening | thinking | speaking
   audioLevel = 0,
   gender = 'female', // female (Maya) | male (Alex)
@@ -442,15 +442,15 @@ export default function AvatarCanvas({
   return (
     <div style={{ position: 'relative', width: '100%', height: '100%', overflow: 'hidden' }}>
       {/* 3D WebGL Canvas Container */}
-      <div
-        ref={mountRef}
-        style={{
-          width: '100%',
-          height: '100%',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}
+      <div 
+        ref={mountRef} 
+        style={{ 
+          width: '100%', 
+          height: '100%', 
+          display: 'flex', 
+          alignItems: 'center', 
+          justifyContent: 'center' 
+        }} 
       />
 
       {/* Loading Spinner */}

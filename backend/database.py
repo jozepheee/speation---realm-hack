@@ -1,6 +1,7 @@
 import os
 import ssl
 from sqlalchemy.engine import make_url
+from sqlalchemy.exc import TimeoutError as SQLTimeoutError
 from typing import AsyncGenerator
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
 from sqlalchemy.orm import DeclarativeBase
@@ -45,8 +46,9 @@ engine = create_async_engine(
     pool_pre_ping=True,
     pool_recycle=300,
     connect_args=connect_args,
-    # API and worker each own a pool; leave room within the hosted session limit.
-    **({'pool_size': 3, 'max_overflow': 1, 'pool_timeout': 15}
+    # Bound each process to six connections. A page opens several scoped reads
+    # together; allow transient bursts without immediately starving target reads.
+    **({'pool_size': 3, 'max_overflow': 3, 'pool_timeout': 30}
        if database_url.startswith('postgresql+asyncpg://') else {})
 )
 
@@ -65,7 +67,7 @@ async def get_db() -> AsyncGenerator[AsyncSession, None]:
     async with AsyncSessionLocal() as session:
         try:
             yield session
-        except TimeoutError as error:
+        except (TimeoutError,SQLTimeoutError) as error:
             from fastapi import HTTPException
             raise HTTPException(503, 'The database connection timed out. Please retry shortly.') from error
         finally:

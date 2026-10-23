@@ -2,7 +2,7 @@
 .container {
     text-align: center;
   }
-
+  
   .navbar {
     display: flex;
     align-items: center;
@@ -17,7 +17,7 @@
     left: 0;
     z-index: 100;
   }
-
+  
   .navLinks a {
     font-size: 1rem; /* Increase from 1rem to 1.2rem */
     white-space: nowrap;
@@ -25,8 +25,8 @@
     font-weight: normal;
     color: black;
   }
-
-
+  
+  
   .navLinks {
     list-style: none;
     display: flex;
@@ -35,26 +35,26 @@
     align-items: center;
     font-size: 1rem;
   }
-
+  
   .auth a {
     white-space: nowrap;
     text-decoration: none; /* Removes underline */
     font-weight: normal; /* Removes boldness */
     color: black; /* Matches other links */
   }
-
+  
   .auth {
     margin-left: 50px; /* Keeps spacing */
     padding-right: -30px;
   }
-
-
+  
+  
   .navLinks li {
     font-size: 1rem;
   }
-
+  
   /* header finish */
-
+  
   .title {
     font-size: 2rem;
     font-weight: bold;
@@ -68,29 +68,29 @@
     gap: 40px;
     padding: 20px;
   }
-
+  
   /* Character Card */
   .characterCard {
     text-align: center;
   }
-
+  
   /* Character Image with Hover Effect */
   .characterImage {
     border-radius: 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
-
+  
   .characterImage:hover {
     transform: scale(1.05); /* Slightly enlarges the image */
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Adds a shadow */
   }
-
+  
   /* Character Quote */
   .quote {
     font-size: 1rem;
     margin-top: 10px;
   }
-
+  
   .videoContainer {
     display: flex;
     justify-content: center;
@@ -102,7 +102,7 @@
     margin: 20px auto;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   }
-
+  
   /* Video Styling */
   .video {
     width: 100%;
@@ -113,8 +113,8 @@
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
     background: #ddd;
   }
-
-
+  
+  
 /* ✅ Footer */
 .footer {
     background-color: #FFEFC2;

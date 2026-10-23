@@ -2,7 +2,7 @@ import {useState} from 'react';
 import VisibleSpeechDemo from './VisibleSpeechDemo';
 import {movementForSound} from '../lib/visualArticulation';
 import styles from '../styles/articulation-coach.module.css';
-const PLACES={g:'back',ɡ:'back',k:'back',ŋ:'back',θ:'dental',ð:'dental',t:'front',d:'front',n:'front',l:'front',s:'air',z:'air',ʃ:'air',ɹ:'curved',r:'curved'};
+const PLACES={g:'back',ɡ:'back',k:'back',ŋ:'back',θ:'dental',ð:'dental',t:'front',d:'front',n:'front',l:'front',s:'air',z:'air',ʃ:'air',ɹ:'curved',r:'curved',ɻ:'curved',ɭ:'curved'};
 export default function ArticulationCoach({word,phone='',produced='',onHear,disabled=false,age=8,cameraSupport,contrast}){
  const [slow,setSlow]=useState(false);if(!word)return null;
  const place=PLACES[phone],movement=movementForSound(phone),voiced=['g','ɡ','d','n','l','z','ɹ','r','b','m','v'].includes(phone);
@@ -24,6 +24,7 @@ export default function ArticulationCoach({word,phone='',produced='',onHear,disa
  </svg>:<VisibleSpeechDemo phone={phone}/>}
  <div><p className={styles.cue}>{age>=16?'Watch the demonstration, then repeat the word.':'Watch my mouth picture. Listen… now you try!'}</p>
  <button disabled={disabled} onClick={()=>onHear?.(word)}>▶ Hear “{word}”</button><button disabled={disabled} aria-pressed={slow} onClick={()=>{setSlow(!slow);onHear?.(word,{slow:true});}}>🐢 Hear slowly</button>
+ {contrast&&<button disabled={disabled} onClick={()=>onHear?.(contrast.speech)}>Hear Maya’s correction</button>}
  <p>{cameraSupport?.cue||movement.label}</p><small>{movement.visible?'Your mirror can help you copy this visible movement.':'The picture shows inside the mouth. Your camera cannot check this hidden movement.'}</small>
  </div></div><details><summary>For a parent or therapist</summary><p>Illustrative articulation teaching, not a reconstruction of this learner’s tongue or exact phoneme lip sync. Audio assessment determines the practice result; camera observations provide supporting visible geometry only.</p><p>Expected sound: {phone||'Listen to the complete example'}{produced?`; possible heard sound: ${produced}`:''}</p></details>
  </section>;

@@ -34,6 +34,7 @@ export function MicButton({ listening, disabled, onPress }) {
       <p className="mic__label" aria-live="polite">
         {listening ? label : 'Tap and say it'}
       </p>
+      {listening&&phase==='recording'&&<meter aria-label="Live microphone input level" min="0" max="1" value={Math.min(1,(speech?.inputLevel||0)*4)} style={{width:120,height:12}}/>}
     </div>
   )
 }

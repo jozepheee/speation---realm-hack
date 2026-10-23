@@ -20,7 +20,7 @@ from learners.acoustic_router import Concern,crop
 from learners.provider_http import client as provider_client
 
 router=APIRouter(tags=['maya-audio-coaching']);capacity=asyncio.Semaphore(2)
-PROMPT_VERSION='maya-audio-practice-v16-isolated-sound-or-word'
+PROMPT_VERSION='maya-audio-practice-v19-language-assessment-policy'
 class CoachingRequest(BaseModel):
  model_config=ConfigDict(extra='forbid')
  mode:Literal['conversation','daily_moment','story','listen_then_say','practice','transfer']='practice'
@@ -44,7 +44,8 @@ async def independent_phone_context(clip,context):
  directory=settings.PHONE_MODEL_DIR or settings.MALAYALAM_PHONE_MODEL_DIR
  if context['language'] not in ['en','hi','ml'] or not context.get('expected_text') or not directory:return None
  # This CPU decoder took 44 seconds on a retained twenty-second sentence.
- # Long turns go directly to the audio model; missing local output is not a veto.
+ # Long turns go to the audio model for suggestions; missing independent
+ # evidence cannot establish a pronunciation pass.
  if context.get('duration_seconds',0)>8:
   return {'scope':'phone_hypotheses_skipped_interactive_budget','phones':[],'pronunciation_score':None,
    'reason':'Full audio is assessed by the audio model; local phone decoding is reserved for short attempts.'}
@@ -82,7 +83,7 @@ async def listen(clip,context):
   'In learning mode focus on the supplied word/sentence, one sound contrast at a time. '
   'If previous_audio_proposals contain the same possible contrast on distinct recordings and the current audio supports it, give a more detailed educational tip: usual placement for the intended sound, then a syllable, then the word. Describe how that sound is normally made, never claim to see the learner\'s tongue or diagnose their movement. '
   'Previous proposals are unvalidated and may be wrong. Use them only to ask if the same difficulty is happening again, never as proof. '
-  'Do not invent a contrast: a substitution cannot have the same expected and produced phoneme. When context.target_sound is supplied, restrict the focal explanation to that intended sound. Use the exact context.expected_text word, never invented spelling. If you hear the expected target without a clear difference, return no_clear_difference with no concerns. If you cannot judge the sounds, use insufficient_evidence, never correctness praise. '
+  'Do not invent a contrast: a substitution cannot have the same expected and produced phoneme. Unless isolated_sound_practice is true, check every sound in the whole word or sentence, including vowels, even when target_sound is supplied. Cup /kʌp/ and coup /kuː/ are different; Malayalam മഴ with /ɻ/ and a production with /z/ are different. Do not repair the acoustic production into the intended word. Use the exact context.expected_text word, never invented spelling. If you hear the expected target without a clear difference, return no_clear_difference with no concerns. If you cannot judge the sounds, use insufficient_evidence, never correctness praise. '
   'For isolated_sound_practice=true, this is a SOUND exercise. Listen for target_sound alone OR inside expected_text. A clear isolated hiss /s/ is sufficient for S; do not require the word see or penalize an absent vowel. A clear target sound inside the example word is also sufficient. Do not accept silence, a different sound or breath noise alone as the target. expected_text is the teaching example, not a required whole-word answer in this mode. Return no_clear_difference only when the target is audibly supported; otherwise tentative_observation for a supported difference, or insufficient_evidence. '
   'For unclear audio, unsupported language, background speakers or uncertain intent return insufficient_evidence and empty concerns. '
   'OVERRIDE for communication_only=true: this is the everyday application step of a lesson. expected_example is an example, NOT a transcript or required wording. Listen for meaning and give one short response or a useful sentence model in the selected language. Accept alternative meaningful wording. Do not assess phonemes or claim correct/incorrect pronunciation. Return insufficient_evidence with empty concerns (no phoneme assessment); put your useful communication response in summary. If silent or unintelligible, invite one short response. '
@@ -149,7 +150,7 @@ def validate_feedback(result,context):
   result.state='no_clear_difference';result.concerns=[]
   result.summary={'en':'That sound was clear in this attempt.','hi':'इस बार ध्वनि स्पष्ट सुनाई दी।','ml':'ഇത്തവണ ശബ്ദം വ്യക്തമായി കേട്ടു.'}[context['language']]
   return result
- end=context['duration_seconds'];target=context.get('expected_text','');focus=normalized_phone(context.get('target_sound',''))
+ end=context['duration_seconds'];target=context.get('expected_text','');focus=normalized_phone(context.get('target_sound','')) if context.get('isolated_sound_practice') else ''
  result.concerns=[item for item in result.concerns if item.start_seconds<item.end_seconds<=end+.05]
  if target:result.concerns=[item for item in result.concerns if item.word.casefold() in target.casefold()]
  else:
@@ -221,6 +222,14 @@ def validate_feedback(result,context):
    result.state='tentative_observation';result.summary=result.concerns[0].observation
  result.concerns=unique_word_concerns(result.concerns)
  if not result.concerns:
+  # A fluent ASR transcription or a general audio-model verdict is not a
+  # pronunciation pass. Require independent full-word acoustic agreement.
+  if result.state=='no_clear_difference' and not context.get('isolated_sound_practice'):
+   actual=[normalized_phone(phone) for phone in (evidence or {}).get('phones',[])]
+   emissions=(evidence or {}).get('emissions',[])
+   variants=[variant for word in reference.get('words',[]) for variant in word.get('variants',[])] if len(reference.get('words',[]))==1 else []
+   agreement=bool(actual and len(emissions)==len(actual) and all(frame.get('peak_posterior',0)>=.85 for frame in emissions) and any(actual==[normalized_phone(phone) for phone in variant] for variant in variants))
+   if not agreement:result.state='insufficient_evidence'
   if result.state=='no_clear_difference' and target:
    result.summary={'en':'I did not hear a clear difference in this attempt. Shall we try the word in a sentence?',
     'hi':'इस प्रयास में कोई स्पष्ट अंतर नहीं सुनाई दिया। क्या अब इस शब्द को एक वाक्य में बोलें?',
@@ -230,24 +239,38 @@ def validate_feedback(result,context):
 
 async def analyze_audio(clip,context):
  """Assess the requested exercise: an isolated sound or the spoken word."""
+ if context['language']=='ml':
+  from learners.indic_malayalam import observe,coaching
+  evidence={'state':'unavailable','source':'AI4Bharat/IndicWav2Vec-Malayalam-Kathbath','emissions':[]}
+  if settings.INDIC_MALAYALAM_MODEL_DIR and context.get('expected_text'):
+   try:evidence=await asyncio.wait_for(run_in_threadpool(observe,clip,settings.INDIC_MALAYALAM_MODEL_DIR),timeout=18)
+   except (TimeoutError,ImportError,OSError,RuntimeError,ValueError,KeyError):pass
+  result,changes=coaching(context,evidence)
+  context['indic_character_assessment']={**evidence,'differences':changes}
+  return CoachingResponse(**result),'AI4Bharat/IndicWav2Vec-Malayalam-Kathbath',None,None
  if context.get('isolated_sound_practice'):
-  result,model=await listen(clip,context)
-  return result,model,None,None
+  evidence=await independent_phone_context(clip,context)
+  if evidence is not None:context['independent_phone_observation']=evidence
+  sound=normalized_phone(context.get('target_sound',''))
+  supported=bool(sound and any(normalized_phone(item['phone'])==sound and item.get('peak_posterior',0)>=.85 for item in (evidence or {}).get('emissions',[])))
+  result=CoachingResponse(state='no_clear_difference' if supported else 'insufficient_evidence',
+   summary='The target sound was detected in this sound-only exercise.' if supported else insufficient_summary(context['language']),concerns=[])
+  return result,'local_target_independent_sound_exercise',evidence,None
  from learners.sound_teaching import provider_concerns,provider_clear
  from learners.phone_contrasts import contrast_hypotheses
  azure=await dedicated_provider_context(clip,context)
  if azure is not None:context['dedicated_provider_assessment']=azure
  if provider_clear(context):return CoachingResponse(state='no_clear_difference',summary='Provider audio check found no clear difference in the practice target.',concerns=[]),'azure_pronunciation_assessment',None,azure
  phone_observation=None
- ready=provider_concerns({**context,'target_sound':normalized_phone(context.get('target_sound',''))})
+ ready=provider_concerns({**context,'target_sound':''})
  if not ready and context['language']!='en':
   phone_observation=await independent_phone_context(clip,context)
   if phone_observation is not None:context['independent_phone_observation']=phone_observation
-  ready=contrast_hypotheses({**context,'target_sound':normalized_phone(context.get('target_sound',''))})
+  ready=contrast_hypotheses({**context,'target_sound':''})
  if ready:
   result=CoachingResponse(state='insufficient_evidence',summary=insufficient_summary(context['language']),concerns=[])
   model='azure_pronunciation_assessment' if azure and provider_concerns(context) else 'local_focal_phone_contrast'
- elif context['language']=='en' and azure and azure.get('state')=='provider_assessment':
+ elif context['language']=='en':
   result=CoachingResponse(state='insufficient_evidence',summary=insufficient_summary('en'),concerns=[])
   model='azure_pronunciation_assessment'
  else:
@@ -267,7 +290,7 @@ async def coach(recording_id:uuid.UUID,payload:CoachingRequest,user:User=Depends
  consent=await require_practice_consent(db,record.learner_id)
  if not consent.cloud_processing_allowed or not consent.retain_audio_allowed or not record.storage_key:
   raise HTTPException(403,'Audio coaching requires cloud processing and private audio retention permission')
- if not settings.OPENROUTER_KEY and not (record.language=='en' and settings.AZURE_SPEECH_KEY and settings.AZURE_SPEECH_REGION):raise HTTPException(503,'Audio coaching is not configured')
+ if not settings.OPENROUTER_KEY and not (record.language=='en' and settings.AZURE_SPEECH_KEY and settings.AZURE_SPEECH_REGION) and not (record.language=='ml' and settings.INDIC_MALAYALAM_MODEL_DIR):raise HTTPException(503,'Audio coaching is not configured')
  confirmed=None
  if payload.confirmed_translation_id:
   confirmed=await db.get(MessageTranslation,payload.confirmed_translation_id)
@@ -284,7 +307,8 @@ async def coach(recording_id:uuid.UUID,payload:CoachingRequest,user:User=Depends
   if row.decision!='rejected' and row.request.get('purpose')=='maya_coaching' and row.recording_id not in seen and row.request.get('expected_text','')==(record.expected_text or '') and row.request.get('mode')==payload.mode:
    previous.append({'recording_id':str(row.recording_id),'concerns':row.content.get('concerns',[]),'decision':row.decision});seen.add(row.recording_id)
   if len(previous)==3:break
- data=await run_in_threadpool(storage.read,record.storage_key);end=min(20,record.duration_seconds)
+ recording_seconds=record.duration_seconds
+ data=await run_in_threadpool(storage.read,record.storage_key);end=min(20,recording_seconds)
  clip=await run_in_threadpool(crop,data,0,end)
  learner_id=record.learner_id;actor_id=user.id
  from learners.answer_recognition import word_recognition
@@ -328,6 +352,7 @@ async def coach(recording_id:uuid.UUID,payload:CoachingRequest,user:User=Depends
   result.summary={'en':f'Let’s practise the sound in “{word}” together.',
    'hi':f'आइए “{word}” की ध्वनि का साथ में अभ्यास करें।',
    'ml':f'“{word}” എന്ന വാക്കിലെ ശബ്ദം നമുക്ക് ഒരുമിച്ച് പരിശീലിക്കാം.'}[context['language']]
+  if teaching[0].get('correction'):result.summary=teaching[0]['correction']['speech']
  user=await db.get(User,actor_id)
  if not user:raise HTTPException(401,'Sign in again to continue speech coaching')
  current_consent=await recheck_cloud_processing(db,user,learner_id,owner_only=True)
@@ -338,7 +363,14 @@ async def coach(recording_id:uuid.UUID,payload:CoachingRequest,user:User=Depends
   request={'purpose':'maya_coaching','mode':payload.mode,'practice_sound':payload.practice_sound,'practice_level':payload.practice_level,'language':context['language'],'expected_text':context['expected_text'],'target_sound':context['target_sound'],'start_seconds':0,'end_seconds':end,'prompt_version':PROMPT_VERSION,'previous_recording_ids':list(map(str,seen))},
   content={**result.model_dump(),'camera_support':camera_support,'assessment_kind':'communication_practice_no_phoneme_grade' if context.get('communication_only') else 'pronunciation_practice','teaching_plan':teaching,'pronunciation_reference':context['pronunciation_reference'],'independent_phone_observation':phone_observation,'dedicated_provider_assessment':azure_assessment,'practice_support':practice_support(result.concerns,previous,recording_id),'clinical_assessment':False,'source':'combined_audio_phone_practice_hypothesis' if phone_observation else 'audio_model_practice_hypothesis'})
  row.content={**row.content,'word_recognition':recognized_answer,'audio_model_result':raw_audio_result,'timing':{'assessment_seconds':analysis_seconds},'evidence_source':model}
- if not (phone_observation or {}).get('emissions'):row.content={**row.content,'source':'dedicated_audio_assessment' if azure_assessment else 'audio_model_practice_hypothesis'}
+ row.content={**row.content,'assessment_policy':PROMPT_VERSION,'indic_character_assessment':context.get('indic_character_assessment'),
+  'verdict_basis':{'transcript_match_proves_pronunciation':False,'all_phonemes_verified':False,
+   'evidence_kind':'acoustic_characters' if context['language']=='ml' else 'isolated_sound_detection' if context.get('isolated_sound_practice') else 'provider_phoneme_assessment',
+   'interpretation':'A practice observation for this attempt, not verified mastery or a diagnosis.'},
+  'coverage':{'assessed_seconds':end,'recording_seconds':recording_seconds,'whole_recording':end>=recording_seconds},
+  'assessment_scope':'acoustic_character_differences_not_verified_phonemes' if context['language']=='ml' else 'isolated_sound' if context.get('isolated_sound_practice') else 'whole_word_or_sentence'}
+ if context.get('indic_character_assessment'):row.content={**row.content,'source':'indicwav2vec_acoustic_character_hypothesis'}
+ if not (phone_observation or {}).get('emissions') and not context.get('indic_character_assessment'):row.content={**row.content,'source':'dedicated_audio_assessment' if azure_assessment else 'audio_model_practice_hypothesis'}
  row.request={**row.request,'confirmed_translation_id':translation_key or translator_target.get('translation_id')}
  if translator_target.get('preceding_cue'):
   row.content={**row.content,'lesson_response':{'stage':translator_target.get('phase'),'result_state':row.content['state'],

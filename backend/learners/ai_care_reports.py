@@ -23,7 +23,7 @@ from learners.provider_http import client as provider_client
 
 router=APIRouter(tags=['ai-care-reports'])
 capacity=asyncio.Semaphore(2)
-VERSION='care-report-evidence-v7-guided-model-listening'
+VERSION='care-report-evidence-v9-confirmed-personal-learning'
 
 def cue_response_evidence(content):
     response=content.get('lesson_response') or {}
@@ -86,7 +86,7 @@ async def snapshot(db,learner_id):
         bucket['recordings']+=1;bucket['minutes']+=row.duration_seconds/60
         evidence.append({'id':str(row.id),'source':'recorded_activity','date':day,'language':row.language,'task':row.task,'duration_seconds':round(row.duration_seconds,2),'recognition_failed':bool(row.recognition_error)})
         if proposal:
-            evidence.append({'id':str(proposal.id),'recording_id':str(row.id),'source':'unvalidated_ai_practice_observation','state':state,'assessment_scope':proposal.request.get('practice_level','word_or_sentence'),'target_sound':proposal.request.get('target_sound'),'clinician_decision':proposal.decision,'clinician_decision_note':proposal.decision_note,
+            evidence.append({'id':str(proposal.id),'recording_id':str(row.id),'source':proposal.content.get('source','unvalidated_ai_practice_observation'),'state':state,'purpose':proposal.request.get('purpose'),'model':proposal.model,'assessment_policy':proposal.content.get('assessment_policy',proposal.request.get('policy')),'inline_correction_delivered':proposal.content.get('inline_correction_delivered'),'assessment_scope':proposal.content.get('assessment_scope',proposal.request.get('practice_level','word_or_sentence')),'target_sound':proposal.request.get('target_sound'),'clinician_decision':proposal.decision,'clinician_decision_note':proposal.decision_note,
                 'summary':str(proposal.content.get('summary',''))[:1000],
                 'visual_articulation':row.quality.get('visual_articulation'),'cue_response':cue_response_evidence(proposal.content),
                 'concerns':[{key:item.get(key) for key in ['word','expected_phone','produced_phone','category','observation','uncertainty']} for item in proposal.content.get('concerns',[])[:3]]})
@@ -117,7 +117,19 @@ async def snapshot(db,learner_id):
         'learning_history':activity_history[:20],'listening_choices':{'correct':listening_correct,'total':listening_total,'interpretation':'Listening choices, not speech accuracy'},
         'ai_outcomes':dict(outcome_counts),'human_outcomes':dict(review_counts),'timeline':[{**value,'minutes':round(value['minutes'],1)} for _,value in sorted(days.items())],
         'truncated':truncated or activities_truncated or len(proposals)>500 or len(reviews)>500,'scope':'latest_100_recordings_and_100_learning_activities','pronunciation_accuracy_percentage':None}
-    digest=hashlib.sha256(json.dumps({'version':VERSION,'model':settings.OPENROUTER_CARE_REPORT_MODEL,'evidence':evidence},sort_keys=True).encode()).hexdigest()
+    from learners.personal_learning import plan
+    learner=await db.get(Learner,learner_id)
+    personal=await plan(db,learner_id,learner.language) if learner else {'targets':[]}
+    metrics['personal_practice_targets']=[{key:item.get(key) for key in ['word','sound','source','recording_ids','proposal_ids','observation_count','requires_confirmation']} for item in personal['targets']]
+    metrics['confirmed_daily_messages']=sum(bool(row.quality.get('confirmed_meaning')) for row in records)
+    for row in records:
+        confirmed=row.quality.get('confirmed_meaning')
+        if confirmed:
+            metrics['evidence_index']['meaning:'+str(row.id)]={'date':row.created_at.date().isoformat(),'kind':'learner_confirmed_daily_meaning'}
+            evidence.append({'id':'meaning:'+str(row.id),'recording_id':str(row.id),'source':'learner_confirmed_daily_meaning',
+            'translation_id':confirmed['translation_id'],'confirmation_recording_id':confirmed.get('confirmation_recording_id'),
+            'interpretation':'Spoken meaning confirmation, not proof of pronunciation accuracy.'})
+    digest=hashlib.sha256(json.dumps({'version':VERSION,'model':settings.OPENROUTER_CARE_REPORT_MODEL,'evidence':evidence,'personal_targets':metrics['personal_practice_targets']},sort_keys=True).encode()).hexdigest()
     return evidence,metrics,digest
 
 def validate_content(value,evidence):

@@ -392,5 +392,5 @@ export default function Arcade(){
  const {learner,loading}=useLearners();
  if(loading)return <ProtectedRoute><p role="status">{t('Opening your bakery…')}</p></ProtectedRoute>;
  if(!learner)return <LegacyArcade/>;
- return <ProtectedRoute><BakeryGame key={learner.id} learner={learner}/></ProtectedRoute>;
+ return <ProtectedRoute><BakeryGame key={learner.id} learner={{...learner,language:'en'}}/></ProtectedRoute>;
 }

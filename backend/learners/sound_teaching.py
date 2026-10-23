@@ -50,7 +50,7 @@ def focused_provider_words(context):
     focus=context.get('focus_word','').casefold();sound=context.get('target_sound','')
     if not focus:return words
     matches=[word for word in words if word['word'].casefold()==focus]
-    if context['language']!='en' or not sound or len(matches)<2:return matches
+    if not context.get('isolated_sound_practice') or context['language']!='en' or not sound or len(matches)<2:return matches
     # Repeated copies of the SAME practice word are separate attempts, not
     # phoneme errors. Keep the strongest focal attempt; preserve raw evidence.
     if len(matches)!=len(words):return matches
@@ -95,7 +95,7 @@ def provider_concerns(context):
                 if len(options) != 1:
                     continue
                 expected = options.pop()
-            if context.get('target_sound') and context['target_sound'] != expected:
+            if context.get('isolated_sound_practice') and context.get('target_sound') and context['target_sound'] != expected:
                 continue
             tip = cue(context['language'], expected, reference['word'])
             if not tip:
@@ -115,7 +115,7 @@ def provider_concerns(context):
                 'uncertainty': 'Low provider score suggests practice, not a verified error or an identified produced sound. Hindi expected sounds may come from unambiguous reference alignment.',
                 'practice_tip': tip, 'start_seconds': 0, 'end_seconds': context['duration_seconds']})
             break  # Teach one sound at a time for each word.
-        if not context.get('target_sound') and not any(item['word'].casefold()==reference['word'].casefold() for item in concerns) and (word.get('provider_error_type') in ['Mispronunciation','Omission'] or isinstance(word.get('provider_accuracy_score'),(int,float)) and word['provider_accuracy_score']<60):
+        if not context.get('isolated_sound_practice') and not any(item['word'].casefold()==reference['word'].casefold() for item in concerns) and (word.get('provider_error_type') in ['Mispronunciation','Omission'] or isinstance(word.get('provider_accuracy_score'),(int,float)) and word['provider_accuracy_score']<60):
             tip={'en':f'Listen to “{reference["word"]}” slowly, then say the word once. Next, try it in your sentence.',
                  'hi':f'पहले “{reference["word"]}” धीरे सुनें, फिर एक बार बोलें। उसके बाद अपने वाक्य में कहें।'}[context['language']]
             concerns.append({'word':reference['word'],'expected_phone':None,'produced_phone':None,'category':'uncertain',
@@ -129,9 +129,9 @@ def provider_clear(context):
     """Educational pass from actual provider audio scores, never transcript matching."""
     assessment=context.get('dedicated_provider_assessment') or {}
     if assessment.get('state')!='provider_assessment':return False
-    words=focused_provider_words(context)
+    words=focused_provider_words(context) if context.get('isolated_sound_practice') else assessment.get('words',[])
     focus=context.get('focus_word','').casefold();sound=context.get('target_sound','')
-    if focus:words=[word for word in words if word['word'].casefold()==focus]
+    if focus and context.get('isolated_sound_practice'):words=[word for word in words if word['word'].casefold()==focus]
     else:
         expected={word['word'].casefold() for word in (context.get('pronunciation_reference') or {}).get('words',[])}
         if not expected or not expected.issubset({word['word'].casefold() for word in words}):return False
@@ -139,10 +139,13 @@ def provider_clear(context):
     for word in words:
         if word.get('provider_error_type') in ['Omission','Insertion']:return False
         phones=word.get('provider_phones',[])
-        if focus and sound and context['language']=='en':
+        if focus and sound and context['language']=='en' and context.get('isolated_sound_practice'):
             phones=[phone for phone in phones if phone.get('provider_phone')==sound]
             if not phones or any(phone.get('provider_accuracy_score') is None or phone['provider_accuracy_score']<80 for phone in phones):return False
-        elif word.get('provider_error_type')!='None' or (word.get('provider_accuracy_score') or 0)<80 or not phones or any(phone.get('provider_accuracy_score') is None or phone['provider_accuracy_score']<60 for phone in phones):return False
+        elif word.get('provider_error_type')!='None' or (word.get('provider_accuracy_score') or 0)<80 or not phones or any(phone.get('provider_accuracy_score') is None or phone['provider_accuracy_score']<80 for phone in phones):return False
+        for phone in phones:
+            alternatives=sorted(phone.get('provider_alternatives',[]),key=lambda item:item['provider_score'],reverse=True)
+            if alternatives and alternatives[0]['phone']!=phone.get('provider_phone') and alternatives[0]['provider_score']>=80 and (len(alternatives)==1 or alternatives[0]['provider_score']-alternatives[1]['provider_score']>=15):return False
     return True
 
 
@@ -168,8 +171,18 @@ def teaching_plan(context, concerns):
             if context['language']=='ml' and expected=='ɻ' and produced=='z':
                 difference=f'“{concern.word}” എന്ന വാക്കിൽ ഴയ്ക്ക് പകരം ഇംഗ്ലീഷിലെ zoo എന്ന വാക്കിലെ z പോലൊരു ശബ്ദമാണ് കേട്ടത്. '
             tip=difference+tip
+        from learners.pronunciation_correction import correction
+        spoken=correction(context['language'],concern.word,concern.expected_phone,concern.produced_phone) if concern.category=='substitution' else None
+        if context['language']=='ml':
+            reported=next((item for item in (context.get('indic_character_assessment') or {}).get('differences',[]) if item['word']==concern.word and item['expected_phone']==concern.expected_phone),None)
+            if reported:
+                wanted,heard=reported['expected_character'],reported['observed_character']
+                spoken={'expected':concern.word,'heard':heard,'expected_sound':wanted,'expected_phone':concern.expected_phone,'produced_phone':None,'kind':'character',
+                    'speech':f'“{concern.word}” എന്ന വാക്കിൽ {wanted} ശബ്ദം ശ്രമിക്കാം. {heard} പോലെയാണ് മോഡലിന് കേട്ടത്. കേൾക്കൂ: {concern.word}. നമുക്ക് ഒരുമിച്ച് പതുക്കെ പറയാം: {concern.word}.',
+                    'source':'indicwav2vec_character_contrast','confirmed_error':False}
+        if spoken:tip=spoken['speech']+' '+(cue(context['language'],concern.expected_phone,concern.word,bool(ids)) or '')
         reference = next((word for word in (context.get('pronunciation_reference') or {}).get('words', []) if word['word'].casefold() == concern.word.casefold()), {})
-        plans.append({'word': concern.word, 'expected_phone': concern.expected_phone, 'practice_tip': tip,
+        plans.append({'word': concern.word, 'expected_phone': concern.expected_phone, 'practice_tip': tip,'correction':spoken,
             'syllables': reference.get('syllables'), 'practice_sentence':context.get('expected_text') if context.get('expected_text')!=concern.word else None, 'previous_attempt_count': len(ids),
             'level': 'slower_parts_then_word' if ids else 'sound_then_word',
             'instruction': 'Speak this cue now in the session language, model the word aloud, then listen to ONE new attempt. Read ordinary letters/words, not IPA code names. Expected sound placement is education, not observed tongue movement.'})

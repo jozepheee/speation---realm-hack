@@ -56,7 +56,9 @@ def target_reference(text, language):
     if language not in ['en', 'hi'] or not text or len(text) > 300:
         return None
     pattern = r"[A-Za-z]+(?:['’][A-Za-z]+)?" if language == 'en' else r'[\u0900-\u097f]+'
-    words = list(dict.fromkeys(re.findall(pattern, unicodedata.normalize('NFC', text))))[:12]
+    # The whole sentence is already bounded to 300 characters. Truncating to
+    # twelve unique words silently dropped late targets such as "school".
+    words = list(dict.fromkeys(re.findall(pattern, unicodedata.normalize('NFC', text))))
     if not words:
         return None
     references, missing = [], []

@@ -43,7 +43,7 @@ def _word(word):
 def target_reference(text, language):
     if language != 'ml' or not text or len(text) > 300:
         return None
-    words = list(dict.fromkeys(re.findall(r'[\u0d00-\u0d7f]+', unicodedata.normalize('NFC', text))))[:12]
+    words = list(dict.fromkeys(re.findall(r'[\u0d00-\u0d7f]+', unicodedata.normalize('NFC', text))))
     references = []
     missing = []
     for word in words:

@@ -8,6 +8,10 @@ export function pronunciationResult(content,expected=''){
   seen.add(key);concerns.push({...item,word});
  }
  const state=content?.state==='no_clear_difference'&&!content.concerns?.length?'clear':concerns.length?'practice':'uncertain';
+ const characterCheck=content?.indic_character_assessment;
+ const noCharacterDifference=state==='uncertain'&&characterCheck?.state==='acoustic_character_evidence'&&Array.isArray(characterCheck.differences)&&!characterCheck.differences.length;
+ if(noCharacterDifference)return {state,title:'Recording checked — no specific difference flagged',concerns,unflagged:words,
+  explanation:'Your speech was captured. The Malayalam character check did not flag a specific difference. Individual sound correctness remains unverified; you can continue the story.',noSpecificDifference:true};
  return {state,title:state==='clear'?'That sounded clear!':state==='practice'?'Here’s what to practise':'I couldn’t check that clearly',
   concerns,unflagged:words.filter(word=>!seen.has(word)),
   explanation:state==='clear'?'No clear pronunciation difference was heard in this recording.':state==='practice'?'These words may need another try. Other words were not individually marked correct.':'Your recording is saved. This result does not mean you said it incorrectly.'};

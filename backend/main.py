@@ -104,6 +104,14 @@ async def lifespan(app: FastAPI):
         except (ImportError, OSError, RuntimeError, ValueError, KeyError):
             print("[Speech] Local phone hypotheses unavailable; no automatic correctness fallback.")
 
+    if settings.INDIC_MALAYALAM_MODEL_DIR:
+        try:
+            from starlette.concurrency import run_in_threadpool
+            from learners.indic_malayalam import load as load_indic_malayalam
+            await run_in_threadpool(load_indic_malayalam, settings.INDIC_MALAYALAM_MODEL_DIR)
+            print('[Speech] IndicWav2Vec Malayalam character assessor warmed; no verified phoneme score.')
+        except (ImportError,OSError,RuntimeError,ValueError,KeyError):
+            print('[Speech] IndicWav2Vec Malayalam unavailable; pronunciation praise disabled.')
     yield
     # Clean up connections on shutdown
     await provider_http.close()
@@ -170,6 +178,12 @@ app.include_router(routines_router)
 app.include_router(intake_router)
 app.include_router(guided_practice_router)
 app.include_router(speech_coaching_router)
+from learners.daily_observations import router as daily_observations_router
+app.include_router(daily_observations_router)
+from learners.conversation_intent import router as conversation_intent_router
+app.include_router(conversation_intent_router)
+from learners.personal_learning import router as personal_learning_router
+app.include_router(personal_learning_router)
 app.include_router(health_router)
 app.include_router(journey_router)
 app.include_router(ai_care_reports_router)

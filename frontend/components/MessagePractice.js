@@ -12,7 +12,7 @@ import WordRecognition from './WordRecognition';
 import AttemptReplay from './AttemptReplay';
 import styles from '../styles/workspace.module.css';
 
-export default function MessagePractice({learner,draftScope='',translation,onResume,onBusyChange,onStart,messagePlaying=false,autoStart=false,onHear,onStopSpeech,autoListen=false,onFeedback,onCompare}) {
+export default function MessagePractice({learner,preferredWord,draftScope='',translation,onResume,onBusyChange,onStart,messagePlaying=false,autoStart=false,onHear,onStopSpeech,autoListen=false,onFeedback,onCompare}) {
  const {t}=useLocale();
  const [analysis,setAnalysis]=useState(null),[target,setTarget]=useState(null),[phase,setPhase]=useState('word');
  const [feedback,setFeedback]=useState(null),[attempt,setAttempt]=useState(null),[history,setHistory]=useState([]),[saved,setSaved]=useState([]);
@@ -62,12 +62,12 @@ export default function MessagePractice({learner,draftScope='',translation,onRes
  useEffect(()=>{if(messagePlaying)stopAudio();},[messagePlaying]);
  useEffect(()=>{
   if(!autoStart||messagePlaying||!analysis?.suggested_words?.length||target||busy||autoStarted.current===translation?.id)return;
-  autoStarted.current=translation.id;void choose(analysis.suggested_words[0]);
+  autoStarted.current=translation.id;void choose(analysis.suggested_words.find(word=>word.toLocaleLowerCase()===preferredWord?.toLocaleLowerCase())||analysis.suggested_words[0]);
  },[autoStart,messagePlaying,analysis,target,busy,translation?.id]);
  function demonstration(word,result=analysis?.content,unclear=false){
   const plan=result?.teaching_plan?.find(item=>item.word===word),concern=result?.concerns?.find(item=>item.word===word);
   const model=childSpeechPractice(language,word,plan?.expected_phone||concern?.expected_phone,unclear,retries.current);
-  const contrast=language==='en'?supportedContrast(result,word):null;
+  const contrast=supportedContrast(result,word);
   return {...model,speech:[contrast?.speech,model.speech].filter(Boolean).join(' ')};
  }
  async function choose(word){

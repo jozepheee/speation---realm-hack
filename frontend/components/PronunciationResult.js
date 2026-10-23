@@ -14,7 +14,8 @@ export default function PronunciationResult({content,record,expected,onHear,onRe
   {!!result.concerns.length&&<ul className={styles.words}>{result.concerns.map(item=>{
    const contrast=supportedContrast(content,item.word);
    return <li key={item.word.toLowerCase()}><h3>{item.word}</h3>
-    {contrast?<p>Possible heard word: <strong>{contrast.heard}</strong> → try <strong>{contrast.expected}</strong></p>:<p>{item.observation||'Let’s listen to this word and try it once more.'}</p>}
+    {contrast?<p>Possible heard {contrast.kind==='character'?'character':contrast.kind==='sound'?'sound':'word'}: <strong>{contrast.heard}</strong> → try <strong>{contrast.expected}</strong></p>:<p>{item.observation||'Let’s listen to this word and try it once more.'}</p>}
+    {contrast&&<button disabled={disabled} onClick={()=>onHear?.(contrast.speech)}>Hear Maya’s correction</button>}
     {item.expected_phone&&<p>Target sound: /{item.expected_phone}/{item.produced_phone&&item.produced_phone!==item.expected_phone?` · Possible heard sound: /${item.produced_phone}/`:''}</p>}
     <button disabled={disabled} onClick={()=>onHear?.(item.word)}>Hear “{item.word}”</button>
    </li>;

@@ -14,6 +14,7 @@ class Settings(BaseSettings):
     OPENROUTER_AUDIO_MODEL: str = 'google/gemini-3-flash-preview'
     MALAYALAM_PHONE_MODEL_DIR: str = ''
     PHONE_MODEL_DIR: str = ''
+    INDIC_MALAYALAM_MODEL_DIR: str = ''
     RHUBARB_PATH: str = ''
     REVOICE_SELECTOR_ENABLED: bool = False
     REVOICE_SELECTOR_ARTIFACT: str = ''

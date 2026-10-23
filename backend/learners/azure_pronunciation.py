@@ -14,18 +14,19 @@ from learners.provider_http import client as provider_client
 from config import settings
 
 
-async def assess(clip, text, language):
+async def assess(clip, text, language, *, unscripted=False):
     if language not in ['en','hi'] or not settings.AZURE_SPEECH_KEY or not settings.AZURE_SPEECH_REGION:
         return None
     region=settings.AZURE_SPEECH_REGION
     if not re.fullmatch(r'[a-z0-9-]{2,40}',region):
         raise ValueError('Invalid Azure Speech region')
-    if not text.strip() or len(text)>300:raise ValueError('Provide a bounded practice target')
+    if (not unscripted and not text.strip()) or len(text)>300:raise ValueError('Provide a bounded practice target')
+    if unscripted and (language!='en' or text):raise ValueError('Unscripted review requires English audio without a reference')
     with wave.open(io.BytesIO(clip),'rb') as audio:
         if audio.getframerate()!=16000 or audio.getnchannels()!=1 or audio.getsampwidth()!=2 or audio.getnframes()>20*16000:
             raise ValueError('Pronunciation assessment requires at most twenty seconds of 16 kHz mono PCM')
     config={'ReferenceText':text,'GradingSystem':'HundredMark','Granularity':'Phoneme',
-            'Dimension':'Comprehensive','EnableMiscue':True}
+            'Dimension':'Comprehensive','EnableMiscue':not unscripted}
     if language=='en':config.update(PhonemeAlphabet='IPA',NBestPhonemeCount=5)
     header=base64.b64encode(json.dumps(config,ensure_ascii=False).encode()).decode()
     async with provider_client(timeout=5 if language=='en' else 15) as client:
@@ -72,7 +73,7 @@ async def assess(clip, text, language):
                 'provider_alternatives':normalized_alternatives})
         normalized.append({'word':str(word.get('Word',''))[:100], 'provider_accuracy_score':accuracy,
             'provider_error_type':str(assessment.get('ErrorType','Unknown'))[:50], 'provider_phones':normalized_phones})
-    return {'source':'azure_pronunciation_assessment','state':'provider_assessment','language':language,
+    return {'source':'azure_pronunciation_assessment','state':'provider_assessment','language':language,'unscripted':unscripted,
         'phone_alphabet':'IPA' if language=='en' else 'provider_default_not_assumed_IPA',
         'words':normalized,'phone_detail_available':any(phone['provider_phone'] for word in normalized for phone in word['provider_phones']),
         'phone_scores_available':any(phone['provider_accuracy_score'] is not None for word in normalized for phone in word['provider_phones']),'clinical_assessment':False,

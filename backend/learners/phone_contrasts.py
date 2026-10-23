@@ -13,7 +13,8 @@ def phone_key(phone):
 def contrast_hypothesis(context):
     language=context.get('language')
     rules={
-        'en':{('ɪ','iː'),('iː','ɪ'),('θ','t'),('θ','ð'),('ð','d'),('ɹ','l'),('l','ɹ')},
+        'en':{('ʌ','uː'),('uː','ʌ'),('ʌ','u'),('ɪ','iː'),('iː','ɪ'),('θ','t'),('θ','ð'),('ð','d'),('ɹ','l'),('l','ɹ'),
+            ('ɡ','b'),('k','t'),('s','ʃ'),('ʃ','s'),('f','p'),('p','f'),('ɹ','w')},
         'hi':{('k','kʰ'),('kʰ','k'),('p','pʰ'),('pʰ','p'),('t̪','d̪'),('d̪','t̪'),
               ('t̪','ʈ'),('ʈ','t̪'),('d̪','ɖ'),('ɖ','d̪')},
         'ml':{('ɻ','l'),('ɻ','z'),('ɻ','ʒ'),('ɻ','ɭ'),('ɭ','l'),('l','ɭ'),('aː','a'),('a','aː'),('p','f')}}
@@ -60,14 +61,16 @@ def teaching_text(language,word,expected,produced):
     if language=='ml':
         return f'“{word}” എന്ന വാക്കിൽ /{expected}/ എന്നതിന് പകരം /{produced}/ പോലൊരു ശബ്ദം കേട്ടതായി മോഡൽ സൂചിപ്പിക്കുന്നു.', cue(language,expected,word) or f'“{word}” പതുക്കെ കേട്ടിട്ട് പറഞ്ഞുനോക്കാം.'
     if language=='en':
-        cues={'ɪ':'Use the short, relaxed vowel in “sit”, rather than the long “ee” in “see”.',
+        cues={'ʌ':'Listen to the short vowel in “cup”. Relax your lips; try “cup” with me.',
+            'uː':'Listen to the long vowel in “moon”. Gently round your lips, then try the word.',
+            'ɪ':'Use the short, relaxed vowel in “sit”, rather than the long “ee” in “see”.',
             'iː':'Use the longer “ee” sound in “see”, rather than the short vowel in “sit”.',
             'θ':'Rest the tongue tip lightly near the front teeth and let air flow gently; keep the voice quiet.',
             'ð':'Rest the tongue tip lightly near the front teeth and let air flow gently with your voice.',
             'ɹ':'Listen to the initial sound in “red”, then try the sound and the word slowly.',
             'l':'Touch the tongue tip gently behind the upper front teeth, then try the word slowly.'}
         observation=f'An acoustic model suggests /{produced}/ where /{expected}/ is expected in “{word}”.'
-        return observation, cues[expected]+f' Listen, then try “{word}” once more.'
+        return observation, (cues.get(expected) or cue(language,expected,word) or f'Watch the mouth picture and listen to “{word}” slowly.')+f' Listen, then try “{word}” once more.'
     if language=='hi':
         cues={'k':'क में ख जैसा हवा का तेज़ झोंका न दें। धीरे कहें: क, फिर पूरा शब्द।',
             'kʰ':'ख में क के साथ हल्का हवा का झोंका दें। धीरे कहें: ख, फिर पूरा शब्द।',
@@ -83,7 +86,7 @@ def teaching_text(language,word,expected,produced):
 
 def contrast_hypotheses(context):
     """Scan confirmed sentence words with the same acoustic anchors as a selected word."""
-    if not context.get('confirmed_intended_message') or context.get('focus_word'):
+    if context.get('confirmed_intended_message') is False or len(context.get('expected_text','').split())<=1:
         result=contrast_hypothesis(context)
         return [result] if result else []
     results=[]

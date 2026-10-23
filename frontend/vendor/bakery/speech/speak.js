@@ -113,7 +113,7 @@ function playClip(url, speed, text, finish) {
 function browserSpeak(text, speed, finish) {
   if (!canUseBrowserVoice) return finish()
   const utterance = new SpeechSynthesisUtterance(text)
-  utterance.lang = 'en-US'
+  utterance.lang = /[\u0d00-\u0d7f]/.test(text)?'ml-IN':'en-US'
   utterance.rate = BROWSER_RATE[speed]
   utterance.pitch = 1.1
   utterance.onend = finish

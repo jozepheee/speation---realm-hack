@@ -82,7 +82,8 @@ export default function AudioProposalPanel({
       <button disabled={busy || !enabled || !record.audio_retained}>{busy ? t("Working\u2026") : t("Request audio observations")}</button>
     </form>
     {rows.map(row => <article key={row.id} className={styles.detail}><h4>{t(row.content.state.replaceAll('_', ' '))}</h4><p>{row.content.summary}</p>
-      <small>{row.model} · {row.request.start_seconds}–{row.request.end_seconds}{t("s \xB7")} {t(row.decision)}</small>
+      {row.request.purpose==='daily_observation'&&<p>{t('Collected silently during Daily conversation. Confirm the intended word before assigning practice.')}</p>}
+      <small>{row.model} · {row.request.start_seconds!=null?`${row.request.start_seconds}–${row.request.end_seconds}s · `:''}{t(row.decision)}</small>
       {row.content.concerns.map((item, index) => <div key={index}><p>{t(item.category)}: {item.observation}</p><p>{t("Uncertainty:")} {item.uncertainty}</p>
         {row.decision === 'pending' && <button type="button" disabled={busy} onClick={() => onInspect(row, item)}>{t("Inspect and write my assessment")}</button>}</div>)}
       {row.decision === 'pending' && <form onSubmit={event => reject(event, row.id)} className={styles.form}><label>{t("Reason for rejecting this proposal")}<input name="note" maxLength={1500} required /></label><button disabled={busy}>{t("Reject proposal")}</button></form>}

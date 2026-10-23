@@ -12,6 +12,7 @@ from scripts.expire_live_calls import expire_live_calls
 from scripts.finalize_live_calls import finalize_live_calls
 from scripts.worker_health import save as save_health
 from learners.rehearsal_sounds import drain as review_rehearsal_sounds
+from learners.daily_observations import drain as review_daily_observations
 
 logger = logging.getLogger('care-worker')
 
@@ -39,7 +40,8 @@ async def main(once=False, health_file=None):
                     logger.error('Worker health file could not be updated')
             if once:
                 return ok
-            await asyncio.sleep(15)
+            # Live meaning questions should not wait an extra 15s worker cycle.
+            await asyncio.sleep(2 if name=='daily-observations' else 15)
 
     try:
         # Separate loops keep slow transcript processing or an unavailable graph
@@ -49,7 +51,7 @@ async def main(once=False, health_file=None):
             run('call-expiration', expire_live_calls),
             run('call-finalization', finalize_live_calls),
             run('graph-delivery', graph_delivery),
-            run('rehearsal-sounds', review_rehearsal_sounds))
+            run('rehearsal-sounds', review_rehearsal_sounds),run('daily-observations',review_daily_observations))
         return all(results)
     finally:
         await engine.dispose()

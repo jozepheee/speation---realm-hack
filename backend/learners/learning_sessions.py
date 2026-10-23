@@ -25,13 +25,16 @@ class StartLearning(BaseModel):
     pair_id:Literal['k-t','r-w','s-sh','f-p','s-th','g-b']|None=None
     story:Adventure|None=None
     lesson_version:int=Field(default=1,ge=1,le=2)
+    language:Literal['en','ml','hi']='en'
+    personalized:bool=False
+    practice_words:list[str]=Field(default_factory=list,max_length=3)
 
     @model_validator(mode='after')
     def validate_kind(self):
         if self.kind=='story':
             if not self.story or not self.target:raise ValueError('A story needs its selected target and three scenes')
-            checked_adventure(self.story.model_dump(),self.target)
-        elif self.kind=='listening' and not self.pair_id:raise ValueError('Choose a listening contrast')
+            checked_adventure(self.story.model_dump(),self.target,self.practice_words)
+        elif self.kind=='listening' and not self.pair_id and not (self.personalized and self.target):raise ValueError('Choose a listening contrast')
         elif self.kind=='model' and not self.target.strip():raise ValueError('Choose a model target')
         return self
 
@@ -58,13 +61,23 @@ async def start(learner_id:uuid.UUID,payload:StartLearning,user:User=Depends(get
         if stored!=payload.model_dump(mode='json',exclude={'request_id'}):raise HTTPException(409,'Request ID already belongs to another activity')
         return summary(existing)
     content={'start_request':payload.model_dump(mode='json',exclude={'request_id'})}
+    from learners.personal_learning import plan
+    personal=await plan(db,learner_id,payload.language)
+    selected=next((item for item in personal['targets'] if item['word'].casefold()==payload.target.casefold() and not item.get('requires_confirmation')),None)
+    if selected:content['personal_target']=selected
+    if payload.personalized and not selected:raise HTTPException(409,'Refresh the personal practice plan; this target is no longer available')
+    if payload.personalized and any(word.casefold() not in {item['word'].casefold() for item in personal['targets'] if not item.get('requires_confirmation')} for word in payload.practice_words):raise HTTPException(409,'Refresh your personal story words; a target is no longer active')
     if payload.kind=='story':content.update(payload.story.model_dump())
     elif payload.kind=='model':content.update(target=payload.target.strip(),lesson_version=payload.lesson_version)
     else:
         order=[0,1,0,1,0,1] if payload.lesson_version==2 else [0,1,0,1];secrets.SystemRandom().shuffle(order)
-        content.update(pair_id=payload.pair_id,words=PAIRS[payload.pair_id],rounds=order)
+        if payload.personalized:
+            contrast=selected.get('listening')
+            if not contrast:raise HTTPException(422,'No supported listening contrast is available for this target; use a demonstration instead')
+            content.update(pair_id='personal',words=contrast['words'],contrast=contrast,rounds=order)
+        else:content.update(pair_id=payload.pair_id,words=PAIRS[payload.pair_id],rounds=order)
     row=LearningSession(id=payload.request_id,learner_id=learner_id,started_by=user.id,
-        kind=payload.kind,target=payload.target if payload.kind in ['story','model'] else ' / '.join(PAIRS[payload.pair_id]),content=content,events=[])
+        kind=payload.kind,target=payload.target if payload.kind in ['story','model'] or payload.personalized else ' / '.join(PAIRS[payload.pair_id]),content=content,events=[])
     db.add(row);await db.commit();return summary(row)
 
 @router.get('/learners/{learner_id}/learning-sessions')
@@ -130,9 +143,10 @@ async def event(session_id:uuid.UUID,payload:LearningEvent,user:User=Depends(get
             began=row.created_at.replace(tzinfo=timezone.utc) if not row.created_at.tzinfo else row.created_at
             target=payload.expected_text.strip()
             words=row.content.get('words',[]) if row.kind=='listening' else [row.target]
+            if row.kind=='listening' and row.content.get('personal_target'):words=[row.target,*words]
             import re
             if not target or not any(re.search(r'(?<!\w)'+re.escape(word)+r'(?!\w)',target,re.I) for word in words):raise HTTPException(422,'Use a target from this lesson')
-            if record.language!='en' or record.task!=payload.phase or record.expected_text!=target or created<began:raise HTTPException(422,'Use a fresh English recording for this lesson step')
+            if record.language!=row.content.get('start_request',{}).get('language','en') or record.task!=payload.phase or record.expected_text!=target or created<began:raise HTTPException(422,'Use a fresh recording in the lesson language for this step')
             if any(event.get('recording_id')==str(record.id) for event in row.events):raise HTTPException(409,'This attempt is already saved; record a fresh retry')
             bound=record.quality.get('learning_lesson_id')
             if bound and bound!=str(row.id):raise HTTPException(409,'Recording is already linked to another lesson')
@@ -155,6 +169,7 @@ async def event(session_id:uuid.UUID,payload:LearningEvent,user:User=Depends(get
                 record=await db.get(SpeechRecording,payload.recording_id) if payload.recording_id else None
                 if not record or record.learner_id!=row.learner_id:raise HTTPException(404,'Recording not found')
                 if record.expected_text!=row.content['scenes'][row.position]['sentence']:raise HTTPException(422,'Recording must match this scene')
+                if record.language!=row.content.get('start_request',{}).get('language','en'):raise HTTPException(422,'Recording must use the story language')
                 data['evidence_source']='saved_recording'
             else:data['evidence_source']='explicit_skip'
         row.position+=1

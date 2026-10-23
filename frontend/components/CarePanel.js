@@ -10,6 +10,7 @@ import ReviewedActivityEditor from './ReviewedActivityEditor';
 import AudioProposalPanel from './AudioProposalPanel';
 import CareReportDialog from './CareReportDialog';
 import AICareReport from './AICareReport';
+import PronunciationTargets from './PronunciationTargets';
 import { portalApi, privateAudio } from '../lib/portalApi';
 import { LANGUAGES } from './LearnerWorkspace';
 import styles from '../styles/workspace.module.css';
@@ -227,6 +228,7 @@ export default function CarePanel({
   return <div style={{
     marginTop: 24
   }}>
+    {["all","overview"].includes(view)&&<PronunciationTargets learner={learner} onRecording={id=>{const item=records.find(row=>row.id===id);if(item)void playRecording(item);else setNotice('This recording is outside the currently loaded list. Use the care report to review its evidence.');}}/>}
     {["all","overview"].includes(view)&&<AICareReport learner={learner} clinical={clinical}/>}
     <div aria-live="polite">{error && <p className={styles.error} role="alert">{t(error)}</p>}{notice && <p className={styles.success}>{t(notice)}</p>}</div>
     {!summary && !error && <p role="status">{t("Loading patient records…")}</p>}

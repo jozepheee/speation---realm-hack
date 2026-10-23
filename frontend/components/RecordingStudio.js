@@ -36,6 +36,8 @@ export default function RecordingStudio({
   onBusyChange,
   onRecordingChange,
   onCaptureStateChange,
+  onLevelChange,
+  minSignalRms = .004,
   onError,
   assessFeedback = Boolean(expectedText)
 }) {
@@ -79,6 +81,8 @@ export default function RecordingStudio({
   const errorCallback=useRef(onError);errorCallback.current=onError;
   const captureStateCallback=useRef(onCaptureStateChange);captureStateCallback.current=onCaptureStateChange;
   useEffect(()=>{captureStateCallback.current?.(state);},[state]);
+  const levelCallback=useRef(onLevelChange);levelCallback.current=onLevelChange;
+  useEffect(()=>{levelCallback.current?.(level);},[level]);
   useEffect(()=>{if(error)errorCallback.current?.(error);},[error]);
   function release() {
     if(visualStop.current){const summary=visualStop.current();visualStop.current=null;if(attempt.current)attempt.current.visualArticulation=summary;}
@@ -177,7 +181,7 @@ export default function RecordingStudio({
           type: device.mimeType
         });
         if (autoSubmit && !activitySeen) {
-          setError('No speech was heard. Tap the mic and try again.');
+          setError('No microphone signal was detected. Check your input device, move closer, then try again.');
           setState('idle');
           setLevel(0);
           return;
@@ -196,7 +200,7 @@ export default function RecordingStudio({
       };
       const Context = window.AudioContext || window.webkitAudioContext;
       let activitySeen = false,endpoint=null;
-      const detectPause=createPauseDetector({quietMs:quietFinishMs,maxMs:maxSeconds*1000});
+      const detectPause=createPauseDetector({quietMs:quietFinishMs,maxMs:maxSeconds*1000,minRms:minSignalRms});
       if (!Context && autoSubmit) throw new Error('Automatic recording is unavailable in this browser. Try an up-to-date browser.');
       let measure = () => {};
       if (Context) {

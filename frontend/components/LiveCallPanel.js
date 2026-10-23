@@ -11,7 +11,9 @@ import {savedReservation,rememberReservation,forgetReservation} from '../lib/com
 import { liveSpeechCapture } from '../lib/liveSpeechCapture';
 import { AudioFeedbackGate, AUDIO_FEEDBACK_EVENT } from '../lib/audioFeedbackGate';
 import { PracticeAudioQueue } from '../lib/practiceAudioQueue';
+import { DailyIntentFlow } from '../lib/dailyIntentFlow';
 import { LiveAvatarTiming } from '../lib/liveAvatarTiming';
+import {recoverableVoiceError,voiceDisconnectMessage} from '../lib/liveCallFailure';
 import styles from '../styles/companion.module.css';
 export default function LiveCallPanel({
   learner,
@@ -60,12 +62,22 @@ export default function LiveCallPanel({
   const capture = useRef(null), extraMic = useRef(null), coachingCallback=useRef(onCoachingFeedback);
   const activeTarget=useRef(null),pendingReview=useRef(null),lastDelivered=useRef(null),targetCallback=useRef(onPracticeTarget);targetCallback.current=onPracticeTarget;
   const agentSpeaking=useRef(false);
+  const dailyObservationOnly=['conversation','daily_moment'].includes(mode),lastDailyWords=useRef(null),dailyIntent=useRef(new DailyIntentFlow());
   const animation=useRef(new LiveAvatarTiming()),animationCallback=useRef(onAnimation);animationCallback.current=onAnimation;
   const audioQueue=useRef(new PracticeAudioQueue());
   const feedbackGate=useRef(null);
   const [coachingStatus,setCoachingStatus]=useState('');coachingCallback.current=onCoachingFeedback;
   const [lesson,setLesson]=useState(null),[lessonBusy,setLessonBusy]=useState(false);
   const lessonCallback=useRef(onLesson);lessonCallback.current=onLesson;
+  async function saveDailyMeaning(current,callId){
+    const flow=dailyIntent.current,pending=flow.pending;
+    if(!pending?.id||pending.saving||pending.askedAfter===null||!flow.latest||flow.latest.sequence<=pending.askedAfter)return;
+    pending.saving=true;
+    try{const body=await flow.response(pending.id);
+      const value=await portalApi(`/live-calls/${callId}/meaning-proposals/${pending.id}/answer`,{method:'POST',body,timeoutMs:20000});
+      if(current===generation.current&&flow.pending===pending){flow.pending=null;setCoachingStatus(value.state==='confirmed'?'Meaning saved; original audio will be assessed.':'Meaning was not confirmed.');}
+    }catch(err){pending.saving=false;if(current===generation.current)setCoachingStatus(err.message);}
+  }
   function syncLesson(value){if(call.current)call.current.lesson=value;setLesson(value);lessonCallback.current?.(value);}
   async function changeLesson(action,text='',notify=true){
     const current=generation.current;if(!call.current||stopping.current)return {state:'call_ended'};
@@ -86,6 +98,27 @@ export default function LiveCallPanel({
   onStateRef.current = onState;
   onActiveRef.current = onActive;
   onSavedRef.current = onSavedCall;
+  useEffect(()=>{
+    if(!dailyObservationOnly||status!=='connected')return;
+    const current=generation.current;let cancelled=false,timer;
+    async function poll(){try{
+      const pending=dailyIntent.current.pending;
+      if(pending?.id&&pending.askedAfter===null&&Date.now()-(pending.deliveredAt||0)>10000){
+        pending.deliveredAt=Date.now();session.current?.sendUserActivity();session.current?.sendUserMessage('[SPEATION_MEANING]'+JSON.stringify({...pending,instruction:'The learner has not yet been asked this question. Ask the exact question now, gently. Wait for a fresh spoken answer. Do not continue the topic until meaning is clarified.'}));
+      }
+      if(!dailyIntent.current.pending&&call.current&&!stopping.current){
+        const rows=await portalApi(`/live-calls/${call.current.id}/meaning-proposals`,{timeoutMs:10000});
+        if(!cancelled&&current===generation.current&&!dailyIntent.current.pending&&rows.length){
+          const item=rows[0];const value=await portalApi(`/live-calls/${call.current.id}/meaning-proposals/${item.id}/activate`,{method:'POST',timeoutMs:10000});
+          if(cancelled||current!==generation.current)return;
+          dailyIntent.current.proposed(value,{sequence:dailyIntent.current.sequence});
+          void saveDailyMeaning(current,call.current.id);
+          if(dailyIntent.current.pending?.askedAfter===null){dailyIntent.current.pending.deliveredAt=Date.now();session.current?.sendUserActivity();session.current?.sendUserMessage('[SPEATION_MEANING]'+JSON.stringify({...value,instruction:'Ask this exact question gently in the session language. Wait for a new spoken answer, then call confirm_message_meaning with this proposal ID. No correction or drill.'}));}
+        }
+      }
+    }catch{}finally{if(!cancelled)timer=setTimeout(poll,5000);}}
+    void poll();return()=>{cancelled=true;clearTimeout(timer);};
+  },[status,dailyObservationOnly]);
   async function loadHistory() {
     const current = generation.current;
     try {
@@ -95,7 +128,7 @@ export default function LiveCallPanel({
       if (current === generation.current) setError(err.message);
     }
   }
-  async function stop() {
+  async function stop(disconnectDetails=null) {
     if (stopping.current) return;
     stopping.current=true;
     animation.current.clear();animationCallback.current?.(null,0);
@@ -116,7 +149,11 @@ export default function LiveCallPanel({
     if(!priorCall)return;
     setSaving(true);
     try {
-      const saved=await portalApi(`/live-calls/${priorCall.id}/finish`,{method:'POST',timeoutMs:10000});
+      let saved;
+      for(let attempt=0;attempt<2;attempt++){
+        try{saved=await portalApi(`/live-calls/${priorCall.id}/finish`,{method:'POST',...(disconnectDetails?.reason?{body:{reason:String(disconnectDetails.reason).slice(0,40),message:voiceDisconnectMessage(disconnectDetails)}}:{}),timeoutMs:20000});break;}
+        catch(err){if(attempt)throw err;await new Promise(resolve=>setTimeout(resolve,1500));}
+      }
       forgetReservation(learner.id,priorCall.id);
       if(current===generation.current)onSavedRef.current?.(saved);
     }catch(err){if(current===generation.current)setError(`The call has stopped. Transcript saving needs retry: ${err.message}`);}
@@ -157,6 +194,7 @@ export default function LiveCallPanel({
     const current = ++generation.current;
     agentSpeaking.current=false;
     activeTarget.current=null;pendingReview.current=null;lastDelivered.current=null;targetCallback.current?.(null);
+    lastDailyWords.current=null;
     setError('');setSaving(false);setSpeakerBlocked(false);
     setMessages([]);
     setElapsed(0);
@@ -166,7 +204,7 @@ export default function LiveCallPanel({
     connecting.current = pending;
     onActiveRef.current?.(true);
     let prepared, live;
-    audioQueue.current=new PracticeAudioQueue();
+    audioQueue.current=new PracticeAudioQueue();dailyIntent.current=new DailyIntentFlow();
     feedbackGate.current=new AudioFeedbackGate({
       hold:()=>{if(current!==generation.current)return;onStateRef.current?.('thinking',0);session.current?.setVolume({volume:0});session.current?.sendContextualUpdate('An actual audio attempt is being analyzed. Call review_practice_attempt and wait. Do not judge or praise pronunciation from captions.');},
       release:()=>{if(current===generation.current)session.current?.setVolume({volume:1});},
@@ -218,22 +256,30 @@ export default function LiveCallPanel({
       call.current = prepared;
       rememberReservation(learner.id,prepared.id);
       syncLesson(prepared.lesson||null);
-      activeTarget.current=prepared.active_practice_target||null;
+      activeTarget.current=dailyObservationOnly?null:prepared.active_practice_target||null;
       targetCallback.current?.(activeTarget.current);
       if(extraMic.current){
         try {
-          const input=await liveSpeechCapture(extraMic.current,{quietMs:['practice','listen_then_say','transfer'].includes(mode)?1200:3000,onError:()=>setCoachingStatus('Live audio coaching is unavailable; use a recorded practice turn.'),onSpeechStart:()=>{if(current===generation.current&&activeTarget.current&&!['offer_sentence','offer_break','completed'].includes(call.current?.lesson?.phase)&&!call.current?.lesson?.completed&&!feedbackGate.current?.waiting)feedbackGate.current?.wait();},onClip:(blob,visual)=>{
+          const input=await liveSpeechCapture(extraMic.current,{quietMs:['practice','listen_then_say','transfer'].includes(mode)?1200:3000,onError:()=>setCoachingStatus('Live audio coaching is unavailable; use a recorded practice turn.'),onSpeechStart:()=>{if(dailyObservationOnly)dailyIntent.current.speechStart();if(current===generation.current&&!dailyObservationOnly&&activeTarget.current&&!['offer_sentence','offer_break','completed'].includes(call.current?.lesson?.phase)&&!call.current?.lesson?.completed&&!feedbackGate.current?.waiting)feedbackGate.current?.wait();},onClip:(blob,visual)=>{
             if(current!==generation.current)return;
             if(call.current?.lesson?.completed||call.current?.lesson?.phase==='offer_sentence')return;
-            const target=activeTarget.current;
+            const dailyTurn=dailyObservationOnly?dailyIntent.current.clip():null;
+            const target=dailyObservationOnly?null:activeTarget.current;
+            const hint=dailyObservationOnly&&lastDailyWords.current&&Date.now()-lastDailyWords.current.at<30000?lastDailyWords.current.text:'';
+            if(dailyObservationOnly)lastDailyWords.current=null;
             if(['practice','listen_then_say','transfer'].includes(mode)&&!target)return;
             const gate=feedbackGate.current;
             const feedbackVersion=target?(gate?.waiting?gate.version:gate?.wait()):null;
-            setCoachingStatus('Listening to the audio for practice feedback…');
+            setCoachingStatus(dailyObservationOnly?'Saving conversation audio for later practice…':'Listening to the audio for practice feedback…');
             const task=audioQueue.current.enqueue(async()=>{try{
-              const expected=target?.expected_text||coachingTarget||'';
+              const expected=dailyObservationOnly?'':target?.expected_text||coachingTarget||'';
               const form=new FormData();form.set('audio',blob,'conversation-turn.wav');form.set('attempt_id',crypto.randomUUID());form.set('language',learner.language);form.set('provider','sarvam');form.set('recognition_mode','selected_language');form.set('recognize_audio','false');form.set('expected_text',expected);form.set('task',expected?'sentence':'conversation');if(visual)form.set('visual_articulation',JSON.stringify(visual));
+              if(dailyObservationOnly){form.set('live_call_id',prepared.id);form.set('transcript_hint',(dailyTurn?.text||hint).slice(0,2000));}
               const record=await portalApi(`/learners/${learner.id}/recordings`,{method:'POST',body:form,timeoutMs:30000});
+              if(dailyObservationOnly){
+                if(current===generation.current)setCoachingStatus('Conversation observations saved for later practice.');
+                return record;
+              }
               await portalApi(`/live-calls/${prepared.id}/recordings/${record.id}`,{method:'POST',body:{practice_target_id:target?.id||null},timeoutMs:15000});
               const result=await portalApi(`/recordings/${record.id}/maya-coaching`,{method:'POST',body:{mode,allow_model_audio:true},timeoutMs:55000});
               if(current!==generation.current || target?.id!==activeTarget.current?.id)return;
@@ -246,6 +292,7 @@ export default function LiveCallPanel({
               else session.current?.sendContextualUpdate('Actual audio practice suggestions (not a correctness grade): '+JSON.stringify(result.content));
               setCoachingStatus('Audio practice feedback is ready.');return result;
             }catch(err){if(current===generation.current){setCoachingStatus(err.message);gate?.fail(feedbackVersion);}throw err;}});
+            if(dailyTurn)dailyIntent.current.saved(dailyTurn,task);
             pendingReview.current=task;void task.catch(()=>{});return task;
           }});
           if(current!==generation.current){input.stop();return;}input.setAgentSpeaking(agentSpeaking.current);capture.current=input;
@@ -259,8 +306,27 @@ export default function LiveCallPanel({
         conversationToken: prepared.conversation_token,
         connectionType: 'webrtc',
         clientTools:{
-          lesson_action:params=>changeLesson(params.action,params.text||'',false),
+          propose_message_meaning:async params=>{
+            if(!dailyObservationOnly||current!==generation.current||stopping.current)return {state:'unavailable'};
+            capture.current?.flush();const original=dailyIntent.current.original();
+            dailyIntent.current.pending={preparing:true};
+            void (async()=>{try{const {turn,record}=await original;
+              const value=await portalApi(`/live-calls/${prepared.id}/meaning-proposals`,{method:'POST',body:{request_id:crypto.randomUUID(),recording_id:record.id,expected_text:params.expected_text,heard_text:turn.text},timeoutMs:15000});
+              if(current!==generation.current)return;dailyIntent.current.proposed(value,turn);
+              void saveDailyMeaning(current,prepared.id);
+              if(dailyIntent.current.pending?.askedAfter===null){session.current?.sendUserActivity();session.current?.sendUserMessage('[SPEATION_MEANING]'+JSON.stringify({...value,instruction:'Ask this exact question gently. Preserve its exact words, never replace one with a synonym. Wait for a new spoken answer, then call confirm_message_meaning.'}));}
+            }catch(err){dailyIntent.current.pending=null;if(current===generation.current)setCoachingStatus(err.message);}})();
+            return {state:'preparing',instruction:'Do not wait silently for storage. Briefly acknowledge the learner. The saved meaning question will arrive as SPEATION_MEANING; only then ask it exactly and wait for their answer.'};
+          },
+          confirm_message_meaning:async params=>{
+            if(!dailyObservationOnly||current!==generation.current||stopping.current)return {state:'unavailable'};
+            capture.current?.flush();
+            if(dailyIntent.current.pending?.id===params.proposal_id)void saveDailyMeaning(current,prepared.id);
+            return {state:'saving',instruction:'Continue chatting naturally while the response is saved. Do not wait silently or announce pronunciation results. Saving is not yet confirmed.'};
+          },
+          lesson_action:params=>dailyObservationOnly?{state:'silent_observation_only'}:changeLesson(params.action,params.text||'',false),
           set_practice_target:async params=>{
+            if(dailyObservationOnly)return {state:'silent_observation_only',instruction:'Continue the conversation naturally. Pronunciation practice belongs in Learn with Maya.'};
             if(current!==generation.current||!call.current||stopping.current)return {state:'call_ended'};
             try{const target=await portalApi(`/live-calls/${call.current.id}/practice-target`,{method:'POST',body:params});
               if(current!==generation.current)return {state:'call_ended'};
@@ -271,6 +337,7 @@ export default function LiveCallPanel({
             }catch(err){return {state:'unavailable',message:err.message};}
           },
           review_practice_attempt:async()=>{
+            if(dailyObservationOnly)return {state:'silent_observation_only',instruction:'Do not give pronunciation feedback here. Continue discussing the learner’s message naturally.'};
             if(current!==generation.current||stopping.current)return {state:'call_ended'};
             if(!coachingEnabled)return {state:'audio_unavailable',instruction:'Audio practice needs private audio retention permission. Do not infer pronunciation from the transcript.'};
             capture.current?.flush();
@@ -289,9 +356,10 @@ export default function LiveCallPanel({
         },
         onMessage: event => {
           if (current !== generation.current) return;
-          if(event.message?.startsWith(AUDIO_FEEDBACK_EVENT)||event.message?.startsWith('[SPEATION_LESSON]'))return;
+          if(event.message?.startsWith(AUDIO_FEEDBACK_EVENT)||event.message?.startsWith('[SPEATION_LESSON]')||event.message?.startsWith('[SPEATION_MEANING]'))return;
           const role=event.role||(event.source==='user'?'user':'agent');
-          if(role==='user'&&activeTarget.current&&coachingEnabled&&!call.current?.lesson?.completed&&call.current?.lesson?.phase!=='offer_sentence'){capture.current?.flush();}
+          if(dailyObservationOnly){if(role==='user'){lastDailyWords.current={text:String(event.message||''),at:Date.now()};dailyIntent.current.transcript(event.message);capture.current?.flush();}else dailyIntent.current.agent(event.message);void saveDailyMeaning(current,prepared.id);}
+          if(role==='user'&&!dailyObservationOnly&&activeTarget.current&&coachingEnabled&&!call.current?.lesson?.completed&&call.current?.lesson?.phase!=='offer_sentence'){capture.current?.flush();}
           if(role!=='user'&&feedbackGate.current?.waiting)return;
           setMessages(items => [...items.slice(-99), {
             id: `${Date.now()}:${items.length}`,
@@ -309,13 +377,14 @@ export default function LiveCallPanel({
         onVadScore: event => {if(current===generation.current)capture.current?.setVadScore(event.vadScore);},
         onAudioAlignment: event=>{if(current===generation.current&&learner.language==='en')animation.current.append(event);},
         onInterruption: ()=>{if(current===generation.current){animation.current.clear();animationCallback.current?.(null,0);}},
-        onDisconnect: () => {
-          if (current === generation.current && !stopping.current) void stop();
+        onDisconnect: details => {
+          if (current === generation.current && !stopping.current){setError(voiceDisconnectMessage(details));void stop(details);}
         },
-        onError: () => {
+        onError: (message,context) => {
           if (current === generation.current) {
-            setError('The live voice connection failed. Your saved call can be retried.');
-            void stop();
+            if(recoverableVoiceError(message,context)){setCoachingStatus('A conversation helper could not complete. The voice call is still open; please restate your message.');return;}
+            const details={reason:'error',message:String(message||'Live voice error')};
+            setError(voiceDisconnectMessage(details));void stop(details);
           }
         }
       }), {

@@ -1,5 +1,5 @@
 // Relative energy endpointing only. This detects an utterance boundary, not correctness.
-export function createPauseDetector({quietMs=1800,maxMs=12000}={}) {
+export function createPauseDetector({quietMs=1800,maxMs=12000,minRms=.004}={}) {
  let started=null,lastActivity=null,activityMs=0,previous=null;
  const history=[];
  return function sample(rms,now) {
@@ -12,7 +12,7 @@ export function createPauseDetector({quietMs=1800,maxMs=12000}={}) {
   const sorted=[...history].sort((a,b)=>a-b);
   const peak=sorted[sorted.length-1];
   const floor=history.length>=6?Math.min(sorted[Math.floor((sorted.length-1)*.2)],peak*.3):.002;
-  const threshold=Math.max(.004,floor*2);
+  const threshold=Math.max(minRms,floor*2);
   const voice=rms>threshold;
   if(voice){lastActivity=now;activityMs+=delta;}
   const heard=activityMs>=100;
