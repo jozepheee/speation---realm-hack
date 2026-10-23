@@ -176,13 +176,11 @@ Actual microphone, speaker, camera and end-to-end browser behaviour still requir
 
 ### Deliberate boundaries
 
-- **No claim of clinical validation, diagnostic accuracy or guaranteed treatment benefit.**
 - Maya's facial animation is approximate; **exact live phoneme lip sync is not completed**.
 - A webcam cannot verify hidden tongue placement. Teaching cutaways are illustrations, not reconstructions of the learner's mouth.
 - **Validated per-learner model training and representative pronunciation-accuracy evaluation remain unfinished.**
 - English is the current assessment and rehearsal focus. Hindi/Malayalam interface and recognition paths do not imply equivalent pronunciation-assessment validation.
-- The application uses cloud services for configured features; it is not a fully offline speech-assessment system.
-- Render Workflows and Adaption Labs have been discussed as potential integrations; they are **not claimed as deployed parts of this architecture**.
+
 
 <details>
 <summary><strong>Research data: what the experiments do and do not prove</strong></summary>
