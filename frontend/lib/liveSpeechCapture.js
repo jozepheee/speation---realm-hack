@@ -1,0 +1,10 @@
+import {beginVisualAttempt} from './visualArticulation.js';
+import {SpeechSegments} from './speechSegments.js';
+export async function liveSpeechCapture(stream,{onClip,onError,onSpeechStart,quietMs=3000}){
+ const context=new AudioContext();let source,node,gain,stopped=false,muted=false,vad=-1,vadAt=0,speaking=false,noiseFloor=.003,visualStop=null;
+ try {await context.audioWorklet.addModule('/speech-input-processor.js');source=context.createMediaStreamSource(stream);node=new AudioWorkletNode(context,'speation-speech-input');gain=context.createGain();gain.gain.value=0;source.connect(node).connect(gain).connect(context.destination);await context.resume();
+  const emit=bytes=>{const visual=visualStop?.();visualStop=null;if(!stopped&&!muted)onClip(new Blob([bytes],{type:'audio/wav'}),visual);};let segments=new SpeechSegments(context.sampleRate,emit,quietMs);
+  node.port.onmessage=({data})=>{if(stopped||muted)return;const rms=Math.sqrt(data.reduce((sum,v)=>sum+v*v,0)/data.length);const freshVad=performance.now()-vadAt<700&&vad>=0;const localVoice=rms>Math.max(.006,noiseFloor*2.5);const voice=speaking?freshVad&&vad>.55:localVoice||(freshVad&&vad>.35);if(!voice&&!speaking)noiseFloor=.95*noiseFloor+.05*Math.min(rms,.02);if(voice&&!visualStop){visualStop=beginVisualAttempt();onSpeechStart?.();}segments.push(data,voice);};
+  return {flush(){if(!stopped&&!muted)segments.flush();},reset(){visualStop?.();visualStop=null;segments=new SpeechSegments(context.sampleRate,emit,quietMs);},setMuted(value){visualStop?.();visualStop=null;muted=value;segments=new SpeechSegments(context.sampleRate,emit,quietMs);stream.getAudioTracks().forEach(track=>{track.enabled=!value;});},setVadScore(value){vad=value;vadAt=performance.now();},setAgentSpeaking(value){speaking=value;},stop(){visualStop?.();visualStop=null;stopped=true;node.port.onmessage=null;source.disconnect();node.disconnect();gain.disconnect();stream.getTracks().forEach(track=>track.stop());void context.close();}};
+ }catch(error){stopped=true;source?.disconnect();node?.disconnect();stream.getTracks().forEach(track=>track.stop());await context.close();onError?.(error);throw error;}
+}

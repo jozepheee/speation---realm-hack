@@ -1,0 +1,231 @@
+
+.container {
+    text-align: center;
+  }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 20px 17px 30px; /* top right bottom left */
+    height: 30px; /* Set fixed height */
+    background-color: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); /* Drop Shadow */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+  }
+
+  .navLinks a {
+    font-size: 1rem; /* Increase from 1rem to 1.2rem */
+    white-space: nowrap;
+    text-decoration: none;
+    font-weight: normal;
+    color: black;
+  }
+
+
+  .navLinks {
+    list-style: none;
+    display: flex;
+    flex: 1;  /* Make sure items spread evenly */
+    justify-content: space-evenly; /* Spread items evenly */
+    align-items: center;
+    font-size: 1rem;
+  }
+
+  .auth a {
+    white-space: nowrap;
+    text-decoration: none; /* Removes underline */
+    font-weight: normal; /* Removes boldness */
+    color: black; /* Matches other links */
+  }
+
+  .auth {
+    margin-left: 50px; /* Keeps spacing */
+    padding-right: -30px;
+  }
+
+
+  .navLinks li {
+    font-size: 1rem;
+  }
+
+  /* header finish */
+
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 120px; /* Space below navbar */
+  }
+/* Character Grid */
+.characterGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+  }
+
+  /* Character Card */
+  .characterCard {
+    text-align: center;
+  }
+
+  /* Character Image with Hover Effect */
+  .characterImage {
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .characterImage:hover {
+    transform: scale(1.05); /* Slightly enlarges the image */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Adds a shadow */
+  }
+
+  /* Character Quote */
+  .quote {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+
+  .videoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFEFC2;
+    padding: 30px;
+    border-radius: 15px;
+    width: 80%;
+    margin: 20px auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Video Styling */
+  .video {
+    width: 100%;
+    max-width: 800px; /* Keep video within a standard width */
+    height: 450px; /* Keep the video height fixed */
+    border-radius: 10px;
+    border: 3px solid #FF9525;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    background: #ddd;
+  }
+
+
+/* ✅ Footer */
+.footer {
+    background-color: #FFEFC2;
+    color: black;
+    padding: 40px 0;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 50px;
+}
+
+.footerLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+/* footer start */
+
+.footer {
+  background-color: #FFEFC2; /* Light beige */
+
+  color: black;
+  padding: 40px 0;
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* Center Logo */
+.footerLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Footer Links Section */
+.footerLinks {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+/* Individual Footer Columns */
+.footerColumn {
+  text-align: left;
+  min-width: 200px;
+}
+
+.footerColumn h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footerColumn ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footerColumn li {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+/* Copyright Section */
+.footerCopyright {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  padding-top: 10px;
+  font-size: 0.9rem;
+}
+
+/* Fix Logo Contrast */
+.footerLogo img {
+  width: 170px;  /* Adjust width */
+  height: auto;  /* Maintain aspect ratio */
+  filter: brightness(1.2); /* Keep logo visible */
+}
+
+/* footer finish */
+
+
+.inputContainer {
+  margin-top: 20px;
+}
+
+.textInput {
+  width: 70%;
+  height: 100px;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.generateButton {
+  background-color: #FF9525;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.generateButton:hover {
+  background-color: #FFB400;
+}

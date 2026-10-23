@@ -23,7 +23,7 @@ from learners.provider_http import client as provider_client
 
 router=APIRouter(tags=['ai-care-reports'])
 capacity=asyncio.Semaphore(2)
-VERSION='care-report-evidence-v6-self-check'
+VERSION='care-report-evidence-v7-guided-model-listening'
 
 def cue_response_evidence(content):
     response=content.get('lesson_response') or {}
@@ -102,6 +102,11 @@ async def snapshot(db,learner_id):
             'kind':row.kind,'status':row.status,'steps_completed':row.position,
             'recording_ids':[item['recording_id'] for item in row.events if item.get('recording_id')],
             'listening_choices_correct':correct,'listening_choices_total':len(answers),
+            'support_tracking_available':row.content.get('start_request',{}).get('lesson_version',1)==2,
+            'independent_listening_correct':sum(bool(event.get('matched')) and not event.get('help_used',False) for event in answers),
+            'supported_choices':sum(bool(event.get('help_used')) for event in answers),
+            'replays':sum(event.get('replays',0) for event in answers),
+            'model_steps':[{'action':event['action'],'model_source':event.get('verified_model_source',event.get('model_source')),'demonstration_id':event.get('demonstration_id'),'segment_start':event.get('segment_start'),'segment_end':event.get('segment_end'),'repetitions':event.get('repetitions',1),'slow':event.get('slow',False)} for event in row.events if event['action'].startswith('model_')],
             'pronunciation_score':None,'completion_is_mastery':False}
         evidence.append(item);activity_history.append(item)
     evidence_index={item['id']:{'date':item.get('date') or next((row.created_at.date().isoformat() for row in records if str(row.id)==item.get('recording_id',item['id'])),''),'kind':item['source']} for item in evidence}
