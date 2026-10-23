@@ -1,0 +1,57 @@
+.main { width:100%; max-width: 1920px; margin: 94px auto 40px; padding: clamp(18px, 2.5vw, 48px); min-width:0; }
+.clinicalHeader { margin: 0 0 26px; }.clinicalHeader h1 { font-size: clamp(2rem,4vw,3rem); color:#163d38; margin:8px 0; }.clinicalHeader p { color:#456258; }
+.patientToolbar { display:grid; grid-template-columns:1fr 2fr auto; gap:18px; align-items:end; padding:22px; border:1px solid #cbded2; background:#edf5f0; border-radius:22px; }.patientToolbar .form { margin:0; min-width:0; }.patientToolbar button { margin:0; }
+.patientHeading { display:flex; justify-content:space-between; align-items:center; gap:18px; margin:24px 0 18px; }.patientHeading h2 { margin:0; color:#163d38; }.patientHeading p { margin:8px 0 0; }
+.patientTabs { display:flex; gap:8px; flex-wrap:wrap; border-bottom:1px solid #cbded2; padding-bottom:12px; }.patientTabs a { background:#edf3ef; color:#174c3f; border:1px solid #cbded2; border-radius:12px; padding:14px 20px; font-weight:700; }.patientTabs a[aria-current=page] { color:white; background:#174c3f; border-color:#174c3f; }
+.metricGrid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; margin:20px 0 28px; }.metricGrid > div { background:#f0f6f2; padding:20px; border-radius:16px; }.metricGrid strong { display:block; font-size:2.2rem; color:#174c3f; }.metricGrid span { font-size:.85rem; color:#405d50; }
+.chartHeader { display:flex; justify-content:space-between; align-items:center; gap:20px; }.chartHeader .form { margin:0; }.chartLegend { display:flex; gap:18px; flex-wrap:wrap; font-size:.85rem; }.chartLegend span { display:flex; align-items:center; gap:7px; }.chartLegend i { width:12px; height:12px; border-radius:3px; }
+.reviewChart { display:flex; align-items:flex-end; gap:10px; overflow-x:auto; padding:25px 8px 10px; border-bottom:1px solid #cbded2; }.reviewChart button { min-width:64px; background:#f4f7f5 !important; color:#173c30 !important; border:2px solid transparent !important; box-shadow:none !important; border-radius:10px; padding:8px; }.reviewChart button[aria-pressed=true] { border-color:#174c3f !important; }.chartBar { display:flex; flex-direction:column-reverse; justify-content:flex-start; height:150px; width:28px; margin:0 auto 12px; border-radius:6px; overflow:hidden; background:#e5ece8; }.chartBar > span { display:block; flex-shrink:0; }.chartEmpty { border:1px dashed #9fb9ab; border-radius:16px; padding:35px; background:#f8faf8; margin:20px 0; }.dayDetail { display:flex; gap:16px; flex-wrap:wrap; padding:18px; background:#edf5f0; border-radius:12px; margin-top:16px; }.targetChart { padding:16px 0; border-bottom:1px solid #e0e7e2; }.targetBar { display:flex; height:16px; border-radius:8px; overflow:hidden; margin:10px 0; background:#edf3ef; }.caseload { margin-top:28px; }.caseload > summary { cursor:pointer; padding:18px; font-weight:700; color:#174c3f; background:#edf5f0; border-radius:14px; }
+@media(max-width:760px) { .patientToolbar { grid-template-columns:1fr; }.patientHeading,.chartHeader { align-items:flex-start; flex-direction:column; }.metricGrid { grid-template-columns:repeat(2,minmax(0,1fr)); }.patientToolbar select { width:100%; }.patientTabs a { flex:1; text-align:center; padding:12px; } }
+.hero { padding: 28px; border-radius: 30px; background: radial-gradient(ellipse at 85% 30%, #fff1c4, transparent 55%), #f3f6f3; border: 1px solid #e2e9df; }
+.hero h1 { font-size: clamp(1.8rem, 3.2vw, 2.8rem); line-height: 1.15; letter-spacing: -.045em; max-width: 1000px; margin: 8px 0 12px; color: #163d38; }
+.careSequence { margin-top:24px; }.careSequence > summary { cursor:pointer; padding:20px; border:1px solid #b6cdbd; border-radius:16px; color:#174c3f; font-weight:700; background:#f1f6f1; }
+.hero p { max-width: 650px; color: #455e58; }
+.eyebrow { font-size: .72rem; letter-spacing: .16em; font-weight: 700; color: #42665b; margin-bottom: 12px; }
+.switches { display: flex; flex-wrap: wrap; gap: 12px; margin: 22px 0; }
+.switches a { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 13px 20px; border: 1px solid #174c3f; background: #174c3f; color: white; border-radius: 14px; font-size: 1rem; font-weight: 700; box-shadow: 0 3px 0 #10382f; }
+.switches a:hover { background: #28654f; }
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; }
+.panel { min-width:0; background: white; border: 1px solid #e0e7e2; border-radius: 24px; padding: 28px; box-shadow: 0 8px 28px #23403806; }
+.main img, .main video, .main audio { max-width:100%; }.main select, .main input, .main textarea { min-width:0; max-width:100%; }
+.panel h2 { color: #163d38; font-size: 1.6rem; margin-bottom: 18px; letter-spacing: -.025em; }
+.panel h3 { color: #163d38; margin-bottom: 8px; }
+.panel p { color: #51615a; margin: 12px 0; line-height: 1.65; }
+.roster { display: grid; gap: 12px; margin: 24px 0; }
+.learner { display: flex; align-items: center; gap: 14px; border: 1px solid #dfe7e1; border-radius: 16px; padding: 18px; background: #fbfcfa; text-align: left; color: #163d38; cursor: pointer; width: 100%; }
+.learner small { display: block; margin-top: 3px; color: #5c7168; }
+.selected { border-color: #5b8a70; background: #eff7ed; }
+.initial { display: grid; place-items: center; background: #dfebdb; color: #335b42; border-radius: 14px; width: 44px; height: 44px; font-weight: 700; flex-shrink: 0; }
+.badge { margin-left: auto; font-size: .7rem; border-radius: 12px; padding: 4px 9px; background: #e5eee5; }
+.detail { margin-top: 24px; border-top: 1px solid #e0e7e2; padding-top: 24px; }
+.form { display: grid; gap: 16px; margin-top: 22px; }
+.form label { display: grid; gap: 7px; font-size: .9rem; font-weight: 600; color: #34564b; }
+.form input:not([type=checkbox]), .form select, .form textarea { width: 100%; padding: 12px 14px; border: 1px solid #cad9cf; background: #fff; border-radius: 10px; color: #183d32; font: inherit; }
+.form textarea { min-height: 100px; resize: vertical; }
+.form .check { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; }
+.check input { margin-top: 5px; accent-color: #2e6b50; }
+.form button, .linkButton { display: inline-block; background: #214e3e; color: white; min-height: 50px; padding: 14px 22px; border-radius: 14px; border: 1px solid #174c3f; font: inherit; font-weight: 700; box-shadow: 0 3px 0 #10382f; cursor: pointer; }
+.form button:disabled { opacity: 1; background: #e0e7e1; color: #425a4b; cursor: wait; }
+.hint { font-size: .8rem; }
+.linkButton[aria-pressed="true"] { background:#ecd184; color:#173d32; border-color:#ad8f38; box-shadow:0 3px 0 #c5ac65; }
+.phraseGrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; margin: 26px 0; }
+.phraseGrid button { border: 1px solid #d7e5dc; border-radius: 20px; padding: 22px; background: #f5f9f1; cursor: pointer; color: #40664c; text-align: center; }
+.phraseGrid span { display: block; font-size: 2.8rem; margin-bottom: 10px; color: #8ba880; }
+.phraseGrid strong { font-size: .95rem; }
+.outcomes { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 22px; }
+.outcomes strong { display: block; font-size: 2rem; color: #28583f; }
+.outcomes span { font-size: .85rem; text-transform: capitalize; }
+.error { background: #fff0e9; border: 1px solid #f0c5b7; border-radius: 12px; padding: 16px; margin: 18px 0; color: #8a302a; }
+.success { background: #eff8ed; padding: 16px; border-radius: 12px; margin: 18px 0; color: #285537; }
+.main :focus-visible { outline: 3px solid #d39a18; outline-offset: 3px; }
+.recordingOptions { margin: 14px 0; font-size: .8rem; color: #3c5e4b; }.recordingOptions summary { cursor: pointer; padding: 8px 0; }.recordMic { display: inline-flex; align-items: center; gap: 12px; border-radius: 30px; background: #174c3f; padding: 15px 24px; color: white; border: 0; }
+@media(max-width: 760px) { .layout { grid-template-columns: 1fr; } .hero { padding: 26px; } .main { padding: 16px; } .panel { padding: 22px; } }
+
+.practiceAreas { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; margin: 24px 0; }.practiceAreas a { display: flex; flex-direction: column; gap: 7px; padding: 20px; border: 1px solid #9eb8a8; border-radius: 18px; background: #fff; color: #174c3f; box-shadow: 0 4px 0 #d8e4dc; }.practiceAreas a:hover { background: #edf5ed; border-color: #174c3f; }.practiceAreas strong { font-size: 1.05rem; }.practiceAreas span { font-size: .9rem; color: #3d5c4b; }@media(max-width:760px) { .practiceAreas { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.activityMetrics { grid-template-columns:repeat(5,minmax(0,1fr)); }
+@media(max-width:900px){.activityMetrics { grid-template-columns:repeat(3,minmax(0,1fr)); }}
+@media(max-width:600px){.activityMetrics { grid-template-columns:repeat(2,minmax(0,1fr)); }}
