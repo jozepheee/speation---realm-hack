@@ -1,0 +1,302 @@
+/* The grown-up corner: a calm, readable page (no bakery scene). */
+.grownups {
+  min-height: 100dvh;
+  padding: 84px 16px 48px;
+  background: var(--cream);
+  animation: screen-in 280ms ease-out;
+}
+
+.grownups__page {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: min(960px, 100%);
+  margin: 0 auto;
+}
+
+.grownups__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.grownups__header .btn {
+  min-height: 52px;
+  padding: 0 24px;
+  font-size: 1.15rem;
+}
+
+.grownups__kicker {
+  color: var(--plum-soft);
+  font-size: 0.95rem;
+}
+
+.grownups h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 700;
+}
+
+.grownups__h2 {
+  margin: 10px 0 0;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.grownups__note {
+  max-width: 70ch;
+  color: var(--plum-soft);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.gu-card {
+  padding: 18px 20px;
+  border-radius: 22px;
+  background: var(--paper);
+  box-shadow: 0 5px 0 var(--line);
+}
+
+.gu-glance {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.gu-glance__label {
+  display: block;
+  color: var(--plum-soft);
+  font-size: 0.95rem;
+}
+
+.gu-glance__value {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.gu-tip {
+  padding: 14px 18px;
+  border-left: 6px solid var(--purple);
+  border-radius: 14px;
+  background: var(--lilac);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.gu-sounds {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.gu-sound--focus {
+  box-shadow:
+    0 0 0 3px var(--purple),
+    0 5px 0 var(--purple-deep);
+}
+
+.gu-sound__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.gu-sound__icon {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.gu-sound h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.gu-sound h3 span {
+  color: var(--plum-soft);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.gu-badge {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--purple);
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.gu-sound__empty {
+  color: var(--plum-soft);
+}
+
+.gu-stats {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 14px;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.gu-stats dt {
+  color: var(--plum-soft);
+  font-weight: 700;
+}
+
+.gu-stats dd {
+  margin: 0;
+  font-weight: 800;
+}
+
+.gu-small {
+  color: var(--plum-soft);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.gu-toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.gu-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 18px;
+  border: 2px solid var(--lavender-deep);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--plum-soft);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.gu-toggle__dot {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--lavender-deep);
+  border-radius: 50%;
+  background: #fff;
+}
+
+.gu-toggle--on {
+  border-color: var(--purple);
+  background: var(--lilac);
+  color: var(--plum);
+}
+
+.gu-toggle--on .gu-toggle__dot {
+  border-color: var(--purple);
+  background: var(--purple) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center / 70% no-repeat;
+}
+
+.gu-resources {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gu-resources li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.gu-resources a {
+  color: var(--purple-deep);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.gu-resources__source {
+  color: var(--plum-soft);
+  font-size: 0.85rem;
+}
+
+.gu-privacy {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-weight: 600;
+}
+
+/* The math check before the grown-up corner */
+.gate-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.gate-form label {
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.gate-input {
+  width: 8ch;
+  min-height: 56px;
+  border: 3px solid var(--lavender-deep);
+  border-radius: 16px;
+  font: inherit;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.gate-input:focus {
+  border-color: var(--purple);
+  outline: none;
+}
+
+.gate-wrong {
+  color: var(--plum-soft);
+}
+
+/* The small, tucked-away button on the start screen */
+.corner-grownups {
+  position: absolute;
+  top: 18px;
+  right: clamp(14px, 3vw, 32px);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 0 14px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 253, 249, 0.7);
+  color: var(--wood-text);
+  font-size: 0.85rem;
+  font-weight: 800;
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+.corner-grownups:hover,
+.corner-grownups:focus-visible {
+  opacity: 1;
+}

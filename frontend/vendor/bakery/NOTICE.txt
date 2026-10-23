@@ -1,0 +1,155 @@
+The Speakery integration
+
+Original interface, artwork, teaching content and recorded prompts are from the
+user-supplied TheSpeakery-main project in C:/recdd/ref projects. The user explicitly
+authorised direct reuse on October 22, 2026. Original authorship is retained.
+
+Speation modifications: scoped styling/storage, authenticated recording and audio
+assessment, cancellation/error handling, and removal of demonstration grading.
+The original source README is retained beside this notice. Teaching illustrations
+remain educational drafts, not validated measurements of the learner's mouth.
+
+Original recording lines and artwork should retain their upstream provenance
+when this integration is redistributed.
+
+
+--- Upstream project README (preserved as supplied) ---
+
+# The Speakery
+
+A cozy bakery game where kids practice the R, S, and K sounds. The child says
+magic words out loud, and each correct word bakes the next part of the treat.
+
+## Run it
+
+You need [Node.js](https://nodejs.org) installed.
+
+```
+npm install
+npm run dev
+```
+
+Then open the link it prints (usually http://localhost:5173) in **Google Chrome**.
+Chrome and Edge can listen to speech. Safari only works if Dictation is on in
+Mac settings. Firefox, Brave, and Arc can't listen.
+
+Other commands:
+
+- `npm run lint` checks the code for mistakes
+- `npm run build` makes the final version for hosting (in `dist/`)
+
+## Demo backup
+
+If speech recognition acts up during the live demo, tap the mic and then press
+**Y** on the keyboard to count the word as correct, **N** to count it as missed,
+or **M** to count it as a near miss (like hearing "way" for "ray"), so the dragon
+gives a coaching tip.
+Kids can also always tap "Keep baking" on the practice screen.
+
+## Where things live
+
+| What | Where |
+| --- | --- |
+| Practice words, treats, and tips | `src/data/sounds.js` |
+| Game rules (what happens next) | `src/game/gameReducer.js` |
+| Listening and talking | `src/speech/` |
+| Screens | `src/screens/` |
+| Dragon, buttons, mic | `src/components/` |
+| Colors and animations | `src/styles.css` |
+| Art and sounds | `public/assets/` |
+
+## Adding art
+
+The bakery, counter, and treats are stand-in SVG pictures in the art kit style.
+To swap in final art, drop a file into `public/assets/` and point to it:
+
+- Backgrounds: `backgrounds/bg-kitchen.svg` and `backgrounds/bg-counter.svg`
+  (used in `src/styles.css`)
+- Treats: `treats/treat-smore-1.svg` to `-5`, `treat-roll-1` to `-5`,
+  `treat-cupcake-1` to `-5`. Picture 1 is the start, and each word adds the next.
+  Paths are set in `src/data/sounds.js`. `tools/make_treats.py` redraws the stand-ins.
+
+The dragon's body is `dragon/body/dragon-body-faceless.png` (the original drawing
+is `dragon/dragon-original.png`). Its expressions are drawn in
+`src/components/Dragon.jsx`. If the team draws face pieces or finishes the Rive
+animation, that's the one file to change.
+
+## Recording the voice (ElevenLabs)
+
+The game can use natural ElevenLabs voices instead of the robotic browser voice.
+You record every line once, and the game plays the files. Until a line is
+recorded, the game uses the browser voice for it, so nothing breaks.
+
+1. Make an account at [elevenlabs.io](https://elevenlabs.io).
+2. Create an API key: click your profile, then **API Keys**. Copy it somewhere safe.
+   Don't paste it in chats or into the code.
+3. Pick a voice: open **Voices**, choose a warm, friendly one, and copy its **Voice ID**.
+4. In Terminal, in the project folder, run:
+   ```
+   cp .env.example .env
+   open -e .env
+   ```
+   Paste your key after `ELEVENLABS_API_KEY=` and the voice ID after
+   `ELEVENLABS_VOICE_ID=`, then save. The `.env` file stays on your computer and
+   is never uploaded (it's in `.gitignore`).
+5. Record everything:
+   ```
+   npm run voice
+   ```
+   The mp3s land in `public/assets/voice/`. Then run `npm run dev` and listen.
+
+There are 116 lines (about 7,100 characters, which is what ElevenLabs counts).
+Rerunning only records new or changed lines, so it costs much less.
+Running it again only records new or changed lines. To switch voices, change
+`ELEVENLABS_VOICE_ID` and run `npm run voice -- --all`.
+
+All spoken lines live in `src/speech/lines.js`. If you change a line or a word
+in `src/data/sounds.js`, run `npm run voice` again to record it.
+
+## Testing speech
+
+Open http://localhost:5173/?debug to see what the browser heard on each try,
+and why a try failed. Nothing is saved; it only shows the latest try.
+
+## Adding treat animations (Rive)
+
+Each baking step can play a Rive animation when the child says the word, like
+batter pouring into the liner. Then the step's picture appears.
+
+1. In Rive, make one **timeline animation** per step (not a looping one). Give
+   the artboard a **transparent background**, and match the size and position
+   of the treat sprites, so the first frame looks like the "before" sprite and
+   the last frame like the "after" sprite.
+2. Export the `.riv` file into `public/assets/animations/` (for example `cupcake.riv`).
+3. In `src/data/sounds.js`, add `animation` to that step:
+   `animation: { file: '/assets/animations/cupcake.riv', name: 'pour' }`
+   (`name` is the animation's name in Rive. Add `artboard: '...'` if there's more than one.)
+
+If a file is missing or broken, the game skips the animation and shows the sprite.
+
+## Grown-up corner
+
+On the start screen, tap **Grown-ups** (top-right corner) and answer the math
+question. It shows practice time and how each sound is going, lets a grown-up
+choose which sounds to practice, and links to trusted resources. Everything is
+saved on the device only. For a demo, open the game with `?debug` and use the
+shelf buttons to unlock "Feed the dragon" quickly.
+
+## R sound check (tuning)
+
+R words also check whether the R sounded like a W (the browser alone can't
+tell "bwown" from "brown"). Open the game with `?debug` and say an R word: the
+debug box shows `R check: r / w / unsure (score 0.xx)`. The score runs from 0
+(sounds like a W) to 1 (sounds like an R). At or below `W_MAX` (0.2) the try
+counts as a W-for-R swap; in between, the game trusts the browser. If clear R's
+get flagged as W, lower `W_MAX` in `src/speech/rSoundCheck.js` (for example to
+0.1). If W's slip through, raise it (for example to 0.3).
+
+## Treat pictures
+
+The cinnamon roll and cupcake use the team's sprites (PNG files in
+`art/treat-sprites/`, named `treat-roll-1.png` to `treat-roll-5.png` and
+`treat-cupcake-1.png` to `treat-cupcake-5.png`). To update one, replace the PNG
+and run `python3 tools/place_sprites.py`. It centers each sprite on its plate or
+board and rebuilds the pictures in `public/assets/treats/`. The s'more is drawn
+by `tools/make_treats.py`.

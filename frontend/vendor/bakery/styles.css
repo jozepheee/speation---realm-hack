@@ -1,0 +1,1444 @@
+/* The Speakery styles. Colors match "The Speakery Art Kit". */
+
+:root {
+  --cream: #fcf4ea;
+  --paper: #fffdf9;
+  --plum: #3b2350;
+  --plum-soft: #6b5878;
+  --purple: #7c4dDB;
+  --purple-deep: #5b33ae;
+  --lavender: #e2cffd;
+  --lavender-deep: #c7aaf5;
+  --lilac: #f1e8ff;
+  --line: #ecdcc6;
+  --wood-text: #5a3a1e;
+  --sun: #ffc23d;
+  --pink: #f06d8a;
+
+  --font-display: 'Fredoka', 'Nunito', system-ui, sans-serif;
+  --font-body: 'Nunito', system-ui, sans-serif;
+
+  /* Scene layout */
+  --counter-h: 28dvh;
+  --dragon-w: clamp(220px, 25vw, 380px);
+  --dragon-x: 7vw;
+  --side-left: calc(var(--dragon-x) + var(--dragon-w) + 1vw);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--plum);
+  font-family: var(--font-body);
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 4px solid var(--plum);
+  outline-offset: 4px;
+}
+
+/* ---------- Scene layers: wall, dragon, counter, game UI ---------- */
+
+.scene {
+  position: relative;
+  height: 100dvh;
+  min-height: 580px;
+  overflow: hidden;
+  animation: screen-in 280ms ease-out;
+}
+
+@keyframes screen-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.scene__wall {
+  position: absolute;
+  inset: 0;
+  background: url('/bakery/assets/backgrounds/bg-kitchen.svg') center 70% / cover no-repeat var(--cream);
+}
+
+/* Practice uses the same kitchen, softly blurred, so the card stands out. */
+.scene--calm .scene__wall {
+  inset: -24px;
+  filter: blur(7px) saturate(0.9);
+  opacity: 0.75;
+}
+
+.scene__counter {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 2;
+  height: var(--counter-h);
+  background: url('/bakery/assets/backgrounds/bg-counter.svg') center top / cover no-repeat #e2b886;
+}
+
+.scene__dragon {
+  position: absolute;
+  z-index: 1;
+  left: var(--dragon-x);
+  bottom: var(--counter-h);
+  width: var(--dragon-w);
+  /* Sink the dragon behind the counter so he peeks over it. */
+  translate: 0 34%;
+}
+
+.scene--dragon-center .scene__dragon {
+  left: 50%;
+  translate: -50% 30%;
+  --dragon-w: clamp(240px, 28vw, 420px);
+}
+
+.scene__ui {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.scene__ui > * {
+  pointer-events: auto;
+}
+
+/* The dragon's little speech bubble, up by his head. */
+.dragon-says {
+  position: absolute;
+  top: 2%;
+  left: 74%;
+  z-index: 4;
+  padding: 10px 18px;
+  border-radius: 22px 22px 22px 6px;
+  background: var(--paper);
+  box-shadow: 0 5px 0 var(--line);
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 1.7vw, 1.4rem);
+  font-weight: 600;
+  white-space: nowrap;
+  animation: pop-in 380ms cubic-bezier(0.3, 1.6, 0.6, 1);
+}
+
+@keyframes pop-in {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+}
+
+.scene--calm .dragon-says {
+  top: -20%;
+  left: 0;
+  max-width: 95%;
+  white-space: normal;
+}
+
+/* ---------- Regions on top of the scene ---------- */
+
+/* Big title at the top center */
+.headline {
+  position: absolute;
+  top: clamp(64px, 9dvh, 92px);
+  left: 50%;
+  translate: -50% 0;
+  width: min(900px, 92vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+
+.headline__small {
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  font-weight: 800;
+  color: var(--plum-soft);
+}
+
+.headline__row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.headline__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.6vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+/* Space between the headline and the counter, beside the dragon */
+.center-zone {
+  position: absolute;
+  top: clamp(170px, 26dvh, 230px);
+  bottom: calc(var(--counter-h) + 2dvh);
+  left: var(--side-left);
+  right: 4vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.center-zone > * {
+  pointer-events: auto;
+}
+
+.center-zone--right {
+  justify-content: flex-end;
+  padding-right: 4vw;
+}
+
+.center-zone--top {
+  align-items: flex-start;
+  bottom: auto;
+}
+
+/* Something sitting on the counter top, center stage */
+.on-counter {
+  position: absolute;
+  left: 52%;
+  bottom: calc(var(--counter-h) - 4.5dvh);
+  width: clamp(200px, 28vw, 360px);
+  aspect-ratio: 1;
+  translate: -50% 0;
+}
+
+.treat__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.on-counter--pop .treat__img {
+  animation: treat-pop 520ms cubic-bezier(0.3, 1.7, 0.6, 1);
+}
+
+@keyframes treat-pop {
+  0% {
+    transform: scale(0.75);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* The front of the counter, where the main button or mic goes */
+.counter-front {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: var(--counter-h);
+  padding: 4dvh 16px 3dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.counter-hint {
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: rgba(255, 253, 249, 0.9);
+  color: var(--wood-text);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+/* Little card on the right showing the order */
+.order-card {
+  position: absolute;
+  right: 5vw;
+  bottom: calc(var(--counter-h) + 4dvh);
+  width: clamp(110px, 12vw, 170px);
+  aspect-ratio: 1;
+  padding: 12px;
+  border-radius: 28px;
+  background: rgba(255, 253, 249, 0.92);
+  box-shadow: 0 6px 0 var(--line);
+}
+
+.order-card .art {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 72px;
+  padding: 0 40px;
+  border: none;
+  border-radius: 999px;
+  background: var(--lavender);
+  color: #331a63;
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 6px 0 var(--lavender-deep);
+  transition: transform 90ms ease, box-shadow 90ms ease;
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(4px) scale(0.98, 0.96);
+  box-shadow: 0 2px 0 var(--lavender-deep);
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.btn--xl {
+  min-height: 88px;
+  padding: 0 56px;
+  font-size: 2.3rem;
+}
+
+.btn--strong {
+  background: var(--purple);
+  color: #fff;
+  box-shadow: 0 6px 0 var(--purple-deep);
+}
+
+.btn--strong:active:not(:disabled) {
+  box-shadow: 0 2px 0 var(--purple-deep);
+}
+
+.btn--link {
+  min-height: 44px;
+  padding: 0 16px;
+  background: none;
+  box-shadow: none;
+  color: var(--wood-text);
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.btn--link:active:not(:disabled) {
+  box-shadow: none;
+}
+
+.icon-btn {
+  display: inline-grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border: none;
+  border-radius: 50%;
+  background: #fff3e2;
+  color: #6b4a2e;
+  cursor: pointer;
+  box-shadow: 0 4px 0 var(--line);
+  transition: transform 90ms ease, box-shadow 90ms ease;
+}
+
+.icon-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 var(--line);
+}
+
+.icon-btn--speak {
+  background: var(--lilac);
+  color: var(--purple-deep);
+  box-shadow: 0 4px 0 #dccafa;
+}
+
+/* ---------- Top bar ---------- */
+
+.topbar {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 56px 1fr 56px;
+  align-items: center;
+  padding: 14px clamp(14px, 3vw, 32px);
+  pointer-events: none;
+}
+
+.topbar > * {
+  pointer-events: auto;
+}
+
+.progress {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.progress li {
+  width: 34px;
+  height: 12px;
+  border-radius: 6px;
+  background: #ece2f6;
+  transition: width 300ms ease;
+}
+
+.progress li.is-done {
+  background: var(--purple);
+}
+
+.progress li.is-now {
+  width: 56px;
+  background: #b998f3;
+}
+
+/* ---------- Start screen ---------- */
+
+.hero {
+  position: absolute;
+  top: clamp(70px, 10dvh, 110px);
+  left: 50%;
+  translate: -50% 0;
+  width: min(900px, 92vw);
+  text-align: center;
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(3.4rem, 9vw, 7rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--plum);
+}
+
+.hero__tagline {
+  margin-top: 10px;
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  font-weight: 800;
+  color: var(--plum-soft);
+}
+
+/* ---------- Pick a sound ---------- */
+
+.sound-cards {
+  display: flex;
+  justify-content: center;
+  gap: clamp(10px, 1.6vw, 20px);
+}
+
+.sound-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  width: clamp(110px, 15vw, 190px);
+  padding: 14px 10px 16px;
+  border: 4px solid transparent;
+  border-radius: 30px;
+  background: var(--paper);
+  cursor: pointer;
+  box-shadow: 0 6px 0 var(--line);
+  transition: transform 120ms ease;
+}
+
+.sound-card:active {
+  transform: translateY(4px);
+}
+
+.sound-card.is-selected {
+  border-color: var(--purple);
+  background: #f8f3ff;
+  box-shadow: 0 6px 0 #d6c4fa;
+}
+
+.sound-card__icon {
+  width: clamp(64px, 8vw, 96px);
+  height: clamp(64px, 8vw, 96px);
+  object-fit: contain;
+}
+
+.sound-card__letter {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5.5vw, 4.4rem);
+  font-weight: 700;
+  line-height: 0.95;
+}
+
+.sound-card.is-selected .sound-card__letter {
+  color: var(--purple);
+}
+
+.sound-card__example {
+  font-size: clamp(0.85rem, 1.2vw, 1rem);
+  font-weight: 800;
+  color: var(--plum-soft);
+}
+
+.sound-card__check {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--purple);
+  color: #fff;
+}
+
+/* ---------- Order ticket ---------- */
+
+.ticket {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: min(340px, 100%);
+  padding: 30px 24px 22px;
+  border-radius: 28px;
+  background: var(--paper);
+  box-shadow: 0 8px 0 var(--line);
+  rotate: 2deg;
+  animation: ticket-in 520ms cubic-bezier(0.3, 1.5, 0.6, 1);
+}
+
+@keyframes ticket-in {
+  from {
+    translate: 0 -40px;
+    rotate: -6deg;
+    opacity: 0;
+  }
+}
+
+.ticket__pin {
+  position: absolute;
+  top: -14px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--purple);
+  box-shadow: 0 4px 0 var(--purple-deep);
+}
+
+.ticket__title {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--purple-deep);
+}
+
+.ticket__treat {
+  width: clamp(130px, 16vw, 190px);
+  height: clamp(130px, 16vw, 190px);
+  object-fit: contain;
+}
+
+.ticket__line {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* ---------- Placeholder for missing art ---------- */
+
+.art-placeholder {
+  display: grid;
+  place-items: center;
+  padding: 8px;
+  border: 3px dashed #d9c3a3;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.6);
+  color: #7a5e40;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Microphone ---------- */
+
+.mic {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  column-gap: 14px;
+  row-gap: 4px;
+}
+
+.mic__button {
+  display: grid;
+  place-items: center;
+  width: clamp(92px, 12dvh, 112px);
+  height: clamp(92px, 12dvh, 112px);
+  border: 6px solid #fff;
+  border-radius: 50%;
+  background: var(--purple);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 6px 0 var(--purple-deep);
+  transition: transform 90ms ease, box-shadow 90ms ease;
+}
+
+.mic__button:active:not(:disabled) {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 var(--purple-deep);
+}
+
+.mic__button:disabled {
+  cursor: default;
+}
+
+.mic--listening .mic__button {
+  animation: mic-pulse 1.2s ease-out infinite;
+}
+
+@keyframes mic-pulse {
+  0% {
+    box-shadow: 0 6px 0 var(--purple-deep), 0 0 0 0 rgba(124, 77, 219, 0.5);
+  }
+  100% {
+    box-shadow: 0 6px 0 var(--purple-deep), 0 0 0 28px rgba(124, 77, 219, 0);
+  }
+}
+
+.mic__wave {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 60px;
+}
+
+.mic__wave:first-child {
+  justify-content: flex-end;
+}
+
+.mic__wave span {
+  width: 7px;
+  height: 12px;
+  border-radius: 4px;
+  background: #fff8ee;
+  opacity: 0.7;
+}
+
+.mic--listening .mic__wave span {
+  background: var(--purple);
+  opacity: 0.9;
+  animation: wave 0.8s ease-in-out infinite alternate;
+  animation-delay: calc(var(--i) * -0.13s);
+}
+
+@keyframes wave {
+  from {
+    transform: scaleY(0.6);
+  }
+  to {
+    transform: scaleY(3.6);
+  }
+}
+
+.mic__label {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--wood-text);
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+/* ---------- Messages ---------- */
+
+.notice {
+  max-width: 540px;
+  padding: 12px 18px;
+  border: 2px solid #f1d9a6;
+  border-radius: 18px;
+  background: #fffaf0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.target-letter {
+  color: var(--purple);
+  text-decoration: underline;
+  text-decoration-thickness: 0.09em;
+  text-underline-offset: 0.12em;
+}
+
+.icon-btn--turtle {
+  background: #e3f3d8;
+  box-shadow: 0 4px 0 #c3e2ad;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* "Now you try! Say 'see'" pill, sitting on the counter edge */
+.practice-target {
+  position: absolute;
+  left: 50%;
+  bottom: calc(var(--counter-h) + 10px);
+  translate: -50% 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: min(640px, 94vw);
+  padding: 6px 8px 6px 20px;
+  border-radius: 999px;
+  background: var(--purple);
+  color: #fff;
+  box-shadow: 0 5px 0 var(--purple-deep);
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.practice-target:has(> span:only-child) {
+  white-space: normal;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.practice-target__label {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.practice-target__say {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.practice-target .target-letter {
+  color: #ffd15c;
+}
+
+.practice-target .icon-btn {
+  width: 46px;
+  height: 46px;
+}
+
+/* ---------- Grown-up help ---------- */
+
+.grownup-link {
+  position: absolute;
+  right: clamp(10px, 2vw, 24px);
+  bottom: 10px;
+  min-height: 44px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(255, 253, 249, 0.85);
+  color: var(--wood-text);
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.grownup-link--highlight {
+  background: var(--paper);
+  color: var(--purple-deep);
+  box-shadow: 0 0 0 4px var(--lavender-deep);
+  animation: help-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes help-pulse {
+  50% {
+    box-shadow: 0 0 0 9px rgba(199, 170, 245, 0.45);
+  }
+}
+
+.grownup-dialog {
+  width: min(440px, 92vw);
+  padding: 26px 26px 18px;
+  border: none;
+  border-radius: 28px;
+  background: var(--paper);
+  color: var(--plum);
+  text-align: center;
+  box-shadow: 0 10px 0 var(--line);
+}
+
+.grownup-dialog[open] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.grownup-dialog::backdrop {
+  background: rgba(59, 35, 80, 0.45);
+}
+
+.grownup-dialog h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.grownup-dialog p {
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--plum-soft);
+}
+
+.hold-btn {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  min-height: 64px;
+  border: none;
+  border-radius: 999px;
+  background: var(--lilac);
+  color: var(--purple-deep);
+  font-size: 1.1rem;
+  font-weight: 800;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+
+.hold-btn__fill {
+  position: absolute;
+  inset: 0;
+  background: var(--lavender-deep);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.hold-btn.is-holding .hold-btn__fill {
+  transform: scaleX(1);
+  transition: transform var(--hold-ms) linear;
+}
+
+.hold-btn__label {
+  position: relative;
+}
+
+/* ---------- Sound guide: mouth picture + steps table ---------- */
+
+.center-zone--guide {
+  top: clamp(150px, 21dvh, 190px);
+  bottom: calc(var(--counter-h) + 76px);
+  left: max(var(--side-left), 30vw);
+}
+
+.sound-guide {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2vw, 26px);
+  width: min(860px, 100%);
+  max-height: 100%;
+  padding: clamp(12px, 1.8dvh, 20px) clamp(14px, 1.8vw, 24px);
+  border-radius: 32px;
+  background: var(--paper);
+  box-shadow: 0 6px 0 #dccafa;
+  animation: pop-in 380ms cubic-bezier(0.3, 1.4, 0.6, 1);
+}
+
+.sound-guide__picture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+  width: clamp(170px, 24vw, 300px);
+}
+
+.mouth-diagram {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.mouth-diagram__ring {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ring-pulse 1.4s ease-out infinite;
+}
+
+@keyframes ring-pulse {
+  from {
+    transform: scale(0.7);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.mouth-diagram__air {
+  stroke-dasharray: 10 8;
+  animation: air-flow 0.8s linear infinite;
+}
+
+@keyframes air-flow {
+  to {
+    stroke-dashoffset: -36;
+  }
+}
+
+.mouth-diagram__pop,
+.mouth-diagram__hum {
+  animation: pop-fade 1.2s ease-in-out infinite;
+}
+
+@keyframes pop-fade {
+  50% {
+    opacity: 0.25;
+  }
+}
+
+.sound-guide__listen {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 18px;
+  border: none;
+  border-radius: 999px;
+  background: var(--lilac);
+  color: var(--purple-deep);
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #dccafa;
+}
+
+.sound-guide__listen:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #dccafa;
+}
+
+.guide-table {
+  flex: 1;
+  min-width: 0;
+  border-collapse: separate;
+  border-spacing: 0 6px;
+  font-size: clamp(0.95rem, 1.35vw, 1.12rem);
+  line-height: 1.3;
+}
+
+.guide-table th,
+.guide-table td {
+  padding: 8px 10px;
+  background: #fff6ea;
+  vertical-align: middle;
+}
+
+.guide-table th {
+  width: 7.5em;
+  border-radius: 16px 0 0 16px;
+  font-family: var(--font-display);
+  font-size: 1.1em;
+  font-weight: 600;
+  text-align: left;
+  white-space: nowrap;
+  color: var(--purple-deep);
+}
+
+.guide-table td {
+  font-weight: 700;
+}
+
+.guide-table__num {
+  display: inline-grid;
+  place-items: center;
+  width: 1.6em;
+  height: 1.6em;
+  margin-right: 8px;
+  border-radius: 50%;
+  background: var(--purple);
+  color: #fff;
+  font-size: 0.8em;
+}
+
+.guide-table__hear {
+  width: 1%;
+  border-radius: 0 16px 16px 0;
+}
+
+.guide-table__hear .icon-btn {
+  width: 44px;
+  height: 44px;
+}
+
+/* ---------- Finish: give the treat ---------- */
+
+.give {
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.give .treat__img {
+  transition: transform 150ms ease;
+  animation: treat-pop 600ms cubic-bezier(0.3, 1.7, 0.6, 1);
+}
+
+.give:hover .treat__img,
+.give:focus-visible .treat__img {
+  transform: scale(1.05) rotate(-3deg);
+}
+
+.sparkles svg {
+  position: absolute;
+  fill: var(--sun);
+  animation: twinkle 1.8s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    transform: scale(0.6) rotate(0deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1) rotate(20deg);
+    opacity: 1;
+  }
+}
+
+/* ---------- The dragon ---------- */
+
+.dragon {
+  position: relative;
+  width: 100%;
+}
+
+.dragon__body {
+  position: relative;
+  transform-origin: 50% 100%;
+}
+
+.dragon__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.dragon__face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Blink every few seconds */
+.dragon__blink {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: blink 4.6s infinite;
+}
+
+@keyframes blink {
+  0%,
+  93%,
+  100% {
+    transform: scaleY(1);
+  }
+  95% {
+    transform: scaleY(0.1);
+  }
+}
+
+.dragon__thought {
+  position: absolute;
+  top: -6%;
+  left: 60%;
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--purple);
+  animation: thought 900ms cubic-bezier(0.3, 1.6, 0.6, 1);
+}
+
+@keyframes thought {
+  from {
+    transform: translateY(20px) scale(0.4) rotate(-20deg);
+    opacity: 0;
+  }
+}
+
+.dragon--idle .dragon__body {
+  animation: bob 3s ease-in-out infinite;
+}
+
+.dragon--listening .dragon__body {
+  animation: lean 1.6s ease-in-out infinite;
+}
+
+.dragon--cheer .dragon__body {
+  animation: hop 0.55s cubic-bezier(0.3, 0, 0.5, 1) 3;
+}
+
+.dragon--confused .dragon__body {
+  animation: tilt 0.5s ease-out forwards;
+}
+
+.dragon--encourage .dragon__body {
+  animation: sway 2.4s ease-in-out infinite;
+}
+
+.dragon--yum .dragon__body {
+  animation: wiggle 0.9s ease-in-out infinite;
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0) scale(1, 1);
+  }
+  50% {
+    transform: translateY(-8px) scale(0.99, 1.01);
+  }
+}
+
+@keyframes lean {
+  0%,
+  100% {
+    transform: rotate(-3deg) translateY(-6px);
+  }
+  50% {
+    transform: rotate(-5deg) translateY(-10px);
+  }
+}
+
+@keyframes hop {
+  0% {
+    transform: translateY(0) scale(1.06, 0.92);
+  }
+  45% {
+    transform: translateY(-14%) scale(0.96, 1.05);
+  }
+  100% {
+    transform: translateY(0) scale(1, 1);
+  }
+}
+
+@keyframes tilt {
+  to {
+    transform: rotate(7deg) translateY(-4px);
+  }
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0) scale(1);
+  }
+  25% {
+    transform: rotate(-4deg) scale(1.02);
+  }
+  75% {
+    transform: rotate(4deg) scale(1.02);
+  }
+}
+
+.hearts {
+  position: absolute;
+  top: -10%;
+  left: 20%;
+  width: 70%;
+  height: 40%;
+}
+
+.hearts span {
+  position: absolute;
+  bottom: 0;
+  width: 24px;
+  height: 24px;
+  background: var(--pink);
+  transform: rotate(-45deg);
+  animation: heart-float 2.2s ease-out infinite;
+}
+
+.hearts span::before,
+.hearts span::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--pink);
+}
+
+.hearts span::before {
+  top: -12px;
+  left: 0;
+}
+
+.hearts span::after {
+  top: 0;
+  left: 12px;
+}
+
+.hearts span:nth-child(2) {
+  left: 45%;
+  animation-delay: 0.7s;
+  scale: 0.75;
+}
+
+.hearts span:nth-child(3) {
+  left: 85%;
+  animation-delay: 1.4s;
+  scale: 0.6;
+}
+
+@keyframes heart-float {
+  0% {
+    translate: 0 0;
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    translate: 0 -140px;
+    opacity: 0;
+  }
+}
+
+/* ---------- Testing panel (only with ?debug in the address) ---------- */
+
+.debug {
+  position: fixed;
+  right: 10px;
+  top: 76px;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: 280px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(30, 20, 40, 0.88);
+  color: #fff;
+  font: 600 13px/1.4 ui-monospace, monospace;
+}
+
+/* ---------- Phones held upright ---------- */
+
+@media (max-aspect-ratio: 4/5) {
+  :root {
+    --counter-h: 25dvh;
+    --dragon-w: 40vw;
+    --dragon-x: 2vw;
+    --side-left: 4vw;
+  }
+
+  .scene--dragon-center .scene__dragon {
+    --dragon-w: 58vw;
+  }
+
+  .scene__dragon {
+    translate: 0 30%;
+  }
+
+  .dragon-says {
+    left: 55%;
+    top: -14%;
+    font-size: 1rem;
+  }
+
+  .center-zone {
+    top: clamp(190px, 25dvh, 230px);
+    bottom: calc(var(--counter-h) + 22dvh);
+  }
+
+  .center-zone--right {
+    justify-content: center;
+    padding-right: 0;
+    bottom: calc(var(--counter-h) + 12dvh);
+  }
+
+  .on-counter {
+    left: auto;
+    right: 3vw;
+    translate: 0 0;
+    width: 50vw;
+  }
+
+  .order-card {
+    display: none;
+  }
+
+  .sound-card {
+    width: 28vw;
+  }
+
+  .ticket {
+    padding: 24px 18px 16px;
+  }
+
+  .ticket__treat {
+    width: 110px;
+    height: 110px;
+  }
+
+  .btn {
+    min-height: 64px;
+    font-size: 1.5rem;
+    padding: 0 30px;
+  }
+
+  .btn--xl {
+    min-height: 76px;
+    font-size: 1.9rem;
+  }
+
+  .mic__wave {
+    display: none;
+  }
+
+  .mic {
+    grid-template-columns: auto;
+  }
+
+  .center-zone--guide {
+    top: clamp(140px, 17dvh, 170px);
+    left: 3vw;
+    right: 3vw;
+    bottom: calc(var(--counter-h) + 68px);
+  }
+
+  .practice-target {
+    padding-left: 14px;
+    gap: 8px;
+  }
+
+  /* On phones the corner by the mic is crowded, so grown-up help moves to the top. */
+  .grownup-link {
+    top: 20px;
+    bottom: auto;
+  }
+
+  .practice-target__label {
+    font-size: 0.85rem;
+  }
+
+  .practice-target__say {
+    font-size: 1.3rem;
+  }
+
+  .sound-guide {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    overflow-y: auto;
+  }
+
+  .scene--calm {
+    --counter-h: 19dvh;
+  }
+
+  .scene--calm .counter-front {
+    padding: 10px 16px;
+  }
+
+  .sound-guide__picture {
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .sound-guide__picture .mouth-diagram {
+    width: min(48vw, 190px);
+  }
+
+  .sound-guide__listen {
+    flex-direction: column;
+    gap: 2px;
+    padding: 8px 12px;
+    border-radius: 18px;
+    font-size: 0.85rem;
+  }
+
+  .guide-table {
+    width: 100%;
+    font-size: 0.92rem;
+    border-spacing: 0 4px;
+  }
+
+  .guide-table th {
+    width: auto;
+    padding: 6px 8px;
+  }
+
+  .guide-table td {
+    padding: 6px 8px;
+  }
+
+  .guide-table__num {
+    display: none;
+  }
+}
+
+/* ---------- Less motion for people who ask for it ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
