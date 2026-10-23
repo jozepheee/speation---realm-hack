@@ -1,0 +1,2017 @@
+{
+  "generator": "mlphon==3.1.3",
+  "license": "MIT",
+  "source": "https://gitlab.com/smc/mlphon",
+  "audio_assessment": false,
+  "words": {
+    "മഴ": {
+      "word": "മഴ",
+      "variants": [
+        [
+          "m",
+          "a",
+          "ɻ",
+          "a"
+        ]
+      ],
+      "syllables": [
+        "മ",
+        "ഴ"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "m",
+                "tags": [
+                  "nasal",
+                  "labial"
+                ]
+              },
+              {
+                "ipa": "a",
+                "tags": [
+                  "inherentvowel"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "ɻ",
+                "tags": [
+                  "approximant",
+                  "retroflex"
+                ]
+              },
+              {
+                "ipa": "a",
+                "tags": [
+                  "inherentvowel"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "മല": {
+      "word": "മല",
+      "variants": [
+        [
+          "m",
+          "a",
+          "l",
+          "a"
+        ]
+      ],
+      "syllables": [
+        "മ",
+        "ല"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "m",
+                "tags": [
+                  "nasal",
+                  "labial"
+                ]
+              },
+              {
+                "ipa": "a",
+                "tags": [
+                  "inherentvowel"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "l",
+                "tags": [
+                  "lateral",
+                  "alveolar"
+                ]
+              },
+              {
+                "ipa": "a",
+                "tags": [
+                  "inherentvowel"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "മള": {
+      "word": "മള",
+      "variants": [
+        [
+          "m",
+          "a",
+          "ɭ",
+          "a"
+        ]
+      ],
+      "syllables": [
+        "മ",
+        "ള"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "m",
+                "tags": [
+                  "nasal",
+                  "labial"
+                ]
+              },
+              {
+                "ipa": "a",
+                "tags": [
+                  "inherentvowel"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "ɭ",
+                "tags": [
+                  "lateral",
+                  "retroflex"
+                ]
+              },
+              {
+                "ipa": "a",
+                "tags": [
+                  "inherentvowel"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "മാല": {
+      "word": "മാല",
+      "variants": [
+        [
+          "m",
+          "aː",
+          "l",
+          "a"
+        ]
+      ],
+      "syllables": [
+        "മാ",
+        "ല"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "m",
+                "tags": [
+                  "nasal",
+                  "labial"
+                ]
+              },
+              {
+                "ipa": "aː",
+                "tags": [
+                  "v_sign"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "l",
+                "tags": [
+                  "lateral",
+                  "alveolar"
+                ]
+              },
+              {
+                "ipa": "a",
+                "tags": [
+                  "inherentvowel"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "മരം": {
+      "word": "മരം",
+      "variants": [
+        [
+          "m",
+          "a",
+          "ɾ",
+          "a",
+          "m"
+        ]
+      ],
+      "syllables": [
+        "മ",
+        "രം"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "m",
+                "tags": [
+                  "nasal",
+                  "labial"
+                ]
+              },
+              {
+                "ipa": "a",
+                "tags": [
+                  "inherentvowel"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "ɾ",
+                "tags": [
+                  "flapped",
+                  "alveolar"
+                ]
+              },
+              {
+                "ipa": "a",
+                "tags": [
+                  "inherentvowel"
+                ]
+              },
+              {
+                "ipa": "m",
+                "tags": [
+                  "anuswara"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "വെള്ളം": {
+      "word": "വെള്ളം",
+      "variants": [
+        [
+          "ʋ",
+          "e",
+          "ɭ",
+          "ɭ",
+          "a",
+          "m"
+        ]
+      ],
+      "syllables": [
+        "വെ",
+        "ള്ളം"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "ʋ",
+                "tags": [
+                  "approximant",
+                  "labiodental"
+                ]
+              },
+              {
+                "ipa": "e",
+                "tags": [
+                  "v_sign"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "ɭ",
+                "tags": [
+                  "lateral",
+                  "retroflex",
+                  "virama"
+                ]
+              },
+              {
+                "ipa": "ɭ",
+                "tags": [
+                  "lateral",
+                  "retroflex"
+                ]
+              },
+              {
+                "ipa": "a",
+                "tags": [
+                  "inherentvowel"
+                ]
+              },
+              {
+                "ipa": "m",
+                "tags": [
+                  "anuswara"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "പാൽ": {
+      "word": "പാൽ",
+      "variants": [
+        [
+          "p",
+          "aː",
+          "l"
+        ]
+      ],
+      "syllables": [
+        "പാൽ"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "p",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "unaspirated",
+                  "labial"
+                ]
+              },
+              {
+                "ipa": "aː",
+                "tags": [
+                  "v_sign"
+                ]
+              },
+              {
+                "ipa": "l",
+                "tags": [
+                  "chil"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "പഴം": {
+      "word": "പഴം",
+      "variants": [
+        [
+          "p",
+          "a",
+          "ɻ",
+          "a",
+          "m"
+        ]
+      ],
+      "syllables": [
+        "പ",
+        "ഴം"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "p",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "unaspirated",
+                  "labial"
+                ]
+              },
+              {
+                "ipa": "a",
+                "tags": [
+                  "inherentvowel"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "ɻ",
+                "tags": [
+                  "approximant",
+                  "retroflex"
+                ]
+              },
+              {
+                "ipa": "a",
+                "tags": [
+                  "inherentvowel"
+                ]
+              },
+              {
+                "ipa": "m",
+                "tags": [
+                  "anuswara"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "വാഴ": {
+      "word": "വാഴ",
+      "variants": [
+        [
+          "ʋ",
+          "aː",
+          "ɻ",
+          "a"
+        ]
+      ],
+      "syllables": [
+        "വാ",
+        "ഴ"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "ʋ",
+                "tags": [
+                  "approximant",
+                  "labiodental"
+                ]
+              },
+              {
+                "ipa": "aː",
+                "tags": [
+                  "v_sign"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "ɻ",
+                "tags": [
+                  "approximant",
+                  "retroflex"
+                ]
+              },
+              {
+                "ipa": "a",
+                "tags": [
+                  "inherentvowel"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "വാല": {
+      "word": "വാല",
+      "variants": [
+        [
+          "ʋ",
+          "aː",
+          "l",
+          "a"
+        ]
+      ],
+      "syllables": [
+        "വാ",
+        "ല"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "ʋ",
+                "tags": [
+                  "approximant",
+                  "labiodental"
+                ]
+              },
+              {
+                "ipa": "aː",
+                "tags": [
+                  "v_sign"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "l",
+                "tags": [
+                  "lateral",
+                  "alveolar"
+                ]
+              },
+              {
+                "ipa": "a",
+                "tags": [
+                  "inherentvowel"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "വള": {
+      "word": "വള",
+      "variants": [
+        [
+          "ʋ",
+          "a",
+          "ɭ",
+          "a"
+        ]
+      ],
+      "syllables": [
+        "വ",
+        "ള"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "ʋ",
+                "tags": [
+                  "approximant",
+                  "labiodental"
+                ]
+              },
+              {
+                "ipa": "a",
+                "tags": [
+                  "inherentvowel"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "ɭ",
+                "tags": [
+                  "lateral",
+                  "retroflex"
+                ]
+              },
+              {
+                "ipa": "a",
+                "tags": [
+                  "inherentvowel"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "കളി": {
+      "word": "കളി",
+      "variants": [
+        [
+          "k",
+          "a",
+          "ɭ",
+          "i"
+        ]
+      ],
+      "syllables": [
+        "ക",
+        "ളി"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "k",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "unaspirated",
+                  "velar"
+                ]
+              },
+              {
+                "ipa": "a",
+                "tags": [
+                  "inherentvowel"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "ɭ",
+                "tags": [
+                  "lateral",
+                  "retroflex"
+                ]
+              },
+              {
+                "ipa": "i",
+                "tags": [
+                  "v_sign"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "കിളി": {
+      "word": "കിളി",
+      "variants": [
+        [
+          "k",
+          "i",
+          "ɭ",
+          "i"
+        ]
+      ],
+      "syllables": [
+        "കി",
+        "ളി"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "k",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "unaspirated",
+                  "velar"
+                ]
+              },
+              {
+                "ipa": "i",
+                "tags": [
+                  "v_sign"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "ɭ",
+                "tags": [
+                  "lateral",
+                  "retroflex"
+                ]
+              },
+              {
+                "ipa": "i",
+                "tags": [
+                  "v_sign"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "പട്ടം": {
+      "word": "പട്ടം",
+      "variants": [
+        [
+          "p",
+          "a",
+          "ʈ",
+          "ʈ",
+          "a",
+          "m"
+        ]
+      ],
+      "syllables": [
+        "പ",
+        "ട്ടം"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "p",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "unaspirated",
+                  "labial"
+                ]
+              },
+              {
+                "ipa": "a",
+                "tags": [
+                  "inherentvowel"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "ʈ",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "unaspirated",
+                  "retroflex",
+                  "virama"
+                ]
+              },
+              {
+                "ipa": "ʈ",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "unaspirated",
+                  "retroflex"
+                ]
+              },
+              {
+                "ipa": "a",
+                "tags": [
+                  "inherentvowel"
+                ]
+              },
+              {
+                "ipa": "m",
+                "tags": [
+                  "anuswara"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "പടം": {
+      "word": "പടം",
+      "variants": [
+        [
+          "p",
+          "a",
+          "ʈ",
+          "a",
+          "m"
+        ]
+      ],
+      "syllables": [
+        "പ",
+        "ടം"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "p",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "unaspirated",
+                  "labial"
+                ]
+              },
+              {
+                "ipa": "a",
+                "tags": [
+                  "inherentvowel"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "ʈ",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "unaspirated",
+                  "retroflex"
+                ]
+              },
+              {
+                "ipa": "a",
+                "tags": [
+                  "inherentvowel"
+                ]
+              },
+              {
+                "ipa": "m",
+                "tags": [
+                  "anuswara"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "കുട്ടി": {
+      "word": "കുട്ടി",
+      "variants": [
+        [
+          "k",
+          "u",
+          "ʈ",
+          "ʈ",
+          "i"
+        ]
+      ],
+      "syllables": [
+        "കു",
+        "ട്ടി"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "k",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "unaspirated",
+                  "velar"
+                ]
+              },
+              {
+                "ipa": "u",
+                "tags": [
+                  "v_sign"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "ʈ",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "unaspirated",
+                  "retroflex",
+                  "virama"
+                ]
+              },
+              {
+                "ipa": "ʈ",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "unaspirated",
+                  "retroflex"
+                ]
+              },
+              {
+                "ipa": "i",
+                "tags": [
+                  "v_sign"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "കുടി": {
+      "word": "കുടി",
+      "variants": [
+        [
+          "k",
+          "u",
+          "ʈ",
+          "i"
+        ]
+      ],
+      "syllables": [
+        "കു",
+        "ടി"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "k",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "unaspirated",
+                  "velar"
+                ]
+              },
+              {
+                "ipa": "u",
+                "tags": [
+                  "v_sign"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "ʈ",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "unaspirated",
+                  "retroflex"
+                ]
+              },
+              {
+                "ipa": "i",
+                "tags": [
+                  "v_sign"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "അമ്മ": {
+      "word": "അമ്മ",
+      "variants": [
+        [
+          "a",
+          "m",
+          "m",
+          "a"
+        ]
+      ],
+      "syllables": [
+        "അ",
+        "മ്മ"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "a",
+                "tags": [
+                  "vowel"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "m",
+                "tags": [
+                  "nasal",
+                  "labial",
+                  "virama"
+                ]
+              },
+              {
+                "ipa": "m",
+                "tags": [
+                  "nasal",
+                  "labial"
+                ]
+              },
+              {
+                "ipa": "a",
+                "tags": [
+                  "inherentvowel"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "അച്ഛൻ": {
+      "word": "അച്ഛൻ",
+      "variants": [
+        [
+          "a",
+          "t͡ʃ",
+          "t͡ʃʰ",
+          "a",
+          "n"
+        ]
+      ],
+      "syllables": [
+        "അ",
+        "ച്ഛൻ"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "a",
+                "tags": [
+                  "vowel"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "t͡ʃ",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "unaspirated",
+                  "palatal",
+                  "virama"
+                ]
+              },
+              {
+                "ipa": "t͡ʃʰ",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "aspirated",
+                  "palatal"
+                ]
+              },
+              {
+                "ipa": "a",
+                "tags": [
+                  "inherentvowel"
+                ]
+              },
+              {
+                "ipa": "n",
+                "tags": [
+                  "chil"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "വീട്": {
+      "word": "വീട്",
+      "variants": [
+        [
+          "ʋ",
+          "iː",
+          "ʈ",
+          "ə"
+        ]
+      ],
+      "syllables": [
+        "വീ",
+        "ട്"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "ʋ",
+                "tags": [
+                  "approximant",
+                  "labiodental"
+                ]
+              },
+              {
+                "ipa": "iː",
+                "tags": [
+                  "v_sign"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "ʈ",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "unaspirated",
+                  "retroflex"
+                ]
+              },
+              {
+                "ipa": "ə",
+                "tags": [
+                  "schwa"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "പൂച്ച": {
+      "word": "പൂച്ച",
+      "variants": [
+        [
+          "p",
+          "uː",
+          "t͡ʃ",
+          "t͡ʃ",
+          "a"
+        ]
+      ],
+      "syllables": [
+        "പൂ",
+        "ച്ച"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "p",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "unaspirated",
+                  "labial"
+                ]
+              },
+              {
+                "ipa": "uː",
+                "tags": [
+                  "v_sign"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "t͡ʃ",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "unaspirated",
+                  "palatal",
+                  "virama"
+                ]
+              },
+              {
+                "ipa": "t͡ʃ",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "unaspirated",
+                  "palatal"
+                ]
+              },
+              {
+                "ipa": "a",
+                "tags": [
+                  "inherentvowel"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "മീൻ": {
+      "word": "മീൻ",
+      "variants": [
+        [
+          "m",
+          "iː",
+          "n"
+        ]
+      ],
+      "syllables": [
+        "മീൻ"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "m",
+                "tags": [
+                  "nasal",
+                  "labial"
+                ]
+              },
+              {
+                "ipa": "iː",
+                "tags": [
+                  "v_sign"
+                ]
+              },
+              {
+                "ipa": "n",
+                "tags": [
+                  "chil"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "പൂവ്": {
+      "word": "പൂവ്",
+      "variants": [
+        [
+          "p",
+          "uː",
+          "ʋ",
+          "ə"
+        ]
+      ],
+      "syllables": [
+        "പൂ",
+        "വ്"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "p",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "unaspirated",
+                  "labial"
+                ]
+              },
+              {
+                "ipa": "uː",
+                "tags": [
+                  "v_sign"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "ʋ",
+                "tags": [
+                  "approximant",
+                  "labiodental"
+                ]
+              },
+              {
+                "ipa": "ə",
+                "tags": [
+                  "schwa"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "കാറ്റ്": {
+      "word": "കാറ്റ്",
+      "variants": [
+        [
+          "k",
+          "aː",
+          "ṯ",
+          "ṯ",
+          "ə"
+        ]
+      ],
+      "syllables": [
+        "കാ",
+        "റ്റ്"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "k",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "unaspirated",
+                  "velar"
+                ]
+              },
+              {
+                "ipa": "aː",
+                "tags": [
+                  "v_sign"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "ṯ",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "unaspirated",
+                  "alveolar",
+                  "virama"
+                ]
+              },
+              {
+                "ipa": "ṯ",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "unaspirated",
+                  "alveolar"
+                ]
+              },
+              {
+                "ipa": "ə",
+                "tags": [
+                  "schwa"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "കഥ": {
+      "word": "കഥ",
+      "variants": [
+        [
+          "k",
+          "a",
+          "t̪ʰ",
+          "a"
+        ]
+      ],
+      "syllables": [
+        "ക",
+        "ഥ"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "k",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "unaspirated",
+                  "velar"
+                ]
+              },
+              {
+                "ipa": "a",
+                "tags": [
+                  "inherentvowel"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "t̪ʰ",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "aspirated",
+                  "dental"
+                ]
+              },
+              {
+                "ipa": "a",
+                "tags": [
+                  "inherentvowel"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "പന്ത്": {
+      "word": "പന്ത്",
+      "variants": [
+        [
+          "p",
+          "a",
+          "n̪",
+          "t̪",
+          "ə"
+        ]
+      ],
+      "syllables": [
+        "പ",
+        "ന്ത്"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "p",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "unaspirated",
+                  "labial"
+                ]
+              },
+              {
+                "ipa": "a",
+                "tags": [
+                  "inherentvowel"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "n̪",
+                "tags": [
+                  "nasal",
+                  "dental",
+                  "virama"
+                ]
+              },
+              {
+                "ipa": "t̪",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "unaspirated",
+                  "dental"
+                ]
+              },
+              {
+                "ipa": "ə",
+                "tags": [
+                  "schwa"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "സൂര്യൻ": {
+      "word": "സൂര്യൻ",
+      "variants": [
+        [
+          "s",
+          "uː",
+          "ɾ",
+          "j",
+          "a",
+          "n"
+        ]
+      ],
+      "syllables": [
+        "സൂ",
+        "ര്യൻ"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "s",
+                "tags": [
+                  "fricative",
+                  "alveolar"
+                ]
+              },
+              {
+                "ipa": "uː",
+                "tags": [
+                  "v_sign"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "ɾ",
+                "tags": [
+                  "flapped",
+                  "alveolar",
+                  "virama"
+                ]
+              },
+              {
+                "ipa": "j",
+                "tags": [
+                  "glide",
+                  "palatal"
+                ]
+              },
+              {
+                "ipa": "a",
+                "tags": [
+                  "inherentvowel"
+                ]
+              },
+              {
+                "ipa": "n",
+                "tags": [
+                  "chil"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "ആപ്പിൾ": {
+      "word": "ആപ്പിൾ",
+      "variants": [
+        [
+          "aː",
+          "p",
+          "p",
+          "i",
+          "ɭ"
+        ]
+      ],
+      "syllables": [
+        "ആ",
+        "പ്പിൾ"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "aː",
+                "tags": [
+                  "vowel"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "p",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "unaspirated",
+                  "labial",
+                  "virama"
+                ]
+              },
+              {
+                "ipa": "p",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "unaspirated",
+                  "labial"
+                ]
+              },
+              {
+                "ipa": "i",
+                "tags": [
+                  "v_sign"
+                ]
+              },
+              {
+                "ipa": "ɭ",
+                "tags": [
+                  "chil"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "കാർ": {
+      "word": "കാർ",
+      "variants": [
+        [
+          "k",
+          "aː",
+          "r"
+        ]
+      ],
+      "syllables": [
+        "കാർ"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "k",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "unaspirated",
+                  "velar"
+                ]
+              },
+              {
+                "ipa": "aː",
+                "tags": [
+                  "v_sign"
+                ]
+              },
+              {
+                "ipa": "r",
+                "tags": [
+                  "chil"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "എനിക്ക്": {
+      "word": "എനിക്ക്",
+      "variants": [
+        [
+          "e",
+          "n",
+          "i",
+          "k",
+          "k",
+          "ə"
+        ]
+      ],
+      "syllables": [
+        "എ",
+        "നി",
+        "ക്ക്"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "e",
+                "tags": [
+                  "vowel"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "n",
+                "tags": [
+                  "nasal",
+                  "alveolar"
+                ]
+              },
+              {
+                "ipa": "i",
+                "tags": [
+                  "v_sign"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "k",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "unaspirated",
+                  "velar",
+                  "virama"
+                ]
+              },
+              {
+                "ipa": "k",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "unaspirated",
+                  "velar"
+                ]
+              },
+              {
+                "ipa": "ə",
+                "tags": [
+                  "schwa"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "വേണം": {
+      "word": "വേണം",
+      "variants": [
+        [
+          "ʋ",
+          "eː",
+          "ɳ",
+          "a",
+          "m"
+        ]
+      ],
+      "syllables": [
+        "വേ",
+        "ണം"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "ʋ",
+                "tags": [
+                  "approximant",
+                  "labiodental"
+                ]
+              },
+              {
+                "ipa": "eː",
+                "tags": [
+                  "v_sign"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "ɳ",
+                "tags": [
+                  "nasal",
+                  "retroflex"
+                ]
+              },
+              {
+                "ipa": "a",
+                "tags": [
+                  "inherentvowel"
+                ]
+              },
+              {
+                "ipa": "m",
+                "tags": [
+                  "anuswara"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "ഇന്ന്": {
+      "word": "ഇന്ന്",
+      "variants": [
+        [
+          "i",
+          "n̪",
+          "n̪",
+          "ə"
+        ]
+      ],
+      "syllables": [
+        "ഇ",
+        "ന്ന്"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "i",
+                "tags": [
+                  "vowel"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "n̪",
+                "tags": [
+                  "nasal",
+                  "dental",
+                  "virama"
+                ]
+              },
+              {
+                "ipa": "n̪",
+                "tags": [
+                  "nasal",
+                  "dental"
+                ]
+              },
+              {
+                "ipa": "ə",
+                "tags": [
+                  "schwa"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "നാളെ": {
+      "word": "നാളെ",
+      "variants": [
+        [
+          "n̪",
+          "aː",
+          "ɭ",
+          "e"
+        ]
+      ],
+      "syllables": [
+        "നാ",
+        "ളെ"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "n̪",
+                "tags": [
+                  "nasal",
+                  "dental"
+                ]
+              },
+              {
+                "ipa": "aː",
+                "tags": [
+                  "v_sign"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "ɭ",
+                "tags": [
+                  "lateral",
+                  "retroflex"
+                ]
+              },
+              {
+                "ipa": "e",
+                "tags": [
+                  "v_sign"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    "കേരളം": {
+      "word": "കേരളം",
+      "variants": [
+        [
+          "k",
+          "eː",
+          "ɾ",
+          "a",
+          "ɭ",
+          "a",
+          "m"
+        ]
+      ],
+      "syllables": [
+        "കേ",
+        "ര",
+        "ളം"
+      ],
+      "articulatory_variants": [
+        [
+          {
+            "phonemes": [
+              {
+                "ipa": "k",
+                "tags": [
+                  "plosive",
+                  "voiceless",
+                  "unaspirated",
+                  "velar"
+                ]
+              },
+              {
+                "ipa": "eː",
+                "tags": [
+                  "v_sign"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "ɾ",
+                "tags": [
+                  "flapped",
+                  "alveolar"
+                ]
+              },
+              {
+                "ipa": "a",
+                "tags": [
+                  "inherentvowel"
+                ]
+              }
+            ]
+          },
+          {
+            "phonemes": [
+              {
+                "ipa": "ɭ",
+                "tags": [
+                  "lateral",
+                  "retroflex"
+                ]
+              },
+              {
+                "ipa": "a",
+                "tags": [
+                  "inherentvowel"
+                ]
+              },
+              {
+                "ipa": "m",
+                "tags": [
+                  "anuswara"
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    }
+  }
+}
