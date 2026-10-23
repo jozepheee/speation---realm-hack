@@ -155,6 +155,7 @@ class SpeechRequest(BaseModel):
     language: Literal["en", "hi", "ml"]
     voice_id: uuid.UUID | None = None
     mouth_animation: bool = False
+    speaker: Literal['maya','asha','rohan','neha'] = 'maya'
 
 
 @router.post("/learners/{learner_id}/speak")
@@ -169,7 +170,9 @@ async def speak(learner_id: uuid.UUID, payload: SpeechRequest,
         raise HTTPException(404, "Voice profile not found")
     if voice and voice.provider_id.startswith('fish_ref:') and not consent.retain_audio_allowed:
         raise HTTPException(403,'Private audio retention permission is required for this voice reference')
-    speech = await synthesize(payload.text, payload.language, voice.provider_id if voice else None)
+    if voice and payload.speaker!='maya':raise HTTPException(422,'Choose a personal voice or a meeting participant, not both')
+    preset=getattr(settings,f'ELEVENLABS_{payload.speaker.upper()}_VOICE_ID',None) if payload.speaker!='maya' else None
+    speech = await synthesize(payload.text, payload.language, voice.provider_id if voice else preset)
     if payload.mouth_animation and payload.language=='en':
         from learners.mouth_animation import cues
         from starlette.concurrency import run_in_threadpool

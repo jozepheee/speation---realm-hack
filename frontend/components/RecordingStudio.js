@@ -22,6 +22,8 @@ export default function RecordingStudio({
   disabled = false,
   beforeRecord,
   meetingMode = false,
+  rehearsalMode = false,
+  manualFinish = false,
   autoStartToken = 0,
   autoStartOnMount = false,
   cancelToken = 0,
@@ -72,7 +74,8 @@ export default function RecordingStudio({
     generation = useRef(0),
     active = useRef(true);
   const lastAutoStart=useRef(autoStartOnMount?0:autoStartToken),lastCancel=useRef(cancelToken);
-  const maxSeconds = Math.min(maxDuration, ['sarvam','adapted_english'].includes(provider) ? 29 : 58);
+  const manualFinishRef=useRef(manualFinish);manualFinishRef.current=manualFinish;
+  const maxSeconds = Math.min(maxDuration, provider==='adapted_english'?29:(meetingMode||rehearsalMode)?178:provider==='sarvam'?29:58);
   const errorCallback=useRef(onError);errorCallback.current=onError;
   const captureStateCallback=useRef(onCaptureStateChange);captureStateCallback.current=onCaptureStateChange;
   useEffect(()=>{captureStateCallback.current?.(state);},[state]);
@@ -228,7 +231,7 @@ export default function RecordingStudio({
         measure();
         const elapsed = Math.floor((Date.now() - started) / 1000);
         setSeconds(elapsed);
-        if ((elapsed >= maxSeconds || (autoFinish||autoSubmit) && endpoint?.finished) && device.state === 'recording') device.stop();
+        if ((elapsed >= maxSeconds || !manualFinishRef.current && (autoFinish||autoSubmit) && endpoint?.finished) && device.state === 'recording') device.stop();
       }, 50);
     } catch (err) {
       release();
@@ -270,13 +273,14 @@ export default function RecordingStudio({
     data.append('recognition_mode', attempt.current.mode);
     data.append('dialect', attempt.current.dialect);
     data.append('recognize_audio',String(recognizeAudio));
+    if(meetingMode||rehearsalMode)data.append('rehearsal_capture','true');
     if(attempt.current.visualArticulation)data.append('visual_articulation',JSON.stringify(attempt.current.visualArticulation));
     try {
       const response = await portalApi(`/learners/${attempt.current.learnerId}/recordings`, {
         method: 'POST',
         body: data,
         signal: request.current.signal,
-        timeoutMs: recognizeAudio?60000:15000
+        timeoutMs: recognizeAudio?(meetingMode||rehearsalMode?180000:60000):15000
       });
       // The upload is acknowledged even if onRecorded replaces this component
       // with message confirmation before its async callback returns.
@@ -323,9 +327,9 @@ export default function RecordingStudio({
   useEffect(()=>{onBusyChange?.(locked);return()=>onBusyChange?.(false);},[locked,onBusyChange]);
   useEffect(()=>{onRecordingChange?.(state==='recording');return()=>onRecordingChange?.(false);},[state,onRecordingChange]);
   if(meetingMode)return <div data-meeting-recorder>
-    <button data-recording={state==='recording'} onClick={state==='recording'?()=>{if(recorder.current?.state==='recording')recorder.current.stop();}:start} disabled={disabled||(locked&&state!=='recording')||!learner.consent?.practice_allowed} aria-label={t(state==='recording'?'Send contribution now':'Take the floor')}><MicIcon/><span>{t(state==='recording'?'Listening…':state==='requesting'?'Waiting for microphone…':state==='sending'?'Transcribing your answer…':state==='processing'?'Preparing the next question…':'Take the floor')}</span></button>
+    <button data-recording={state==='recording'} onClick={state==='recording'?()=>{if(recorder.current?.state==='recording')recorder.current.stop();}:start} disabled={disabled||(locked&&state!=='recording')||!learner.consent?.practice_allowed} aria-label={t(state==='recording'?'Send contribution now':'Take the floor')}><MicIcon/><span>{t(state==='recording'?'Send contribution now':state==='requesting'?'Waiting for microphone…':state==='sending'?'Transcribing your answer…':state==='processing'?'Preparing the next question…':'Take the floor')}</span></button>
     {(state==='recording'||state==='requesting')&&<button onClick={cancel}>{t('Cancel recording')}</button>}
-    {state==='recording'&&<span role="status">{seconds}s · {t('Pause to send automatically')}</span>}
+    {state==='recording'&&<span role="status">{seconds}s / {maxSeconds}s · {t(manualFinish?'Take your time. Tap the microphone when you are done.':'Pause to send automatically')}{maxSeconds-seconds<=15&&<strong> · {t('Recording limit approaching. Finish this section; you can continue in another answer.')}</strong>}</span>}
     {clip&&!locked&&state!=='saved'&&<button onClick={()=>submit()} disabled={disabled}>{t('Retry')}</button>}
     {error&&<span role="alert">{t(error)}</span>}
   </div>;
@@ -335,7 +339,7 @@ export default function RecordingStudio({
     {draftNotice&&<p role="status">{draftNotice}</p>}
     <p>{t('Speech language')}: <strong>{t({en:'English',hi:'Hindi',ml:'Malayalam'}[learner.language])}</strong>{!compact&&<> · {provider === 'sarvam' ? 'Sarvam' : provider === 'deepgram' ? 'Deepgram' : 'Whisper'}</>}</p>
     {expectedText && <p lang={learner.language}>{expectedText}</p>}
-    <p>{compact?t('Tap the mic and speak once. Your answer finishes and submits after a pause.'):t('Tap the mic and speak once. Your answer finishes and submits after a pause.')} {!compact&&<>{maxSeconds} {t("seconds.")}</>}</p>
+    <p>{t(manualFinish?'Take your time. Select Send answer now when you finish.':'Tap the mic and speak once. Your answer finishes and submits after a pause.')} {(!compact||rehearsalMode)&&<>{maxSeconds} {t("seconds.")}</>}</p>
     {!compact&&<>
     <details className={styles.recordingOptions}><summary>{t("Recording options")}</summary>
     <label className={styles.form}>{t("Dialect or home-language variety, optional")}<input value={dialect} onChange={event => setDialect(event.target.value)} maxLength={80} disabled={locked || !!clip} placeholder={t("Describe the language variety you use")} /></label>
@@ -354,7 +358,7 @@ export default function RecordingStudio({
         background: '#4e9266'
       }} /></div>
     {state === 'recording' && <p>{t("Recording:")} {seconds}{t("s \xB7 quiet activity:")} {quietSeconds}{t("s. This meter does not assess pronunciation.")}</p>}
-    {state === 'recording' && autoSubmit && <p role="status">{t('Listening. Pause when you finish; your answer sends automatically.')}</p>}
+    {state === 'recording' && autoSubmit && <p role="status">{t(manualFinish?'Listening. Select Send answer now when you finish.':'Listening. Pause when you finish; your answer sends automatically.')}{maxSeconds-seconds<=15&&<strong> {t('Recording limit approaching.')}</strong>}</p>}
     <div className={styles.switches}>
       {!['recording','sending','processing'].includes(state) && <button className={styles.recordMic} onClick={start} disabled={disabled || locked || !learner.consent?.practice_allowed}><MicIcon />{state === 'requesting' ? t("Waiting for microphone…") : t("Tap to record")}</button>}
       {state === 'recording' && autoSubmit && showSendButton && <button className={styles.recordMic} onClick={()=>{if(recorder.current?.state==='recording')recorder.current.stop();}}>{t('Send answer now')}</button>}

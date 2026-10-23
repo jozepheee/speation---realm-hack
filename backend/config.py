@@ -34,6 +34,9 @@ class Settings(BaseSettings):
     SARVAM_ASR_MODEL: str = 'saaras:v4'
     DEEPGRAM_ASR_MODEL: str = 'nova-3'
     ELEVENLABS_VOICE_ID: str = ""
+    ELEVENLABS_ASHA_VOICE_ID: str = 'EXAVITQu4vr4xnSDxMaL'
+    ELEVENLABS_ROHAN_VOICE_ID: str = 'bIHbv24MWmeRgasZH58o'
+    ELEVENLABS_NEHA_VOICE_ID: str = 'pFZP5JQG7iQjIQuC4Bku'
     ELEVENLABS_AGENT_LLM: str = 'gpt-5.6-sol'
     ELEVENLABS_AGENT_TTS_MODEL: str = 'eleven_v3_conversational'
     LIVE_CALL_MAX_SECONDS: int = 600

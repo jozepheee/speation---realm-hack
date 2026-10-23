@@ -1,5 +1,8 @@
 """Explicit recognition providers. No target hints, silent fallback or error grading."""
+import asyncio
+import io
 import httpx
+import soundfile as sf
 from fastapi import HTTPException
 from starlette.concurrency import run_in_threadpool
 from config import settings
@@ -17,6 +20,22 @@ def check_script(transcript, language, mode):
 
 
 async def recognize(waveform, wav_bytes, language, provider, mode, transcriber=transcribe_recording):
+    if provider == 'sarvam' and len(waveform) > 30*SAMPLE_RATE:
+        # Short provider requests, one complete learner answer. No target-word hints.
+        if len(waveform) > 180*SAMPLE_RATE:
+            raise HTTPException(422, 'Use an answer of at most three minutes')
+        gate=asyncio.Semaphore(2)
+        async def part(offset):
+            segment=waveform[offset:offset+29*SAMPLE_RATE]
+            output=io.BytesIO();sf.write(output,segment,SAMPLE_RATE,format='WAV',subtype='PCM_16')
+            async with gate:
+                try:text,words,meta=await recognize(segment,output.getvalue(),language,provider,mode,transcriber)
+                except InvalidAudioError:return '',[],{'provider':provider,'model':settings.SARVAM_ASR_MODEL,'mode':mode,'timestamp_granularity':'chunk','cloud_audio_transmitted':True,'state':'no_recognized_speech'}
+            return text,[{**w,'start':w['start']+offset/SAMPLE_RATE,'end':w['end']+offset/SAMPLE_RATE} for w in words],meta
+        pieces=await asyncio.gather(*(part(offset) for offset in range(0,len(waveform),29*SAMPLE_RATE)))
+        if not any(p[0].strip() for p in pieces):raise InvalidAudioError('No speech was recognized in this answer')
+        return ' '.join(p[0] for p in pieces),[w for p in pieces for w in p[1]],{
+            **pieces[0][2],'chunks':len(pieces),'chunk_seconds':29,'boundary_word_accuracy':'not_established'}
     if provider in ['local_whisper','adapted_english']:
         model_name=settings.CARE_ASR_MODEL
         if provider=='adapted_english':
