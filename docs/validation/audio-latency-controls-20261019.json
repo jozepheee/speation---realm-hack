@@ -1,0 +1,158 @@
+[
+  {
+    "model": "google/gemini-3-flash-preview",
+    "seconds": 5.79,
+    "control": "പന്ത്",
+    "raw": {
+      "state": "tentative_observation",
+      "summary": "നന്നായി ശ്രമിച്ചു! 'പന്ത്' എന്ന് പറയുമ്പോൾ ആദ്യത്തെ ശബ്ദം 'പ' എന്നാണ് വരേണ്ടത്. അത് കുറച്ചുകൂടി വ്യക്തമായി കേൾക്കാൻ നമുക്ക് ശ്രമിക്കാം.",
+      "concerns": [
+        {
+          "produced_phone": "b",
+          "category": "substitution",
+          "observation": "'പന്ത്' എന്ന വാക്കിന്റെ തുടക്കത്തിൽ 'p' എന്ന ശബ്ദത്തിന് പകരം 'b' എന്ന ശബ്ദമാണ് കേൾക്കുന്നത്.",
+          "uncertainty": "ഈ ഓഡിയോയിൽ 'പ' എന്ന ശബ്ദം അല്പം അമർന്നുപോയതായി തോന്നുന്നു; ഇത് റെക്കോർഡിംഗിലെ മാറ്റം കൊണ്ടുമാകാം.",
+          "word": "പന്ത്",
+          "expected_phone": "p",
+          "practice_tip": "നമുക്ക് 'പ' എന്ന ശബ്ദം ഒന്ന് പരിശീലിച്ചാലോ? ചുണ്ടുകൾ തമ്മിൽ അമർത്തി പെട്ടെന്ന് തുറന്ന് 'പ' എന്ന് പറഞ്ഞുനോക്കൂ. പ... പ... പന്ത്.",
+          "start_seconds": 0.0,
+          "end_seconds": 0.67
+        }
+      ]
+    },
+    "validated": {
+      "state": "tentative_observation",
+      "summary": "നന്നായി ശ്രമിച്ചു! 'പന്ത്' എന്ന് പറയുമ്പോൾ ആദ്യത്തെ ശബ്ദം 'പ' എന്നാണ് വരേണ്ടത്. അത് കുറച്ചുകൂടി വ്യക്തമായി കേൾക്കാൻ നമുക്ക് ശ്രമിക്കാം.",
+      "concerns": [
+        {
+          "produced_phone": "b",
+          "category": "substitution",
+          "observation": "'പന്ത്' എന്ന വാക്കിന്റെ തുടക്കത്തിൽ 'p' എന്ന ശബ്ദത്തിന് പകരം 'b' എന്ന ശബ്ദമാണ് കേൾക്കുന്നത്.",
+          "uncertainty": "ഈ ഓഡിയോയിൽ 'പ' എന്ന ശബ്ദം അല്പം അമർന്നുപോയതായി തോന്നുന്നു; ഇത് റെക്കോർഡിംഗിലെ മാറ്റം കൊണ്ടുമാകാം.",
+          "word": "പന്ത്",
+          "expected_phone": "p",
+          "practice_tip": "നമുക്ക് 'പ' എന്ന ശബ്ദം ഒന്ന് പരിശീലിച്ചാലോ? ചുണ്ടുകൾ തമ്മിൽ അമർത്തി പെട്ടെന്ന് തുറന്ന് 'പ' എന്ന് പറഞ്ഞുനോക്കൂ. പ... പ... പന്ത്.",
+          "start_seconds": 0.0,
+          "end_seconds": 0.67
+        }
+      ]
+    }
+  },
+  {
+    "model": "google/gemini-3-flash-preview",
+    "seconds": 5.11,
+    "control": "fantu",
+    "raw": {
+      "state": "tentative_observation",
+      "summary": "നന്നായി ശ്രമിച്ചു! 'പന്ത്' എന്ന് പറയുമ്പോൾ ആദ്യത്തെ ശബ്ദം ഒന്ന് ശ്രദ്ധിക്കാം. 'പ' എന്നതിന് പകരം 'ഫ' പോലെയാണ് കേട്ടത്.",
+      "concerns": [
+        {
+          "produced_phone": "f",
+          "category": "substitution",
+          "observation": "The initial sound in 'പന്ത്' (panthə) sounded more like a labiodental fricative /f/ rather than the intended voiceless bilabial plosive /p/.",
+          "uncertainty": "The acoustic hypothesis suggests /f/, which aligns with the audible breathiness, but this is a tentative observation from a general audio model and not a clinical assessment.",
+          "word": "പന്ത്",
+          "expected_phone": "p",
+          "practice_tip": "ചുണ്ടുകൾ തമ്മിൽ അമർത്തി പെട്ടെന്ന് തുറന്ന് 'പ' എന്ന് പറയാൻ ശ്രമിക്കൂ. പ... പ... പന്ത്.",
+          "start_seconds": 0.08,
+          "end_seconds": 0.5
+        }
+      ]
+    },
+    "validated": {
+      "state": "tentative_observation",
+      "summary": "നന്നായി ശ്രമിച്ചു! 'പന്ത്' എന്ന് പറയുമ്പോൾ ആദ്യത്തെ ശബ്ദം ഒന്ന് ശ്രദ്ധിക്കാം. 'പ' എന്നതിന് പകരം 'ഫ' പോലെയാണ് കേട്ടത്.",
+      "concerns": [
+        {
+          "produced_phone": "f",
+          "category": "substitution",
+          "observation": "The initial sound in 'പന്ത്' (panthə) sounded more like a labiodental fricative /f/ rather than the intended voiceless bilabial plosive /p/.",
+          "uncertainty": "The acoustic hypothesis suggests /f/, which aligns with the audible breathiness, but this is a tentative observation from a general audio model and not a clinical assessment.",
+          "word": "പന്ത്",
+          "expected_phone": "p",
+          "practice_tip": "ചുണ്ടുകൾ തമ്മിൽ അമർത്തി പെട്ടെന്ന് തുറന്ന് 'പ' എന്ന് പറയാൻ ശ്രമിക്കൂ. പ... പ... പന്ത്.",
+          "start_seconds": 0.08,
+          "end_seconds": 0.5
+        }
+      ]
+    }
+  },
+  {
+    "model": "google/gemini-3.1-pro-preview",
+    "seconds": 17.08,
+    "control": "പന്ത്",
+    "raw": {
+      "state": "tentative_observation",
+      "summary": "I heard 'പന്ത്' (panth). The starting sound seemed a bit like 'b' instead of 'p'. Let's practice the 'p' sound together.",
+      "concerns": [
+        {
+          "produced_phone": "b",
+          "category": "substitution",
+          "observation": "The initial sound in 'പന്ത്' sounded voiced, closer to /b/ than the expected voiceless /p/.",
+          "uncertainty": "The audio is short and the distinction between /p/ and /b/ can be subtle. The independent recognizer also suggested /b/.",
+          "word": "പന്ത്",
+          "expected_phone": "p",
+          "practice_tip": "Let's try the 'p' sound. Keep your lips together and let a little puff of air out without using your voice: 'p'. Then try 'പ' (pa), and finally 'പന്ത്' (panth).",
+          "start_seconds": 0.0,
+          "end_seconds": 0.67
+        }
+      ]
+    },
+    "validated": {
+      "state": "tentative_observation",
+      "summary": "I heard 'പന്ത്' (panth). The starting sound seemed a bit like 'b' instead of 'p'. Let's practice the 'p' sound together.",
+      "concerns": [
+        {
+          "produced_phone": "b",
+          "category": "substitution",
+          "observation": "The initial sound in 'പന്ത്' sounded voiced, closer to /b/ than the expected voiceless /p/.",
+          "uncertainty": "The audio is short and the distinction between /p/ and /b/ can be subtle. The independent recognizer also suggested /b/.",
+          "word": "പന്ത്",
+          "expected_phone": "p",
+          "practice_tip": "Let's try the 'p' sound. Keep your lips together and let a little puff of air out without using your voice: 'p'. Then try 'പ' (pa), and finally 'പന്ത്' (panth).",
+          "start_seconds": 0.0,
+          "end_seconds": 0.67
+        }
+      ]
+    }
+  },
+  {
+    "model": "google/gemini-3.1-pro-preview",
+    "seconds": 12.11,
+    "control": "fantu",
+    "raw": {
+      "state": "tentative_observation",
+      "summary": "Good effort! I noticed a small difference at the beginning of the word. Let's practice the 'p' sound together.",
+      "concerns": [
+        {
+          "produced_phone": "f",
+          "category": "substitution",
+          "observation": "The initial sound in 'പന്ത്' sounded more like an 'f' sound instead of the expected 'p' sound.",
+          "uncertainty": "Audio analysis is tentative and may not perfectly capture the exact articulation. The local recognizer also suggested an 'f' sound, but this is not a clinical assessment.",
+          "word": "പന്ത്",
+          "expected_phone": "p",
+          "practice_tip": "Let's try the 'p' sound. Bring your lips together and release a little puff of air. Try saying 'പ' (pa), and then 'പന്ത്' (panth).",
+          "start_seconds": 0.0,
+          "end_seconds": 0.5
+        }
+      ]
+    },
+    "validated": {
+      "state": "tentative_observation",
+      "summary": "Good effort! I noticed a small difference at the beginning of the word. Let's practice the 'p' sound together.",
+      "concerns": [
+        {
+          "produced_phone": "f",
+          "category": "substitution",
+          "observation": "The initial sound in 'പന്ത്' sounded more like an 'f' sound instead of the expected 'p' sound.",
+          "uncertainty": "Audio analysis is tentative and may not perfectly capture the exact articulation. The local recognizer also suggested an 'f' sound, but this is not a clinical assessment.",
+          "word": "പന്ത്",
+          "expected_phone": "p",
+          "practice_tip": "Let's try the 'p' sound. Bring your lips together and release a little puff of air. Try saying 'പ' (pa), and then 'പന്ത്' (panth).",
+          "start_seconds": 0.0,
+          "end_seconds": 0.5
+        }
+      ]
+    }
+  }
+]

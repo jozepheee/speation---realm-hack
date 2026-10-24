@@ -1,0 +1,723 @@
+{
+  "date": "2026-10-22",
+  "source": "MAYA_UPDATED_TASKS_20261022.md",
+  "execution_log": "MAYA_EXECUTION_LOG_20261022.md",
+  "status_rule": "Only checked tasks are complete; partial and verify remain open.",
+  "tasks": [
+    {
+      "id": "MAYA-001",
+      "area": "1. Boundaries and experience",
+      "complete": true,
+      "requirement": "Keep regular conversation and Learn with Maya separate; preserve the companion layout."
+    },
+    {
+      "id": "MAYA-002",
+      "area": "1. Boundaries and experience",
+      "complete": false,
+      "requirement": "**PARTIAL** Preserve regular conversation's purpose while fixing its voice/session reliability."
+    },
+    {
+      "id": "MAYA-003",
+      "area": "1. Boundaries and experience",
+      "complete": true,
+      "requirement": "Connected English Learn journey: meaningful recording → confirmed/spoken message → supported target → fresh word attempt → optional sentence or finish. Browser fixture covers success and decline; physical/accuracy acceptance remains MAYA-105/108/061."
+    },
+    {
+      "id": "MAYA-004",
+      "area": "1. Boundaries and experience",
+      "complete": false,
+      "requirement": "**PARTIAL** Use age for suitable presentation/topics, including mature 16+/18+ situations; use demonstrated ability for difficulty."
+    },
+    {
+      "id": "MAYA-005",
+      "area": "1. Boundaries and experience",
+      "complete": false,
+      "requirement": "**VERIFY** Desktop/mobile layout, accessible controls and camera placement without obscuring Maya."
+    },
+    {
+      "id": "MAYA-006",
+      "area": "2. Voice, capture and session behaviour",
+      "complete": false,
+      "requirement": "**VERIFY** Audible greetings, questions, instructions, examples and feedback in both surfaces."
+    },
+    {
+      "id": "MAYA-007",
+      "area": "2. Voice, capture and session behaviour",
+      "complete": false,
+      "requirement": "**VERIFY** Visible autoplay recovery restores actual playback."
+    },
+    {
+      "id": "MAYA-008",
+      "area": "2. Voice, capture and session behaviour",
+      "complete": false,
+      "requirement": "**VERIFY** Listen automatically after playback finishes, without recording Maya's voice as the learner's answer."
+    },
+    {
+      "id": "MAYA-009",
+      "area": "2. Voice, capture and session behaviour",
+      "complete": false,
+      "requirement": "**PARTIAL** Consistent microphone-off/listening/processing/speaking/saving states across calls and activities."
+    },
+    {
+      "id": "MAYA-010",
+      "area": "2. Voice, capture and session behaviour",
+      "complete": false,
+      "requirement": "**VERIFY** Interruption stops playback and mouth animation together and returns reliably to listening."
+    },
+    {
+      "id": "MAYA-011",
+      "area": "2. Voice, capture and session behaviour",
+      "complete": false,
+      "requirement": "**VERIFY** Bounded processing, distinct capture/network/model errors and working retry."
+    },
+    {
+      "id": "MAYA-012",
+      "area": "2. Voice, capture and session behaviour",
+      "complete": true,
+      "requirement": "Immediate hang-up and independent saving; browser check confirms a pending SDK disconnect does not keep capture active."
+    },
+    {
+      "id": "MAYA-013",
+      "area": "2. Voice, capture and session behaviour",
+      "complete": true,
+      "requirement": "Reconnect/reload reservation recovery verified in the dedicated browser fixture; stale reservation cannot clear a newer call."
+    },
+    {
+      "id": "MAYA-014",
+      "area": "2. Voice, capture and session behaviour",
+      "complete": false,
+      "requirement": "**VERIFY** Release microphone, camera, playback and animation on exit/unmount."
+    },
+    {
+      "id": "MAYA-015",
+      "area": "2. Voice, capture and session behaviour",
+      "complete": false,
+      "requirement": "**PARTIAL** Measure latency by stage and avoid unnecessary serial inference; validate response times."
+    },
+    {
+      "id": "MAYA-016",
+      "area": "2. Voice, capture and session behaviour",
+      "complete": false,
+      "requirement": "**VERIFY** Quiet speech, sustained unvoiced sounds, recording boundaries and manual Send; capture failure must not become a pronunciation failure."
+    },
+    {
+      "id": "MAYA-017",
+      "area": "3. Character and demonstrations",
+      "complete": true,
+      "requirement": "Inspect actual character rig: the loaded GLB Maya has 72 morph controls, including 15 speech/rest shapes, with mouth/teeth controls. Inventory saved in docs/MAYA_AVATAR_RIG_INVENTORY.json; no replacement is required for timed example animation."
+    },
+    {
+      "id": "MAYA-018",
+      "area": "3. Character and demonstrations",
+      "complete": false,
+      "requirement": "**PARTIAL** Teaching clips use Rhubarb visemes; live voice now consumes SDK character timing for approximate generated-speech mouth shapes. Exact live phoneme alignment and provider-specific timing acceptance remain open."
+    },
+    {
+      "id": "MAYA-019",
+      "area": "3. Character and demonstrations",
+      "complete": false,
+      "requirement": "**VERIFY** Animation synchronises with playback, pause, replay and interruption."
+    },
+    {
+      "id": "MAYA-020",
+      "area": "3. Character and demonstrations",
+      "complete": false,
+      "requirement": "**PARTIAL** Natural blinking, restrained gaze and distinct listening/rest poses."
+    },
+    {
+      "id": "MAYA-021",
+      "area": "3. Character and demonstrations",
+      "complete": false,
+      "requirement": "**PARTIAL** Readable mouth close-up with natural-speed and slow examples for the current target."
+    },
+    {
+      "id": "MAYA-022",
+      "area": "3. Character and demonstrations",
+      "complete": false,
+      "requirement": "**PARTIAL** Added visible closure, rounding, spreading and lip-to-teeth teaching pictures alongside S/R/K cutaways. Teaching pictures are not measurements of internal articulation."
+    },
+    {
+      "id": "MAYA-023",
+      "area": "3. Character and demonstrations",
+      "complete": false,
+      "requirement": "**PARTIAL** Explanatory cutaways for actions external lips cannot demonstrate."
+    },
+    {
+      "id": "MAYA-024",
+      "area": "3. Character and demonstrations",
+      "complete": true,
+      "requirement": "Keep the existing character: actual rig inspection found the required facial controls, so replacement is unnecessary."
+    },
+    {
+      "id": "MAYA-025",
+      "area": "4. Learner camera",
+      "complete": false,
+      "requirement": "**VERIFY** Reliable camera window within the existing UI for children and adults; clear denied/unavailable-camera recovery."
+    },
+    {
+      "id": "MAYA-026",
+      "area": "4. Learner camera",
+      "complete": false,
+      "requirement": "**VERIFY** Stable mirrored video and lip contours during speech."
+    },
+    {
+      "id": "MAYA-027",
+      "area": "4. Learner camera",
+      "complete": false,
+      "requirement": "**PARTIAL** Understandable visible opening, closure and rounding feedback."
+    },
+    {
+      "id": "MAYA-028",
+      "area": "4. Learner camera",
+      "complete": false,
+      "requirement": "**PARTIAL** Useful missing-face, lighting, pose, obstruction and tracking-quality messages."
+    },
+    {
+      "id": "MAYA-029",
+      "area": "4. Learner camera",
+      "complete": false,
+      "requirement": "**PARTIAL** Local/privately shared examples can be positioned beside the camera; physical guided-comparison acceptance remains open."
+    },
+    {
+      "id": "MAYA-030",
+      "area": "4. Learner camera",
+      "complete": false,
+      "requirement": "**VERIFY** Local video processing by default and clean stream shutdown."
+    },
+    {
+      "id": "MAYA-031",
+      "area": "4. Learner camera",
+      "complete": false,
+      "requirement": "**PARTIAL** Clearly separate visible movement from acoustic assessment; do not infer internal tongue correctness or diagnosis from lip geometry."
+    },
+    {
+      "id": "MAYA-032",
+      "area": "5. Meaningful lessons and intelligent targets",
+      "complete": false,
+      "requirement": "**PARTIAL** Use interests, daily communication needs and reviewed therapist goals."
+    },
+    {
+      "id": "MAYA-033",
+      "area": "5. Meaningful lessons and intelligent targets",
+      "complete": false,
+      "requirement": "**PARTIAL** Picture/story, school, request and personally important sentence activities with age-appropriate content."
+    },
+    {
+      "id": "MAYA-034",
+      "area": "5. Meaningful lessons and intelligent targets",
+      "complete": false,
+      "requirement": "**VERIFY** Useful starting activity without requiring clinician assignment."
+    },
+    {
+      "id": "MAYA-035",
+      "area": "5. Meaningful lessons and intelligent targets",
+      "complete": true,
+      "requirement": "Goals and repeated supported observations inform live lessons; the fresh-message confirmation-to-target flow is connected inside Learn and passes browser integration."
+    },
+    {
+      "id": "MAYA-036",
+      "area": "5. Meaningful lessons and intelligent targets",
+      "complete": true,
+      "requirement": "Current audio-supported words are ordered by active reviewed goal, then recurring evidence; one primary target is shown. Other supported observations remain saved. Neither spelling nor history introduces an unsupported word. Priority and workflow checks pass."
+    },
+    {
+      "id": "MAYA-037",
+      "area": "5. Meaningful lessons and intelligent targets",
+      "complete": false,
+      "requirement": "**PARTIAL** Distinguish sound difference, different word, acceptable variant, poor capture and insufficient evidence."
+    },
+    {
+      "id": "MAYA-038",
+      "area": "5. Meaningful lessons and intelligent targets",
+      "complete": true,
+      "requirement": "Sound problems are not inferred solely from spelling or a corrected transcript; independent audio assessment remains distinct."
+    },
+    {
+      "id": "MAYA-039",
+      "area": "5. Meaningful lessons and intelligent targets",
+      "complete": true,
+      "requirement": "Practice suggestions are deduplicated; original transcript/audio repetitions remain unchanged."
+    },
+    {
+      "id": "MAYA-040",
+      "area": "5. Meaningful lessons and intelligent targets",
+      "complete": false,
+      "requirement": "**PARTIAL** Remember targets, cues, attempts and completion; resume interrupted lessons with correct learner isolation."
+    },
+    {
+      "id": "MAYA-041",
+      "area": "6. Message understanding and playback",
+      "complete": true,
+      "requirement": "Did-you-mean confirmation and editing are available inside Learn; confirmation is explicitly saved."
+    },
+    {
+      "id": "MAYA-042",
+      "area": "6. Message understanding and playback",
+      "complete": true,
+      "requirement": "Confirmed message playback starts immediately, with replay and stop; full playback precedes automatic word practice in browser tests."
+    },
+    {
+      "id": "MAYA-043",
+      "area": "6. Message understanding and playback",
+      "complete": true,
+      "requirement": "Original recording/transcript stay separate from the immutable confirmed message; backend fresh-attempt tests verify binding."
+    },
+    {
+      "id": "MAYA-044",
+      "area": "6. Message understanding and playback",
+      "complete": true,
+      "requirement": "Message confirmation/playback is independent of succeeding at practice."
+    },
+    {
+      "id": "MAYA-045",
+      "area": "6. Message understanding and playback",
+      "complete": true,
+      "requirement": "Meaning recovery and direct-audio pronunciation assessment use separate evidence; fresh practice cannot reuse the original recording."
+    },
+    {
+      "id": "MAYA-046",
+      "area": "7. Adaptive practice and completion",
+      "complete": false,
+      "requirement": "**PARTIAL** Natural/slow examples and useful verified chunks where appropriate."
+    },
+    {
+      "id": "MAYA-047",
+      "area": "7. Adaptive practice and completion",
+      "complete": false,
+      "requirement": "**PARTIAL** One short spoken cue at a time; child-friendly language and mature wording for older learners."
+    },
+    {
+      "id": "MAYA-048",
+      "area": "7. Adaptive practice and completion",
+      "complete": true,
+      "requirement": "Each practice submission is bound to a fresh recording for this learner, language, expected text and word/sentence phase; backend rejects reused/mismatched evidence."
+    },
+    {
+      "id": "MAYA-049",
+      "area": "7. Adaptive practice and completion",
+      "complete": false,
+      "requirement": "**PARTIAL** Short cues change after repeated attempts and three unresolved attempts offer a break/finish. Broader evidence-driven cue selection still needs learner validation."
+    },
+    {
+      "id": "MAYA-050",
+      "area": "7. Adaptive practice and completion",
+      "complete": false,
+      "requirement": "**VERIFY** Private own-attempt replay and reference replay are implemented; final real-device audibility acceptance remains open."
+    },
+    {
+      "id": "MAYA-051",
+      "area": "7. Adaptive practice and completion",
+      "complete": false,
+      "requirement": "**VERIFY** Explicit supported success; uncertainty differs from incorrect production and capture failure."
+    },
+    {
+      "id": "MAYA-052",
+      "area": "7. Adaptive practice and completion",
+      "complete": true,
+      "requirement": "Clear word offers optional sentence practice; declining finishes, and clear sentence finishes. Both browser branches pass."
+    },
+    {
+      "id": "MAYA-053",
+      "area": "7. Adaptive practice and completion",
+      "complete": false,
+      "requirement": "**PARTIAL** Consistent skip, break and finish without losing saved work."
+    },
+    {
+      "id": "MAYA-054",
+      "area": "7. Adaptive practice and completion",
+      "complete": true,
+      "requirement": "Scheduled retention/transfer checks are surfaced in Learn from reviewed goals; unaided fresh recordings link to their mission and clinician workflow."
+    },
+    {
+      "id": "MAYA-055",
+      "area": "7. Adaptive practice and completion",
+      "complete": false,
+      "requirement": "**PARTIAL** Played example cues and following fresh results are retained; familiar cue recall excludes rejected evidence. Richer longitudinal adaptation remains unvalidated."
+    },
+    {
+      "id": "MAYA-056",
+      "area": "8. Speech evidence and model evaluation",
+      "complete": false,
+      "requirement": "**VERIFY** Preserve original audio/timing and check capture quality before interpreting attempts."
+    },
+    {
+      "id": "MAYA-057",
+      "area": "8. Speech evidence and model evaluation",
+      "complete": false,
+      "requirement": "**PARTIAL** Expected pronunciation separate from independently heard acoustic evidence, including substitutions normalised by ASR."
+    },
+    {
+      "id": "MAYA-058",
+      "area": "8. Speech evidence and model evaluation",
+      "complete": false,
+      "requirement": "**PARTIAL** Appropriate English accent/pronunciation variants."
+    },
+    {
+      "id": "MAYA-059",
+      "area": "8. Speech evidence and model evaluation",
+      "complete": false,
+      "requirement": "**PARTIAL** Evidence source, model/version and uncertainty consistently saved across activities."
+    },
+    {
+      "id": "MAYA-060",
+      "area": "8. Speech evidence and model evaluation",
+      "complete": false,
+      "requirement": "**PARTIAL** Benchmark correct/error productions before promoting assessors; measure false rejection and missed errors."
+    },
+    {
+      "id": "MAYA-061",
+      "area": "8. Speech evidence and model evaluation",
+      "complete": false,
+      "requirement": "**PENDING** Representative learner validation: small adult/research benchmarks do not establish child or general dysarthric accuracy."
+    },
+    {
+      "id": "MAYA-062",
+      "area": "8. Speech evidence and model evaluation",
+      "complete": false,
+      "requirement": "**PARTIAL** English delivery first; Malayalam/Hindi assessment must not be marked finished."
+    },
+    {
+      "id": "MAYA-063",
+      "area": "8. Speech evidence and model evaluation",
+      "complete": false,
+      "requirement": "**PENDING** Validate per-learner acoustic adaptation before claiming personalised model training complete; the research fine-tune is not that result."
+    },
+    {
+      "id": "MAYA-064",
+      "area": "8. Speech evidence and model evaluation",
+      "complete": false,
+      "requirement": "**VERIFY** No unsupported grades from a stronger LLM, forced alignment or missing evidence."
+    },
+    {
+      "id": "MAYA-065",
+      "area": "9. Three approved activities and bakery",
+      "complete": true,
+      "requirement": "Story adventure: three connected scenes conditioned on age, interest and target; strict target/schema validation; bounded model endpoint with access/consent recheck."
+    },
+    {
+      "id": "MAYA-066",
+      "area": "9. Three approved activities and bakery",
+      "complete": true,
+      "requirement": "Story local resume, model playback path, standard recording/assessment handoff and continue/skip/finish. Completion means participation, not mastery."
+    },
+    {
+      "id": "MAYA-067",
+      "area": "9. Three approved activities and bakery",
+      "complete": true,
+      "requirement": "Hear-the-difference: curated K/T, R/W, S/SH, F/P and S/TH picture choices, four balanced rounds, replay and practice handoff. Listening scores are not speech grades."
+    },
+    {
+      "id": "MAYA-068",
+      "area": "9. Three approved activities and bakery",
+      "complete": true,
+      "requirement": "Familiar adult example: permission acknowledgement, capped recording/upload, account/learner/target-scoped local persistence, replay and deletion."
+    },
+    {
+      "id": "MAYA-069",
+      "area": "9. Three approved activities and bakery",
+      "complete": true,
+      "requirement": "Guard conflicting live calls/surface switches during activity recording; prepare camera before story capture."
+    },
+    {
+      "id": "MAYA-070",
+      "area": "9. Three approved activities and bakery",
+      "complete": false,
+      "requirement": "**PARTIAL** Connect activity choice/targets to personalised selection rather than requiring every decision from the family."
+    },
+    {
+      "id": "MAYA-071",
+      "area": "9. Three approved activities and bakery",
+      "complete": true,
+      "requirement": "Story/session identity, scenes, recording links and server-scored listening outcomes persist and feed parent/clinician report evidence; access/idempotency checks pass."
+    },
+    {
+      "id": "MAYA-072",
+      "area": "9. Three approved activities and bakery",
+      "complete": false,
+      "requirement": "**VERIFY** Target selection now finds a same-learner, matching-word clinician-authored/approved demonstration, excluding rejected examples. Word practice can open it beside the camera, including after repeated uncertainty. Backend checks pass; real-device comparison acceptance remains open."
+    },
+    {
+      "id": "MAYA-073",
+      "area": "9. Three approved activities and bakery",
+      "complete": true,
+      "requirement": "Private server-persisted family/clinician examples support assigned-clinician approval/replacement and cross-device retrieval; scheduled missions are exposed in Learn."
+    },
+    {
+      "id": "MAYA-074",
+      "area": "9. Three approved activities and bakery",
+      "complete": false,
+      "requirement": "**VERIFY** Existing bakery capture, assessment and report linkage after shared pipeline changes; preserve its established UI."
+    },
+    {
+      "id": "MAYA-075",
+      "area": "10. Parent dashboard",
+      "complete": false,
+      "requirement": "**PARTIAL** Clear session summaries and useful home activities connected to the practised message."
+    },
+    {
+      "id": "MAYA-076",
+      "area": "10. Parent dashboard",
+      "complete": false,
+      "requirement": "**PARTIAL** Frequency/completion trends, targets and support required, including new activities."
+    },
+    {
+      "id": "MAYA-077",
+      "area": "10. Parent dashboard",
+      "complete": true,
+      "requirement": "Comparable attempt timelines separate exact wording, language, phase and model, with cue context and playable recordings. They do not claim cue effectiveness or improvement percentages."
+    },
+    {
+      "id": "MAYA-078",
+      "area": "10. Parent dashboard",
+      "complete": false,
+      "requirement": "**VERIFY** Participation, AI observations and therapist-reviewed findings visibly distinct."
+    },
+    {
+      "id": "MAYA-079",
+      "area": "10. Parent dashboard",
+      "complete": false,
+      "requirement": "**VERIFY** Meaningful chart denominators and missing-data states; no invented improvement/health percentages."
+    },
+    {
+      "id": "MAYA-080",
+      "area": "10. Parent dashboard",
+      "complete": false,
+      "requirement": "**PARTIAL** All companion evidence reaches the configured premium report model and assigned clinician's in-app review queue; do not imply external email delivery."
+    },
+    {
+      "id": "MAYA-081",
+      "area": "11. Therapist feedback loop",
+      "complete": false,
+      "requirement": "**PARTIAL** Assigned goals/priorities drive future Maya lessons."
+    },
+    {
+      "id": "MAYA-082",
+      "area": "11. Therapist feedback loop",
+      "complete": false,
+      "requirement": "**PARTIAL** Compact evidence with relevant playable intervals, intended target, observation and uncertainty."
+    },
+    {
+      "id": "MAYA-083",
+      "area": "11. Therapist feedback loop",
+      "complete": true,
+      "requirement": "Report evidence joins preceding cue and fresh result; comparable word/sentence timelines provide private replay while keeping phase/model/wording distinct."
+    },
+    {
+      "id": "MAYA-084",
+      "area": "11. Therapist feedback loop",
+      "complete": false,
+      "requirement": "**PARTIAL** Accept/correct/dismiss individual observations; report approval remains distinct from recording-level review."
+    },
+    {
+      "id": "MAYA-085",
+      "area": "11. Therapist feedback loop",
+      "complete": false,
+      "requirement": "**PARTIAL** Assign/adjust next practice; corrections change future target/cue selection."
+    },
+    {
+      "id": "MAYA-086",
+      "area": "11. Therapist feedback loop",
+      "complete": true,
+      "requirement": "Owner/assigned-clinician authorization and learner isolation are covered by backend session, example, report and care-experience tests."
+    },
+    {
+      "id": "MAYA-087",
+      "area": "12. AAC, UI and accessibility",
+      "complete": true,
+      "requirement": "Rename My Words to AAC across principal navigation, home/workspace links and the communication page."
+    },
+    {
+      "id": "MAYA-088",
+      "area": "12. AAC, UI and accessibility",
+      "complete": true,
+      "requirement": "AAC defaults off; Settings/Family Hub/companion setting enables it; hide links and gate main AAC page; preserve phrases when disabled."
+    },
+    {
+      "id": "MAYA-089",
+      "area": "12. AAC, UI and accessibility",
+      "complete": true,
+      "requirement": "Preference account-scoped on this browser; visibility setting, not server access control or cross-device sync."
+    },
+    {
+      "id": "MAYA-090",
+      "area": "12. AAC, UI and accessibility",
+      "complete": true,
+      "requirement": "Remove duplicate companion language control, collapse voice personalisation and hide call history during active calls."
+    },
+    {
+      "id": "MAYA-091",
+      "area": "12. AAC, UI and accessibility",
+      "complete": false,
+      "requirement": "**PARTIAL** Finish contextual controls: clear record/help/replay/finish; advanced options tucked away; no duplicated buttons/activity wall."
+    },
+    {
+      "id": "MAYA-092",
+      "area": "12. AAC, UI and accessibility",
+      "complete": false,
+      "requirement": "**VERIFY** Preserve typing, stop/mute, skip, keyboard navigation and mobile readability."
+    },
+    {
+      "id": "MAYA-093",
+      "area": "12. AAC, UI and accessibility",
+      "complete": true,
+      "requirement": "Legacy Quick Words and its public About link now follow AAC visibility. AAC remains separate from practice vocabulary and correctness."
+    },
+    {
+      "id": "MAYA-094",
+      "area": "13. Affordability and continuity",
+      "complete": false,
+      "requirement": "**PARTIAL** Account/learner-scoped generated-example cache avoids repeated synthesis; inference cost monitoring remains incomplete."
+    },
+    {
+      "id": "MAYA-095",
+      "area": "13. Affordability and continuity",
+      "complete": false,
+      "requirement": "**VERIFY** Shared-device learner/account isolation for recordings, lessons, local media and preferences."
+    },
+    {
+      "id": "MAYA-096",
+      "area": "13. Affordability and continuity",
+      "complete": true,
+      "requirement": "Story/listening progress has idempotent retry; Learn recording recovery is encrypted and account/learner/task/target scoped, explicitly recovered, and preserves its attempt ID."
+    },
+    {
+      "id": "MAYA-097",
+      "area": "13. Affordability and continuity",
+      "complete": true,
+      "requirement": "Downloaded standalone story works without a connection or login, including cached generated examples where available; no recording or offline grade. Browser offline navigation/finish test passes. This is a downloaded activity, not a claim of a fully offline assessment engine."
+    },
+    {
+      "id": "MAYA-098",
+      "area": "13. Affordability and continuity",
+      "complete": true,
+      "requirement": "Offline/cached activity never invents an assessment; recovered recordings require explicit online submission."
+    },
+    {
+      "id": "MAYA-099",
+      "area": "14. Related 16+ features retained in wider project audit",
+      "complete": false,
+      "requirement": "**VERIFY** Browser/backend fixtures cover one-to-one interview, optional résumé, welcome/introduction and follow-ups. Real-device voice and actual uploaded résumé acceptance remain open."
+    },
+    {
+      "id": "MAYA-100",
+      "area": "14. Related 16+ features retained in wider project audit",
+      "complete": true,
+      "requirement": "Automatic interview follow-ups, bounded answer processing, microphone cleanup and early finish/report routes pass synthetic browser/backend checks."
+    },
+    {
+      "id": "MAYA-101",
+      "area": "14. Related 16+ features retained in wider project audit",
+      "complete": false,
+      "requirement": "**VERIFY** Full multi-participant GD rounds, replies, transcript, interruption and completion pass browser fixtures; real-device audio acceptance remains open."
+    },
+    {
+      "id": "MAYA-102",
+      "area": "14. Related 16+ features retained in wider project audit",
+      "complete": false,
+      "requirement": "**VERIFY** PDF/PPT preview routes, prominent slides, spoken navigation, notes and audience Q&A pass fixtures; actual user files/device playback remain open."
+    },
+    {
+      "id": "MAYA-103",
+      "area": "14. Related 16+ features retained in wider project audit",
+      "complete": true,
+      "requirement": "Detailed rehearsal reports include evidence-based strengths, improvements, WPM, pauses and fillers, replay and missing-data states; responsive report checks pass."
+    },
+    {
+      "id": "MAYA-104",
+      "area": "14. Related 16+ features retained in wider project audit",
+      "complete": false,
+      "requirement": "**VERIFY** Mature onboarding and entry points for older learners, rather than child-oriented defaults as their only experience."
+    },
+    {
+      "id": "MAYA-105",
+      "area": "15. Release acceptance before calling the companion complete",
+      "complete": false,
+      "requirement": "**VERIFY** Real journey: meaningful response → confirm message → useful supported target → audible/visual coaching → fresh attempt → success/uncertainty → optional sentence/finish."
+    },
+    {
+      "id": "MAYA-106",
+      "area": "15. Release acceptance before calling the companion complete",
+      "complete": false,
+      "requirement": "**VERIFY** Journey produces parent summary and playable clinician evidence; a clinician correction changes the next lesson."
+    },
+    {
+      "id": "MAYA-107",
+      "area": "15. Release acceptance before calling the companion complete",
+      "complete": false,
+      "requirement": "**VERIFY** Denied permissions, autoplay block, poor audio, missing face, timeout, interruption, reload/reconnect and exit do not strand the session or leak capture."
+    },
+    {
+      "id": "MAYA-108",
+      "area": "15. Release acceptance before calling the companion complete",
+      "complete": false,
+      "requirement": "**VERIFY** Physical desktop/mobile microphone/speaker/camera checks plus correct/error/variant recordings; fixtures alone are insufficient."
+    },
+    {
+      "id": "MAYA-109",
+      "area": "15. Release acceptance before calling the companion complete",
+      "complete": false,
+      "requirement": "**VERIFY** Rebuild/restart after implementation changes and verify the running build."
+    },
+    {
+      "id": "MAYA-110",
+      "area": "Previously recorded verification of recent additions",
+      "complete": true,
+      "requirement": "60 frontend checks and two new backend checks passed."
+    },
+    {
+      "id": "MAYA-111",
+      "area": "Previously recorded verification of recent additions",
+      "complete": true,
+      "requirement": "Browser harness: AAC toggle/reload, story completion, listening handoff and adult media upload/reload/delete, using synthetic recording/provider fixtures."
+    },
+    {
+      "id": "MAYA-112",
+      "area": "Previously recorded verification of recent additions",
+      "complete": true,
+      "requirement": "Configured model returned a valid public synthetic three-scene key story; no learner audio used."
+    },
+    {
+      "id": "MAYA-113",
+      "area": "Previously recorded verification of recent additions",
+      "complete": true,
+      "requirement": "Production build passed; API/frontend restarted; primary routes and endpoint authentication checked."
+    },
+    {
+      "id": "MAYA-114",
+      "area": "23 October — six-part main-stage delivery",
+      "complete": true,
+      "requirement": "Main-stage learning tabs replace the activity sidebar; illustrated story scenes, picture listening, message practice and familiar demonstrations occupy the main area. Desktop/mobile actual-page browser fixture passed."
+    },
+    {
+      "id": "MAYA-115",
+      "area": "23 October — six-part main-stage delivery",
+      "complete": true,
+      "requirement": "English target-word coaching includes spoken natural/slower examples and an illustrative mouth/cutaway demonstration; complex placement instructions are not the main child-facing explanation. Illustrations are educational, not exact live phoneme animation."
+    },
+    {
+      "id": "MAYA-116",
+      "area": "23 October — six-part main-stage delivery",
+      "complete": true,
+      "requirement": "Learning-call feedback gate begins on captured speech onset, before the cleaned transcript can authorize pronunciation feedback; original audio remains the assessment source. Supported differences receive a gentle acknowledgment; unclear audio never becomes a wrong score."
+    },
+    {
+      "id": "MAYA-117",
+      "area": "23 October — six-part main-stage delivery",
+      "complete": true,
+      "requirement": "Per-attempt visible lip summaries are captured locally, validated server-side and stored with the audio recording. Usable geometry selects supporting closure/rounding cues; missing tracking and hidden tongue movements are explicitly separated from pronunciation grades."
+    },
+    {
+      "id": "MAYA-118",
+      "area": "23 October — six-part main-stage delivery",
+      "complete": true,
+      "requirement": "Fresh word attempt → supported success → optional sentence → finish, or decline → finish, verified in both synthetic-audio browser branches; story and listening completion, break and resume regressions passed."
+    },
+    {
+      "id": "MAYA-119",
+      "area": "23 October — six-part main-stage delivery",
+      "complete": true,
+      "requirement": "Parent report metrics and clinician evidence receive per-recording camera availability/movement summaries alongside existing cue/audio evidence. API test verifies upload-to-report linkage and rejects images/landmarks/camera grades."
+    }
+  ],
+  "last_reconciled": "2026-10-23 exact-list audit: comparison, supported contrast visual/wording and automatic story progress"
+}

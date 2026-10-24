@@ -1,0 +1,464 @@
+[
+  {
+    "source": "synthetic_adult_control_not_phonetic_gold",
+    "synthesis_text": "പന്ത്",
+    "synthesis_language": "ml",
+    "audio_sha256": "0ce58eb4d4b4e80a5699956f217b47a8a856ff2e98ad29d96a51cbede1927d55",
+    "reference": {
+      "source": "mlphon-3.1.3",
+      "source_url": "https://pypi.org/project/mlphon/",
+      "scope": "expected_pronunciation_reference_only",
+      "audio_assessed": false,
+      "words": [
+        {
+          "word": "പന്ത്",
+          "variants": [
+            [
+              "p",
+              "a",
+              "n̪",
+              "t̪",
+              "ə"
+            ]
+          ],
+          "syllables": [
+            "പ",
+            "ന്ത്"
+          ],
+          "articulatory_variants": [
+            [
+              {
+                "phonemes": [
+                  {
+                    "ipa": "p",
+                    "tags": [
+                      "plosive",
+                      "voiceless",
+                      "unaspirated",
+                      "labial"
+                    ]
+                  },
+                  {
+                    "ipa": "a",
+                    "tags": [
+                      "inherentvowel"
+                    ]
+                  }
+                ]
+              },
+              {
+                "phonemes": [
+                  {
+                    "ipa": "n̪",
+                    "tags": [
+                      "nasal",
+                      "dental",
+                      "virama"
+                    ]
+                  },
+                  {
+                    "ipa": "t̪",
+                    "tags": [
+                      "plosive",
+                      "voiceless",
+                      "unaspirated",
+                      "dental"
+                    ]
+                  },
+                  {
+                    "ipa": "ə",
+                    "tags": [
+                      "schwa"
+                    ]
+                  }
+                ]
+              }
+            ]
+          ]
+        }
+      ],
+      "uncovered_words": [],
+      "instruction": "Use these expected sounds, syllables and articulatory attributes to model the word. They do not describe what the learner pronounced. Accept valid variants; never infer an error, correctness, score or hidden tongue movement from this text reference."
+    },
+    "observation": {
+      "source": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+      "revision": "2c733782da5604684829819a5eb744c193fe9398",
+      "scope": "unvalidated_target_independent_phone_hypotheses",
+      "reference_text_supplied": false,
+      "phones": [
+        "b",
+        "a",
+        "n",
+        "d",
+        "ə"
+      ],
+      "emissions": [
+        {
+          "phone": "b",
+          "emission_seconds": 0.08,
+          "peak_posterior": 0.67009,
+          "alternatives": [
+            {
+              "phone": "b",
+              "posterior": 0.67009
+            },
+            {
+              "phone": "p",
+              "posterior": 0.27763
+            },
+            {
+              "phone": "<pad>",
+              "posterior": 0.01597
+            }
+          ]
+        },
+        {
+          "phone": "a",
+          "emission_seconds": 0.12,
+          "peak_posterior": 0.7748,
+          "alternatives": [
+            {
+              "phone": "a",
+              "posterior": 0.7748
+            },
+            {
+              "phone": "ʌ",
+              "posterior": 0.06994
+            },
+            {
+              "phone": "ɑː",
+              "posterior": 0.03532
+            }
+          ]
+        },
+        {
+          "phone": "n",
+          "emission_seconds": 0.24,
+          "peak_posterior": 0.93033,
+          "alternatives": [
+            {
+              "phone": "n",
+              "posterior": 0.93033
+            },
+            {
+              "phone": "<pad>",
+              "posterior": 0.04424
+            },
+            {
+              "phone": "ŋ",
+              "posterior": 0.01527
+            }
+          ]
+        },
+        {
+          "phone": "d",
+          "emission_seconds": 0.36,
+          "peak_posterior": 0.95658,
+          "alternatives": [
+            {
+              "phone": "d",
+              "posterior": 0.95658
+            },
+            {
+              "phone": "t",
+              "posterior": 0.00862
+            },
+            {
+              "phone": "<pad>",
+              "posterior": 0.00428
+            }
+          ]
+        },
+        {
+          "phone": "ə",
+          "emission_seconds": 0.38,
+          "peak_posterior": 0.4862,
+          "alternatives": [
+            {
+              "phone": "ə",
+              "posterior": 0.4862
+            },
+            {
+              "phone": "<pad>",
+              "posterior": 0.06855
+            },
+            {
+              "phone": "ʌ",
+              "posterior": 0.05427
+            }
+          ]
+        }
+      ],
+      "latency_seconds": 4.288,
+      "pronunciation_score": null,
+      "instruction": "These are fallible acoustic hypotheses, not verified errors or pronunciation scores. Posterior values are not pronunciation correctness probabilities. Do not infer hidden tongue movement.",
+      "language": "ml"
+    },
+    "raw": {
+      "state": "tentative_observation",
+      "summary": "I heard 'പന്ത്', but the first sound seemed a bit different. Let's practice the 'p' sound.",
+      "concerns": [
+        {
+          "produced_phone": "b",
+          "category": "substitution",
+          "observation": "The initial sound in 'പന്ത്' sounded voiced, closer to a 'b' sound rather than the expected voiceless 'p'.",
+          "uncertainty": "The local recognizer suggests 'b' and it sounds voiced, but this is a tentative observation from a short audio clip, not a clinical diagnosis.",
+          "word": "പന്ത്",
+          "expected_phone": "p",
+          "practice_tip": "Let's try the 'p' sound. Bring your lips together and release a little puff of air without using your voice. Try saying 'പ' (pa), and then 'പന്ത്' (panth).",
+          "start_seconds": 0.0,
+          "end_seconds": 0.67
+        }
+      ]
+    },
+    "result": {
+      "state": "tentative_observation",
+      "summary": "I heard 'പന്ത്', but the first sound seemed a bit different. Let's practice the 'p' sound.",
+      "concerns": [
+        {
+          "produced_phone": "b",
+          "category": "substitution",
+          "observation": "The initial sound in 'പന്ത്' sounded voiced, closer to a 'b' sound rather than the expected voiceless 'p'.",
+          "uncertainty": "The local recognizer suggests 'b' and it sounds voiced, but this is a tentative observation from a short audio clip, not a clinical diagnosis.",
+          "word": "പന്ത്",
+          "expected_phone": "p",
+          "practice_tip": "Let's try the 'p' sound. Bring your lips together and release a little puff of air without using your voice. Try saying 'പ' (pa), and then 'പന്ത്' (panth).",
+          "start_seconds": 0.0,
+          "end_seconds": 0.67
+        }
+      ]
+    },
+    "model": "google/gemini-3.1-pro-preview"
+  },
+  {
+    "source": "synthetic_adult_control_not_phonetic_gold",
+    "synthesis_text": "fantu",
+    "synthesis_language": "en",
+    "audio_sha256": "dffc2963f194483ad3e21fa273b1b1341f3e6349c11d4f222507d8de7feef430",
+    "reference": {
+      "source": "mlphon-3.1.3",
+      "source_url": "https://pypi.org/project/mlphon/",
+      "scope": "expected_pronunciation_reference_only",
+      "audio_assessed": false,
+      "words": [
+        {
+          "word": "പന്ത്",
+          "variants": [
+            [
+              "p",
+              "a",
+              "n̪",
+              "t̪",
+              "ə"
+            ]
+          ],
+          "syllables": [
+            "പ",
+            "ന്ത്"
+          ],
+          "articulatory_variants": [
+            [
+              {
+                "phonemes": [
+                  {
+                    "ipa": "p",
+                    "tags": [
+                      "plosive",
+                      "voiceless",
+                      "unaspirated",
+                      "labial"
+                    ]
+                  },
+                  {
+                    "ipa": "a",
+                    "tags": [
+                      "inherentvowel"
+                    ]
+                  }
+                ]
+              },
+              {
+                "phonemes": [
+                  {
+                    "ipa": "n̪",
+                    "tags": [
+                      "nasal",
+                      "dental",
+                      "virama"
+                    ]
+                  },
+                  {
+                    "ipa": "t̪",
+                    "tags": [
+                      "plosive",
+                      "voiceless",
+                      "unaspirated",
+                      "dental"
+                    ]
+                  },
+                  {
+                    "ipa": "ə",
+                    "tags": [
+                      "schwa"
+                    ]
+                  }
+                ]
+              }
+            ]
+          ]
+        }
+      ],
+      "uncovered_words": [],
+      "instruction": "Use these expected sounds, syllables and articulatory attributes to model the word. They do not describe what the learner pronounced. Accept valid variants; never infer an error, correctness, score or hidden tongue movement from this text reference."
+    },
+    "observation": {
+      "source": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+      "revision": "2c733782da5604684829819a5eb744c193fe9398",
+      "scope": "unvalidated_target_independent_phone_hypotheses",
+      "reference_text_supplied": false,
+      "phones": [
+        "f",
+        "a",
+        "n",
+        "t",
+        "u"
+      ],
+      "emissions": [
+        {
+          "phone": "f",
+          "emission_seconds": 0.1,
+          "peak_posterior": 0.97581,
+          "alternatives": [
+            {
+              "phone": "f",
+              "posterior": 0.97581
+            },
+            {
+              "phone": "v",
+              "posterior": 0.00756
+            },
+            {
+              "phone": "<pad>",
+              "posterior": 0.00374
+            }
+          ]
+        },
+        {
+          "phone": "a",
+          "emission_seconds": 0.16,
+          "peak_posterior": 0.94698,
+          "alternatives": [
+            {
+              "phone": "a",
+              "posterior": 0.94698
+            },
+            {
+              "phone": "aː",
+              "posterior": 0.02974
+            },
+            {
+              "phone": "ɑ",
+              "posterior": 0.00632
+            }
+          ]
+        },
+        {
+          "phone": "n",
+          "emission_seconds": 0.26,
+          "peak_posterior": 0.9846,
+          "alternatives": [
+            {
+              "phone": "n",
+              "posterior": 0.9846
+            },
+            {
+              "phone": "<pad>",
+              "posterior": 0.00583
+            },
+            {
+              "phone": "m",
+              "posterior": 0.00207
+            }
+          ]
+        },
+        {
+          "phone": "t",
+          "emission_seconds": 0.38,
+          "peak_posterior": 0.98287,
+          "alternatives": [
+            {
+              "phone": "t",
+              "posterior": 0.98287
+            },
+            {
+              "phone": "d",
+              "posterior": 0.00343
+            },
+            {
+              "phone": "tː",
+              "posterior": 0.00199
+            }
+          ]
+        },
+        {
+          "phone": "u",
+          "emission_seconds": 0.42,
+          "peak_posterior": 0.7587,
+          "alternatives": [
+            {
+              "phone": "u",
+              "posterior": 0.7587
+            },
+            {
+              "phone": "o",
+              "posterior": 0.07992
+            },
+            {
+              "phone": "uː",
+              "posterior": 0.0703
+            }
+          ]
+        }
+      ],
+      "latency_seconds": 1.228,
+      "pronunciation_score": null,
+      "instruction": "These are fallible acoustic hypotheses, not verified errors or pronunciation scores. Posterior values are not pronunciation correctness probabilities. Do not infer hidden tongue movement.",
+      "language": "ml"
+    },
+    "raw": {
+      "state": "tentative_observation",
+      "summary": "You tried saying 'പന്ത്' (panthu). I heard a sound closer to 'f' at the beginning instead of 'p'. Let's practice the 'p' sound together.",
+      "concerns": [
+        {
+          "produced_phone": "f",
+          "category": "substitution",
+          "observation": "The initial sound in 'പന്ത്' sounded like an 'f' instead of the expected 'p'.",
+          "uncertainty": "The audio is short and the recognizer suggests 'f', but this is a tentative observation and not a clinical diagnosis.",
+          "word": "പന്ത്",
+          "expected_phone": "p",
+          "practice_tip": "To make the 'p' sound, gently press your lips together and then release them with a little puff of air. Try saying 'pa', then 'panthu'.",
+          "start_seconds": 0.0,
+          "end_seconds": 0.5
+        }
+      ]
+    },
+    "result": {
+      "state": "tentative_observation",
+      "summary": "You tried saying 'പന്ത്' (panthu). I heard a sound closer to 'f' at the beginning instead of 'p'. Let's practice the 'p' sound together.",
+      "concerns": [
+        {
+          "produced_phone": "f",
+          "category": "substitution",
+          "observation": "The initial sound in 'പന്ത്' sounded like an 'f' instead of the expected 'p'.",
+          "uncertainty": "The audio is short and the recognizer suggests 'f', but this is a tentative observation and not a clinical diagnosis.",
+          "word": "പന്ത്",
+          "expected_phone": "p",
+          "practice_tip": "To make the 'p' sound, gently press your lips together and then release them with a little puff of air. Try saying 'pa', then 'panthu'.",
+          "start_seconds": 0.0,
+          "end_seconds": 0.5
+        }
+      ]
+    },
+    "model": "google/gemini-3.1-pro-preview"
+  }
+]

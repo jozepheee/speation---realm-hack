@@ -1,0 +1,1157 @@
+{
+  "scope": "synthetic_adult_engineering_controls_not_gold_phonetic_labels",
+  "release_approved": false,
+  "clinical_validation": false,
+  "results": [
+    {
+      "language": "en",
+      "target": "ship",
+      "synthetic_spoken_text": "ship",
+      "audio_sha256": "862813399a179cedf944993cd531e5296eb9102495f124529d388c3e86af7d44",
+      "reference": {
+        "source": "espeak-ng/espeakng-loader-0.2.4",
+        "source_url": "https://github.com/espeak-ng/espeak-ng",
+        "language": "en",
+        "scope": "expected_pronunciation_reference_only",
+        "audio_assessed": false,
+        "notation": "Hindi engine t/d/tʰ/dʰ are normalized to dental t̪/d̪/t̪ʰ/d̪ʰ; audio predictions are never normalized this way.",
+        "words": [
+          {
+            "word": "ship",
+            "variants": [
+              [
+                "ʃ",
+                "ɪ",
+                "p"
+              ]
+            ],
+            "reference_locales": [
+              "en-us",
+              "en-gb"
+            ],
+            "syllables": null
+          }
+        ],
+        "uncovered_words": [],
+        "instruction": "These are expected-phone teaching references, not learner audio or exhaustive dialect variants. Never mark an accent or variant wrong solely because it differs from this reference. Preserve vowel length, aspiration, dental/retroflex and voicing distinctions. Syllabification is not supplied; do not treat written letters as separate syllables."
+      },
+      "observation": {
+        "source": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+        "revision": "2c733782da5604684829819a5eb744c193fe9398",
+        "scope": "unvalidated_target_independent_phone_hypotheses",
+        "reference_text_supplied": false,
+        "phones": [
+          "ʃ",
+          "ɛ",
+          "p"
+        ],
+        "emissions": [
+          {
+            "phone": "ʃ",
+            "emission_seconds": 0.12,
+            "alternatives": [
+              {
+                "phone": "ʃ",
+                "posterior": 0.93702
+              },
+              {
+                "phone": "ɕ",
+                "posterior": 0.00986
+              },
+              {
+                "phone": "s",
+                "posterior": 0.00934
+              }
+            ]
+          },
+          {
+            "phone": "ɛ",
+            "emission_seconds": 0.18,
+            "alternatives": [
+              {
+                "phone": "ɛ",
+                "posterior": 0.89993
+              },
+              {
+                "phone": "eː",
+                "posterior": 0.0262
+              },
+              {
+                "phone": "e",
+                "posterior": 0.02093
+              }
+            ]
+          },
+          {
+            "phone": "p",
+            "emission_seconds": 0.36,
+            "alternatives": [
+              {
+                "phone": "p",
+                "posterior": 0.97535
+              },
+              {
+                "phone": "b",
+                "posterior": 0.01269
+              },
+              {
+                "phone": "t",
+                "posterior": 0.00178
+              }
+            ]
+          }
+        ],
+        "latency_seconds": 0.974,
+        "pronunciation_score": null,
+        "instruction": "These are fallible acoustic hypotheses, not verified errors or pronunciation scores. Posterior values are not pronunciation correctness probabilities. Do not infer hidden tongue movement.",
+        "language": "en"
+      },
+      "elapsed_seconds": 1.055
+    },
+    {
+      "language": "en",
+      "target": "ship",
+      "synthetic_spoken_text": "sheep",
+      "audio_sha256": "907e748e91d3d2fe42bd4c542d1d1a37f35fe37f89756dbfee5d6a99ad584b34",
+      "reference": {
+        "source": "espeak-ng/espeakng-loader-0.2.4",
+        "source_url": "https://github.com/espeak-ng/espeak-ng",
+        "language": "en",
+        "scope": "expected_pronunciation_reference_only",
+        "audio_assessed": false,
+        "notation": "Hindi engine t/d/tʰ/dʰ are normalized to dental t̪/d̪/t̪ʰ/d̪ʰ; audio predictions are never normalized this way.",
+        "words": [
+          {
+            "word": "ship",
+            "variants": [
+              [
+                "ʃ",
+                "ɪ",
+                "p"
+              ]
+            ],
+            "reference_locales": [
+              "en-us",
+              "en-gb"
+            ],
+            "syllables": null
+          }
+        ],
+        "uncovered_words": [],
+        "instruction": "These are expected-phone teaching references, not learner audio or exhaustive dialect variants. Never mark an accent or variant wrong solely because it differs from this reference. Preserve vowel length, aspiration, dental/retroflex and voicing distinctions. Syllabification is not supplied; do not treat written letters as separate syllables."
+      },
+      "observation": {
+        "source": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+        "revision": "2c733782da5604684829819a5eb744c193fe9398",
+        "scope": "unvalidated_target_independent_phone_hypotheses",
+        "reference_text_supplied": false,
+        "phones": [
+          "ʃ",
+          "iː",
+          "p"
+        ],
+        "emissions": [
+          {
+            "phone": "ʃ",
+            "emission_seconds": 0.12,
+            "alternatives": [
+              {
+                "phone": "ʃ",
+                "posterior": 0.91014
+              },
+              {
+                "phone": "s",
+                "posterior": 0.01273
+              },
+              {
+                "phone": "ɕ",
+                "posterior": 0.0122
+              }
+            ]
+          },
+          {
+            "phone": "iː",
+            "emission_seconds": 0.18,
+            "alternatives": [
+              {
+                "phone": "iː",
+                "posterior": 0.66721
+              },
+              {
+                "phone": "i",
+                "posterior": 0.20883
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.0359
+              }
+            ]
+          },
+          {
+            "phone": "p",
+            "emission_seconds": 0.38,
+            "alternatives": [
+              {
+                "phone": "p",
+                "posterior": 0.97348
+              },
+              {
+                "phone": "b",
+                "posterior": 0.01089
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.0042
+              }
+            ]
+          }
+        ],
+        "latency_seconds": 0.24,
+        "pronunciation_score": null,
+        "instruction": "These are fallible acoustic hypotheses, not verified errors or pronunciation scores. Posterior values are not pronunciation correctness probabilities. Do not infer hidden tongue movement.",
+        "language": "en"
+      },
+      "elapsed_seconds": 0.249
+    },
+    {
+      "language": "en",
+      "target": "thin",
+      "synthetic_spoken_text": "thin",
+      "audio_sha256": "479cb761f3c01484375577bddf979deb8a1035bc24895947972f534d97493444",
+      "reference": {
+        "source": "espeak-ng/espeakng-loader-0.2.4",
+        "source_url": "https://github.com/espeak-ng/espeak-ng",
+        "language": "en",
+        "scope": "expected_pronunciation_reference_only",
+        "audio_assessed": false,
+        "notation": "Hindi engine t/d/tʰ/dʰ are normalized to dental t̪/d̪/t̪ʰ/d̪ʰ; audio predictions are never normalized this way.",
+        "words": [
+          {
+            "word": "thin",
+            "variants": [
+              [
+                "θ",
+                "ɪ",
+                "n"
+              ]
+            ],
+            "reference_locales": [
+              "en-us",
+              "en-gb"
+            ],
+            "syllables": null
+          }
+        ],
+        "uncovered_words": [],
+        "instruction": "These are expected-phone teaching references, not learner audio or exhaustive dialect variants. Never mark an accent or variant wrong solely because it differs from this reference. Preserve vowel length, aspiration, dental/retroflex and voicing distinctions. Syllabification is not supplied; do not treat written letters as separate syllables."
+      },
+      "observation": {
+        "source": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+        "revision": "2c733782da5604684829819a5eb744c193fe9398",
+        "scope": "unvalidated_target_independent_phone_hypotheses",
+        "reference_text_supplied": false,
+        "phones": [
+          "ð",
+          "ɪ",
+          "n"
+        ],
+        "emissions": [
+          {
+            "phone": "ð",
+            "emission_seconds": 0.06,
+            "alternatives": [
+              {
+                "phone": "ð",
+                "posterior": 0.94357
+              },
+              {
+                "phone": "θ",
+                "posterior": 0.01057
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.00787
+              }
+            ]
+          },
+          {
+            "phone": "ɪ",
+            "emission_seconds": 0.12,
+            "alternatives": [
+              {
+                "phone": "ɪ",
+                "posterior": 0.32261
+              },
+              {
+                "phone": "ø",
+                "posterior": 0.12135
+              },
+              {
+                "phone": "ɨ",
+                "posterior": 0.07687
+              }
+            ]
+          },
+          {
+            "phone": "n",
+            "emission_seconds": 0.3,
+            "alternatives": [
+              {
+                "phone": "n",
+                "posterior": 0.76658
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.22537
+              },
+              {
+                "phone": "m",
+                "posterior": 0.00283
+              }
+            ]
+          }
+        ],
+        "latency_seconds": 0.308,
+        "pronunciation_score": null,
+        "instruction": "These are fallible acoustic hypotheses, not verified errors or pronunciation scores. Posterior values are not pronunciation correctness probabilities. Do not infer hidden tongue movement.",
+        "language": "en"
+      },
+      "elapsed_seconds": 0.317
+    },
+    {
+      "language": "en",
+      "target": "thin",
+      "synthetic_spoken_text": "tin",
+      "audio_sha256": "13b795c4738f10eb157a62ac4af76eb26febf8029ac84772e4b2a1b308bffaa6",
+      "reference": {
+        "source": "espeak-ng/espeakng-loader-0.2.4",
+        "source_url": "https://github.com/espeak-ng/espeak-ng",
+        "language": "en",
+        "scope": "expected_pronunciation_reference_only",
+        "audio_assessed": false,
+        "notation": "Hindi engine t/d/tʰ/dʰ are normalized to dental t̪/d̪/t̪ʰ/d̪ʰ; audio predictions are never normalized this way.",
+        "words": [
+          {
+            "word": "thin",
+            "variants": [
+              [
+                "θ",
+                "ɪ",
+                "n"
+              ]
+            ],
+            "reference_locales": [
+              "en-us",
+              "en-gb"
+            ],
+            "syllables": null
+          }
+        ],
+        "uncovered_words": [],
+        "instruction": "These are expected-phone teaching references, not learner audio or exhaustive dialect variants. Never mark an accent or variant wrong solely because it differs from this reference. Preserve vowel length, aspiration, dental/retroflex and voicing distinctions. Syllabification is not supplied; do not treat written letters as separate syllables."
+      },
+      "observation": {
+        "source": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+        "revision": "2c733782da5604684829819a5eb744c193fe9398",
+        "scope": "unvalidated_target_independent_phone_hypotheses",
+        "reference_text_supplied": false,
+        "phones": [
+          "t",
+          "ɛ",
+          "n"
+        ],
+        "emissions": [
+          {
+            "phone": "t",
+            "emission_seconds": 0.04,
+            "alternatives": [
+              {
+                "phone": "t",
+                "posterior": 0.94877
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.02819
+              },
+              {
+                "phone": "ts",
+                "posterior": 0.00272
+              }
+            ]
+          },
+          {
+            "phone": "ɛ",
+            "emission_seconds": 0.16,
+            "alternatives": [
+              {
+                "phone": "ɛ",
+                "posterior": 0.91365
+              },
+              {
+                "phone": "æ",
+                "posterior": 0.02386
+              },
+              {
+                "phone": "eː",
+                "posterior": 0.01612
+              }
+            ]
+          },
+          {
+            "phone": "n",
+            "emission_seconds": 0.32,
+            "alternatives": [
+              {
+                "phone": "n",
+                "posterior": 0.74134
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.25367
+              },
+              {
+                "phone": "m",
+                "posterior": 0.0015
+              }
+            ]
+          }
+        ],
+        "latency_seconds": 0.192,
+        "pronunciation_score": null,
+        "instruction": "These are fallible acoustic hypotheses, not verified errors or pronunciation scores. Posterior values are not pronunciation correctness probabilities. Do not infer hidden tongue movement.",
+        "language": "en"
+      },
+      "elapsed_seconds": 0.199
+    },
+    {
+      "language": "en",
+      "target": "right",
+      "synthetic_spoken_text": "right",
+      "audio_sha256": "41718a3026361a7f06d517f30686f538ddf95198668150c2ebe9f57fde19ea03",
+      "reference": {
+        "source": "espeak-ng/espeakng-loader-0.2.4",
+        "source_url": "https://github.com/espeak-ng/espeak-ng",
+        "language": "en",
+        "scope": "expected_pronunciation_reference_only",
+        "audio_assessed": false,
+        "notation": "Hindi engine t/d/tʰ/dʰ are normalized to dental t̪/d̪/t̪ʰ/d̪ʰ; audio predictions are never normalized this way.",
+        "words": [
+          {
+            "word": "right",
+            "variants": [
+              [
+                "ɹ",
+                "aɪ",
+                "t"
+              ]
+            ],
+            "reference_locales": [
+              "en-us",
+              "en-gb"
+            ],
+            "syllables": null
+          }
+        ],
+        "uncovered_words": [],
+        "instruction": "These are expected-phone teaching references, not learner audio or exhaustive dialect variants. Never mark an accent or variant wrong solely because it differs from this reference. Preserve vowel length, aspiration, dental/retroflex and voicing distinctions. Syllabification is not supplied; do not treat written letters as separate syllables."
+      },
+      "observation": {
+        "source": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+        "revision": "2c733782da5604684829819a5eb744c193fe9398",
+        "scope": "unvalidated_target_independent_phone_hypotheses",
+        "reference_text_supplied": false,
+        "phones": [
+          "ɹ",
+          "aɪ",
+          "t"
+        ],
+        "emissions": [
+          {
+            "phone": "ɹ",
+            "emission_seconds": 0.12,
+            "alternatives": [
+              {
+                "phone": "ɹ",
+                "posterior": 0.90479
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.01784
+              },
+              {
+                "phone": "w",
+                "posterior": 0.00934
+              }
+            ]
+          },
+          {
+            "phone": "aɪ",
+            "emission_seconds": 0.18,
+            "alternatives": [
+              {
+                "phone": "aɪ",
+                "posterior": 0.82344
+              },
+              {
+                "phone": "æ",
+                "posterior": 0.01704
+              },
+              {
+                "phone": "ɑɨ",
+                "posterior": 0.01339
+              }
+            ]
+          },
+          {
+            "phone": "t",
+            "emission_seconds": 0.4,
+            "alternatives": [
+              {
+                "phone": "t",
+                "posterior": 0.91065
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.03975
+              },
+              {
+                "phone": "ɾ",
+                "posterior": 0.01103
+              }
+            ]
+          }
+        ],
+        "latency_seconds": 0.394,
+        "pronunciation_score": null,
+        "instruction": "These are fallible acoustic hypotheses, not verified errors or pronunciation scores. Posterior values are not pronunciation correctness probabilities. Do not infer hidden tongue movement.",
+        "language": "en"
+      },
+      "elapsed_seconds": 0.406
+    },
+    {
+      "language": "en",
+      "target": "right",
+      "synthetic_spoken_text": "light",
+      "audio_sha256": "8577966cda73f03b5e10c957c4443002fdbf3d544f558ca6dd7b6d58b8242561",
+      "reference": {
+        "source": "espeak-ng/espeakng-loader-0.2.4",
+        "source_url": "https://github.com/espeak-ng/espeak-ng",
+        "language": "en",
+        "scope": "expected_pronunciation_reference_only",
+        "audio_assessed": false,
+        "notation": "Hindi engine t/d/tʰ/dʰ are normalized to dental t̪/d̪/t̪ʰ/d̪ʰ; audio predictions are never normalized this way.",
+        "words": [
+          {
+            "word": "right",
+            "variants": [
+              [
+                "ɹ",
+                "aɪ",
+                "t"
+              ]
+            ],
+            "reference_locales": [
+              "en-us",
+              "en-gb"
+            ],
+            "syllables": null
+          }
+        ],
+        "uncovered_words": [],
+        "instruction": "These are expected-phone teaching references, not learner audio or exhaustive dialect variants. Never mark an accent or variant wrong solely because it differs from this reference. Preserve vowel length, aspiration, dental/retroflex and voicing distinctions. Syllabification is not supplied; do not treat written letters as separate syllables."
+      },
+      "observation": {
+        "source": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+        "revision": "2c733782da5604684829819a5eb744c193fe9398",
+        "scope": "unvalidated_target_independent_phone_hypotheses",
+        "reference_text_supplied": false,
+        "phones": [
+          "l",
+          "aɪ",
+          "t"
+        ],
+        "emissions": [
+          {
+            "phone": "l",
+            "emission_seconds": 0.1,
+            "alternatives": [
+              {
+                "phone": "l",
+                "posterior": 0.99168
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.00225
+              },
+              {
+                "phone": "ɭ",
+                "posterior": 0.00049
+              }
+            ]
+          },
+          {
+            "phone": "aɪ",
+            "emission_seconds": 0.16,
+            "alternatives": [
+              {
+                "phone": "aɪ",
+                "posterior": 0.84415
+              },
+              {
+                "phone": "æ",
+                "posterior": 0.01554
+              },
+              {
+                "phone": "eɪ",
+                "posterior": 0.01069
+              }
+            ]
+          },
+          {
+            "phone": "t",
+            "emission_seconds": 0.38,
+            "alternatives": [
+              {
+                "phone": "t",
+                "posterior": 0.91247
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.07173
+              },
+              {
+                "phone": "d",
+                "posterior": 0.00361
+              }
+            ]
+          }
+        ],
+        "latency_seconds": 0.324,
+        "pronunciation_score": null,
+        "instruction": "These are fallible acoustic hypotheses, not verified errors or pronunciation scores. Posterior values are not pronunciation correctness probabilities. Do not infer hidden tongue movement.",
+        "language": "en"
+      },
+      "elapsed_seconds": 0.332
+    },
+    {
+      "language": "hi",
+      "target": "ताल",
+      "synthetic_spoken_text": "ताल",
+      "audio_sha256": "50bab84748446cb4f5c5e3835c0d342392a1c2aae9f1ca2e36317abb2684c93f",
+      "reference": {
+        "source": "espeak-ng/espeakng-loader-0.2.4",
+        "source_url": "https://github.com/espeak-ng/espeak-ng",
+        "language": "hi",
+        "scope": "expected_pronunciation_reference_only",
+        "audio_assessed": false,
+        "notation": "Hindi engine t/d/tʰ/dʰ are normalized to dental t̪/d̪/t̪ʰ/d̪ʰ; audio predictions are never normalized this way.",
+        "words": [
+          {
+            "word": "ताल",
+            "variants": [
+              [
+                "t̪",
+                "aː",
+                "l"
+              ]
+            ],
+            "reference_locales": [
+              "hi"
+            ],
+            "syllables": null
+          }
+        ],
+        "uncovered_words": [],
+        "instruction": "These are expected-phone teaching references, not learner audio or exhaustive dialect variants. Never mark an accent or variant wrong solely because it differs from this reference. Preserve vowel length, aspiration, dental/retroflex and voicing distinctions. Syllabification is not supplied; do not treat written letters as separate syllables."
+      },
+      "observation": {
+        "source": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+        "revision": "2c733782da5604684829819a5eb744c193fe9398",
+        "scope": "unvalidated_target_independent_phone_hypotheses",
+        "reference_text_supplied": false,
+        "phones": [
+          "t",
+          "aː",
+          "l"
+        ],
+        "emissions": [
+          {
+            "phone": "t",
+            "emission_seconds": 0.06,
+            "alternatives": [
+              {
+                "phone": "t",
+                "posterior": 0.94796
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.01691
+              },
+              {
+                "phone": "d",
+                "posterior": 0.01348
+              }
+            ]
+          },
+          {
+            "phone": "aː",
+            "emission_seconds": 0.1,
+            "alternatives": [
+              {
+                "phone": "aː",
+                "posterior": 0.30203
+              },
+              {
+                "phone": "a",
+                "posterior": 0.14573
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.06225
+              }
+            ]
+          },
+          {
+            "phone": "l",
+            "emission_seconds": 0.32,
+            "alternatives": [
+              {
+                "phone": "l",
+                "posterior": 0.83614
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.1083
+              },
+              {
+                "phone": "n",
+                "posterior": 0.04335
+              }
+            ]
+          }
+        ],
+        "latency_seconds": 0.319,
+        "pronunciation_score": null,
+        "instruction": "These are fallible acoustic hypotheses, not verified errors or pronunciation scores. Posterior values are not pronunciation correctness probabilities. Do not infer hidden tongue movement.",
+        "language": "hi"
+      },
+      "elapsed_seconds": 0.328
+    },
+    {
+      "language": "hi",
+      "target": "ताल",
+      "synthetic_spoken_text": "दाल",
+      "audio_sha256": "faba90cdd2c95fd4284f8c20274afe3ecbc87832c02bef2540482f523162df97",
+      "reference": {
+        "source": "espeak-ng/espeakng-loader-0.2.4",
+        "source_url": "https://github.com/espeak-ng/espeak-ng",
+        "language": "hi",
+        "scope": "expected_pronunciation_reference_only",
+        "audio_assessed": false,
+        "notation": "Hindi engine t/d/tʰ/dʰ are normalized to dental t̪/d̪/t̪ʰ/d̪ʰ; audio predictions are never normalized this way.",
+        "words": [
+          {
+            "word": "ताल",
+            "variants": [
+              [
+                "t̪",
+                "aː",
+                "l"
+              ]
+            ],
+            "reference_locales": [
+              "hi"
+            ],
+            "syllables": null
+          }
+        ],
+        "uncovered_words": [],
+        "instruction": "These are expected-phone teaching references, not learner audio or exhaustive dialect variants. Never mark an accent or variant wrong solely because it differs from this reference. Preserve vowel length, aspiration, dental/retroflex and voicing distinctions. Syllabification is not supplied; do not treat written letters as separate syllables."
+      },
+      "observation": {
+        "source": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+        "revision": "2c733782da5604684829819a5eb744c193fe9398",
+        "scope": "unvalidated_target_independent_phone_hypotheses",
+        "reference_text_supplied": false,
+        "phones": [
+          "d",
+          "a",
+          "l"
+        ],
+        "emissions": [
+          {
+            "phone": "d",
+            "emission_seconds": 0.06,
+            "alternatives": [
+              {
+                "phone": "d",
+                "posterior": 0.4648
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.25064
+              },
+              {
+                "phone": "t",
+                "posterior": 0.2332
+              }
+            ]
+          },
+          {
+            "phone": "a",
+            "emission_seconds": 0.12,
+            "alternatives": [
+              {
+                "phone": "a",
+                "posterior": 0.45618
+              },
+              {
+                "phone": "aː",
+                "posterior": 0.42665
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.02349
+              }
+            ]
+          },
+          {
+            "phone": "l",
+            "emission_seconds": 0.38,
+            "alternatives": [
+              {
+                "phone": "l",
+                "posterior": 0.78507
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.20462
+              },
+              {
+                "phone": "n",
+                "posterior": 0.00185
+              }
+            ]
+          }
+        ],
+        "latency_seconds": 0.31,
+        "pronunciation_score": null,
+        "instruction": "These are fallible acoustic hypotheses, not verified errors or pronunciation scores. Posterior values are not pronunciation correctness probabilities. Do not infer hidden tongue movement.",
+        "language": "hi"
+      },
+      "elapsed_seconds": 0.318
+    },
+    {
+      "language": "hi",
+      "target": "कल",
+      "synthetic_spoken_text": "कल",
+      "audio_sha256": "6520394b22d6c44c61af911d48ee2bc48bb459e74863beec97b7696845f09fce",
+      "reference": {
+        "source": "espeak-ng/espeakng-loader-0.2.4",
+        "source_url": "https://github.com/espeak-ng/espeak-ng",
+        "language": "hi",
+        "scope": "expected_pronunciation_reference_only",
+        "audio_assessed": false,
+        "notation": "Hindi engine t/d/tʰ/dʰ are normalized to dental t̪/d̪/t̪ʰ/d̪ʰ; audio predictions are never normalized this way.",
+        "words": [
+          {
+            "word": "कल",
+            "variants": [
+              [
+                "k",
+                "ʌ",
+                "l"
+              ]
+            ],
+            "reference_locales": [
+              "hi"
+            ],
+            "syllables": null
+          }
+        ],
+        "uncovered_words": [],
+        "instruction": "These are expected-phone teaching references, not learner audio or exhaustive dialect variants. Never mark an accent or variant wrong solely because it differs from this reference. Preserve vowel length, aspiration, dental/retroflex and voicing distinctions. Syllabification is not supplied; do not treat written letters as separate syllables."
+      },
+      "observation": {
+        "source": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+        "revision": "2c733782da5604684829819a5eb744c193fe9398",
+        "scope": "unvalidated_target_independent_phone_hypotheses",
+        "reference_text_supplied": false,
+        "phones": [
+          "k",
+          "a",
+          "l"
+        ],
+        "emissions": [
+          {
+            "phone": "k",
+            "emission_seconds": 0.04,
+            "alternatives": [
+              {
+                "phone": "k",
+                "posterior": 0.6481
+              },
+              {
+                "phone": "ɡ",
+                "posterior": 0.32214
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.0041
+              }
+            ]
+          },
+          {
+            "phone": "a",
+            "emission_seconds": 0.1,
+            "alternatives": [
+              {
+                "phone": "a",
+                "posterior": 0.9179
+              },
+              {
+                "phone": "ʌ",
+                "posterior": 0.01853
+              },
+              {
+                "phone": "aː",
+                "posterior": 0.01035
+              }
+            ]
+          },
+          {
+            "phone": "l",
+            "emission_seconds": 0.26,
+            "alternatives": [
+              {
+                "phone": "l",
+                "posterior": 0.5581
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.42994
+              },
+              {
+                "phone": "n",
+                "posterior": 0.00181
+              }
+            ]
+          }
+        ],
+        "latency_seconds": 0.246,
+        "pronunciation_score": null,
+        "instruction": "These are fallible acoustic hypotheses, not verified errors or pronunciation scores. Posterior values are not pronunciation correctness probabilities. Do not infer hidden tongue movement.",
+        "language": "hi"
+      },
+      "elapsed_seconds": 0.257
+    },
+    {
+      "language": "hi",
+      "target": "कल",
+      "synthetic_spoken_text": "खल",
+      "audio_sha256": "004445cba1846b1fa328ccf9fa85364cd68bb8324f876b0fd5cd6825fdfbbeb7",
+      "reference": {
+        "source": "espeak-ng/espeakng-loader-0.2.4",
+        "source_url": "https://github.com/espeak-ng/espeak-ng",
+        "language": "hi",
+        "scope": "expected_pronunciation_reference_only",
+        "audio_assessed": false,
+        "notation": "Hindi engine t/d/tʰ/dʰ are normalized to dental t̪/d̪/t̪ʰ/d̪ʰ; audio predictions are never normalized this way.",
+        "words": [
+          {
+            "word": "कल",
+            "variants": [
+              [
+                "k",
+                "ʌ",
+                "l"
+              ]
+            ],
+            "reference_locales": [
+              "hi"
+            ],
+            "syllables": null
+          }
+        ],
+        "uncovered_words": [],
+        "instruction": "These are expected-phone teaching references, not learner audio or exhaustive dialect variants. Never mark an accent or variant wrong solely because it differs from this reference. Preserve vowel length, aspiration, dental/retroflex and voicing distinctions. Syllabification is not supplied; do not treat written letters as separate syllables."
+      },
+      "observation": {
+        "source": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+        "revision": "2c733782da5604684829819a5eb744c193fe9398",
+        "scope": "unvalidated_target_independent_phone_hypotheses",
+        "reference_text_supplied": false,
+        "phones": [
+          "k",
+          "x",
+          "a5"
+        ],
+        "emissions": [
+          {
+            "phone": "k",
+            "emission_seconds": 0.08,
+            "alternatives": [
+              {
+                "phone": "k",
+                "posterior": 0.4126
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.40428
+              },
+              {
+                "phone": "x",
+                "posterior": 0.03558
+              }
+            ]
+          },
+          {
+            "phone": "x",
+            "emission_seconds": 0.1,
+            "alternatives": [
+              {
+                "phone": "x",
+                "posterior": 0.25428
+              },
+              {
+                "phone": "k",
+                "posterior": 0.1768
+              },
+              {
+                "phone": "kh",
+                "posterior": 0.13874
+              }
+            ]
+          },
+          {
+            "phone": "a5",
+            "emission_seconds": 0.18,
+            "alternatives": [
+              {
+                "phone": "a5",
+                "posterior": 0.18316
+              },
+              {
+                "phone": "əɜ",
+                "posterior": 0.0568
+              },
+              {
+                "phone": "aɜ",
+                "posterior": 0.04121
+              }
+            ]
+          }
+        ],
+        "latency_seconds": 0.254,
+        "pronunciation_score": null,
+        "instruction": "These are fallible acoustic hypotheses, not verified errors or pronunciation scores. Posterior values are not pronunciation correctness probabilities. Do not infer hidden tongue movement.",
+        "language": "hi"
+      },
+      "elapsed_seconds": 0.261
+    },
+    {
+      "language": "hi",
+      "target": "ताल",
+      "synthetic_spoken_text": "टाल",
+      "audio_sha256": "c440813256f867231d6789736feec1d08bab7a0f5001db5b2f82a6c1e739e231",
+      "reference": {
+        "source": "espeak-ng/espeakng-loader-0.2.4",
+        "source_url": "https://github.com/espeak-ng/espeak-ng",
+        "language": "hi",
+        "scope": "expected_pronunciation_reference_only",
+        "audio_assessed": false,
+        "notation": "Hindi engine t/d/tʰ/dʰ are normalized to dental t̪/d̪/t̪ʰ/d̪ʰ; audio predictions are never normalized this way.",
+        "words": [
+          {
+            "word": "ताल",
+            "variants": [
+              [
+                "t̪",
+                "aː",
+                "l"
+              ]
+            ],
+            "reference_locales": [
+              "hi"
+            ],
+            "syllables": null
+          }
+        ],
+        "uncovered_words": [],
+        "instruction": "These are expected-phone teaching references, not learner audio or exhaustive dialect variants. Never mark an accent or variant wrong solely because it differs from this reference. Preserve vowel length, aspiration, dental/retroflex and voicing distinctions. Syllabification is not supplied; do not treat written letters as separate syllables."
+      },
+      "observation": {
+        "source": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+        "revision": "2c733782da5604684829819a5eb744c193fe9398",
+        "scope": "unvalidated_target_independent_phone_hypotheses",
+        "reference_text_supplied": false,
+        "phones": [
+          "d",
+          "a",
+          "l"
+        ],
+        "emissions": [
+          {
+            "phone": "d",
+            "emission_seconds": 0.1,
+            "alternatives": [
+              {
+                "phone": "d",
+                "posterior": 0.78429
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.08203
+              },
+              {
+                "phone": "t",
+                "posterior": 0.06138
+              }
+            ]
+          },
+          {
+            "phone": "a",
+            "emission_seconds": 0.16,
+            "alternatives": [
+              {
+                "phone": "a",
+                "posterior": 0.74188
+              },
+              {
+                "phone": "aː",
+                "posterior": 0.18523
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.01376
+              }
+            ]
+          },
+          {
+            "phone": "l",
+            "emission_seconds": 0.36,
+            "alternatives": [
+              {
+                "phone": "l",
+                "posterior": 0.92261
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.0679
+              },
+              {
+                "phone": "a",
+                "posterior": 0.00152
+              }
+            ]
+          }
+        ],
+        "latency_seconds": 0.197,
+        "pronunciation_score": null,
+        "instruction": "These are fallible acoustic hypotheses, not verified errors or pronunciation scores. Posterior values are not pronunciation correctness probabilities. Do not infer hidden tongue movement.",
+        "language": "hi"
+      },
+      "elapsed_seconds": 0.206
+    }
+  ]
+}

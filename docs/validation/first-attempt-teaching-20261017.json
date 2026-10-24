@@ -1,0 +1,1203 @@
+{
+  "scope": "adult_synthetic_engineering_controls_not_gold_pronunciation",
+  "clinical_validation": false,
+  "microphone_test": false,
+  "results": [
+    {
+      "language": "ml",
+      "target": "മഴ",
+      "synthetic_spoken_text": "മഴ",
+      "audio_sha256": "095554ea8a9b785c4982085648a7d0567a781d06e3c85f6b838c2fe5b3affdf1",
+      "model": "google/gemini-3.1-pro-preview",
+      "raw_response": {
+        "state": "tentative_observation",
+        "summary": "You're doing great! I heard you say 'മഴ'. It sounded a little bit like 'മറ'. Let's practice the special 'ഴ' sound together.",
+        "concerns": [
+          {
+            "produced_phone": "ɾ",
+            "category": "substitution",
+            "observation": "The 'ഴ' (/ɻ/) sound sounded more like a 'റ' (/ɾ/).",
+            "uncertainty": "Audio analysis is tentative and cannot confirm exact tongue placement.",
+            "word": "മഴ",
+            "expected_phone": "ɻ",
+            "practice_tip": "To make the 'ഴ' sound, curl your tongue back, but don't let it touch the top of your mouth. Let's try just the sound first: ഴ... and now the word: മഴ.",
+            "start_seconds": 0.0,
+            "end_seconds": 0.96
+          }
+        ]
+      },
+      "content": {
+        "state": "insufficient_evidence",
+        "summary": "ഈ റെക്കോർഡിങ്ങിലെ ശബ്ദങ്ങൾ വിശ്വസനീയമായി വിലയിരുത്താനായില്ല. ഉദ്ദേശിച്ച വാക്ക് പറയാമോ, അല്ലെങ്കിൽ ഒരു ചെറിയ വാക്ക് വീണ്ടും പറയാമോ?",
+        "concerns": []
+      },
+      "teaching_plan": [
+        {
+          "word": "മഴ",
+          "expected_phone": "ɻ",
+          "practice_tip": "ഴ പറയാൻ നാവിന്റെ അറ്റം അല്പം പിന്നിലേക്ക് വളച്ച്, മുകളിൽ തൊടാതെ ശബ്ദം വരാൻ വിടൂ. ബലം കൊടുക്കേണ്ട. ഇനി “മഴ” കേട്ടിട്ട് ഒരിക്കൽ പറഞ്ഞുനോക്കൂ.",
+          "syllables": [
+            "മ",
+            "ഴ"
+          ],
+          "previous_attempt_count": 0,
+          "level": "expected_word_demonstration",
+          "instruction": "General expected-word teaching only; no error was established. Briefly acknowledge uncertainty if needed, model the word aloud, then listen to one attempt. Do not wait for a clinician or require typing."
+        }
+      ],
+      "repeat_teaching_simulation": [
+        {
+          "word": "മഴ",
+          "expected_phone": "ɻ",
+          "practice_tip": "ഴ പറയാൻ നാവിന്റെ അറ്റം അല്പം പിന്നിലേക്ക് വളച്ച്, മുകളിൽ തൊടാതെ ശബ്ദം വരാൻ വിടൂ. ബലം കൊടുക്കേണ്ട. ഇനി “മഴ” കേട്ടിട്ട് ഒരിക്കൽ പറഞ്ഞുനോക്കൂ.",
+          "syllables": [
+            "മ",
+            "ഴ"
+          ],
+          "previous_attempt_count": 0,
+          "level": "expected_word_demonstration",
+          "instruction": "General expected-word teaching only; no error was established. Briefly acknowledge uncertainty if needed, model the word aloud, then listen to one attempt. Do not wait for a clinician or require typing."
+        }
+      ],
+      "dedicated_provider_assessment": null,
+      "cached_acoustic_hypotheses": {
+        "source": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+        "revision": "2c733782da5604684829819a5eb744c193fe9398",
+        "scope": "unvalidated_target_independent_phone_hypotheses",
+        "reference_text_supplied": false,
+        "phones": [
+          "m",
+          "a",
+          "ɾ",
+          "a"
+        ],
+        "emissions": [
+          {
+            "phone": "m",
+            "emission_seconds": 0.1,
+            "alternatives": [
+              {
+                "phone": "m",
+                "posterior": 0.9916
+              },
+              {
+                "phone": "n",
+                "posterior": 0.00208
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.00126
+              }
+            ]
+          },
+          {
+            "phone": "a",
+            "emission_seconds": 0.16,
+            "alternatives": [
+              {
+                "phone": "a",
+                "posterior": 0.78133
+              },
+              {
+                "phone": "aː",
+                "posterior": 0.06858
+              },
+              {
+                "phone": "ɑ",
+                "posterior": 0.03155
+              }
+            ]
+          },
+          {
+            "phone": "ɾ",
+            "emission_seconds": 0.26,
+            "alternatives": [
+              {
+                "phone": "ɾ",
+                "posterior": 0.15614
+              },
+              {
+                "phone": "r",
+                "posterior": 0.13032
+              },
+              {
+                "phone": "ɹ",
+                "posterior": 0.11628
+              }
+            ]
+          },
+          {
+            "phone": "a",
+            "emission_seconds": 0.32,
+            "alternatives": [
+              {
+                "phone": "a",
+                "posterior": 0.78585
+              },
+              {
+                "phone": "ɐ",
+                "posterior": 0.07343
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.05972
+              }
+            ]
+          }
+        ],
+        "latency_seconds": 2.195,
+        "pronunciation_score": null,
+        "instruction": "These are fallible acoustic hypotheses, not verified errors or pronunciation scores. Posterior values are not pronunciation correctness probabilities. Do not infer hidden tongue movement."
+      },
+      "elapsed_seconds": 14.12
+    },
+    {
+      "language": "ml",
+      "target": "മഴ",
+      "synthetic_spoken_text": "മല",
+      "audio_sha256": "ed9e407c159dc5221d17c28269a526f73777da6cad68b968a317169e5c714e2e",
+      "model": "google/gemini-3.1-pro-preview",
+      "raw_response": {
+        "state": "tentative_observation",
+        "summary": "നിങ്ങൾ 'മഴ' എന്നതിന് പകരം 'മല' എന്നാണ് പറഞ്ഞത്. നമുക്ക് 'ഴ' എന്ന ശബ്ദം പരിശീലിക്കാം.",
+        "concerns": [
+          {
+            "produced_phone": "l",
+            "category": "substitution",
+            "observation": "'ഴ' എന്ന ശബ്ദം 'ല' ആയിട്ടാണ് കേട്ടത്.",
+            "uncertainty": "ഓഡിയോ വളരെ ചെറുതാണ്, എങ്കിലും 'ഴ' യ്ക്ക് പകരം 'ല' എന്നാണ് കേൾക്കുന്നത്.",
+            "word": "മഴ",
+            "expected_phone": "ɻ",
+            "practice_tip": "'ഴ' എന്ന് പറയാൻ, നാവിന്റെ അറ്റം മുകളിലേക്ക് വളച്ച് അണ്ണാക്കിൽ മുട്ടാതെ ശബ്ദം ഉണ്ടാക്കുക. 'ഴ' എന്ന് പറഞ്ഞു നോക്കൂ, എന്നിട്ട് 'മഴ' എന്ന് പറയാം.",
+            "start_seconds": 0.0,
+            "end_seconds": 0.5
+          }
+        ]
+      },
+      "content": {
+        "state": "tentative_observation",
+        "summary": "നിങ്ങൾ 'മഴ' എന്നതിന് പകരം 'മല' എന്നാണ് പറഞ്ഞത്. നമുക്ക് 'ഴ' എന്ന ശബ്ദം പരിശീലിക്കാം.",
+        "concerns": [
+          {
+            "produced_phone": "l",
+            "category": "substitution",
+            "observation": "'ഴ' എന്ന ശബ്ദം 'ല' ആയിട്ടാണ് കേട്ടത്.",
+            "uncertainty": "ഓഡിയോ വളരെ ചെറുതാണ്, എങ്കിലും 'ഴ' യ്ക്ക് പകരം 'ല' എന്നാണ് കേൾക്കുന്നത്.",
+            "word": "മഴ",
+            "expected_phone": "ɻ",
+            "practice_tip": "'ഴ' എന്ന് പറയാൻ, നാവിന്റെ അറ്റം മുകളിലേക്ക് വളച്ച് അണ്ണാക്കിൽ മുട്ടാതെ ശബ്ദം ഉണ്ടാക്കുക. 'ഴ' എന്ന് പറഞ്ഞു നോക്കൂ, എന്നിട്ട് 'മഴ' എന്ന് പറയാം.",
+            "start_seconds": 0.0,
+            "end_seconds": 0.5
+          }
+        ]
+      },
+      "teaching_plan": [
+        {
+          "word": "മഴ",
+          "expected_phone": "ɻ",
+          "practice_tip": "ഴ പറയാൻ നാവിന്റെ അറ്റം അല്പം പിന്നിലേക്ക് വളച്ച്, മുകളിൽ തൊടാതെ ശബ്ദം വരാൻ വിടൂ. ബലം കൊടുക്കേണ്ട. ഇനി “മഴ” കേട്ടിട്ട് ഒരിക്കൽ പറഞ്ഞുനോക്കൂ.",
+          "syllables": [
+            "മ",
+            "ഴ"
+          ],
+          "previous_attempt_count": 0,
+          "level": "sound_then_word",
+          "instruction": "Speak this cue now in the session language, model the word aloud, then listen to ONE new attempt. Read ordinary letters/words, not IPA code names. Expected sound placement is education, not observed tongue movement."
+        }
+      ],
+      "repeat_teaching_simulation": [
+        {
+          "word": "മഴ",
+          "expected_phone": "ɻ",
+          "practice_tip": "ഴ പറയാൻ നാവിന്റെ അറ്റം അല്പം പിന്നിലേക്ക് വളച്ച്, മുകളിൽ തൊടാതെ ശബ്ദം വരാൻ വിടൂ. ബലം കൊടുക്കേണ്ട. ആദ്യം “ഴ” മാത്രം കേട്ട് പറയാം. പിന്നെ വാക്കിന്റെ ഭാഗങ്ങൾ പതുക്കെ ചേർക്കാം. ല, ള, ഴ എന്നിവ ഒരേ ശബ്ദമല്ല. ഇനി “മഴ” കേട്ടിട്ട് ഒരിക്കൽ പറഞ്ഞുനോക്കൂ.",
+          "syllables": [
+            "മ",
+            "ഴ"
+          ],
+          "previous_attempt_count": 1,
+          "level": "slower_parts_then_word",
+          "instruction": "Speak this cue now in the session language, model the word aloud, then listen to ONE new attempt. Read ordinary letters/words, not IPA code names. Expected sound placement is education, not observed tongue movement."
+        }
+      ],
+      "dedicated_provider_assessment": null,
+      "cached_acoustic_hypotheses": {
+        "source": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+        "revision": "2c733782da5604684829819a5eb744c193fe9398",
+        "scope": "unvalidated_target_independent_phone_hypotheses",
+        "reference_text_supplied": false,
+        "phones": [
+          "m",
+          "a",
+          "l",
+          "a"
+        ],
+        "emissions": [
+          {
+            "phone": "m",
+            "emission_seconds": 0.08,
+            "alternatives": [
+              {
+                "phone": "m",
+                "posterior": 0.99221
+              },
+              {
+                "phone": "n",
+                "posterior": 0.00188
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.00186
+              }
+            ]
+          },
+          {
+            "phone": "a",
+            "emission_seconds": 0.12,
+            "alternatives": [
+              {
+                "phone": "a",
+                "posterior": 0.97011
+              },
+              {
+                "phone": "aː",
+                "posterior": 0.00729
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.0058
+              }
+            ]
+          },
+          {
+            "phone": "l",
+            "emission_seconds": 0.24,
+            "alternatives": [
+              {
+                "phone": "l",
+                "posterior": 0.99142
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.00118
+              },
+              {
+                "phone": "n",
+                "posterior": 0.00084
+              }
+            ]
+          },
+          {
+            "phone": "a",
+            "emission_seconds": 0.28,
+            "alternatives": [
+              {
+                "phone": "a",
+                "posterior": 0.91551
+              },
+              {
+                "phone": "ɐ",
+                "posterior": 0.04203
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.02558
+              }
+            ]
+          }
+        ],
+        "latency_seconds": 0.422,
+        "pronunciation_score": null,
+        "instruction": "These are fallible acoustic hypotheses, not verified errors or pronunciation scores. Posterior values are not pronunciation correctness probabilities. Do not infer hidden tongue movement."
+      },
+      "elapsed_seconds": 14.02
+    },
+    {
+      "language": "ml",
+      "target": "മാല",
+      "synthetic_spoken_text": "മാല",
+      "audio_sha256": "212e4d18727198ee46a80492d86f23c9919e1d51b366dac0da2084d776c0be35",
+      "model": "google/gemini-3.1-pro-preview",
+      "raw_response": {
+        "state": "no_clear_difference",
+        "summary": "Great job! You said \"മാല\" very clearly.",
+        "concerns": []
+      },
+      "content": {
+        "state": "no_clear_difference",
+        "summary": "ഈ ശ്രമത്തിൽ വ്യക്തമായ വ്യത്യാസം കേട്ടില്ല. ഇനി ഈ വാക്ക് ഒരു വാക്യത്തിൽ പറഞ്ഞുനോക്കാമോ?",
+        "concerns": []
+      },
+      "teaching_plan": [
+        {
+          "word": "മാല",
+          "expected_phone": null,
+          "practice_tip": "ആദ്യം “മാല” പതുക്കെ കേട്ടിട്ട് ഒരിക്കൽ പറയാം. പിന്നെ ഒരു ചെറിയ വാക്യത്തിൽ പരിശീലിക്കാം.",
+          "syllables": [
+            "മാ",
+            "ല"
+          ],
+          "previous_attempt_count": 0,
+          "level": "expected_word_demonstration",
+          "instruction": "General expected-word teaching only; no error was established. Briefly acknowledge uncertainty if needed, model the word aloud, then listen to one attempt. Do not wait for a clinician or require typing."
+        }
+      ],
+      "repeat_teaching_simulation": [
+        {
+          "word": "മാല",
+          "expected_phone": null,
+          "practice_tip": "ആദ്യം “മാല” പതുക്കെ കേട്ടിട്ട് ഒരിക്കൽ പറയാം. പിന്നെ ഒരു ചെറിയ വാക്യത്തിൽ പരിശീലിക്കാം.",
+          "syllables": [
+            "മാ",
+            "ല"
+          ],
+          "previous_attempt_count": 0,
+          "level": "expected_word_demonstration",
+          "instruction": "General expected-word teaching only; no error was established. Briefly acknowledge uncertainty if needed, model the word aloud, then listen to one attempt. Do not wait for a clinician or require typing."
+        }
+      ],
+      "dedicated_provider_assessment": null,
+      "cached_acoustic_hypotheses": {
+        "source": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+        "revision": "2c733782da5604684829819a5eb744c193fe9398",
+        "scope": "unvalidated_target_independent_phone_hypotheses",
+        "reference_text_supplied": false,
+        "phones": [
+          "m",
+          "aː",
+          "l",
+          "a"
+        ],
+        "emissions": [
+          {
+            "phone": "m",
+            "emission_seconds": 0.06,
+            "alternatives": [
+              {
+                "phone": "m",
+                "posterior": 0.98733
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.0048
+              },
+              {
+                "phone": "n",
+                "posterior": 0.00222
+              }
+            ]
+          },
+          {
+            "phone": "aː",
+            "emission_seconds": 0.12,
+            "alternatives": [
+              {
+                "phone": "aː",
+                "posterior": 0.44427
+              },
+              {
+                "phone": "a",
+                "posterior": 0.43618
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.02002
+              }
+            ]
+          },
+          {
+            "phone": "l",
+            "emission_seconds": 0.28,
+            "alternatives": [
+              {
+                "phone": "l",
+                "posterior": 0.97544
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.0036
+              },
+              {
+                "phone": "n",
+                "posterior": 0.0026
+              }
+            ]
+          },
+          {
+            "phone": "a",
+            "emission_seconds": 0.32,
+            "alternatives": [
+              {
+                "phone": "a",
+                "posterior": 0.69682
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.11527
+              },
+              {
+                "phone": "ɐ",
+                "posterior": 0.08734
+              }
+            ]
+          }
+        ],
+        "latency_seconds": 0.212,
+        "pronunciation_score": null,
+        "instruction": "These are fallible acoustic hypotheses, not verified errors or pronunciation scores. Posterior values are not pronunciation correctness probabilities. Do not infer hidden tongue movement."
+      },
+      "elapsed_seconds": 6.35
+    },
+    {
+      "language": "ml",
+      "target": "മാല",
+      "synthetic_spoken_text": "മല",
+      "audio_sha256": "ed9e407c159dc5221d17c28269a526f73777da6cad68b968a317169e5c714e2e",
+      "model": "google/gemini-3.1-pro-preview",
+      "raw_response": {
+        "state": "tentative_observation",
+        "summary": "നിങ്ങൾ 'മാല' എന്ന് പറഞ്ഞത് കേട്ടു, പക്ഷേ ആദ്യത്തെ അക്ഷരം അല്പം ചെറുതായിപ്പോയി. നമുക്ക് 'മാ' എന്ന് നീട്ടി പറയാൻ ശ്രമിക്കാം.",
+        "concerns": [
+          {
+            "produced_phone": "a",
+            "category": "substitution",
+            "observation": "ആദ്യത്തെ സ്വരം 'മാ' എന്നതിലെ നീണ്ട 'aː' ക്ക് പകരം ചെറിയ 'a' പോലെ തോന്നി.",
+            "uncertainty": "സംസാരത്തിൽ സ്വരങ്ങളുടെ നീളം വ്യത്യാസപ്പെടാം, കൂടാതെ ഓഡിയോ മോഡലിന് ഇത് കൃത്യമായി അളക്കാൻ കഴിഞ്ഞെന്നുവരില്ല.",
+            "word": "മാല",
+            "expected_phone": "aː",
+            "practice_tip": "ആദ്യത്തെ ഭാഗം നമുക്കൊന്ന് നീട്ടി പറയാം. 'മാാാ', പിന്നെ 'ല'. 'മാല'.",
+            "start_seconds": 0.08,
+            "end_seconds": 0.2
+          }
+        ]
+      },
+      "content": {
+        "state": "tentative_observation",
+        "summary": "നിങ്ങൾ 'മാല' എന്ന് പറഞ്ഞത് കേട്ടു, പക്ഷേ ആദ്യത്തെ അക്ഷരം അല്പം ചെറുതായിപ്പോയി. നമുക്ക് 'മാ' എന്ന് നീട്ടി പറയാൻ ശ്രമിക്കാം.",
+        "concerns": [
+          {
+            "produced_phone": "a",
+            "category": "substitution",
+            "observation": "ആദ്യത്തെ സ്വരം 'മാ' എന്നതിലെ നീണ്ട 'aː' ക്ക് പകരം ചെറിയ 'a' പോലെ തോന്നി.",
+            "uncertainty": "സംസാരത്തിൽ സ്വരങ്ങളുടെ നീളം വ്യത്യാസപ്പെടാം, കൂടാതെ ഓഡിയോ മോഡലിന് ഇത് കൃത്യമായി അളക്കാൻ കഴിഞ്ഞെന്നുവരില്ല.",
+            "word": "മാല",
+            "expected_phone": "aː",
+            "practice_tip": "ആദ്യത്തെ ഭാഗം നമുക്കൊന്ന് നീട്ടി പറയാം. 'മാാാ', പിന്നെ 'ല'. 'മാല'.",
+            "start_seconds": 0.08,
+            "end_seconds": 0.2
+          }
+        ]
+      },
+      "teaching_plan": [
+        {
+          "word": "മാല",
+          "expected_phone": "aː",
+          "practice_tip": "ആ എന്ന സ്വരം അ എന്നതിനെക്കാൾ നീട്ടി പറയൂ. ഇനി “മാല” കേട്ടിട്ട് ഒരിക്കൽ പറഞ്ഞുനോക്കൂ.",
+          "syllables": [
+            "മാ",
+            "ല"
+          ],
+          "previous_attempt_count": 0,
+          "level": "sound_then_word",
+          "instruction": "Speak this cue now in the session language, model the word aloud, then listen to ONE new attempt. Read ordinary letters/words, not IPA code names. Expected sound placement is education, not observed tongue movement."
+        }
+      ],
+      "repeat_teaching_simulation": [
+        {
+          "word": "മാല",
+          "expected_phone": "aː",
+          "practice_tip": "ആ എന്ന സ്വരം അ എന്നതിനെക്കാൾ നീട്ടി പറയൂ. “അ, ആ” കേട്ടുനോക്കൂ. നീണ്ട ആ ശബ്ദം വാക്കിൽ നിലനിർത്താം. ഇനി “മാല” കേട്ടിട്ട് ഒരിക്കൽ പറഞ്ഞുനോക്കൂ.",
+          "syllables": [
+            "മാ",
+            "ല"
+          ],
+          "previous_attempt_count": 1,
+          "level": "slower_parts_then_word",
+          "instruction": "Speak this cue now in the session language, model the word aloud, then listen to ONE new attempt. Read ordinary letters/words, not IPA code names. Expected sound placement is education, not observed tongue movement."
+        }
+      ],
+      "dedicated_provider_assessment": null,
+      "cached_acoustic_hypotheses": {
+        "source": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+        "revision": "2c733782da5604684829819a5eb744c193fe9398",
+        "scope": "unvalidated_target_independent_phone_hypotheses",
+        "reference_text_supplied": false,
+        "phones": [
+          "m",
+          "a",
+          "l",
+          "a"
+        ],
+        "emissions": [
+          {
+            "phone": "m",
+            "emission_seconds": 0.08,
+            "alternatives": [
+              {
+                "phone": "m",
+                "posterior": 0.99221
+              },
+              {
+                "phone": "n",
+                "posterior": 0.00188
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.00186
+              }
+            ]
+          },
+          {
+            "phone": "a",
+            "emission_seconds": 0.12,
+            "alternatives": [
+              {
+                "phone": "a",
+                "posterior": 0.97011
+              },
+              {
+                "phone": "aː",
+                "posterior": 0.00729
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.0058
+              }
+            ]
+          },
+          {
+            "phone": "l",
+            "emission_seconds": 0.24,
+            "alternatives": [
+              {
+                "phone": "l",
+                "posterior": 0.99142
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.00118
+              },
+              {
+                "phone": "n",
+                "posterior": 0.00084
+              }
+            ]
+          },
+          {
+            "phone": "a",
+            "emission_seconds": 0.28,
+            "alternatives": [
+              {
+                "phone": "a",
+                "posterior": 0.91551
+              },
+              {
+                "phone": "ɐ",
+                "posterior": 0.04203
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.02558
+              }
+            ]
+          }
+        ],
+        "latency_seconds": 0.364,
+        "pronunciation_score": null,
+        "instruction": "These are fallible acoustic hypotheses, not verified errors or pronunciation scores. Posterior values are not pronunciation correctness probabilities. Do not infer hidden tongue movement."
+      },
+      "elapsed_seconds": 15.21
+    },
+    {
+      "language": "en",
+      "target": "ship",
+      "synthetic_spoken_text": "ship",
+      "audio_sha256": "862813399a179cedf944993cd531e5296eb9102495f124529d388c3e86af7d44",
+      "model": "google/gemini-3.1-pro-preview",
+      "raw_response": {
+        "state": "no_clear_difference",
+        "summary": "You said 'ship' very clearly! Great job with the 'sh' sound and the ending.",
+        "concerns": []
+      },
+      "content": {
+        "state": "insufficient_evidence",
+        "summary": "I could not reliably judge the sounds in this recording. Tell me the word you meant, or try a short repeat.",
+        "concerns": []
+      },
+      "teaching_plan": [
+        {
+          "word": "ship",
+          "expected_phone": null,
+          "practice_tip": "Listen to “ship” slowly, then say it once. We can practise it in a short sentence next.",
+          "syllables": null,
+          "previous_attempt_count": 0,
+          "level": "expected_word_demonstration",
+          "instruction": "General expected-word teaching only; no error was established. Briefly acknowledge uncertainty if needed, model the word aloud, then listen to one attempt. Do not wait for a clinician or require typing."
+        }
+      ],
+      "repeat_teaching_simulation": [
+        {
+          "word": "ship",
+          "expected_phone": null,
+          "practice_tip": "Listen to “ship” slowly, then say it once. We can practise it in a short sentence next.",
+          "syllables": null,
+          "previous_attempt_count": 0,
+          "level": "expected_word_demonstration",
+          "instruction": "General expected-word teaching only; no error was established. Briefly acknowledge uncertainty if needed, model the word aloud, then listen to one attempt. Do not wait for a clinician or require typing."
+        }
+      ],
+      "dedicated_provider_assessment": {
+        "source": "azure_pronunciation_assessment",
+        "state": "provider_assessment",
+        "language": "en",
+        "phone_alphabet": "IPA",
+        "words": [
+          {
+            "word": "ship",
+            "provider_accuracy_score": 100.0,
+            "provider_error_type": "None",
+            "provider_phones": [
+              {
+                "provider_phone": "ʃ",
+                "provider_accuracy_score": 100.0
+              },
+              {
+                "provider_phone": "ɪ",
+                "provider_accuracy_score": 100.0
+              },
+              {
+                "provider_phone": "p",
+                "provider_accuracy_score": 100.0
+              }
+            ]
+          }
+        ],
+        "phone_detail_available": true,
+        "phone_scores_available": true,
+        "clinical_assessment": false,
+        "instruction": "These are dedicated-provider educational scores, not diagnoses or verified mastery. Hindi provider phone labels must not be reinterpreted as IPA. Do not invent produced sounds."
+      },
+      "cached_acoustic_hypotheses": {
+        "source": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+        "revision": "2c733782da5604684829819a5eb744c193fe9398",
+        "scope": "unvalidated_target_independent_phone_hypotheses",
+        "reference_text_supplied": false,
+        "phones": [
+          "ʃ",
+          "ɛ",
+          "p"
+        ],
+        "emissions": [
+          {
+            "phone": "ʃ",
+            "emission_seconds": 0.12,
+            "alternatives": [
+              {
+                "phone": "ʃ",
+                "posterior": 0.93702
+              },
+              {
+                "phone": "ɕ",
+                "posterior": 0.00986
+              },
+              {
+                "phone": "s",
+                "posterior": 0.00934
+              }
+            ]
+          },
+          {
+            "phone": "ɛ",
+            "emission_seconds": 0.18,
+            "alternatives": [
+              {
+                "phone": "ɛ",
+                "posterior": 0.89993
+              },
+              {
+                "phone": "eː",
+                "posterior": 0.0262
+              },
+              {
+                "phone": "e",
+                "posterior": 0.02093
+              }
+            ]
+          },
+          {
+            "phone": "p",
+            "emission_seconds": 0.36,
+            "alternatives": [
+              {
+                "phone": "p",
+                "posterior": 0.97535
+              },
+              {
+                "phone": "b",
+                "posterior": 0.01269
+              },
+              {
+                "phone": "t",
+                "posterior": 0.00178
+              }
+            ]
+          }
+        ],
+        "latency_seconds": 0.388,
+        "pronunciation_score": null,
+        "instruction": "These are fallible acoustic hypotheses, not verified errors or pronunciation scores. Posterior values are not pronunciation correctness probabilities. Do not infer hidden tongue movement.",
+        "language": "en"
+      },
+      "elapsed_seconds": 8.49
+    },
+    {
+      "language": "en",
+      "target": "ship",
+      "synthetic_spoken_text": "sheep",
+      "audio_sha256": "907e748e91d3d2fe42bd4c542d1d1a37f35fe37f89756dbfee5d6a99ad584b34",
+      "model": "azure_pronunciation_assessment",
+      "raw_response": {
+        "state": "insufficient_evidence",
+        "summary": "Dedicated provider teaching",
+        "concerns": []
+      },
+      "content": {
+        "state": "tentative_observation",
+        "summary": "The sound assessment suggests practising /ɪ/ in “ship”.",
+        "concerns": [
+          {
+            "produced_phone": null,
+            "category": "distortion",
+            "observation": "The sound assessment suggests practising /ɪ/ in “ship”.",
+            "uncertainty": "Low provider score suggests practice, not a verified error or an identified produced sound. Hindi expected sounds may come from unambiguous reference alignment.",
+            "word": "ship",
+            "expected_phone": "ɪ",
+            "practice_tip": "Use the short, relaxed vowel in “sit”; keep it shorter than “ee” in “see”. Listen to “ship”, then try it once.",
+            "start_seconds": 0.0,
+            "end_seconds": 0.96
+          }
+        ]
+      },
+      "teaching_plan": [
+        {
+          "word": "ship",
+          "expected_phone": "ɪ",
+          "practice_tip": "Use the short, relaxed vowel in “sit”; keep it shorter than “ee” in “see”. Listen to “ship”, then try it once.",
+          "syllables": null,
+          "previous_attempt_count": 0,
+          "level": "sound_then_word",
+          "instruction": "Speak this cue now in the session language, model the word aloud, then listen to ONE new attempt. Read ordinary letters/words, not IPA code names. Expected sound placement is education, not observed tongue movement."
+        }
+      ],
+      "repeat_teaching_simulation": [
+        {
+          "word": "ship",
+          "expected_phone": "ɪ",
+          "practice_tip": "Use the short, relaxed vowel in “sit”; keep it shorter than “ee” in “see”. Alternate “sit, see”, then say the short vowel in your word. Listen to “ship”, then try it once.",
+          "syllables": null,
+          "previous_attempt_count": 1,
+          "level": "slower_parts_then_word",
+          "instruction": "Speak this cue now in the session language, model the word aloud, then listen to ONE new attempt. Read ordinary letters/words, not IPA code names. Expected sound placement is education, not observed tongue movement."
+        }
+      ],
+      "dedicated_provider_assessment": {
+        "source": "azure_pronunciation_assessment",
+        "state": "provider_assessment",
+        "language": "en",
+        "phone_alphabet": "IPA",
+        "words": [
+          {
+            "word": "ship",
+            "provider_accuracy_score": 72.0,
+            "provider_error_type": "None",
+            "provider_phones": [
+              {
+                "provider_phone": "ʃ",
+                "provider_accuracy_score": 72.0
+              },
+              {
+                "provider_phone": "ɪ",
+                "provider_accuracy_score": 54.0
+              },
+              {
+                "provider_phone": "p",
+                "provider_accuracy_score": 61.0
+              }
+            ]
+          }
+        ],
+        "phone_detail_available": true,
+        "phone_scores_available": true,
+        "clinical_assessment": false,
+        "instruction": "These are dedicated-provider educational scores, not diagnoses or verified mastery. Hindi provider phone labels must not be reinterpreted as IPA. Do not invent produced sounds."
+      },
+      "cached_acoustic_hypotheses": {
+        "source": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+        "revision": "2c733782da5604684829819a5eb744c193fe9398",
+        "scope": "unvalidated_target_independent_phone_hypotheses",
+        "reference_text_supplied": false,
+        "phones": [
+          "ʃ",
+          "iː",
+          "p"
+        ],
+        "emissions": [
+          {
+            "phone": "ʃ",
+            "emission_seconds": 0.12,
+            "alternatives": [
+              {
+                "phone": "ʃ",
+                "posterior": 0.91014
+              },
+              {
+                "phone": "s",
+                "posterior": 0.01273
+              },
+              {
+                "phone": "ɕ",
+                "posterior": 0.0122
+              }
+            ]
+          },
+          {
+            "phone": "iː",
+            "emission_seconds": 0.18,
+            "alternatives": [
+              {
+                "phone": "iː",
+                "posterior": 0.66721
+              },
+              {
+                "phone": "i",
+                "posterior": 0.20883
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.0359
+              }
+            ]
+          },
+          {
+            "phone": "p",
+            "emission_seconds": 0.38,
+            "alternatives": [
+              {
+                "phone": "p",
+                "posterior": 0.97348
+              },
+              {
+                "phone": "b",
+                "posterior": 0.01089
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.0042
+              }
+            ]
+          }
+        ],
+        "latency_seconds": 0.173,
+        "pronunciation_score": null,
+        "instruction": "These are fallible acoustic hypotheses, not verified errors or pronunciation scores. Posterior values are not pronunciation correctness probabilities. Do not infer hidden tongue movement.",
+        "language": "en"
+      },
+      "elapsed_seconds": 1.02
+    },
+    {
+      "language": "hi",
+      "target": "ताल",
+      "synthetic_spoken_text": "ताल",
+      "audio_sha256": "50bab84748446cb4f5c5e3835c0d342392a1c2aae9f1ca2e36317abb2684c93f",
+      "model": "google/gemini-3.1-pro-preview",
+      "raw_response": {
+        "state": "no_clear_difference",
+        "summary": "Great job! I heard 'ताल' clearly. Keep up the good work!",
+        "concerns": []
+      },
+      "content": {
+        "state": "insufficient_evidence",
+        "summary": "इस रिकॉर्डिंग की ध्वनियों का भरोसेमंद आकलन नहीं हो सका। आप कौन सा शब्द कहना चाहते थे? या एक छोटा शब्द फिर कहें।",
+        "concerns": []
+      },
+      "teaching_plan": [
+        {
+          "word": "ताल",
+          "expected_phone": null,
+          "practice_tip": "पहले “ताल” धीरे सुनें और एक बार कहें। फिर छोटे वाक्य में अभ्यास करें।",
+          "syllables": null,
+          "previous_attempt_count": 0,
+          "level": "expected_word_demonstration",
+          "instruction": "General expected-word teaching only; no error was established. Briefly acknowledge uncertainty if needed, model the word aloud, then listen to one attempt. Do not wait for a clinician or require typing."
+        }
+      ],
+      "repeat_teaching_simulation": [
+        {
+          "word": "ताल",
+          "expected_phone": null,
+          "practice_tip": "पहले “ताल” धीरे सुनें और एक बार कहें। फिर छोटे वाक्य में अभ्यास करें।",
+          "syllables": null,
+          "previous_attempt_count": 0,
+          "level": "expected_word_demonstration",
+          "instruction": "General expected-word teaching only; no error was established. Briefly acknowledge uncertainty if needed, model the word aloud, then listen to one attempt. Do not wait for a clinician or require typing."
+        }
+      ],
+      "dedicated_provider_assessment": {
+        "source": "azure_pronunciation_assessment",
+        "state": "provider_assessment",
+        "language": "hi",
+        "phone_alphabet": "provider_default_not_assumed_IPA",
+        "words": [
+          {
+            "word": "ताल",
+            "provider_accuracy_score": 90.0,
+            "provider_error_type": "None",
+            "provider_phones": [
+              {
+                "provider_phone": "",
+                "provider_accuracy_score": 95.0
+              },
+              {
+                "provider_phone": "",
+                "provider_accuracy_score": 100.0
+              },
+              {
+                "provider_phone": "",
+                "provider_accuracy_score": 78.0
+              }
+            ]
+          }
+        ],
+        "phone_detail_available": false,
+        "phone_scores_available": true,
+        "clinical_assessment": false,
+        "instruction": "These are dedicated-provider educational scores, not diagnoses or verified mastery. Hindi provider phone labels must not be reinterpreted as IPA. Do not invent produced sounds."
+      },
+      "cached_acoustic_hypotheses": {
+        "source": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+        "revision": "2c733782da5604684829819a5eb744c193fe9398",
+        "scope": "unvalidated_target_independent_phone_hypotheses",
+        "reference_text_supplied": false,
+        "phones": [
+          "t",
+          "aː",
+          "l"
+        ],
+        "emissions": [
+          {
+            "phone": "t",
+            "emission_seconds": 0.06,
+            "alternatives": [
+              {
+                "phone": "t",
+                "posterior": 0.94796
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.01691
+              },
+              {
+                "phone": "d",
+                "posterior": 0.01348
+              }
+            ]
+          },
+          {
+            "phone": "aː",
+            "emission_seconds": 0.1,
+            "alternatives": [
+              {
+                "phone": "aː",
+                "posterior": 0.30203
+              },
+              {
+                "phone": "a",
+                "posterior": 0.14573
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.06225
+              }
+            ]
+          },
+          {
+            "phone": "l",
+            "emission_seconds": 0.32,
+            "alternatives": [
+              {
+                "phone": "l",
+                "posterior": 0.83614
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.1083
+              },
+              {
+                "phone": "n",
+                "posterior": 0.04335
+              }
+            ]
+          }
+        ],
+        "latency_seconds": 0.264,
+        "pronunciation_score": null,
+        "instruction": "These are fallible acoustic hypotheses, not verified errors or pronunciation scores. Posterior values are not pronunciation correctness probabilities. Do not infer hidden tongue movement.",
+        "language": "hi"
+      },
+      "elapsed_seconds": 7.75
+    },
+    {
+      "language": "hi",
+      "target": "ताल",
+      "synthetic_spoken_text": "दाल",
+      "audio_sha256": "faba90cdd2c95fd4284f8c20274afe3ecbc87832c02bef2540482f523162df97",
+      "model": "azure_pronunciation_assessment",
+      "raw_response": {
+        "state": "insufficient_evidence",
+        "summary": "Dedicated provider teaching",
+        "concerns": []
+      },
+      "content": {
+        "state": "tentative_observation",
+        "summary": "ध्वनि आकलन के अनुसार “ताल” में /t̪/ का अभ्यास करें।",
+        "concerns": [
+          {
+            "produced_phone": null,
+            "category": "distortion",
+            "observation": "ध्वनि आकलन के अनुसार “ताल” में /t̪/ का अभ्यास करें।",
+            "uncertainty": "Low provider score suggests practice, not a verified error or an identified produced sound. Hindi expected sounds may come from unambiguous reference alignment.",
+            "word": "ताल",
+            "expected_phone": "t̪",
+            "practice_tip": "त में जीभ की नोक ऊपर के दाँतों के पास हल्के से रखें और छोड़ें। अब “ताल” सुनें और एक बार कहें।",
+            "start_seconds": 0.0,
+            "end_seconds": 1.2
+          }
+        ]
+      },
+      "teaching_plan": [
+        {
+          "word": "ताल",
+          "expected_phone": "t̪",
+          "practice_tip": "त में जीभ की नोक ऊपर के दाँतों के पास हल्के से रखें और छोड़ें। अब “ताल” सुनें और एक बार कहें।",
+          "syllables": null,
+          "previous_attempt_count": 0,
+          "level": "sound_then_word",
+          "instruction": "Speak this cue now in the session language, model the word aloud, then listen to ONE new attempt. Read ordinary letters/words, not IPA code names. Expected sound placement is education, not observed tongue movement."
+        }
+      ],
+      "repeat_teaching_simulation": [
+        {
+          "word": "ताल",
+          "expected_phone": "t̪",
+          "practice_tip": "त में जीभ की नोक ऊपर के दाँतों के पास हल्के से रखें और छोड़ें। पहले “ता” धीरे कहें। फिर बिना ज़ोर लगाए पूरे शब्द में जोड़ें। अब “ताल” सुनें और एक बार कहें।",
+          "syllables": null,
+          "previous_attempt_count": 1,
+          "level": "slower_parts_then_word",
+          "instruction": "Speak this cue now in the session language, model the word aloud, then listen to ONE new attempt. Read ordinary letters/words, not IPA code names. Expected sound placement is education, not observed tongue movement."
+        }
+      ],
+      "dedicated_provider_assessment": {
+        "source": "azure_pronunciation_assessment",
+        "state": "provider_assessment",
+        "language": "hi",
+        "phone_alphabet": "provider_default_not_assumed_IPA",
+        "words": [
+          {
+            "word": "ताल",
+            "provider_accuracy_score": 82.0,
+            "provider_error_type": "None",
+            "provider_phones": [
+              {
+                "provider_phone": "",
+                "provider_accuracy_score": 44.0
+              },
+              {
+                "provider_phone": "",
+                "provider_accuracy_score": 91.0
+              },
+              {
+                "provider_phone": "",
+                "provider_accuracy_score": 79.0
+              }
+            ]
+          }
+        ],
+        "phone_detail_available": false,
+        "phone_scores_available": true,
+        "clinical_assessment": false,
+        "instruction": "These are dedicated-provider educational scores, not diagnoses or verified mastery. Hindi provider phone labels must not be reinterpreted as IPA. Do not invent produced sounds."
+      },
+      "cached_acoustic_hypotheses": {
+        "source": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+        "revision": "2c733782da5604684829819a5eb744c193fe9398",
+        "scope": "unvalidated_target_independent_phone_hypotheses",
+        "reference_text_supplied": false,
+        "phones": [
+          "d",
+          "a",
+          "l"
+        ],
+        "emissions": [
+          {
+            "phone": "d",
+            "emission_seconds": 0.06,
+            "alternatives": [
+              {
+                "phone": "d",
+                "posterior": 0.4648
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.25064
+              },
+              {
+                "phone": "t",
+                "posterior": 0.2332
+              }
+            ]
+          },
+          {
+            "phone": "a",
+            "emission_seconds": 0.12,
+            "alternatives": [
+              {
+                "phone": "a",
+                "posterior": 0.45618
+              },
+              {
+                "phone": "aː",
+                "posterior": 0.42665
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.02349
+              }
+            ]
+          },
+          {
+            "phone": "l",
+            "emission_seconds": 0.38,
+            "alternatives": [
+              {
+                "phone": "l",
+                "posterior": 0.78507
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.20462
+              },
+              {
+                "phone": "n",
+                "posterior": 0.00185
+              }
+            ]
+          }
+        ],
+        "latency_seconds": 0.312,
+        "pronunciation_score": null,
+        "instruction": "These are fallible acoustic hypotheses, not verified errors or pronunciation scores. Posterior values are not pronunciation correctness probabilities. Do not infer hidden tongue movement.",
+        "language": "hi"
+      },
+      "elapsed_seconds": 1.07
+    }
+  ]
+}

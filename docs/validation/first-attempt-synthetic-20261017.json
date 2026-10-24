@@ -1,0 +1,128 @@
+[
+  {
+    "language": "ml",
+    "expected_text": "മഴ",
+    "synthetic_spoken_text": "മഴ",
+    "model": "google/gemini-2.5-flash",
+    "content": {
+      "state": "tentative_observation",
+      "summary": "Thank you for practicing! I heard you say \"മഴ\" (maḻa). It sounds like the first sound was a little different from what is usually expected. Would you like to try practicing that word?",
+      "concerns": [
+        {
+          "produced_phone": "mə",
+          "category": "substitution",
+          "observation": "The initial 'm' sound in \"മഴ\" (maḻa) seemed to be produced more like 'mə', with an unstressed vowel sound following it, instead of the clear 'm' followed by 'a'. This can sometimes happen when the lips might not be fully closed for the 'm' or the subsequent 'a' is not fully articulated.",
+          "uncertainty": "This is a subtle difference and could be influenced by various factors. My acoustic analysis is not a definitive diagnosis, and I am not a native Malayalam speaker. The observation is based on patterns learned from data, and may not reflect individual speech variations accurately.",
+          "word": "ʈə",
+          "expected_phone": "ma",
+          "practice_tip": "Let's try to really focus on the 'മ' (ma) sound. Make sure your lips come together for the 'm' sound at the beginning. Try saying 'മാ' (maa) first, like in \"മാങ്ങ\" (maanga - mango), and then try to say \"മഴ\" (maᄲa).",
+          "start_seconds": 0.05,
+          "end_seconds": 0.3
+        }
+      ]
+    },
+    "elapsed_seconds": 9.41,
+    "source": "synthetic_adult_tts_control_not_child_speech_validation"
+  },
+  {
+    "language": "ml",
+    "expected_text": "മഴ",
+    "synthetic_spoken_text": "മല",
+    "model": "google/gemini-2.5-flash",
+    "content": {
+      "state": "tentative_observation",
+      "summary": "നിങ്ങൾ \"മഴ\" എന്ന് പറയാൻ ശ്രമിച്ചു, പക്ഷേ \"ഴ\" എന്ന ശബ്ദം \"ല\" പോലെയാണ് കേൾക്കുന്നത്. ഈ ശബ്ദം കൃത്യമായി ഉച്ചരിക്കാൻ നിങ്ങൾ ശ്രദ്ധിക്കണം. കൂടുതൽ വ്യക്തമായി പറയാൻ ശ്രമിക്കാം.",
+      "concerns": [
+        {
+          "produced_phone": "l",
+          "category": "substitution",
+          "observation": "The Malayalam retroflex approximant /ɻ/ in \"മഴ\" (mazha) sounds like the alveolar lateral approximant /l/.",
+          "uncertainty": "The audio quality is somewhat noisy, and the specific retroflex quality can be subtle to detect definitively from isolated words without more context or repeated instances. My analysis is based on acoustic cues that suggest a lateral articulation rather than a retroflex one.",
+          "word": "മഴ",
+          "expected_phone": "ɻ",
+          "practice_tip": "നമുക്ക് 'ഴ' എന്ന ശബ്ദം ശ്രദ്ധിച്ചു കേൾക്കാം. നാവ് പിന്നോട്ട് വളച്ച് മുകളിലെ അണ്ണാക്കിൽ തട്ടാതെ പറയാൻ ശ്രമിക്കുക. 'ഴ' (zha) എന്ന് പറഞ്ഞു നോക്കൂ.",
+          "start_seconds": 0.09,
+          "end_seconds": 0.58
+        }
+      ]
+    },
+    "elapsed_seconds": 5.56,
+    "source": "synthetic_adult_tts_control_not_child_speech_validation"
+  },
+  {
+    "language": "en",
+    "expected_text": "ship",
+    "synthetic_spoken_text": "ship",
+    "model": "google/gemini-2.5-flash",
+    "content": {
+      "state": "tentative_observation",
+      "summary": "That was a good try! I heard something a little different in the middle of the word.",
+      "concerns": [
+        {
+          "produced_phone": "ɪ",
+          "category": "substitution",
+          "observation": "The vowel sound in \"ship\" sounded like the 'ih' in \"sit\" instead of the 'ih' in \"ship\".",
+          "uncertainty": "It can be tricky to distinguish between similar vowel sounds, and the audio quality makes it a bit harder to be absolutely certain.",
+          "word": "ship",
+          "expected_phone": "ɪ",
+          "practice_tip": "Let's try to make the 'ih' sound in 'ship' a little shorter and more relaxed. Listen to me: 'shih-p'.",
+          "start_seconds": 0.05,
+          "end_seconds": 0.49
+        }
+      ]
+    },
+    "elapsed_seconds": 5.85,
+    "source": "synthetic_adult_tts_control_not_child_speech_validation"
+  },
+  {
+    "language": "en",
+    "expected_text": "ship",
+    "synthetic_spoken_text": "sheep",
+    "model": "google/gemini-2.5-flash",
+    "content": {
+      "state": "tentative_observation",
+      "summary": "That was a good try! I heard \"sheep\" and it sounded like you might have used a slightly different vowel sound at the end. Let's practice that word together to make sure we get the vowel just right.",
+      "concerns": [
+        {
+          "produced_phone": "i",
+          "category": "substitution",
+          "observation": "I heard \"sheep\" instead of \"ship\". It sounded like the vowel sound was longer, like in \"sheep\", rather than the shorter vowel sound in \"ship\".",
+          "uncertainty": "It's hard to be completely sure about subtle vowel differences just from audio, and background noise or the way someone speaks can sometimes make it sound different. This model is not a clinical tool.",
+          "word": "ship",
+          "expected_phone": "ɢ",
+          "practice_tip": "For \"ship\", try making the vowel sound shorter, like in \"sit\" or \"pig\". Listen to the difference between \"sheep\" and \"ship\".",
+          "start_seconds": 0.09,
+          "end_seconds": 0.77
+        }
+      ]
+    },
+    "elapsed_seconds": 5.81,
+    "source": "synthetic_adult_tts_control_not_child_speech_validation"
+  },
+  {
+    "language": "hi",
+    "expected_text": "ताल",
+    "synthetic_spoken_text": "ताल",
+    "model": "google/gemini-2.5-flash",
+    "content": {
+      "state": "tentative_observation",
+      "summary": "मैंने सुना कि आप \"ताल\" बोल रहे हैं। आप इसे बहुत अच्छे से बोल रहे हैं! आपका उच्चारण बहुत स्पष्ट है।",
+      "concerns": []
+    },
+    "elapsed_seconds": 4.35,
+    "source": "synthetic_adult_tts_control_not_child_speech_validation"
+  },
+  {
+    "language": "hi",
+    "expected_text": "ताल",
+    "synthetic_spoken_text": "दाल",
+    "model": "google/gemini-2.5-flash",
+    "content": {
+      "state": "insufficient_evidence",
+      "summary": "I couldn't quite catch what you said. The audio was a bit unclear, and it was hard to hear the word distinctly. Could you please try saying it again?",
+      "concerns": []
+    },
+    "elapsed_seconds": 4.56,
+    "source": "synthetic_adult_tts_control_not_child_speech_validation"
+  }
+]

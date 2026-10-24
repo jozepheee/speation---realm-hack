@@ -1,0 +1,20 @@
+{
+  "private_audio_used": false,
+  "sound_tests": [
+    {
+      "public_generated_word": "see",
+      "target": "s",
+      "state": "no_clear_difference",
+      "model": "google/gemini-3-flash-preview",
+      "seconds": 3.11
+    },
+    {
+      "public_generated_word": "key",
+      "target": "s",
+      "state": "tentative_observation",
+      "model": "google/gemini-3-flash-preview",
+      "seconds": 3.01
+    }
+  ],
+  "report_synthetic_valid": true
+}

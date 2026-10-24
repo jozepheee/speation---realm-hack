@@ -1,0 +1,1564 @@
+{
+  "state": "complete",
+  "scope": "reference_video_observations_not_device_or_clinical_validation",
+  "results": [
+    {
+      "exercise": "mouth-wide",
+      "input_mirrored_to_match_live_preview": true,
+      "frames": 48,
+      "tracked": 48,
+      "pose_frames": 37,
+      "reps": 1,
+      "calibrated_frames": 0,
+      "min_ratio": 0.09370507099117845,
+      "max_ratio": 0.3183884902596523,
+      "samples": [
+        {
+          "time": 0.125,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.09378240656642417,
+          "shape_scores": {
+            "mouthFunnel": 0.0007346411584876478,
+            "mouthPucker": 0.036247678101062775,
+            "mouthSmileLeft": 0.0003737520019058138,
+            "mouthSmileRight": 0.0005825095577165484,
+            "mouthStretchLeft": 0.0002859180676750839,
+            "mouthStretchRight": 0.0005099360132589936
+          },
+          "pose": false,
+          "calibrated": false,
+          "tongue": null
+        },
+        {
+          "time": 0.75,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.0947570410269675,
+          "shape_scores": {
+            "mouthFunnel": 0.0006053142133168876,
+            "mouthPucker": 0.05937698855996132,
+            "mouthSmileLeft": 0.00013656399096362293,
+            "mouthSmileRight": 0.00017305879737250507,
+            "mouthStretchLeft": 0.0002682983176782727,
+            "mouthStretchRight": 0.000427863618824631
+          },
+          "pose": false,
+          "calibrated": false,
+          "tongue": null
+        },
+        {
+          "time": 1.375,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.15548138995882899,
+          "shape_scores": {
+            "mouthFunnel": 0.012837451882660389,
+            "mouthPucker": 0.17240943014621735,
+            "mouthSmileLeft": 0.000021941328668617643,
+            "mouthSmileRight": 0.00003312138869659975,
+            "mouthStretchLeft": 0.000023787146346876398,
+            "mouthStretchRight": 0.00038915674667805433
+          },
+          "pose": false,
+          "calibrated": false,
+          "tongue": null
+        },
+        {
+          "time": 2,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.31401791391469724,
+          "shape_scores": {
+            "mouthFunnel": 0.004097075667232275,
+            "mouthPucker": 0.0008934341021813452,
+            "mouthSmileLeft": 0.1043999046087265,
+            "mouthSmileRight": 0.10113611817359924,
+            "mouthStretchLeft": 0.033465489745140076,
+            "mouthStretchRight": 0.02941025048494339
+          },
+          "pose": true,
+          "calibrated": false,
+          "tongue": null
+        },
+        {
+          "time": 2.625,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.30370111667583877,
+          "shape_scores": {
+            "mouthFunnel": 0.0031052404083311558,
+            "mouthPucker": 0.0012346868170425296,
+            "mouthSmileLeft": 0.018877826631069183,
+            "mouthSmileRight": 0.02146000787615776,
+            "mouthStretchLeft": 0.03053903952240944,
+            "mouthStretchRight": 0.03585556149482727
+          },
+          "pose": true,
+          "calibrated": false,
+          "tongue": null
+        },
+        {
+          "time": 3.25,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.30242062180481233,
+          "shape_scores": {
+            "mouthFunnel": 0.003305540420114994,
+            "mouthPucker": 0.0013858855236321688,
+            "mouthSmileLeft": 0.016217336058616638,
+            "mouthSmileRight": 0.018585875630378723,
+            "mouthStretchLeft": 0.025438327342271805,
+            "mouthStretchRight": 0.0400017648935318
+          },
+          "pose": true,
+          "calibrated": false,
+          "tongue": null
+        },
+        {
+          "time": 3.875,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.30432376901344677,
+          "shape_scores": {
+            "mouthFunnel": 0.00524172792211175,
+            "mouthPucker": 0.00196776632219553,
+            "mouthSmileLeft": 0.0233842171728611,
+            "mouthSmileRight": 0.028539642691612244,
+            "mouthStretchLeft": 0.01888086646795273,
+            "mouthStretchRight": 0.02980154938995838
+          },
+          "pose": true,
+          "calibrated": false,
+          "tongue": null
+        },
+        {
+          "time": 4.5,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.2832709689577809,
+          "shape_scores": {
+            "mouthFunnel": 0.0030696180183440447,
+            "mouthPucker": 0.0013045179657638073,
+            "mouthSmileLeft": 0.019017118960618973,
+            "mouthSmileRight": 0.026246363297104836,
+            "mouthStretchLeft": 0.019605940207839012,
+            "mouthStretchRight": 0.015337239019572735
+          },
+          "pose": true,
+          "calibrated": false,
+          "tongue": null
+        },
+        {
+          "time": 5.125,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.2929417082783258,
+          "shape_scores": {
+            "mouthFunnel": 0.0044494206085801125,
+            "mouthPucker": 0.0017490156460553408,
+            "mouthSmileLeft": 0.023487478494644165,
+            "mouthSmileRight": 0.032994553446769714,
+            "mouthStretchLeft": 0.013160220347344875,
+            "mouthStretchRight": 0.014281893149018288
+          },
+          "pose": true,
+          "calibrated": false,
+          "tongue": null
+        },
+        {
+          "time": 5.75,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.28268761399812653,
+          "shape_scores": {
+            "mouthFunnel": 0.0031906517688184977,
+            "mouthPucker": 0.000836164690554142,
+            "mouthSmileLeft": 0.04664679244160652,
+            "mouthSmileRight": 0.056200724095106125,
+            "mouthStretchLeft": 0.019277045503258705,
+            "mouthStretchRight": 0.010964983142912388
+          },
+          "pose": true,
+          "calibrated": false,
+          "tongue": null
+        }
+      ]
+    },
+    {
+      "exercise": "say-o",
+      "input_mirrored_to_match_live_preview": true,
+      "frames": 50,
+      "tracked": 49,
+      "pose_frames": 49,
+      "reps": 1,
+      "calibrated_frames": 0,
+      "min_ratio": 0.09558224231409804,
+      "max_ratio": 0.19993672570811835,
+      "samples": [
+        {
+          "time": 0.125,
+          "status": "multiple_faces",
+          "valid": false,
+          "pose": false,
+          "tongue": null
+        },
+        {
+          "time": 0.75,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.1857573230702422,
+          "shape_scores": {
+            "mouthFunnel": 0.05975909158587456,
+            "mouthPucker": 0.9055634140968323,
+            "mouthSmileLeft": 0.0000020296481579862302,
+            "mouthSmileRight": 0.0000014542165445163846,
+            "mouthStretchLeft": 0.000006013424808770651,
+            "mouthStretchRight": 0.00003803159052040428
+          },
+          "pose": true,
+          "calibrated": false,
+          "tongue": null
+        },
+        {
+          "time": 1.375,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.1661548745043335,
+          "shape_scores": {
+            "mouthFunnel": 0.23039041459560394,
+            "mouthPucker": 0.9975363612174988,
+            "mouthSmileLeft": 1.468054335873603e-7,
+            "mouthSmileRight": 1.0591013932526039e-7,
+            "mouthStretchLeft": 1.577200663405165e-7,
+            "mouthStretchRight": 0.0000016740747241783538
+          },
+          "pose": true,
+          "calibrated": false,
+          "tongue": null
+        },
+        {
+          "time": 2,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.1605652660882574,
+          "shape_scores": {
+            "mouthFunnel": 0.24031570553779602,
+            "mouthPucker": 0.9973260760307312,
+            "mouthSmileLeft": 1.5189517910130235e-7,
+            "mouthSmileRight": 1.3107361951369967e-7,
+            "mouthStretchLeft": 1.209015181302675e-7,
+            "mouthStretchRight": 0.000001868477284006076
+          },
+          "pose": true,
+          "calibrated": false,
+          "tongue": null
+        },
+        {
+          "time": 2.625,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.15363563054423834,
+          "shape_scores": {
+            "mouthFunnel": 0.16819603741168976,
+            "mouthPucker": 0.9973575472831726,
+            "mouthSmileLeft": 8.690904707009395e-8,
+            "mouthSmileRight": 6.655188400372936e-8,
+            "mouthStretchLeft": 8.469668699717658e-8,
+            "mouthStretchRight": 0.000001996802211579052
+          },
+          "pose": true,
+          "calibrated": false,
+          "tongue": null
+        },
+        {
+          "time": 3.25,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.1528694280469724,
+          "shape_scores": {
+            "mouthFunnel": 0.1734369546175003,
+            "mouthPucker": 0.9973341226577759,
+            "mouthSmileLeft": 9.555125757287897e-8,
+            "mouthSmileRight": 7.045346706036071e-8,
+            "mouthStretchLeft": 9.26554548641434e-8,
+            "mouthStretchRight": 0.0000021892840322834672
+          },
+          "pose": true,
+          "calibrated": false,
+          "tongue": null
+        },
+        {
+          "time": 3.875,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.16351615690388216,
+          "shape_scores": {
+            "mouthFunnel": 0.1636970043182373,
+            "mouthPucker": 0.9963734745979309,
+            "mouthSmileLeft": 1.0038353792651833e-7,
+            "mouthSmileRight": 7.085789377470064e-8,
+            "mouthStretchLeft": 1.5669293418341113e-7,
+            "mouthStretchRight": 0.0000012463214034141856
+          },
+          "pose": true,
+          "calibrated": false,
+          "tongue": null
+        },
+        {
+          "time": 4.5,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.15161512027077784,
+          "shape_scores": {
+            "mouthFunnel": 0.15508073568344116,
+            "mouthPucker": 0.9960944652557373,
+            "mouthSmileLeft": 1.2065019916462916e-7,
+            "mouthSmileRight": 7.582972472164329e-8,
+            "mouthStretchLeft": 1.5417083432112122e-7,
+            "mouthStretchRight": 0.000002626984496600926
+          },
+          "pose": true,
+          "calibrated": false,
+          "tongue": null
+        },
+        {
+          "time": 5.125,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.1395480314406605,
+          "shape_scores": {
+            "mouthFunnel": 0.16437335312366486,
+            "mouthPucker": 0.9958800077438354,
+            "mouthSmileLeft": 1.391732382671762e-7,
+            "mouthSmileRight": 9.800019995509501e-8,
+            "mouthStretchLeft": 1.9733437284230604e-7,
+            "mouthStretchRight": 0.0000026817644993570866
+          },
+          "pose": true,
+          "calibrated": false,
+          "tongue": null
+        },
+        {
+          "time": 5.75,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.13293284030965927,
+          "shape_scores": {
+            "mouthFunnel": 0.15410248935222626,
+            "mouthPucker": 0.9941849708557129,
+            "mouthSmileLeft": 1.7228747140052292e-7,
+            "mouthSmileRight": 1.4680949789180886e-7,
+            "mouthStretchLeft": 2.6477013648218417e-7,
+            "mouthStretchRight": 0.000003252092710681609
+          },
+          "pose": true,
+          "calibrated": false,
+          "tongue": null
+        }
+      ]
+    },
+    {
+      "exercise": "say-e",
+      "input_mirrored_to_match_live_preview": true,
+      "frames": 39,
+      "tracked": 39,
+      "pose_frames": 30,
+      "reps": 1,
+      "calibrated_frames": 0,
+      "min_ratio": 0.12003021837267033,
+      "max_ratio": 0.18747741903358464,
+      "samples": [
+        {
+          "time": 0.125,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.13946045630033643,
+          "shape_scores": {
+            "mouthFunnel": 0.038653116673231125,
+            "mouthPucker": 0.7577172517776489,
+            "mouthSmileLeft": 0.000002729462039496866,
+            "mouthSmileRight": 0.000002790722192003159,
+            "mouthStretchLeft": 0.00001121410787163768,
+            "mouthStretchRight": 0.00007209011528175324
+          },
+          "pose": false,
+          "calibrated": false,
+          "tongue": null
+        },
+        {
+          "time": 0.75,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.16331928966443743,
+          "shape_scores": {
+            "mouthFunnel": 0.0017555317608639598,
+            "mouthPucker": 0.00038409853004850447,
+            "mouthSmileLeft": 0.17538149654865265,
+            "mouthSmileRight": 0.20585592091083527,
+            "mouthStretchLeft": 0.04677361994981766,
+            "mouthStretchRight": 0.09709277749061584
+          },
+          "pose": true,
+          "calibrated": false,
+          "tongue": null
+        },
+        {
+          "time": 1.375,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.18032550277325637,
+          "shape_scores": {
+            "mouthFunnel": 0.004267879296094179,
+            "mouthPucker": 0.0016803775215521455,
+            "mouthSmileLeft": 0.3548291027545929,
+            "mouthSmileRight": 0.3501172363758087,
+            "mouthStretchLeft": 0.09423920512199402,
+            "mouthStretchRight": 0.15231209993362427
+          },
+          "pose": true,
+          "calibrated": false,
+          "tongue": null
+        },
+        {
+          "time": 2,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.18091035864152422,
+          "shape_scores": {
+            "mouthFunnel": 0.0023849131539463997,
+            "mouthPucker": 0.0007464190130122006,
+            "mouthSmileLeft": 0.13516096770763397,
+            "mouthSmileRight": 0.13537760078907013,
+            "mouthStretchLeft": 0.09522967040538788,
+            "mouthStretchRight": 0.1950996220111847
+          },
+          "pose": true,
+          "calibrated": false,
+          "tongue": null
+        },
+        {
+          "time": 2.625,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.1763705755804346,
+          "shape_scores": {
+            "mouthFunnel": 0.001403688220307231,
+            "mouthPucker": 0.00042353375465609133,
+            "mouthSmileLeft": 0.07315078377723694,
+            "mouthSmileRight": 0.07036339491605759,
+            "mouthStretchLeft": 0.034463491290807724,
+            "mouthStretchRight": 0.11503542959690094
+          },
+          "pose": true,
+          "calibrated": false,
+          "tongue": null
+        },
+        {
+          "time": 3.25,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.16787219450454657,
+          "shape_scores": {
+            "mouthFunnel": 0.0013751775259152055,
+            "mouthPucker": 0.0002870225871447474,
+            "mouthSmileLeft": 0.09033071994781494,
+            "mouthSmileRight": 0.10084987431764603,
+            "mouthStretchLeft": 0.021038567647337914,
+            "mouthStretchRight": 0.04390254244208336
+          },
+          "pose": true,
+          "calibrated": false,
+          "tongue": null
+        },
+        {
+          "time": 3.875,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.17277207923011392,
+          "shape_scores": {
+            "mouthFunnel": 0.0016416007420048118,
+            "mouthPucker": 0.0003505552012939006,
+            "mouthSmileLeft": 0.07382239401340485,
+            "mouthSmileRight": 0.08188748359680176,
+            "mouthStretchLeft": 0.01767590455710888,
+            "mouthStretchRight": 0.04406043142080307
+          },
+          "pose": true,
+          "calibrated": false,
+          "tongue": null
+        },
+        {
+          "time": 4.5,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.12960711706859107,
+          "shape_scores": {
+            "mouthFunnel": 0.006813523825258017,
+            "mouthPucker": 0.00633013341575861,
+            "mouthSmileLeft": 0.0017826661933213472,
+            "mouthSmileRight": 0.002909439615905285,
+            "mouthStretchLeft": 0.0013924496015533805,
+            "mouthStretchRight": 0.0011713514104485512
+          },
+          "pose": false,
+          "calibrated": false,
+          "tongue": null
+        }
+      ]
+    },
+    {
+      "exercise": "tongue-down",
+      "input_mirrored_to_match_live_preview": true,
+      "frames": 66,
+      "tracked": 66,
+      "pose_frames": 47,
+      "reps": 2,
+      "calibrated_frames": 56,
+      "min_ratio": 0.09254142641722937,
+      "max_ratio": 0.44057288554160823,
+      "samples": [
+        {
+          "time": 0.125,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.09380050997007292,
+          "shape_scores": {
+            "mouthFunnel": 0.0010975268669426441,
+            "mouthPucker": 0.06430656462907791,
+            "mouthSmileLeft": 0.00013437298184726387,
+            "mouthSmileRight": 0.00010248672333545983,
+            "mouthStretchLeft": 0.00035329422098584473,
+            "mouthStretchRight": 0.00011064683349104598
+          },
+          "pose": false,
+          "calibrated": false,
+          "tongue": {
+            "dx": -0.04957884313284514,
+            "dy": -0.0006830558195288359,
+            "min_dx": -0.42707311254905045,
+            "max_dx": 0.30568319166629965,
+            "fraction": 0.07234042553191489,
+            "extends_below_lip": true
+          }
+        },
+        {
+          "time": 0.75,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.24499648202925547,
+          "shape_scores": {
+            "mouthFunnel": 0.005531860515475273,
+            "mouthPucker": 0.001830554916523397,
+            "mouthSmileLeft": 0.36877551674842834,
+            "mouthSmileRight": 0.41179776191711426,
+            "mouthStretchLeft": 0.022895965725183487,
+            "mouthStretchRight": 0.040457069873809814
+          },
+          "pose": false,
+          "calibrated": false,
+          "tongue": {
+            "dx": -0.08328010624203681,
+            "dy": 0.05967202378254086,
+            "min_dx": -0.5448953584880092,
+            "max_dx": 0.5357088548513779,
+            "fraction": 0.21052631578947367,
+            "extends_below_lip": true
+          }
+        },
+        {
+          "time": 1.375,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.3992389576798031,
+          "shape_scores": {
+            "mouthFunnel": 0.01523223239928484,
+            "mouthPucker": 0.0076841129921376705,
+            "mouthSmileLeft": 0.07155805826187134,
+            "mouthSmileRight": 0.11926914006471634,
+            "mouthStretchLeft": 0.010068791918456554,
+            "mouthStretchRight": 0.020123900845646858
+          },
+          "pose": true,
+          "calibrated": true,
+          "tongue": {
+            "dx": -0.0699847799825769,
+            "dy": 0.23013056736619197,
+            "min_dx": -0.6161939519313391,
+            "max_dx": 0.48233411424749123,
+            "fraction": 0.4258241758241758,
+            "extends_below_lip": true
+          }
+        },
+        {
+          "time": 2,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.346796324521886,
+          "shape_scores": {
+            "mouthFunnel": 0.018899494782090187,
+            "mouthPucker": 0.007195197511464357,
+            "mouthSmileLeft": 0.21704542636871338,
+            "mouthSmileRight": 0.23977164924144745,
+            "mouthStretchLeft": 0.013494212180376053,
+            "mouthStretchRight": 0.02870960347354412
+          },
+          "pose": true,
+          "calibrated": true,
+          "tongue": {
+            "dx": -0.10366540192363327,
+            "dy": 0.17581891385998508,
+            "min_dx": -0.6374786849444604,
+            "max_dx": 0.47430692645414935,
+            "fraction": 0.3385579937304075,
+            "extends_below_lip": true
+          }
+        },
+        {
+          "time": 2.625,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.3520175123529192,
+          "shape_scores": {
+            "mouthFunnel": 0.026904631406068802,
+            "mouthPucker": 0.01340447086840868,
+            "mouthSmileLeft": 0.24500764906406403,
+            "mouthSmileRight": 0.34881293773651123,
+            "mouthStretchLeft": 0.008202614262700081,
+            "mouthStretchRight": 0.020096946507692337
+          },
+          "pose": true,
+          "calibrated": true,
+          "tongue": {
+            "dx": -0.08708177863167116,
+            "dy": 0.18537651850429798,
+            "min_dx": -0.6058526648645339,
+            "max_dx": 0.4736559531736365,
+            "fraction": 0.3824451410658307,
+            "extends_below_lip": true
+          }
+        },
+        {
+          "time": 3.25,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.3571407668155357,
+          "shape_scores": {
+            "mouthFunnel": 0.02126358263194561,
+            "mouthPucker": 0.008260246366262436,
+            "mouthSmileLeft": 0.14847920835018158,
+            "mouthSmileRight": 0.22893184423446655,
+            "mouthStretchLeft": 0.014887078665196896,
+            "mouthStretchRight": 0.0298932958394289
+          },
+          "pose": true,
+          "calibrated": true,
+          "tongue": {
+            "dx": -0.11616479818484934,
+            "dy": 0.18934770420399868,
+            "min_dx": -0.5883110786507444,
+            "max_dx": 0.47095522722483657,
+            "fraction": 0.3460591133004926,
+            "extends_below_lip": true
+          }
+        },
+        {
+          "time": 3.875,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.3541289710168555,
+          "shape_scores": {
+            "mouthFunnel": 0.025444841012358665,
+            "mouthPucker": 0.011355441063642502,
+            "mouthSmileLeft": 0.26517215371131897,
+            "mouthSmileRight": 0.32887643575668335,
+            "mouthStretchLeft": 0.009635263122618198,
+            "mouthStretchRight": 0.02131686732172966
+          },
+          "pose": true,
+          "calibrated": true,
+          "tongue": {
+            "dx": -0.044883992735480445,
+            "dy": 0.18104318312496115,
+            "min_dx": -0.6052934365183782,
+            "max_dx": 0.5162892354460791,
+            "fraction": 0.3753369272237197,
+            "extends_below_lip": true
+          }
+        },
+        {
+          "time": 4.5,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.25933313330248564,
+          "shape_scores": {
+            "mouthFunnel": 0.0038989814929664135,
+            "mouthPucker": 0.0010326963383704424,
+            "mouthSmileLeft": 0.27373653650283813,
+            "mouthSmileRight": 0.26517075300216675,
+            "mouthStretchLeft": 0.035166289657354355,
+            "mouthStretchRight": 0.022224046289920807
+          },
+          "pose": true,
+          "calibrated": true,
+          "tongue": {
+            "dx": -0.052255226216545755,
+            "dy": 0.1438047250108178,
+            "min_dx": -0.5644969565688742,
+            "max_dx": 0.5464141211911134,
+            "fraction": 0.32450738916256155,
+            "extends_below_lip": true
+          }
+        },
+        {
+          "time": 5.125,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.09335900196854012,
+          "shape_scores": {
+            "mouthFunnel": 0.0001862854405771941,
+            "mouthPucker": 0.009173144586384296,
+            "mouthSmileLeft": 0.0002186654892284423,
+            "mouthSmileRight": 0.0001047331461450085,
+            "mouthStretchLeft": 0.0008811416919343174,
+            "mouthStretchRight": 0.00017131569620687515
+          },
+          "pose": false,
+          "calibrated": true,
+          "tongue": {
+            "dx": -0.12286341049253498,
+            "dy": -0.08128639092565729,
+            "min_dx": -0.2861681975612763,
+            "max_dx": 0.13892288938865327,
+            "fraction": 0.025833333333333333,
+            "extends_below_lip": true
+          }
+        },
+        {
+          "time": 5.75,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.38908084032978296,
+          "shape_scores": {
+            "mouthFunnel": 0.012103133834898472,
+            "mouthPucker": 0.005066369194537401,
+            "mouthSmileLeft": 0.12144124507904053,
+            "mouthSmileRight": 0.1879563182592392,
+            "mouthStretchLeft": 0.011481876485049725,
+            "mouthStretchRight": 0.033256541937589645
+          },
+          "pose": true,
+          "calibrated": true,
+          "tongue": {
+            "dx": -0.09895717226172906,
+            "dy": 0.20491070657671137,
+            "min_dx": -0.6180479363915378,
+            "max_dx": 0.511461333034515,
+            "fraction": 0.4299191374663073,
+            "extends_below_lip": true
+          }
+        },
+        {
+          "time": 6.375,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.34934089829259896,
+          "shape_scores": {
+            "mouthFunnel": 0.004964001942425966,
+            "mouthPucker": 0.012410581111907959,
+            "mouthSmileLeft": 0.0022287045139819384,
+            "mouthSmileRight": 0.0032743995543569326,
+            "mouthStretchLeft": 0.0023110215552151203,
+            "mouthStretchRight": 0.009762648493051529
+          },
+          "pose": true,
+          "calibrated": true,
+          "tongue": {
+            "dx": -0.1333482272794999,
+            "dy": 0.31059284421301386,
+            "min_dx": -0.6837600507241416,
+            "max_dx": 0.4419951421748303,
+            "fraction": 0.4703525641025641,
+            "extends_below_lip": true
+          }
+        },
+        {
+          "time": 7,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.3798634939326986,
+          "shape_scores": {
+            "mouthFunnel": 0.010992850176990032,
+            "mouthPucker": 0.024556472897529602,
+            "mouthSmileLeft": 0.005440817680209875,
+            "mouthSmileRight": 0.0058081080205738544,
+            "mouthStretchLeft": 0.002657173667103052,
+            "mouthStretchRight": 0.010293561033904552
+          },
+          "pose": true,
+          "calibrated": true,
+          "tongue": {
+            "dx": -0.10498044469654788,
+            "dy": 0.2777523611231146,
+            "min_dx": -0.6247700564449047,
+            "max_dx": 0.4612433415117255,
+            "fraction": 0.47333333333333333,
+            "extends_below_lip": true
+          }
+        },
+        {
+          "time": 7.625,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.41797948521379635,
+          "shape_scores": {
+            "mouthFunnel": 0.018925435841083527,
+            "mouthPucker": 0.015606758184731007,
+            "mouthSmileLeft": 0.014203017577528954,
+            "mouthSmileRight": 0.012334897182881832,
+            "mouthStretchLeft": 0.003867542603984475,
+            "mouthStretchRight": 0.007486335933208466
+          },
+          "pose": true,
+          "calibrated": true,
+          "tongue": {
+            "dx": -0.12385487340392469,
+            "dy": 0.25878993852381676,
+            "min_dx": -0.7029593265079129,
+            "max_dx": 0.45693339940267014,
+            "fraction": 0.4686028257456829,
+            "extends_below_lip": true
+          }
+        },
+        {
+          "time": 8.25,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.19727104559567074,
+          "shape_scores": {
+            "mouthFunnel": 0.0018730189185589552,
+            "mouthPucker": 0.0007306397892534733,
+            "mouthSmileLeft": 0.03240186721086502,
+            "mouthSmileRight": 0.035549346357584,
+            "mouthStretchLeft": 0.002871112199500203,
+            "mouthStretchRight": 0.003991337958723307
+          },
+          "pose": true,
+          "calibrated": true,
+          "tongue": {
+            "dx": -0.05032489618493526,
+            "dy": 0.15223169791621888,
+            "min_dx": -0.5684633680357932,
+            "max_dx": 0.5520488458731645,
+            "fraction": 0.284366576819407,
+            "extends_below_lip": true
+          }
+        }
+      ]
+    },
+    {
+      "exercise": "tongue-right",
+      "input_mirrored_to_match_live_preview": true,
+      "frames": 47,
+      "tracked": 46,
+      "pose_frames": 20,
+      "reps": 1,
+      "calibrated_frames": 46,
+      "min_ratio": 0.09441510839577848,
+      "max_ratio": 0.1474843112266701,
+      "samples": [
+        {
+          "time": 0.125,
+          "status": "multiple_faces",
+          "valid": false,
+          "pose": false,
+          "tongue": null
+        },
+        {
+          "time": 0.75,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.11021327548520468,
+          "shape_scores": {
+            "mouthFunnel": 0.0016601327806711197,
+            "mouthPucker": 0.0013610227033495903,
+            "mouthSmileLeft": 0.04947470873594284,
+            "mouthSmileRight": 0.01816139742732048,
+            "mouthStretchLeft": 0.013779627159237862,
+            "mouthStretchRight": 0.004380695056170225
+          },
+          "pose": true,
+          "calibrated": true,
+          "tongue": {
+            "dx": -0.21697426516227192,
+            "dy": 0.034189149773178835,
+            "min_dx": -0.5895290892356828,
+            "max_dx": 0.23441468550687702,
+            "fraction": 0.14285714285714285,
+            "extends_below_lip": true
+          }
+        },
+        {
+          "time": 1.375,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.1040973156265264,
+          "shape_scores": {
+            "mouthFunnel": 0.0015173893189057708,
+            "mouthPucker": 0.002742394106462598,
+            "mouthSmileLeft": 0.17324335873126984,
+            "mouthSmileRight": 0.0747060477733612,
+            "mouthStretchLeft": 0.019997121766209602,
+            "mouthStretchRight": 0.011997698806226254
+          },
+          "pose": true,
+          "calibrated": true,
+          "tongue": {
+            "dx": -0.20621779815184152,
+            "dy": 0.03701611505629107,
+            "min_dx": -0.644899571325122,
+            "max_dx": 0.4095715231969853,
+            "fraction": 0.12797619047619047,
+            "extends_below_lip": true
+          }
+        },
+        {
+          "time": 2,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.11617797406466734,
+          "shape_scores": {
+            "mouthFunnel": 0.0009082364849746227,
+            "mouthPucker": 0.0010202486300840974,
+            "mouthSmileLeft": 0.12280657142400742,
+            "mouthSmileRight": 0.043608058243989944,
+            "mouthStretchLeft": 0.017149657011032104,
+            "mouthStretchRight": 0.0168747715651989
+          },
+          "pose": true,
+          "calibrated": true,
+          "tongue": {
+            "dx": -0.223350616878306,
+            "dy": 0.03904870562652745,
+            "min_dx": -0.5779142613101247,
+            "max_dx": 0.28670840896698524,
+            "fraction": 0.11536050156739812,
+            "extends_below_lip": true
+          }
+        },
+        {
+          "time": 2.625,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.13290118077975233,
+          "shape_scores": {
+            "mouthFunnel": 0.002368090907111764,
+            "mouthPucker": 0.0017474363557994366,
+            "mouthSmileLeft": 0.20525476336479187,
+            "mouthSmileRight": 0.07751567661762238,
+            "mouthStretchLeft": 0.008013305254280567,
+            "mouthStretchRight": 0.00937770213931799
+          },
+          "pose": true,
+          "calibrated": true,
+          "tongue": {
+            "dx": -0.21402440248205198,
+            "dy": 0.03788231571346145,
+            "min_dx": -0.6283688632124397,
+            "max_dx": 0.4133435784384954,
+            "fraction": 0.1322884012539185,
+            "extends_below_lip": true
+          }
+        },
+        {
+          "time": 3.25,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.14006560839199042,
+          "shape_scores": {
+            "mouthFunnel": 0.002762236399576068,
+            "mouthPucker": 0.0016623953124508262,
+            "mouthSmileLeft": 0.09408577531576157,
+            "mouthSmileRight": 0.02860904671251774,
+            "mouthStretchLeft": 0.006521507631987333,
+            "mouthStretchRight": 0.003961737267673016
+          },
+          "pose": false,
+          "calibrated": true,
+          "tongue": {
+            "dx": -0.16778827362843793,
+            "dy": 0.028316720564072737,
+            "min_dx": -0.5268285323101588,
+            "max_dx": 0.386194805918273,
+            "fraction": 0.12235449735449735,
+            "extends_below_lip": true
+          }
+        },
+        {
+          "time": 3.875,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.13319297936872923,
+          "shape_scores": {
+            "mouthFunnel": 0.0016540278447791934,
+            "mouthPucker": 0.0011737087043002248,
+            "mouthSmileLeft": 0.11010168492794037,
+            "mouthSmileRight": 0.033430878072977066,
+            "mouthStretchLeft": 0.015310379676520824,
+            "mouthStretchRight": 0.0076404050923883915
+          },
+          "pose": false,
+          "calibrated": true,
+          "tongue": {
+            "dx": -0.17329699612338692,
+            "dy": 0.017826061649164445,
+            "min_dx": -0.5342798508502634,
+            "max_dx": 0.42363554577133566,
+            "fraction": 0.12132822477650064,
+            "extends_below_lip": true
+          }
+        },
+        {
+          "time": 4.5,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.12517123194088767,
+          "shape_scores": {
+            "mouthFunnel": 0.0031199727673083544,
+            "mouthPucker": 0.0021218634210526943,
+            "mouthSmileLeft": 0.10651711374521255,
+            "mouthSmileRight": 0.03412984311580658,
+            "mouthStretchLeft": 0.006322178058326244,
+            "mouthStretchRight": 0.0032293915282934904
+          },
+          "pose": false,
+          "calibrated": true,
+          "tongue": {
+            "dx": -0.1657894501654832,
+            "dy": 0.04039336654360936,
+            "min_dx": -0.5283809552913489,
+            "max_dx": 0.38932458312653684,
+            "fraction": 0.11375661375661375,
+            "extends_below_lip": true
+          }
+        },
+        {
+          "time": 5.125,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.12893956887051028,
+          "shape_scores": {
+            "mouthFunnel": 0.0035195881500840187,
+            "mouthPucker": 0.0021847900934517384,
+            "mouthSmileLeft": 0.13300518691539764,
+            "mouthSmileRight": 0.04894560948014259,
+            "mouthStretchLeft": 0.004775639157742262,
+            "mouthStretchRight": 0.0036590187810361385
+          },
+          "pose": false,
+          "calibrated": true,
+          "tongue": {
+            "dx": -0.16427081194981114,
+            "dy": 0.03710713283467225,
+            "min_dx": -0.5641369378395561,
+            "max_dx": 0.4301247805889996,
+            "fraction": 0.12169312169312169,
+            "extends_below_lip": true
+          }
+        },
+        {
+          "time": 5.75,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.1348295749782095,
+          "shape_scores": {
+            "mouthFunnel": 0.0030397914815694094,
+            "mouthPucker": 0.0016377134015783668,
+            "mouthSmileLeft": 0.08142900466918945,
+            "mouthSmileRight": 0.03654681146144867,
+            "mouthStretchLeft": 0.002789820311591029,
+            "mouthStretchRight": 0.0037223875988274813
+          },
+          "pose": false,
+          "calibrated": true,
+          "tongue": {
+            "dx": -0.14357400700320366,
+            "dy": 0.019564132183207825,
+            "min_dx": -0.536737709586746,
+            "max_dx": 0.4626300378018941,
+            "fraction": 0.12668463611859837,
+            "extends_below_lip": true
+          }
+        }
+      ]
+    },
+    {
+      "exercise": "tongue-left",
+      "input_mirrored_to_match_live_preview": true,
+      "frames": 44,
+      "tracked": 44,
+      "pose_frames": 34,
+      "reps": 1,
+      "calibrated_frames": 44,
+      "min_ratio": 0.0910121675549659,
+      "max_ratio": 0.13804526861474112,
+      "samples": [
+        {
+          "time": 0.125,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.09324935550887746,
+          "shape_scores": {
+            "mouthFunnel": 0.0006977474549785256,
+            "mouthPucker": 0.12291765213012695,
+            "mouthSmileLeft": 0.000027111904273624532,
+            "mouthSmileRight": 0.000021695059331250377,
+            "mouthStretchLeft": 0.0006756812217645347,
+            "mouthStretchRight": 0.00008999194687930867
+          },
+          "pose": false,
+          "calibrated": true,
+          "tongue": {
+            "dx": -0.1188976910110798,
+            "dy": -0.01968100997569468,
+            "min_dx": -0.4512241469272898,
+            "max_dx": 0.2751885487479669,
+            "fraction": 0.11063829787234042,
+            "extends_below_lip": true
+          }
+        },
+        {
+          "time": 0.75,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.10932864641132736,
+          "shape_scores": {
+            "mouthFunnel": 0.011669768951833248,
+            "mouthPucker": 0.007523149251937866,
+            "mouthSmileLeft": 0.5497432351112366,
+            "mouthSmileRight": 0.6869666576385498,
+            "mouthStretchLeft": 0.016238002106547356,
+            "mouthStretchRight": 0.01554297748953104
+          },
+          "pose": true,
+          "calibrated": true,
+          "tongue": {
+            "dx": 0.046360661616198166,
+            "dy": 0.054727787595243306,
+            "min_dx": -0.5672890534080565,
+            "max_dx": 0.691762780342498,
+            "fraction": 0.19655172413793104,
+            "extends_below_lip": true
+          }
+        },
+        {
+          "time": 1.375,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.09274221560115245,
+          "shape_scores": {
+            "mouthFunnel": 0.0015887649497017264,
+            "mouthPucker": 0.003261472564190626,
+            "mouthSmileLeft": 0.19406040012836456,
+            "mouthSmileRight": 0.2494935244321823,
+            "mouthStretchLeft": 0.01997382566332817,
+            "mouthStretchRight": 0.021322889253497124
+          },
+          "pose": true,
+          "calibrated": true,
+          "tongue": {
+            "dx": 0.046469270256181874,
+            "dy": 0.006942416965953736,
+            "min_dx": -0.5455121586187334,
+            "max_dx": 0.6333167707952899,
+            "fraction": 0.12707535121328226,
+            "extends_below_lip": true
+          }
+        },
+        {
+          "time": 2,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.09381034816526684,
+          "shape_scores": {
+            "mouthFunnel": 0.00655692582949996,
+            "mouthPucker": 0.03476943448185921,
+            "mouthSmileLeft": 0.3989708721637726,
+            "mouthSmileRight": 0.4799126386642456,
+            "mouthStretchLeft": 0.008590796031057835,
+            "mouthStretchRight": 0.0030003052670508623
+          },
+          "pose": false,
+          "calibrated": true,
+          "tongue": {
+            "dx": 0.07265527521870585,
+            "dy": 0.04920000858852758,
+            "min_dx": -0.5090260816447617,
+            "max_dx": 0.589548878048953,
+            "fraction": 0.12007389162561577,
+            "extends_below_lip": true
+          }
+        },
+        {
+          "time": 2.625,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.1013425996680344,
+          "shape_scores": {
+            "mouthFunnel": 0.020902087911963463,
+            "mouthPucker": 0.02664985880255699,
+            "mouthSmileLeft": 0.28871840238571167,
+            "mouthSmileRight": 0.49755915999412537,
+            "mouthStretchLeft": 0.01697498746216297,
+            "mouthStretchRight": 0.009629321284592152
+          },
+          "pose": true,
+          "calibrated": true,
+          "tongue": {
+            "dx": 0.04057328663609954,
+            "dy": 0.07011229403436418,
+            "min_dx": -0.5336916317231803,
+            "max_dx": 0.6563435181235486,
+            "fraction": 0.21845238095238095,
+            "extends_below_lip": true
+          }
+        },
+        {
+          "time": 3.25,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.10484952621489005,
+          "shape_scores": {
+            "mouthFunnel": 0.018230337649583817,
+            "mouthPucker": 0.01963823474943638,
+            "mouthSmileLeft": 0.4502306282520294,
+            "mouthSmileRight": 0.5937509536743164,
+            "mouthStretchLeft": 0.016038767993450165,
+            "mouthStretchRight": 0.015011362731456757
+          },
+          "pose": true,
+          "calibrated": true,
+          "tongue": {
+            "dx": 0.03561080158407722,
+            "dy": 0.043361536652598356,
+            "min_dx": -0.5629191032908676,
+            "max_dx": 0.6708791149423923,
+            "fraction": 0.15204678362573099,
+            "extends_below_lip": true
+          }
+        },
+        {
+          "time": 3.875,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.10369379751723377,
+          "shape_scores": {
+            "mouthFunnel": 0.02110532484948635,
+            "mouthPucker": 0.0209425650537014,
+            "mouthSmileLeft": 0.354918897151947,
+            "mouthSmileRight": 0.4925207197666168,
+            "mouthStretchLeft": 0.032846853137016296,
+            "mouthStretchRight": 0.015960147604346275
+          },
+          "pose": true,
+          "calibrated": true,
+          "tongue": {
+            "dx": 0.06725855462588366,
+            "dy": 0.04612424860065887,
+            "min_dx": -0.5166232869354709,
+            "max_dx": 0.7137766850854816,
+            "fraction": 0.1497076023391813,
+            "extends_below_lip": true
+          }
+        },
+        {
+          "time": 4.5,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.12152033627896959,
+          "shape_scores": {
+            "mouthFunnel": 0.015109071508049965,
+            "mouthPucker": 0.008030572906136513,
+            "mouthSmileLeft": 0.5442154407501221,
+            "mouthSmileRight": 0.6001200079917908,
+            "mouthStretchLeft": 0.01900869980454445,
+            "mouthStretchRight": 0.018463676795363426
+          },
+          "pose": false,
+          "calibrated": true,
+          "tongue": {
+            "dx": 0.03541267318684707,
+            "dy": 0.07358131021603995,
+            "min_dx": -0.5899746325235011,
+            "max_dx": 0.6031605958824164,
+            "fraction": 0.16428571428571428,
+            "extends_below_lip": true
+          }
+        },
+        {
+          "time": 5.125,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.11010992902811925,
+          "shape_scores": {
+            "mouthFunnel": 0.017638016492128372,
+            "mouthPucker": 0.013743857853114605,
+            "mouthSmileLeft": 0.3027532398700714,
+            "mouthSmileRight": 0.4462334215641022,
+            "mouthStretchLeft": 0.039204295724630356,
+            "mouthStretchRight": 0.015394002199172974
+          },
+          "pose": true,
+          "calibrated": true,
+          "tongue": {
+            "dx": 0.09683763329465012,
+            "dy": 0.05542532816574301,
+            "min_dx": -0.548510053925749,
+            "max_dx": 0.6677531754541034,
+            "fraction": 0.14210526315789473,
+            "extends_below_lip": true
+          }
+        }
+      ]
+    },
+    {
+      "exercise": "mouth-open-negative-control",
+      "input_mirrored_to_match_live_preview": true,
+      "frames": 48,
+      "tracked": 48,
+      "pose_frames": 0,
+      "reps": 0,
+      "calibrated_frames": 48,
+      "min_ratio": 0.09370507099117845,
+      "max_ratio": 0.3183884902596523,
+      "samples": [
+        {
+          "time": 0.125,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.09378240656642417,
+          "shape_scores": {
+            "mouthFunnel": 0.0007346411584876478,
+            "mouthPucker": 0.036247678101062775,
+            "mouthSmileLeft": 0.0003737520019058138,
+            "mouthSmileRight": 0.0005825095577165484,
+            "mouthStretchLeft": 0.0002859180676750839,
+            "mouthStretchRight": 0.0005099360132589936
+          },
+          "pose": false,
+          "calibrated": true,
+          "tongue": null
+        },
+        {
+          "time": 0.75,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.0947570410269675,
+          "shape_scores": {
+            "mouthFunnel": 0.0006053142133168876,
+            "mouthPucker": 0.05937698855996132,
+            "mouthSmileLeft": 0.00013656399096362293,
+            "mouthSmileRight": 0.00017305879737250507,
+            "mouthStretchLeft": 0.0002682983176782727,
+            "mouthStretchRight": 0.000427863618824631
+          },
+          "pose": false,
+          "calibrated": true,
+          "tongue": {
+            "dx": 0.012651526340272227,
+            "dy": -0.0164107004326437,
+            "min_dx": -0.2687632192343499,
+            "max_dx": 0.30230280105366314,
+            "fraction": 0.01888162672476398,
+            "extends_below_lip": true
+          }
+        },
+        {
+          "time": 1.375,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.15548138995882899,
+          "shape_scores": {
+            "mouthFunnel": 0.012837451882660389,
+            "mouthPucker": 0.17240943014621735,
+            "mouthSmileLeft": 0.000021941328668617643,
+            "mouthSmileRight": 0.00003312138869659975,
+            "mouthStretchLeft": 0.000023787146346876398,
+            "mouthStretchRight": 0.00038915674667805433
+          },
+          "pose": false,
+          "calibrated": true,
+          "tongue": {
+            "dx": -0.018256059603445753,
+            "dy": -0.05033953357001779,
+            "min_dx": -0.1980776632637377,
+            "max_dx": 0.19752986478890447,
+            "fraction": 0.013076923076923076,
+            "extends_below_lip": false
+          }
+        },
+        {
+          "time": 2,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.31401791391469724,
+          "shape_scores": {
+            "mouthFunnel": 0.004097075667232275,
+            "mouthPucker": 0.0008934341021813452,
+            "mouthSmileLeft": 0.1043999046087265,
+            "mouthSmileRight": 0.10113611817359924,
+            "mouthStretchLeft": 0.033465489745140076,
+            "mouthStretchRight": 0.02941025048494339
+          },
+          "pose": false,
+          "calibrated": true,
+          "tongue": null
+        },
+        {
+          "time": 2.625,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.30370111667583877,
+          "shape_scores": {
+            "mouthFunnel": 0.0031052404083311558,
+            "mouthPucker": 0.0012346868170425296,
+            "mouthSmileLeft": 0.018877826631069183,
+            "mouthSmileRight": 0.02146000787615776,
+            "mouthStretchLeft": 0.03053903952240944,
+            "mouthStretchRight": 0.03585556149482727
+          },
+          "pose": false,
+          "calibrated": true,
+          "tongue": {
+            "dx": -0.12419621304900245,
+            "dy": 0.009977724823956105,
+            "min_dx": -0.263720195260775,
+            "max_dx": 0.026795493728120793,
+            "fraction": 0.009895833333333333,
+            "extends_below_lip": false
+          }
+        },
+        {
+          "time": 3.25,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.30242062180481233,
+          "shape_scores": {
+            "mouthFunnel": 0.003305540420114994,
+            "mouthPucker": 0.0013858855236321688,
+            "mouthSmileLeft": 0.016217336058616638,
+            "mouthSmileRight": 0.018585875630378723,
+            "mouthStretchLeft": 0.025438327342271805,
+            "mouthStretchRight": 0.0400017648935318
+          },
+          "pose": false,
+          "calibrated": true,
+          "tongue": {
+            "dx": 0.0038822107248703223,
+            "dy": 0.01500017126954309,
+            "min_dx": -0.11290496080964722,
+            "max_dx": 0.21278320769506423,
+            "fraction": 0.011458333333333333,
+            "extends_below_lip": false
+          }
+        },
+        {
+          "time": 3.875,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.30432376901344677,
+          "shape_scores": {
+            "mouthFunnel": 0.00524172792211175,
+            "mouthPucker": 0.00196776632219553,
+            "mouthSmileLeft": 0.0233842171728611,
+            "mouthSmileRight": 0.028539642691612244,
+            "mouthStretchLeft": 0.01888086646795273,
+            "mouthStretchRight": 0.02980154938995838
+          },
+          "pose": false,
+          "calibrated": true,
+          "tongue": {
+            "dx": 0.2725350041779301,
+            "dy": -0.020108166444726107,
+            "min_dx": 0.21241421231450228,
+            "max_dx": 0.3927765879047883,
+            "fraction": 0.0064516129032258064,
+            "extends_below_lip": false
+          }
+        },
+        {
+          "time": 4.5,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.2832709689577809,
+          "shape_scores": {
+            "mouthFunnel": 0.0030696180183440447,
+            "mouthPucker": 0.0013045179657638073,
+            "mouthSmileLeft": 0.019017118960618973,
+            "mouthSmileRight": 0.026246363297104836,
+            "mouthStretchLeft": 0.019605940207839012,
+            "mouthStretchRight": 0.015337239019572735
+          },
+          "pose": false,
+          "calibrated": true,
+          "tongue": {
+            "dx": 0.032486967449416544,
+            "dy": 0.022738409130929498,
+            "min_dx": -0.10923633101542138,
+            "max_dx": 0.21589358899214714,
+            "fraction": 0.007107709130672498,
+            "extends_below_lip": false
+          }
+        },
+        {
+          "time": 5.125,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.2929417082783258,
+          "shape_scores": {
+            "mouthFunnel": 0.0044494206085801125,
+            "mouthPucker": 0.0017490156460553408,
+            "mouthSmileLeft": 0.023487478494644165,
+            "mouthSmileRight": 0.032994553446769714,
+            "mouthStretchLeft": 0.013160220347344875,
+            "mouthStretchRight": 0.014281893149018288
+          },
+          "pose": false,
+          "calibrated": true,
+          "tongue": {
+            "dx": 0.03491943112276297,
+            "dy": 0.39335615993820106,
+            "min_dx": -0.12721034644327273,
+            "max_dx": 0.2691068876070379,
+            "fraction": 0.012235817575083427,
+            "extends_below_lip": true
+          }
+        },
+        {
+          "time": 5.75,
+          "status": "tracking",
+          "valid": true,
+          "ratio": 0.28268761399812653,
+          "shape_scores": {
+            "mouthFunnel": 0.0031906517688184977,
+            "mouthPucker": 0.000836164690554142,
+            "mouthSmileLeft": 0.04664679244160652,
+            "mouthSmileRight": 0.056200724095106125,
+            "mouthStretchLeft": 0.019277045503258705,
+            "mouthStretchRight": 0.010964983142912388
+          },
+          "pose": false,
+          "calibrated": true,
+          "tongue": {
+            "dx": -0.043282147289803424,
+            "dy": 0.005125818646672928,
+            "min_dx": -0.17180019332159938,
+            "max_dx": 0.15555709374052337,
+            "fraction": 0.008342602892102336,
+            "extends_below_lip": false
+          }
+        }
+      ]
+    }
+  ]
+}

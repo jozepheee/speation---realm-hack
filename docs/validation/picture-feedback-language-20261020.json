@@ -1,0 +1,26 @@
+[
+  {
+    "source": "synthetic_voice_or_text_with_generated_illustration_not_user_speech",
+    "language": "ml",
+    "input": "കുട്ടി പുസ്തകം വായിക്കുന്നു.",
+    "seconds": 3.22,
+    "result": {
+      "heard_text": "കുട്ടി പുസ്തകം വായിക്കുന്നു.",
+      "verdict": "matches_picture",
+      "summary": "ചിത്രത്തിലെ പ്രധാന കാര്യത്തെക്കുറിച്ച് നിങ്ങൾ കൃത്യമായി പറഞ്ഞു.",
+      "strengths": [
+        "ലളിതമായ വാചകം",
+        "ചിത്രത്തിലെ പ്രധാന പ്രവർത്തനം തിരിച്ചറിഞ്ഞു"
+      ],
+      "improvements": [
+        "ചിത്രത്തിലെ പൂച്ചയെക്കുറിച്ച് പറയാം",
+        "മുറിയിലെ മറ്റ് വസ്തുക്കൾ ഉൾപ്പെടുത്താം"
+      ],
+      "example_sentence": "കുട്ടി സോഫയിൽ ഇരുന്ന് പുസ്തകം വായിക്കുന്നു.",
+      "practice_word": "വായന",
+      "model": "google/gemini-3-flash-preview",
+      "source": "actual_image_and_recognized_words",
+      "pronunciation_assessed": false
+    }
+  }
+]

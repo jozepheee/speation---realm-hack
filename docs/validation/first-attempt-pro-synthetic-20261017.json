@@ -1,0 +1,128 @@
+[
+  {
+    "language": "ml",
+    "expected_text": "മഴ",
+    "synthetic_spoken_text": "മഴ",
+    "model": "google/gemini-2.5-pro",
+    "content": {
+      "state": "tentative_observation",
+      "summary": "നിങ്ങൾ 'മഴ' എന്ന് പറഞ്ഞു. ആ വാക്കിന്റെ അവസാന ഭാഗം നമുക്കൊന്ന് ശ്രദ്ധിച്ചാലോ?",
+      "concerns": [
+        {
+          "produced_phone": "j",
+          "category": "substitution",
+          "observation": "മഴ എന്ന വാക്കിലെ 'ഴ' എന്ന ശബ്ദം 'യ' പോലെയാണ് കേട്ടത്.",
+          "uncertainty": "ഇതൊരു ക്ലിനിക്കൽ വിലയിരുത്തലല്ല, കേട്ടതിനെ അടിസ്ഥാനമാക്കി മാത്രമുള്ള ഒരു നിരീക്ഷണമാണ്. സംസാരത്തിലെ സ്വാഭാവികമായ വ്യത്യാസങ്ങൾ കാരണം ചിലപ്പോൾ ശബ്ദങ്ങൾ വ്യത്യസ്തമായി തോന്നാം.",
+          "word": "മഴ",
+          "expected_phone": "ɻ",
+          "practice_tip": "'ഴ' എന്ന് പറയാൻ, നാവിൻ്റെ അറ്റം മുകളിലേക്ക് വളച്ച് പുറകോട്ട് വലിക്കാൻ ശ്രമിക്കുക. നമുക്ക് ഒരുമിച്ച് പറയാം: ഴാ... ഴാ... ഇനി വാക്ക് പറയാം: മഴ.",
+          "start_seconds": 0.3,
+          "end_seconds": 0.96
+        }
+      ]
+    },
+    "elapsed_seconds": 18.13,
+    "source": "synthetic_adult_tts_control_not_child_speech_validation"
+  },
+  {
+    "language": "ml",
+    "expected_text": "മഴ",
+    "synthetic_spoken_text": "മല",
+    "model": "google/gemini-2.5-pro",
+    "content": {
+      "state": "no_clear_difference",
+      "summary": "ഈ ശ്രമത്തിൽ വ്യക്തമായ വ്യത്യാസം കേട്ടില്ല. ഇനി ഈ വാക്ക് ഒരു വാക്യത്തിൽ പറഞ്ഞുനോക്കാമോ?",
+      "concerns": []
+    },
+    "elapsed_seconds": 11.57,
+    "source": "synthetic_adult_tts_control_not_child_speech_validation"
+  },
+  {
+    "language": "en",
+    "expected_text": "ship",
+    "synthetic_spoken_text": "ship",
+    "model": "google/gemini-2.5-pro",
+    "content": {
+      "state": "tentative_observation",
+      "summary": "That was a great try with 'ship'! I noticed the middle vowel sound seemed a little long, almost like the 'ee' in 'sheep'. The sound in 'ship' is usually a bit shorter. Would you like to try it?",
+      "concerns": [
+        {
+          "produced_phone": "iː",
+          "category": "substitution",
+          "observation": "In the word 'ship', the middle vowel sound was produced more like the long vowel /iː/ (as in 'sheep') rather than the expected short vowel /ɪ/ (as in 'sit').",
+          "uncertainty": "This is a tentative observation based on listening to the audio. I cannot see how the sound is being made, and variations in pronunciation are common across different accents. This is not a clinical diagnosis.",
+          "word": "ship",
+          "expected_phone": "ɪ",
+          "practice_tip": "The sound in 'ship' is a short, quick sound. Let's try it. Listen to the sound by itself: /ɪ/. Now let's try it in the word: 'ship'. It's the same sound you hear in 'sit' or 'is'.",
+          "start_seconds": 0.14,
+          "end_seconds": 0.65
+        }
+      ]
+    },
+    "elapsed_seconds": 14.85,
+    "source": "synthetic_adult_tts_control_not_child_speech_validation"
+  },
+  {
+    "language": "en",
+    "expected_text": "ship",
+    "synthetic_spoken_text": "sheep",
+    "model": "google/gemini-2.5-pro",
+    "content": {
+      "state": "tentative_observation",
+      "summary": "That was a good try with the word 'ship'. I noticed that the middle vowel sound was a little different from what I expected. It sounded more like the 'ee' in 'sheep'. Let's practice the short 'i' sound together!",
+      "concerns": [
+        {
+          "produced_phone": "iː",
+          "category": "substitution",
+          "observation": "In the word 'ship', the vowel sound was produced like the long 'ee' sound /iː/ as in 'sheep', instead of the expected short 'i' sound /ɪ/.",
+          "uncertainty": "This is a general observation from your audio and not a clinical diagnosis. Many factors can influence pronunciation, including regional accents. This is just a friendly tip to explore a different sound.",
+          "word": "ship",
+          "expected_phone": "ɪ",
+          "practice_tip": "The sound we're aiming for in 'ship' is /ɪ/. It's a short, quick vowel. For this sound, your mouth is relaxed. Let's try it! Listen: /ɪ/... /ɪ/. Now a part of the word: 'shi'. And the whole word: 'ship'.",
+          "start_seconds": 0.0,
+          "end_seconds": 0.6
+        }
+      ]
+    },
+    "elapsed_seconds": 17.99,
+    "source": "synthetic_adult_tts_control_not_child_speech_validation"
+  },
+  {
+    "language": "hi",
+    "expected_text": "ताल",
+    "synthetic_spoken_text": "ताल",
+    "model": "google/gemini-2.5-pro",
+    "content": {
+      "state": "no_clear_difference",
+      "summary": "इस प्रयास में कोई स्पष्ट अंतर नहीं सुनाई दिया। क्या अब इस शब्द को एक वाक्य में बोलें?",
+      "concerns": []
+    },
+    "elapsed_seconds": 11.16,
+    "source": "synthetic_adult_tts_control_not_child_speech_validation"
+  },
+  {
+    "language": "hi",
+    "expected_text": "ताल",
+    "synthetic_spoken_text": "दाल",
+    "model": "google/gemini-2.5-pro",
+    "content": {
+      "state": "tentative_observation",
+      "summary": "बहुत अच्छा प्रयास! मुझे 'ताल' की जगह 'दाल' जैसा सुनाई दिया। 'त' और 'द' की आवाज़ बहुत मिलती-जुलती है। क्या आप 'त' ध्वनि का अभ्यास करना चाहेंगे?",
+      "concerns": [
+        {
+          "produced_phone": "d̪",
+          "category": "substitution",
+          "observation": "ऐसा लगा कि 'ताल' का पहला अक्षर 'त' (t̪) की जगह 'द' (d̪) जैसा था, जिसमें आवाज़ का कंपन होता है।",
+          "uncertainty": "यह एक सामान्य ऑडियो विश्लेषण है और इसे नैदानिक मूल्यांकन नहीं माना जाना चाहिए। ध्वनियों के बीच का अंतर सूक्ष्म हो सकता है और रिकॉर्डिंग की गुणवत्ता या व्यक्तिगत बोलने के तरीके से प्रभावित हो सकता है।",
+          "word": "ताल",
+          "expected_phone": "t̪",
+          "practice_tip": "'त' ध्वनि के लिए, जीभ की नोक ऊपरी दाँतों के ठीक पीछे हल्के से छूती है, और बिना गले में कंपन के हवा निकलती है। यह 'द' से अलग है, जिसमें कंपन होता है। सुनिए: त... ता... ताल। चलिए इसे धीरे-धीरे एक साथ कहते हैं।",
+          "start_seconds": 0.14,
+          "end_seconds": 0.77
+        }
+      ]
+    },
+    "elapsed_seconds": 17.71,
+    "source": "synthetic_adult_tts_control_not_child_speech_validation"
+  }
+]

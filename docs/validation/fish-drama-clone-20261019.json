@@ -1,0 +1,26 @@
+[
+  {
+    "language": "en",
+    "model": "fish-audio/drama-3",
+    "bytes": 34271,
+    "seconds": 2.1420625,
+    "reference": "synthetic_eSpeak_adult_style_not_a_human_identity",
+    "speaker_similarity_validated": false
+  },
+  {
+    "language": "hi",
+    "model": "fish-audio/drama-3",
+    "bytes": 30092,
+    "seconds": 1.8808125,
+    "reference": "synthetic_eSpeak_adult_style_not_a_human_identity",
+    "speaker_similarity_validated": false
+  },
+  {
+    "language": "ml",
+    "model": "fish-audio/drama-3",
+    "bytes": 28420,
+    "seconds": 1.7763125,
+    "reference": "synthetic_eSpeak_adult_style_not_a_human_identity",
+    "speaker_similarity_validated": false
+  }
+]

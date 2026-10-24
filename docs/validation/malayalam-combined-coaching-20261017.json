@@ -1,0 +1,419 @@
+{
+  "scope": "synthetic_adult_engineering_controls_not_gold_pronunciation",
+  "clinical_validation": false,
+  "release_approved": false,
+  "results": [
+    {
+      "target": "മഴ",
+      "synthetic_spoken_text": "മഴ",
+      "audio_sha256": "095554ea8a9b785c4982085648a7d0567a781d06e3c85f6b838c2fe5b3affdf1",
+      "audio_model": "google/gemini-2.5-flash",
+      "content": {
+        "state": "insufficient_evidence",
+        "summary": "ഈ റെക്കോർഡിങ്ങിലെ ശബ്ദങ്ങൾ വിശ്വസനീയമായി വിലയിരുത്താനായില്ല. ഉദ്ദേശിച്ച വാക്ക് പറയാമോ, അല്ലെങ്കിൽ ഒരു ചെറിയ വാക്ക് വീണ്ടും പറയാമോ?",
+        "concerns": []
+      },
+      "independent_phone_observation": {
+        "source": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+        "revision": "2c733782da5604684829819a5eb744c193fe9398",
+        "scope": "unvalidated_target_independent_phone_hypotheses",
+        "reference_text_supplied": false,
+        "phones": [
+          "m",
+          "a",
+          "ɾ",
+          "a"
+        ],
+        "emissions": [
+          {
+            "phone": "m",
+            "emission_seconds": 0.1,
+            "alternatives": [
+              {
+                "phone": "m",
+                "posterior": 0.9916
+              },
+              {
+                "phone": "n",
+                "posterior": 0.00208
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.00126
+              }
+            ]
+          },
+          {
+            "phone": "a",
+            "emission_seconds": 0.16,
+            "alternatives": [
+              {
+                "phone": "a",
+                "posterior": 0.78133
+              },
+              {
+                "phone": "aː",
+                "posterior": 0.06858
+              },
+              {
+                "phone": "ɑ",
+                "posterior": 0.03155
+              }
+            ]
+          },
+          {
+            "phone": "ɾ",
+            "emission_seconds": 0.26,
+            "alternatives": [
+              {
+                "phone": "ɾ",
+                "posterior": 0.15614
+              },
+              {
+                "phone": "r",
+                "posterior": 0.13032
+              },
+              {
+                "phone": "ɹ",
+                "posterior": 0.11628
+              }
+            ]
+          },
+          {
+            "phone": "a",
+            "emission_seconds": 0.32,
+            "alternatives": [
+              {
+                "phone": "a",
+                "posterior": 0.78585
+              },
+              {
+                "phone": "ɐ",
+                "posterior": 0.07343
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.05972
+              }
+            ]
+          }
+        ],
+        "latency_seconds": 2.195,
+        "pronunciation_score": null,
+        "instruction": "These are fallible acoustic hypotheses, not verified errors or pronunciation scores. Posterior values are not pronunciation correctness probabilities. Do not infer hidden tongue movement."
+      }
+    },
+    {
+      "target": "മഴ",
+      "synthetic_spoken_text": "മല",
+      "audio_sha256": "ed9e407c159dc5221d17c28269a526f73777da6cad68b968a317169e5c714e2e",
+      "audio_model": "google/gemini-2.5-flash",
+      "content": {
+        "state": "tentative_observation",
+        "summary": "I noticed that the sound for 'ഴ' in \"മഴ\" sounded more like a regular 'ല' sound. Let's practice that retroflex approximant sound!",
+        "concerns": [
+          {
+            "produced_phone": "l",
+            "category": "substitution",
+            "observation": "The retroflex approximant /ɻ/ in \"മഴ\" seemed to be produced as an alveolar lateral approximant /l/. The independent phone observation also suggests /l/ instead of /ɻ/.",
+            "uncertainty": "It can be tricky to distinguish between retroflex and alveolar sounds, and this observation is based on acoustic analysis, not a direct view of tongue placement. There's also some variability in how people produce these sounds naturally.",
+            "word": "മഴ",
+            "expected_phone": "ɻ",
+            "practice_tip": "To make the 'ഴ' sound, try curling your tongue back a bit more, almost touching the roof of your mouth behind your teeth, but not quite. Let's try just the 'ഴ' sound, then the syllable 'ഴ', and then the word \"മഴ\".",
+            "start_seconds": 0.28,
+            "end_seconds": 0.44
+          }
+        ]
+      },
+      "independent_phone_observation": {
+        "source": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+        "revision": "2c733782da5604684829819a5eb744c193fe9398",
+        "scope": "unvalidated_target_independent_phone_hypotheses",
+        "reference_text_supplied": false,
+        "phones": [
+          "m",
+          "a",
+          "l",
+          "a"
+        ],
+        "emissions": [
+          {
+            "phone": "m",
+            "emission_seconds": 0.08,
+            "alternatives": [
+              {
+                "phone": "m",
+                "posterior": 0.99221
+              },
+              {
+                "phone": "n",
+                "posterior": 0.00188
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.00186
+              }
+            ]
+          },
+          {
+            "phone": "a",
+            "emission_seconds": 0.12,
+            "alternatives": [
+              {
+                "phone": "a",
+                "posterior": 0.97011
+              },
+              {
+                "phone": "aː",
+                "posterior": 0.00729
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.0058
+              }
+            ]
+          },
+          {
+            "phone": "l",
+            "emission_seconds": 0.24,
+            "alternatives": [
+              {
+                "phone": "l",
+                "posterior": 0.99142
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.00118
+              },
+              {
+                "phone": "n",
+                "posterior": 0.00084
+              }
+            ]
+          },
+          {
+            "phone": "a",
+            "emission_seconds": 0.28,
+            "alternatives": [
+              {
+                "phone": "a",
+                "posterior": 0.91551
+              },
+              {
+                "phone": "ɐ",
+                "posterior": 0.04203
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.02558
+              }
+            ]
+          }
+        ],
+        "latency_seconds": 0.422,
+        "pronunciation_score": null,
+        "instruction": "These are fallible acoustic hypotheses, not verified errors or pronunciation scores. Posterior values are not pronunciation correctness probabilities. Do not infer hidden tongue movement."
+      }
+    },
+    {
+      "target": "മാല",
+      "synthetic_spoken_text": "മാല",
+      "audio_sha256": "212e4d18727198ee46a80492d86f23c9919e1d51b366dac0da2084d776c0be35",
+      "audio_model": "google/gemini-2.5-flash",
+      "content": {
+        "state": "no_clear_difference",
+        "summary": "ഈ ശ്രമത്തിൽ വ്യക്തമായ വ്യത്യാസം കേട്ടില്ല. ഇനി ഈ വാക്ക് ഒരു വാക്യത്തിൽ പറഞ്ഞുനോക്കാമോ?",
+        "concerns": []
+      },
+      "independent_phone_observation": {
+        "source": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+        "revision": "2c733782da5604684829819a5eb744c193fe9398",
+        "scope": "unvalidated_target_independent_phone_hypotheses",
+        "reference_text_supplied": false,
+        "phones": [
+          "m",
+          "aː",
+          "l",
+          "a"
+        ],
+        "emissions": [
+          {
+            "phone": "m",
+            "emission_seconds": 0.06,
+            "alternatives": [
+              {
+                "phone": "m",
+                "posterior": 0.98733
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.0048
+              },
+              {
+                "phone": "n",
+                "posterior": 0.00222
+              }
+            ]
+          },
+          {
+            "phone": "aː",
+            "emission_seconds": 0.12,
+            "alternatives": [
+              {
+                "phone": "aː",
+                "posterior": 0.44427
+              },
+              {
+                "phone": "a",
+                "posterior": 0.43618
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.02002
+              }
+            ]
+          },
+          {
+            "phone": "l",
+            "emission_seconds": 0.28,
+            "alternatives": [
+              {
+                "phone": "l",
+                "posterior": 0.97544
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.0036
+              },
+              {
+                "phone": "n",
+                "posterior": 0.0026
+              }
+            ]
+          },
+          {
+            "phone": "a",
+            "emission_seconds": 0.32,
+            "alternatives": [
+              {
+                "phone": "a",
+                "posterior": 0.69682
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.11527
+              },
+              {
+                "phone": "ɐ",
+                "posterior": 0.08734
+              }
+            ]
+          }
+        ],
+        "latency_seconds": 0.212,
+        "pronunciation_score": null,
+        "instruction": "These are fallible acoustic hypotheses, not verified errors or pronunciation scores. Posterior values are not pronunciation correctness probabilities. Do not infer hidden tongue movement."
+      }
+    },
+    {
+      "target": "മാല",
+      "synthetic_spoken_text": "മല",
+      "audio_sha256": "ed9e407c159dc5221d17c28269a526f73777da6cad68b968a317169e5c714e2e",
+      "audio_model": "google/gemini-2.5-flash",
+      "content": {
+        "state": "insufficient_evidence",
+        "summary": "ഈ റെക്കോർഡിങ്ങിലെ ശബ്ദങ്ങൾ വിശ്വസനീയമായി വിലയിരുത്താനായില്ല. ഉദ്ദേശിച്ച വാക്ക് പറയാമോ, അല്ലെങ്കിൽ ഒരു ചെറിയ വാക്ക് വീണ്ടും പറയാമോ?",
+        "concerns": []
+      },
+      "independent_phone_observation": {
+        "source": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+        "revision": "2c733782da5604684829819a5eb744c193fe9398",
+        "scope": "unvalidated_target_independent_phone_hypotheses",
+        "reference_text_supplied": false,
+        "phones": [
+          "m",
+          "a",
+          "l",
+          "a"
+        ],
+        "emissions": [
+          {
+            "phone": "m",
+            "emission_seconds": 0.08,
+            "alternatives": [
+              {
+                "phone": "m",
+                "posterior": 0.99221
+              },
+              {
+                "phone": "n",
+                "posterior": 0.00188
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.00186
+              }
+            ]
+          },
+          {
+            "phone": "a",
+            "emission_seconds": 0.12,
+            "alternatives": [
+              {
+                "phone": "a",
+                "posterior": 0.97011
+              },
+              {
+                "phone": "aː",
+                "posterior": 0.00729
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.0058
+              }
+            ]
+          },
+          {
+            "phone": "l",
+            "emission_seconds": 0.24,
+            "alternatives": [
+              {
+                "phone": "l",
+                "posterior": 0.99142
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.00118
+              },
+              {
+                "phone": "n",
+                "posterior": 0.00084
+              }
+            ]
+          },
+          {
+            "phone": "a",
+            "emission_seconds": 0.28,
+            "alternatives": [
+              {
+                "phone": "a",
+                "posterior": 0.91551
+              },
+              {
+                "phone": "ɐ",
+                "posterior": 0.04203
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.02558
+              }
+            ]
+          }
+        ],
+        "latency_seconds": 0.364,
+        "pronunciation_score": null,
+        "instruction": "These are fallible acoustic hypotheses, not verified errors or pronunciation scores. Posterior values are not pronunciation correctness probabilities. Do not infer hidden tongue movement."
+      }
+    }
+  ]
+}

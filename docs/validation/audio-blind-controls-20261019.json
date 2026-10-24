@@ -1,0 +1,68 @@
+[
+  {
+    "model": "google/gemini-3-flash-preview",
+    "seconds": 4.09,
+    "control": "പന്ത്",
+    "raw": {
+      "state": "tentative_observation",
+      "summary": "നന്നായി ശ്രമിച്ചു! 'പന്ത്' എന്ന് പറയുമ്പോൾ അവസാനം ഒരു ചെറിയ മാറ്റം ശ്രദ്ധിച്ചു. നമുക്ക് അത് ഒന്നുകൂടി നോക്കാം.",
+      "concerns": [
+        {
+          "produced_phone": "d",
+          "category": "substitution",
+          "observation": "'പന്ത്' എന്ന വാക്കിന്റെ അവസാനം 'ത' ശബ്ദത്തിന് പകരം 'ഡ' പോലെയാണ് കേട്ടത്.",
+          "uncertainty": "ഈ ചെറിയ ഓഡിയോ ക്ലിപ്പിൽ നിന്ന് ശബ്ദം കൃത്യമായി വേർതിരിച്ചറിയാൻ പ്രയാസമാണ്. പശ്ചാത്തല ശബ്ദങ്ങൾ ഇതിനെ ബാധിച്ചിട്ടുണ്ടാകാം.",
+          "word": "പന്ത്",
+          "expected_phone": "t̪",
+          "practice_tip": "നാവിന്റെ അറ്റം മുകളിലെ പല്ലുകളിൽ തൊടുവിച്ച് 'ത' എന്ന് പറഞ്ഞു നോക്കൂ. പ-ന്ത്.",
+          "start_seconds": 0.0,
+          "end_seconds": 0.679
+        }
+      ]
+    },
+    "validated": {
+      "state": "insufficient_evidence",
+      "summary": "ഈ റെക്കോർഡിങ്ങിലെ ശബ്ദങ്ങൾ വിശ്വസനീയമായി വിലയിരുത്താനായില്ല. ഉദ്ദേശിച്ച വാക്ക് പറയാമോ, അല്ലെങ്കിൽ ഒരു ചെറിയ വാക്ക് വീണ്ടും പറയാമോ?",
+      "concerns": []
+    }
+  },
+  {
+    "model": "google/gemini-3-flash-preview",
+    "seconds": 4.54,
+    "control": "fantu",
+    "raw": {
+      "state": "tentative_observation",
+      "summary": "നന്നായി ശ്രമിച്ചു! 'പന്ത്' എന്ന് പറയുമ്പോൾ ആദ്യത്തെ ശബ്ദം ശ്രദ്ധിച്ചോ? 'പ' എന്ന് തുടങ്ങുന്നതിന് പകരം 'ഫ' പോലെയാണ് കേട്ടത്. നമുക്ക് ഇതൊന്ന് കൂടി നോക്കിയാലോ?",
+      "concerns": [
+        {
+          "produced_phone": "f",
+          "category": "substitution",
+          "observation": "The initial voiceless labial plosive /p/ in 'പന്ത്' (panthə) sounded like a voiceless labial fricative /f/.",
+          "uncertainty": "The audio is short and the distinction between an aspirated release and a fricative can be subtle in this recording quality.",
+          "word": "പന്ത്",
+          "expected_phone": "p",
+          "practice_tip": "ചുണ്ടുകൾ തമ്മിൽ അമർത്തി പെട്ടെന്ന് തുറന്ന് 'പ' എന്ന് പറഞ്ഞു നോക്കൂ. പ... പന്ത്.",
+          "start_seconds": 0.1,
+          "end_seconds": 0.8
+        }
+      ]
+    },
+    "validated": {
+      "state": "tentative_observation",
+      "summary": "നന്നായി ശ്രമിച്ചു! 'പന്ത്' എന്ന് പറയുമ്പോൾ ആദ്യത്തെ ശബ്ദം ശ്രദ്ധിച്ചോ? 'പ' എന്ന് തുടങ്ങുന്നതിന് പകരം 'ഫ' പോലെയാണ് കേട്ടത്. നമുക്ക് ഇതൊന്ന് കൂടി നോക്കിയാലോ?",
+      "concerns": [
+        {
+          "produced_phone": "f",
+          "category": "substitution",
+          "observation": "The initial voiceless labial plosive /p/ in 'പന്ത്' (panthə) sounded like a voiceless labial fricative /f/.",
+          "uncertainty": "The audio is short and the distinction between an aspirated release and a fricative can be subtle in this recording quality.",
+          "word": "പന്ത്",
+          "expected_phone": "p",
+          "practice_tip": "ചുണ്ടുകൾ തമ്മിൽ അമർത്തി പെട്ടെന്ന് തുറന്ന് 'പ' എന്ന് പറഞ്ഞു നോക്കൂ. പ... പന്ത്.",
+          "start_seconds": 0.1,
+          "end_seconds": 0.8
+        }
+      ]
+    }
+  }
+]

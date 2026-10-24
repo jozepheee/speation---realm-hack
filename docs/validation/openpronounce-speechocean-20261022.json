@@ -1,0 +1,151 @@
+{
+  "source": "SpeechOcean762 official test split, 20 distinct speakers",
+  "clinical_validation": false,
+  "dysarthric_validation": false,
+  "production_ready": false,
+  "policy": "Word screening: any expert phone score <1 is difference; all >=1.5 is clear; middle excluded. No threshold tuning.",
+  "groups": {
+    "child": {
+      "tp": 0,
+      "fp": 0,
+      "tn": 55,
+      "fn": 6,
+      "utterances": 10,
+      "excluded_words": 0,
+      "precision": null,
+      "recall": 0.0
+    },
+    "adult": {
+      "tp": 0,
+      "fp": 0,
+      "tn": 63,
+      "fn": 7,
+      "utterances": 10,
+      "excluded_words": 2,
+      "precision": null,
+      "recall": 0.0
+    }
+  },
+  "samples": [
+    {
+      "id": "015030010",
+      "group": "child",
+      "seconds": 30.217,
+      "flagged_word_indices": []
+    },
+    {
+      "id": "091010050",
+      "group": "child",
+      "seconds": 1.605,
+      "flagged_word_indices": []
+    },
+    {
+      "id": "052200142",
+      "group": "child",
+      "seconds": 1.042,
+      "flagged_word_indices": []
+    },
+    {
+      "id": "050290120",
+      "group": "child",
+      "seconds": 0.579,
+      "flagged_word_indices": []
+    },
+    {
+      "id": "001490052",
+      "group": "child",
+      "seconds": 0.563,
+      "flagged_word_indices": []
+    },
+    {
+      "id": "005630302",
+      "group": "adult",
+      "seconds": 0.52,
+      "flagged_word_indices": []
+    },
+    {
+      "id": "096170002",
+      "group": "adult",
+      "seconds": 0.784,
+      "flagged_word_indices": []
+    },
+    {
+      "id": "096180013",
+      "group": "adult",
+      "seconds": 0.977,
+      "flagged_word_indices": []
+    },
+    {
+      "id": "096350013",
+      "group": "adult",
+      "seconds": 1.343,
+      "flagged_word_indices": []
+    },
+    {
+      "id": "011810197",
+      "group": "adult",
+      "seconds": 0.857,
+      "flagged_word_indices": []
+    },
+    {
+      "id": "032140013",
+      "group": "child",
+      "seconds": 0.541,
+      "flagged_word_indices": []
+    },
+    {
+      "id": "050720126",
+      "group": "child",
+      "seconds": 0.55,
+      "flagged_word_indices": []
+    },
+    {
+      "id": "095550082",
+      "group": "child",
+      "seconds": 0.944,
+      "flagged_word_indices": []
+    },
+    {
+      "id": "001140068",
+      "group": "child",
+      "seconds": 0.487,
+      "flagged_word_indices": []
+    },
+    {
+      "id": "050170001",
+      "group": "child",
+      "seconds": 0.418,
+      "flagged_word_indices": []
+    },
+    {
+      "id": "000240320",
+      "group": "adult",
+      "seconds": 0.627,
+      "flagged_word_indices": []
+    },
+    {
+      "id": "014080008",
+      "group": "adult",
+      "seconds": 0.623,
+      "flagged_word_indices": []
+    },
+    {
+      "id": "023550319",
+      "group": "adult",
+      "seconds": 0.481,
+      "flagged_word_indices": []
+    },
+    {
+      "id": "011090273",
+      "group": "adult",
+      "seconds": 0.549,
+      "flagged_word_indices": []
+    },
+    {
+      "id": "020160093",
+      "group": "adult",
+      "seconds": 0.719,
+      "flagged_word_indices": []
+    }
+  ]
+}

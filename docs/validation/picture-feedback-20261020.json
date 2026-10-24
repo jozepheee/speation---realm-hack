@@ -1,0 +1,74 @@
+[
+  {
+    "source": "synthetic_voice_or_text_with_generated_illustration_not_user_speech",
+    "language": "en",
+    "input": "A child is reading a book next to a cat.",
+    "seconds": 6.55,
+    "result": {
+      "heard_text": "The child is reading a book next to a cat.",
+      "verdict": "matches_picture",
+      "summary": "Great job! You accurately identified the main subjects and their relationship in the scene.",
+      "strengths": [
+        "Clear and accurate observation",
+        "Good use of the preposition 'next to'"
+      ],
+      "improvements": [
+        "Try adding an adjective to describe the chair or the cat",
+        "Mention the cozy setting like the lamp or window"
+      ],
+      "example_sentence": "A child in striped pajamas is reading a book on a yellow armchair with a sleeping cat.",
+      "practice_word": "armchair",
+      "model": "google/gemini-3-flash-preview",
+      "source": "actual_image_and_audio",
+      "pronunciation_assessed": false
+    }
+  },
+  {
+    "source": "synthetic_voice_or_text_with_generated_illustration_not_user_speech",
+    "language": "en",
+    "input": "There is a large airplane in this picture.",
+    "seconds": 3.47,
+    "result": {
+      "heard_text": "There is a large airplane in this picture.",
+      "verdict": "needs_revision",
+      "summary": "You used a clear sentence structure, but the object identified does not match the image.",
+      "strengths": [
+        "Good use of 'There is'",
+        "Clear pronunciation"
+      ],
+      "improvements": [
+        "Identify the main subject (a child)",
+        "Correct the object (it is a book, not an airplane)"
+      ],
+      "example_sentence": "A child is reading a book in a yellow chair.",
+      "practice_word": "Armchair",
+      "model": "google/gemini-3-flash-preview",
+      "source": "actual_image_and_audio",
+      "pronunciation_assessed": false
+    }
+  },
+  {
+    "source": "synthetic_voice_or_text_with_generated_illustration_not_user_speech",
+    "language": "ml",
+    "input": "കുട്ടി പുസ്തകം വായിക്കുന്നു.",
+    "seconds": 3.82,
+    "result": {
+      "heard_text": "കുട്ടി പുസ്തകം വായിക്കുന്നു.",
+      "verdict": "matches_picture",
+      "summary": "You correctly identified the main action in the image. Great job!",
+      "strengths": [
+        "Accurate description of the subject",
+        "Correct verb usage"
+      ],
+      "improvements": [
+        "Add details about the cat or the chair",
+        "Mention the setting like the room or window"
+      ],
+      "example_sentence": "കുട്ടി കസേരയിൽ ഇരുന്ന് പുസ്തകം വായിക്കുന്നു.",
+      "practice_word": "കസേര",
+      "model": "google/gemini-3-flash-preview",
+      "source": "actual_image_and_recognized_words",
+      "pronunciation_assessed": false
+    }
+  }
+]

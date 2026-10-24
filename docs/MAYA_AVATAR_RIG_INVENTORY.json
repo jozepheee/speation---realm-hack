@@ -1,0 +1,870 @@
+{
+  "source": "Actual GLB JSON chunks; no inference from filenames",
+  "active_maya_asset": "brunette.glb",
+  "assets": [
+    {
+      "asset": "brunette.glb",
+      "meshes": [
+        {
+          "name": "EyeLeft",
+          "morph_targets": [
+            "mouthOpen",
+            "viseme_sil",
+            "viseme_PP",
+            "viseme_FF",
+            "viseme_TH",
+            "viseme_DD",
+            "viseme_kk",
+            "viseme_CH",
+            "viseme_SS",
+            "viseme_nn",
+            "viseme_RR",
+            "viseme_aa",
+            "viseme_E",
+            "viseme_I",
+            "viseme_O",
+            "viseme_U",
+            "mouthSmile",
+            "browDownLeft",
+            "browDownRight",
+            "browInnerUp",
+            "browOuterUpLeft",
+            "browOuterUpRight",
+            "eyeSquintLeft",
+            "eyeSquintRight",
+            "eyeWideLeft",
+            "eyeWideRight",
+            "jawForward",
+            "jawLeft",
+            "jawRight",
+            "mouthFrownLeft",
+            "mouthFrownRight",
+            "mouthPucker",
+            "mouthShrugLower",
+            "mouthShrugUpper",
+            "noseSneerLeft",
+            "noseSneerRight",
+            "mouthLowerDownLeft",
+            "mouthLowerDownRight",
+            "mouthLeft",
+            "mouthRight",
+            "eyeLookDownLeft",
+            "eyeLookDownRight",
+            "eyeLookUpLeft",
+            "eyeLookUpRight",
+            "eyeLookInLeft",
+            "eyeLookInRight",
+            "eyeLookOutLeft",
+            "eyeLookOutRight",
+            "cheekPuff",
+            "cheekSquintLeft",
+            "cheekSquintRight",
+            "jawOpen",
+            "mouthClose",
+            "mouthFunnel",
+            "mouthDimpleLeft",
+            "mouthDimpleRight",
+            "mouthStretchLeft",
+            "mouthStretchRight",
+            "mouthRollLower",
+            "mouthRollUpper",
+            "mouthPressLeft",
+            "mouthPressRight",
+            "mouthUpperUpLeft",
+            "mouthUpperUpRight",
+            "mouthSmileLeft",
+            "mouthSmileRight",
+            "tongueOut",
+            "eyeBlinkLeft",
+            "eyeBlinkRight",
+            "eyesClosed",
+            "eyesLookUp",
+            "eyesLookDown"
+          ],
+          "primitive_target_counts": [
+            72
+          ]
+        },
+        {
+          "name": "EyeRight",
+          "morph_targets": [
+            "mouthOpen",
+            "viseme_sil",
+            "viseme_PP",
+            "viseme_FF",
+            "viseme_TH",
+            "viseme_DD",
+            "viseme_kk",
+            "viseme_CH",
+            "viseme_SS",
+            "viseme_nn",
+            "viseme_RR",
+            "viseme_aa",
+            "viseme_E",
+            "viseme_I",
+            "viseme_O",
+            "viseme_U",
+            "mouthSmile",
+            "browDownLeft",
+            "browDownRight",
+            "browInnerUp",
+            "browOuterUpLeft",
+            "browOuterUpRight",
+            "eyeSquintLeft",
+            "eyeSquintRight",
+            "eyeWideLeft",
+            "eyeWideRight",
+            "jawForward",
+            "jawLeft",
+            "jawRight",
+            "mouthFrownLeft",
+            "mouthFrownRight",
+            "mouthPucker",
+            "mouthShrugLower",
+            "mouthShrugUpper",
+            "noseSneerLeft",
+            "noseSneerRight",
+            "mouthLowerDownLeft",
+            "mouthLowerDownRight",
+            "mouthLeft",
+            "mouthRight",
+            "eyeLookDownLeft",
+            "eyeLookDownRight",
+            "eyeLookUpLeft",
+            "eyeLookUpRight",
+            "eyeLookInLeft",
+            "eyeLookInRight",
+            "eyeLookOutLeft",
+            "eyeLookOutRight",
+            "cheekPuff",
+            "cheekSquintLeft",
+            "cheekSquintRight",
+            "jawOpen",
+            "mouthClose",
+            "mouthFunnel",
+            "mouthDimpleLeft",
+            "mouthDimpleRight",
+            "mouthStretchLeft",
+            "mouthStretchRight",
+            "mouthRollLower",
+            "mouthRollUpper",
+            "mouthPressLeft",
+            "mouthPressRight",
+            "mouthUpperUpLeft",
+            "mouthUpperUpRight",
+            "mouthSmileLeft",
+            "mouthSmileRight",
+            "tongueOut",
+            "eyeBlinkLeft",
+            "eyeBlinkRight",
+            "eyesClosed",
+            "eyesLookUp",
+            "eyesLookDown"
+          ],
+          "primitive_target_counts": [
+            72
+          ]
+        },
+        {
+          "name": "Wolf3D_Head",
+          "morph_targets": [
+            "mouthOpen",
+            "viseme_sil",
+            "viseme_PP",
+            "viseme_FF",
+            "viseme_TH",
+            "viseme_DD",
+            "viseme_kk",
+            "viseme_CH",
+            "viseme_SS",
+            "viseme_nn",
+            "viseme_RR",
+            "viseme_aa",
+            "viseme_E",
+            "viseme_I",
+            "viseme_O",
+            "viseme_U",
+            "mouthSmile",
+            "browDownLeft",
+            "browDownRight",
+            "browInnerUp",
+            "browOuterUpLeft",
+            "browOuterUpRight",
+            "eyeSquintLeft",
+            "eyeSquintRight",
+            "eyeWideLeft",
+            "eyeWideRight",
+            "jawForward",
+            "jawLeft",
+            "jawRight",
+            "mouthFrownLeft",
+            "mouthFrownRight",
+            "mouthPucker",
+            "mouthShrugLower",
+            "mouthShrugUpper",
+            "noseSneerLeft",
+            "noseSneerRight",
+            "mouthLowerDownLeft",
+            "mouthLowerDownRight",
+            "mouthLeft",
+            "mouthRight",
+            "eyeLookDownLeft",
+            "eyeLookDownRight",
+            "eyeLookUpLeft",
+            "eyeLookUpRight",
+            "eyeLookInLeft",
+            "eyeLookInRight",
+            "eyeLookOutLeft",
+            "eyeLookOutRight",
+            "cheekPuff",
+            "cheekSquintLeft",
+            "cheekSquintRight",
+            "jawOpen",
+            "mouthClose",
+            "mouthFunnel",
+            "mouthDimpleLeft",
+            "mouthDimpleRight",
+            "mouthStretchLeft",
+            "mouthStretchRight",
+            "mouthRollLower",
+            "mouthRollUpper",
+            "mouthPressLeft",
+            "mouthPressRight",
+            "mouthUpperUpLeft",
+            "mouthUpperUpRight",
+            "mouthSmileLeft",
+            "mouthSmileRight",
+            "tongueOut",
+            "eyeBlinkLeft",
+            "eyeBlinkRight",
+            "eyesClosed",
+            "eyesLookUp",
+            "eyesLookDown"
+          ],
+          "primitive_target_counts": [
+            72
+          ]
+        },
+        {
+          "name": "Wolf3D_Teeth",
+          "morph_targets": [
+            "mouthOpen",
+            "viseme_sil",
+            "viseme_PP",
+            "viseme_FF",
+            "viseme_TH",
+            "viseme_DD",
+            "viseme_kk",
+            "viseme_CH",
+            "viseme_SS",
+            "viseme_nn",
+            "viseme_RR",
+            "viseme_aa",
+            "viseme_E",
+            "viseme_I",
+            "viseme_O",
+            "viseme_U",
+            "mouthSmile",
+            "browDownLeft",
+            "browDownRight",
+            "browInnerUp",
+            "browOuterUpLeft",
+            "browOuterUpRight",
+            "eyeSquintLeft",
+            "eyeSquintRight",
+            "eyeWideLeft",
+            "eyeWideRight",
+            "jawForward",
+            "jawLeft",
+            "jawRight",
+            "mouthFrownLeft",
+            "mouthFrownRight",
+            "mouthPucker",
+            "mouthShrugLower",
+            "mouthShrugUpper",
+            "noseSneerLeft",
+            "noseSneerRight",
+            "mouthLowerDownLeft",
+            "mouthLowerDownRight",
+            "mouthLeft",
+            "mouthRight",
+            "eyeLookDownLeft",
+            "eyeLookDownRight",
+            "eyeLookUpLeft",
+            "eyeLookUpRight",
+            "eyeLookInLeft",
+            "eyeLookInRight",
+            "eyeLookOutLeft",
+            "eyeLookOutRight",
+            "cheekPuff",
+            "cheekSquintLeft",
+            "cheekSquintRight",
+            "jawOpen",
+            "mouthClose",
+            "mouthFunnel",
+            "mouthDimpleLeft",
+            "mouthDimpleRight",
+            "mouthStretchLeft",
+            "mouthStretchRight",
+            "mouthRollLower",
+            "mouthRollUpper",
+            "mouthPressLeft",
+            "mouthPressRight",
+            "mouthUpperUpLeft",
+            "mouthUpperUpRight",
+            "mouthSmileLeft",
+            "mouthSmileRight",
+            "tongueOut",
+            "eyeBlinkLeft",
+            "eyeBlinkRight",
+            "eyesClosed",
+            "eyesLookUp",
+            "eyesLookDown"
+          ],
+          "primitive_target_counts": [
+            72
+          ]
+        },
+        {
+          "name": "Wolf3D_Body",
+          "morph_targets": [],
+          "primitive_target_counts": [
+            0
+          ]
+        },
+        {
+          "name": "Wolf3D_Outfit_Bottom",
+          "morph_targets": [],
+          "primitive_target_counts": [
+            0
+          ]
+        },
+        {
+          "name": "Wolf3D_Outfit_Footwear",
+          "morph_targets": [],
+          "primitive_target_counts": [
+            0
+          ]
+        },
+        {
+          "name": "Wolf3D_Outfit_Top",
+          "morph_targets": [],
+          "primitive_target_counts": [
+            0
+          ]
+        },
+        {
+          "name": "Wolf3D_Hair",
+          "morph_targets": [],
+          "primitive_target_counts": [
+            0
+          ]
+        },
+        {
+          "name": "Wolf3D_Glasses",
+          "morph_targets": [],
+          "primitive_target_counts": [
+            0
+          ]
+        }
+      ],
+      "bones": [
+        "HeadTop_End",
+        "Head",
+        "Neck",
+        "Wolf3D_Head"
+      ]
+    },
+    {
+      "asset": "alex.glb",
+      "meshes": [
+        {
+          "name": "AvatarBody",
+          "morph_targets": [],
+          "primitive_target_counts": [
+            0
+          ]
+        },
+        {
+          "name": "AvatarEyelashes",
+          "morph_targets": [
+            "browDownLeft",
+            "browDownRight",
+            "browInnerUp",
+            "browOuterUpLeft",
+            "browOuterUpRight",
+            "cheekSquintLeft",
+            "cheekSquintRight",
+            "eyeBlinkLeft",
+            "eyeBlinkRight",
+            "eyeLookDownLeft",
+            "eyeLookDownRight",
+            "eyeLookInLeft",
+            "eyeLookInRight",
+            "eyeLookOutLeft",
+            "eyeLookOutRight",
+            "eyeLookUpLeft",
+            "eyeLookUpRight",
+            "eyeSquintLeft",
+            "eyeSquintRight",
+            "eyeWideLeft",
+            "eyeWideRight",
+            "mouthDimpleLeft",
+            "mouthDimpleRight",
+            "mouthLeft",
+            "mouthRight",
+            "mouthSmileLeft",
+            "mouthSmileRight",
+            "noseSneerLeft",
+            "noseSneerRight"
+          ],
+          "primitive_target_counts": [
+            29
+          ]
+        },
+        {
+          "name": "AvatarHead",
+          "morph_targets": [
+            "browDownLeft",
+            "browDownRight",
+            "browInnerUp",
+            "browOuterUpLeft",
+            "browOuterUpRight",
+            "cheekPuff",
+            "cheekSquintLeft",
+            "cheekSquintRight",
+            "eyeBlinkLeft",
+            "eyeBlinkRight",
+            "eyeLookDownLeft",
+            "eyeLookDownRight",
+            "eyeLookInLeft",
+            "eyeLookInRight",
+            "eyeLookOutLeft",
+            "eyeLookOutRight",
+            "eyeLookUpLeft",
+            "eyeLookUpRight",
+            "eyeSquintLeft",
+            "eyeSquintRight",
+            "eyeWideLeft",
+            "eyeWideRight",
+            "jawForward",
+            "jawLeft",
+            "jawOpen",
+            "jawRight",
+            "mouthClose",
+            "mouthDimpleLeft",
+            "mouthDimpleRight",
+            "mouthFrownLeft",
+            "mouthFrownRight",
+            "mouthFunnel",
+            "mouthLeft",
+            "mouthLowerDownLeft",
+            "mouthLowerDownRight",
+            "mouthPressLeft",
+            "mouthPressRight",
+            "mouthPucker",
+            "mouthRight",
+            "mouthRollLower",
+            "mouthRollUpper",
+            "mouthShrugLower",
+            "mouthShrugUpper",
+            "mouthSmileLeft",
+            "mouthSmileRight",
+            "mouthStretchLeft",
+            "mouthStretchRight",
+            "mouthUpperUpLeft",
+            "mouthUpperUpRight",
+            "noseSneerLeft",
+            "noseSneerRight",
+            "viseme_CH",
+            "viseme_DD",
+            "viseme_E",
+            "viseme_FF",
+            "viseme_PP",
+            "viseme_RR",
+            "viseme_SS",
+            "viseme_TH",
+            "viseme_aa",
+            "viseme_I",
+            "viseme_kk",
+            "viseme_nn",
+            "viseme_O",
+            "viseme_U",
+            "viseme_sil"
+          ],
+          "primitive_target_counts": [
+            66
+          ]
+        },
+        {
+          "name": "AvatarLeftEyeball",
+          "morph_targets": [
+            "eyeLookUpLeft",
+            "eyeLookDownLeft",
+            "eyeLookInLeft",
+            "eyeLookOutLeft"
+          ],
+          "primitive_target_counts": [
+            4
+          ]
+        },
+        {
+          "name": "AvatarRightEyeball",
+          "morph_targets": [
+            "eyeLookUpRight",
+            "eyeLookDownRight",
+            "eyeLookInRight",
+            "eyeLookOutRight"
+          ],
+          "primitive_target_counts": [
+            4
+          ]
+        },
+        {
+          "name": "AvatarTeethLower",
+          "morph_targets": [
+            "jawForward",
+            "jawLeft",
+            "jawOpen",
+            "jawRight",
+            "viseme_CH",
+            "viseme_DD",
+            "viseme_E",
+            "viseme_FF",
+            "viseme_PP",
+            "viseme_RR",
+            "viseme_SS",
+            "viseme_TH",
+            "viseme_aa",
+            "viseme_I",
+            "viseme_kk",
+            "viseme_nn",
+            "viseme_O",
+            "viseme_U",
+            "viseme_sil"
+          ],
+          "primitive_target_counts": [
+            19
+          ]
+        },
+        {
+          "name": "AvatarTeethUpper",
+          "morph_targets": [],
+          "primitive_target_counts": [
+            0
+          ]
+        },
+        {
+          "name": "outfit_bottom",
+          "morph_targets": [],
+          "primitive_target_counts": [
+            0
+          ]
+        },
+        {
+          "name": "outfit_shoes",
+          "morph_targets": [],
+          "primitive_target_counts": [
+            0
+          ]
+        },
+        {
+          "name": "outfit_top",
+          "morph_targets": [],
+          "primitive_target_counts": [
+            0
+          ]
+        }
+      ],
+      "bones": [
+        "HeadTop_End",
+        "Head",
+        "Neck2",
+        "Neck1",
+        "Neck",
+        "AvatarHead"
+      ]
+    },
+    {
+      "asset": "avaturn.glb",
+      "meshes": [
+        {
+          "name": "Body_Mesh",
+          "morph_targets": [],
+          "primitive_target_counts": [
+            0
+          ]
+        },
+        {
+          "name": "Eye_Mesh",
+          "morph_targets": [
+            "eyeLookDownLeft",
+            "eyeLookDownRight",
+            "eyeLookUpLeft",
+            "eyeLookUpRight",
+            "eyeLookInLeft",
+            "eyeLookInRight",
+            "eyeLookOutLeft",
+            "eyeLookOutRight",
+            "eyesClosed",
+            "eyesLookUp",
+            "eyesLookDown"
+          ],
+          "primitive_target_counts": [
+            11
+          ]
+        },
+        {
+          "name": "EyeAO_Mesh",
+          "morph_targets": [
+            "browDownLeft",
+            "browDownRight",
+            "browInnerUp",
+            "browOuterUpLeft",
+            "browOuterUpRight",
+            "eyeSquintLeft",
+            "eyeSquintRight",
+            "noseSneerLeft",
+            "noseSneerRight",
+            "cheekPuff",
+            "cheekSquintLeft",
+            "cheekSquintRight",
+            "mouthSmile",
+            "mouthLeft",
+            "mouthRight",
+            "mouthSmileLeft",
+            "mouthSmileRight",
+            "eyeWideLeft",
+            "eyeWideRight",
+            "eyeLookDownLeft",
+            "eyeLookDownRight",
+            "eyeLookUpLeft",
+            "eyeLookUpRight",
+            "eyeLookInLeft",
+            "eyeLookInRight",
+            "eyeLookOutLeft",
+            "eyeLookOutRight",
+            "eyeBlinkLeft",
+            "eyeBlinkRight",
+            "eyesClosed",
+            "eyesLookUp",
+            "eyesLookDown"
+          ],
+          "primitive_target_counts": [
+            32
+          ]
+        },
+        {
+          "name": "Eyelash_Mesh",
+          "morph_targets": [
+            "browDownLeft",
+            "browDownRight",
+            "browInnerUp",
+            "browOuterUpLeft",
+            "browOuterUpRight",
+            "eyeSquintLeft",
+            "eyeSquintRight",
+            "eyeWideLeft",
+            "eyeWideRight",
+            "noseSneerLeft",
+            "noseSneerRight",
+            "eyeLookDownLeft",
+            "eyeLookDownRight",
+            "eyeLookUpLeft",
+            "eyeLookUpRight",
+            "eyeLookInLeft",
+            "eyeLookInRight",
+            "eyeLookOutLeft",
+            "eyeLookOutRight",
+            "cheekSquintLeft",
+            "cheekSquintRight",
+            "eyeBlinkLeft",
+            "eyeBlinkRight",
+            "eyesClosed",
+            "eyesLookUp",
+            "eyesLookDown",
+            "mouthSmile",
+            "mouthSmileLeft",
+            "mouthSmileRight",
+            "mouthUpperUpLeft",
+            "mouthUpperUpRight"
+          ],
+          "primitive_target_counts": [
+            31
+          ]
+        },
+        {
+          "name": "Head_Mesh",
+          "morph_targets": [
+            "mouthOpen",
+            "viseme_sil",
+            "viseme_PP",
+            "viseme_FF",
+            "viseme_TH",
+            "eyeWideLeft",
+            "eyeWideRight",
+            "eyeLookDownLeft",
+            "eyeLookDownRight",
+            "eyeLookUpLeft",
+            "eyeLookUpRight",
+            "eyeLookInLeft",
+            "eyeLookInRight",
+            "eyeLookOutLeft",
+            "eyeLookOutRight",
+            "cheekSquintLeft",
+            "cheekSquintRight",
+            "mouthRollUpper",
+            "eyeBlinkLeft",
+            "eyeBlinkRight",
+            "eyesClosed",
+            "eyesLookUp",
+            "eyesLookDown",
+            "mouthClose",
+            "mouthFrownLeft",
+            "mouthFrownRight",
+            "mouthFunnel",
+            "mouthPressLeft",
+            "mouthPressRight",
+            "mouthStretchLeft",
+            "mouthStretchRight",
+            "tongueOut",
+            "mouthDimpleLeft",
+            "mouthDimpleRight",
+            "jawLeft",
+            "jawRight",
+            "eyeSquintLeft",
+            "eyeSquintRight",
+            "mouthLowerDownLeft",
+            "mouthLowerDownRight",
+            "mouthUpperUpLeft",
+            "mouthUpperUpRight",
+            "mouthSmileLeft",
+            "mouthSmileRight",
+            "mouthLeft",
+            "mouthRight",
+            "mouthPucker",
+            "mouthSmile",
+            "jawForward",
+            "jawOpen",
+            "mouthRollLower",
+            "cheekPuff",
+            "noseSneerRight",
+            "noseSneerLeft",
+            "mouthShrugLower",
+            "mouthShrugUpper",
+            "viseme_DD",
+            "viseme_kk",
+            "viseme_CH",
+            "viseme_SS",
+            "viseme_nn",
+            "viseme_RR",
+            "viseme_aa",
+            "viseme_E",
+            "viseme_I",
+            "viseme_O",
+            "viseme_U",
+            "browDownLeft",
+            "browDownRight",
+            "browInnerUp",
+            "browOuterUpLeft",
+            "browOuterUpRight"
+          ],
+          "primitive_target_counts": [
+            72
+          ]
+        },
+        {
+          "name": "Teeth_Mesh",
+          "morph_targets": [
+            "mouthOpen",
+            "viseme_sil",
+            "viseme_PP",
+            "viseme_FF",
+            "viseme_TH",
+            "viseme_DD",
+            "viseme_kk",
+            "viseme_CH",
+            "viseme_SS",
+            "viseme_nn",
+            "viseme_RR",
+            "viseme_aa",
+            "viseme_E",
+            "viseme_I",
+            "viseme_O",
+            "viseme_U",
+            "jawOpen",
+            "jawForward",
+            "jawLeft",
+            "jawRight"
+          ],
+          "primitive_target_counts": [
+            20
+          ]
+        },
+        {
+          "name": "Tongue_Mesh",
+          "morph_targets": [
+            "mouthOpen",
+            "viseme_sil",
+            "viseme_PP",
+            "viseme_FF",
+            "viseme_TH",
+            "viseme_DD",
+            "viseme_kk",
+            "viseme_CH",
+            "viseme_SS",
+            "viseme_nn",
+            "viseme_RR",
+            "viseme_aa",
+            "viseme_E",
+            "viseme_I",
+            "viseme_O",
+            "viseme_U",
+            "jawOpen",
+            "jawForward",
+            "jawLeft",
+            "jawRight",
+            "tongueOut"
+          ],
+          "primitive_target_counts": [
+            21
+          ]
+        },
+        {
+          "name": "avaturn_hair_0",
+          "morph_targets": [],
+          "primitive_target_counts": [
+            0
+          ]
+        },
+        {
+          "name": "avaturn_hair_1",
+          "morph_targets": [],
+          "primitive_target_counts": [
+            0
+          ]
+        },
+        {
+          "name": "avaturn_shoes_0",
+          "morph_targets": [],
+          "primitive_target_counts": [
+            0
+          ]
+        },
+        {
+          "name": "avaturn_look_0",
+          "morph_targets": [],
+          "primitive_target_counts": [
+            0
+          ]
+        }
+      ],
+      "bones": [
+        "Head",
+        "Neck",
+        "Head_Mesh",
+        "Tongue_Mesh"
+      ]
+    }
+  ]
+}

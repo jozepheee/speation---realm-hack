@@ -1,0 +1,1154 @@
+{
+  "scope": "synthetic_adult_engineering_controls_not_gold_pronunciation",
+  "release_approved": false,
+  "clinical_validation": false,
+  "limitations": [
+    "Intended TTS text is not gold phonetic annotation.",
+    "No child, impaired-speech or dialect validation; no calibrated error thresholds."
+  ],
+  "results": [
+    {
+      "target": "മഴ",
+      "synthetic_spoken_text": "മഴ",
+      "audio_sha256": "095554ea8a9b785c4982085648a7d0567a781d06e3c85f6b838c2fe5b3affdf1",
+      "expected_pronunciation_reference": {
+        "source": "mlphon-3.1.3",
+        "source_url": "https://pypi.org/project/mlphon/",
+        "scope": "expected_pronunciation_reference_only",
+        "audio_assessed": false,
+        "words": [
+          {
+            "word": "മഴ",
+            "variants": [
+              [
+                "m",
+                "a",
+                "ɻ",
+                "a"
+              ]
+            ],
+            "syllables": [
+              "മ",
+              "ഴ"
+            ],
+            "articulatory_variants": [
+              [
+                {
+                  "phonemes": [
+                    {
+                      "ipa": "m",
+                      "tags": [
+                        "nasal",
+                        "labial"
+                      ]
+                    },
+                    {
+                      "ipa": "a",
+                      "tags": [
+                        "inherentvowel"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "phonemes": [
+                    {
+                      "ipa": "ɻ",
+                      "tags": [
+                        "approximant",
+                        "retroflex"
+                      ]
+                    },
+                    {
+                      "ipa": "a",
+                      "tags": [
+                        "inherentvowel"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ],
+        "uncovered_words": [],
+        "instruction": "Use these expected sounds, syllables and articulatory attributes to model the word. They do not describe what the learner pronounced. Accept valid variants; never infer an error, correctness, score or hidden tongue movement from this text reference."
+      },
+      "observation": {
+        "source": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+        "revision": "2c733782da5604684829819a5eb744c193fe9398",
+        "scope": "unvalidated_target_independent_phone_hypotheses",
+        "reference_text_supplied": false,
+        "phones": [
+          "m",
+          "a",
+          "ɾ",
+          "a"
+        ],
+        "emissions": [
+          {
+            "phone": "m",
+            "emission_seconds": 0.1,
+            "alternatives": [
+              {
+                "phone": "m",
+                "posterior": 0.9916
+              },
+              {
+                "phone": "n",
+                "posterior": 0.00208
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.00126
+              }
+            ]
+          },
+          {
+            "phone": "a",
+            "emission_seconds": 0.16,
+            "alternatives": [
+              {
+                "phone": "a",
+                "posterior": 0.78133
+              },
+              {
+                "phone": "aː",
+                "posterior": 0.06858
+              },
+              {
+                "phone": "ɑ",
+                "posterior": 0.03155
+              }
+            ]
+          },
+          {
+            "phone": "ɾ",
+            "emission_seconds": 0.26,
+            "alternatives": [
+              {
+                "phone": "ɾ",
+                "posterior": 0.15614
+              },
+              {
+                "phone": "r",
+                "posterior": 0.13032
+              },
+              {
+                "phone": "ɹ",
+                "posterior": 0.11628
+              }
+            ]
+          },
+          {
+            "phone": "a",
+            "emission_seconds": 0.32,
+            "alternatives": [
+              {
+                "phone": "a",
+                "posterior": 0.78585
+              },
+              {
+                "phone": "ɐ",
+                "posterior": 0.07343
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.05972
+              }
+            ]
+          }
+        ],
+        "latency_seconds": 16.266,
+        "pronunciation_score": null,
+        "instruction": "These are fallible acoustic hypotheses, not verified errors or pronunciation scores. Posterior values are not pronunciation correctness probabilities. Do not infer hidden tongue movement."
+      }
+    },
+    {
+      "target": "മഴ",
+      "synthetic_spoken_text": "മല",
+      "audio_sha256": "ed9e407c159dc5221d17c28269a526f73777da6cad68b968a317169e5c714e2e",
+      "expected_pronunciation_reference": {
+        "source": "mlphon-3.1.3",
+        "source_url": "https://pypi.org/project/mlphon/",
+        "scope": "expected_pronunciation_reference_only",
+        "audio_assessed": false,
+        "words": [
+          {
+            "word": "മഴ",
+            "variants": [
+              [
+                "m",
+                "a",
+                "ɻ",
+                "a"
+              ]
+            ],
+            "syllables": [
+              "മ",
+              "ഴ"
+            ],
+            "articulatory_variants": [
+              [
+                {
+                  "phonemes": [
+                    {
+                      "ipa": "m",
+                      "tags": [
+                        "nasal",
+                        "labial"
+                      ]
+                    },
+                    {
+                      "ipa": "a",
+                      "tags": [
+                        "inherentvowel"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "phonemes": [
+                    {
+                      "ipa": "ɻ",
+                      "tags": [
+                        "approximant",
+                        "retroflex"
+                      ]
+                    },
+                    {
+                      "ipa": "a",
+                      "tags": [
+                        "inherentvowel"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ],
+        "uncovered_words": [],
+        "instruction": "Use these expected sounds, syllables and articulatory attributes to model the word. They do not describe what the learner pronounced. Accept valid variants; never infer an error, correctness, score or hidden tongue movement from this text reference."
+      },
+      "observation": {
+        "source": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+        "revision": "2c733782da5604684829819a5eb744c193fe9398",
+        "scope": "unvalidated_target_independent_phone_hypotheses",
+        "reference_text_supplied": false,
+        "phones": [
+          "m",
+          "a",
+          "l",
+          "a"
+        ],
+        "emissions": [
+          {
+            "phone": "m",
+            "emission_seconds": 0.08,
+            "alternatives": [
+              {
+                "phone": "m",
+                "posterior": 0.99221
+              },
+              {
+                "phone": "n",
+                "posterior": 0.00188
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.00186
+              }
+            ]
+          },
+          {
+            "phone": "a",
+            "emission_seconds": 0.12,
+            "alternatives": [
+              {
+                "phone": "a",
+                "posterior": 0.97011
+              },
+              {
+                "phone": "aː",
+                "posterior": 0.00729
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.0058
+              }
+            ]
+          },
+          {
+            "phone": "l",
+            "emission_seconds": 0.24,
+            "alternatives": [
+              {
+                "phone": "l",
+                "posterior": 0.99142
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.00118
+              },
+              {
+                "phone": "n",
+                "posterior": 0.00084
+              }
+            ]
+          },
+          {
+            "phone": "a",
+            "emission_seconds": 0.28,
+            "alternatives": [
+              {
+                "phone": "a",
+                "posterior": 0.91551
+              },
+              {
+                "phone": "ɐ",
+                "posterior": 0.04203
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.02558
+              }
+            ]
+          }
+        ],
+        "latency_seconds": 0.284,
+        "pronunciation_score": null,
+        "instruction": "These are fallible acoustic hypotheses, not verified errors or pronunciation scores. Posterior values are not pronunciation correctness probabilities. Do not infer hidden tongue movement."
+      }
+    },
+    {
+      "target": "മഴ",
+      "synthetic_spoken_text": "മള",
+      "audio_sha256": "794b9b3587bb136efbf430ca0fd7901e2ed65e9f2401d289c39900194a204300",
+      "expected_pronunciation_reference": {
+        "source": "mlphon-3.1.3",
+        "source_url": "https://pypi.org/project/mlphon/",
+        "scope": "expected_pronunciation_reference_only",
+        "audio_assessed": false,
+        "words": [
+          {
+            "word": "മഴ",
+            "variants": [
+              [
+                "m",
+                "a",
+                "ɻ",
+                "a"
+              ]
+            ],
+            "syllables": [
+              "മ",
+              "ഴ"
+            ],
+            "articulatory_variants": [
+              [
+                {
+                  "phonemes": [
+                    {
+                      "ipa": "m",
+                      "tags": [
+                        "nasal",
+                        "labial"
+                      ]
+                    },
+                    {
+                      "ipa": "a",
+                      "tags": [
+                        "inherentvowel"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "phonemes": [
+                    {
+                      "ipa": "ɻ",
+                      "tags": [
+                        "approximant",
+                        "retroflex"
+                      ]
+                    },
+                    {
+                      "ipa": "a",
+                      "tags": [
+                        "inherentvowel"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ],
+        "uncovered_words": [],
+        "instruction": "Use these expected sounds, syllables and articulatory attributes to model the word. They do not describe what the learner pronounced. Accept valid variants; never infer an error, correctness, score or hidden tongue movement from this text reference."
+      },
+      "observation": {
+        "source": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+        "revision": "2c733782da5604684829819a5eb744c193fe9398",
+        "scope": "unvalidated_target_independent_phone_hypotheses",
+        "reference_text_supplied": false,
+        "phones": [
+          "m",
+          "a",
+          "l",
+          "a"
+        ],
+        "emissions": [
+          {
+            "phone": "m",
+            "emission_seconds": 0.1,
+            "alternatives": [
+              {
+                "phone": "m",
+                "posterior": 0.99261
+              },
+              {
+                "phone": "n",
+                "posterior": 0.00153
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.00139
+              }
+            ]
+          },
+          {
+            "phone": "a",
+            "emission_seconds": 0.14,
+            "alternatives": [
+              {
+                "phone": "a",
+                "posterior": 0.87893
+              },
+              {
+                "phone": "ɐ",
+                "posterior": 0.0185
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.01629
+              }
+            ]
+          },
+          {
+            "phone": "l",
+            "emission_seconds": 0.24,
+            "alternatives": [
+              {
+                "phone": "l",
+                "posterior": 0.98369
+              },
+              {
+                "phone": "n",
+                "posterior": 0.00182
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.00167
+              }
+            ]
+          },
+          {
+            "phone": "a",
+            "emission_seconds": 0.28,
+            "alternatives": [
+              {
+                "phone": "a",
+                "posterior": 0.90748
+              },
+              {
+                "phone": "ɐ",
+                "posterior": 0.02853
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.02122
+              }
+            ]
+          }
+        ],
+        "latency_seconds": 0.234,
+        "pronunciation_score": null,
+        "instruction": "These are fallible acoustic hypotheses, not verified errors or pronunciation scores. Posterior values are not pronunciation correctness probabilities. Do not infer hidden tongue movement."
+      }
+    },
+    {
+      "target": "മാല",
+      "synthetic_spoken_text": "മാല",
+      "audio_sha256": "212e4d18727198ee46a80492d86f23c9919e1d51b366dac0da2084d776c0be35",
+      "expected_pronunciation_reference": {
+        "source": "mlphon-3.1.3",
+        "source_url": "https://pypi.org/project/mlphon/",
+        "scope": "expected_pronunciation_reference_only",
+        "audio_assessed": false,
+        "words": [
+          {
+            "word": "മാല",
+            "variants": [
+              [
+                "m",
+                "aː",
+                "l",
+                "a"
+              ]
+            ],
+            "syllables": [
+              "മാ",
+              "ല"
+            ],
+            "articulatory_variants": [
+              [
+                {
+                  "phonemes": [
+                    {
+                      "ipa": "m",
+                      "tags": [
+                        "nasal",
+                        "labial"
+                      ]
+                    },
+                    {
+                      "ipa": "aː",
+                      "tags": [
+                        "v_sign"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "phonemes": [
+                    {
+                      "ipa": "l",
+                      "tags": [
+                        "lateral",
+                        "alveolar"
+                      ]
+                    },
+                    {
+                      "ipa": "a",
+                      "tags": [
+                        "inherentvowel"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ],
+        "uncovered_words": [],
+        "instruction": "Use these expected sounds, syllables and articulatory attributes to model the word. They do not describe what the learner pronounced. Accept valid variants; never infer an error, correctness, score or hidden tongue movement from this text reference."
+      },
+      "observation": {
+        "source": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+        "revision": "2c733782da5604684829819a5eb744c193fe9398",
+        "scope": "unvalidated_target_independent_phone_hypotheses",
+        "reference_text_supplied": false,
+        "phones": [
+          "m",
+          "aː",
+          "l",
+          "a"
+        ],
+        "emissions": [
+          {
+            "phone": "m",
+            "emission_seconds": 0.06,
+            "alternatives": [
+              {
+                "phone": "m",
+                "posterior": 0.98733
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.0048
+              },
+              {
+                "phone": "n",
+                "posterior": 0.00222
+              }
+            ]
+          },
+          {
+            "phone": "aː",
+            "emission_seconds": 0.12,
+            "alternatives": [
+              {
+                "phone": "aː",
+                "posterior": 0.44427
+              },
+              {
+                "phone": "a",
+                "posterior": 0.43618
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.02002
+              }
+            ]
+          },
+          {
+            "phone": "l",
+            "emission_seconds": 0.28,
+            "alternatives": [
+              {
+                "phone": "l",
+                "posterior": 0.97544
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.0036
+              },
+              {
+                "phone": "n",
+                "posterior": 0.0026
+              }
+            ]
+          },
+          {
+            "phone": "a",
+            "emission_seconds": 0.32,
+            "alternatives": [
+              {
+                "phone": "a",
+                "posterior": 0.69682
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.11527
+              },
+              {
+                "phone": "ɐ",
+                "posterior": 0.08734
+              }
+            ]
+          }
+        ],
+        "latency_seconds": 0.103,
+        "pronunciation_score": null,
+        "instruction": "These are fallible acoustic hypotheses, not verified errors or pronunciation scores. Posterior values are not pronunciation correctness probabilities. Do not infer hidden tongue movement."
+      }
+    },
+    {
+      "target": "മാല",
+      "synthetic_spoken_text": "മല",
+      "audio_sha256": "ed9e407c159dc5221d17c28269a526f73777da6cad68b968a317169e5c714e2e",
+      "expected_pronunciation_reference": {
+        "source": "mlphon-3.1.3",
+        "source_url": "https://pypi.org/project/mlphon/",
+        "scope": "expected_pronunciation_reference_only",
+        "audio_assessed": false,
+        "words": [
+          {
+            "word": "മാല",
+            "variants": [
+              [
+                "m",
+                "aː",
+                "l",
+                "a"
+              ]
+            ],
+            "syllables": [
+              "മാ",
+              "ല"
+            ],
+            "articulatory_variants": [
+              [
+                {
+                  "phonemes": [
+                    {
+                      "ipa": "m",
+                      "tags": [
+                        "nasal",
+                        "labial"
+                      ]
+                    },
+                    {
+                      "ipa": "aː",
+                      "tags": [
+                        "v_sign"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "phonemes": [
+                    {
+                      "ipa": "l",
+                      "tags": [
+                        "lateral",
+                        "alveolar"
+                      ]
+                    },
+                    {
+                      "ipa": "a",
+                      "tags": [
+                        "inherentvowel"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ],
+        "uncovered_words": [],
+        "instruction": "Use these expected sounds, syllables and articulatory attributes to model the word. They do not describe what the learner pronounced. Accept valid variants; never infer an error, correctness, score or hidden tongue movement from this text reference."
+      },
+      "observation": {
+        "source": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+        "revision": "2c733782da5604684829819a5eb744c193fe9398",
+        "scope": "unvalidated_target_independent_phone_hypotheses",
+        "reference_text_supplied": false,
+        "phones": [
+          "m",
+          "a",
+          "l",
+          "a"
+        ],
+        "emissions": [
+          {
+            "phone": "m",
+            "emission_seconds": 0.08,
+            "alternatives": [
+              {
+                "phone": "m",
+                "posterior": 0.99221
+              },
+              {
+                "phone": "n",
+                "posterior": 0.00188
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.00186
+              }
+            ]
+          },
+          {
+            "phone": "a",
+            "emission_seconds": 0.12,
+            "alternatives": [
+              {
+                "phone": "a",
+                "posterior": 0.97011
+              },
+              {
+                "phone": "aː",
+                "posterior": 0.00729
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.0058
+              }
+            ]
+          },
+          {
+            "phone": "l",
+            "emission_seconds": 0.24,
+            "alternatives": [
+              {
+                "phone": "l",
+                "posterior": 0.99142
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.00118
+              },
+              {
+                "phone": "n",
+                "posterior": 0.00084
+              }
+            ]
+          },
+          {
+            "phone": "a",
+            "emission_seconds": 0.28,
+            "alternatives": [
+              {
+                "phone": "a",
+                "posterior": 0.91551
+              },
+              {
+                "phone": "ɐ",
+                "posterior": 0.04203
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.02558
+              }
+            ]
+          }
+        ],
+        "latency_seconds": 0.305,
+        "pronunciation_score": null,
+        "instruction": "These are fallible acoustic hypotheses, not verified errors or pronunciation scores. Posterior values are not pronunciation correctness probabilities. Do not infer hidden tongue movement."
+      }
+    },
+    {
+      "target": "പട്ടം",
+      "synthetic_spoken_text": "പട്ടം",
+      "audio_sha256": "1ef233060365b5504ae85a3ade7a0baf0ff02f44b85201620e53603df25d330a",
+      "expected_pronunciation_reference": {
+        "source": "mlphon-3.1.3",
+        "source_url": "https://pypi.org/project/mlphon/",
+        "scope": "expected_pronunciation_reference_only",
+        "audio_assessed": false,
+        "words": [
+          {
+            "word": "പട്ടം",
+            "variants": [
+              [
+                "p",
+                "a",
+                "ʈ",
+                "ʈ",
+                "a",
+                "m"
+              ]
+            ],
+            "syllables": [
+              "പ",
+              "ട്ടം"
+            ],
+            "articulatory_variants": [
+              [
+                {
+                  "phonemes": [
+                    {
+                      "ipa": "p",
+                      "tags": [
+                        "plosive",
+                        "voiceless",
+                        "unaspirated",
+                        "labial"
+                      ]
+                    },
+                    {
+                      "ipa": "a",
+                      "tags": [
+                        "inherentvowel"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "phonemes": [
+                    {
+                      "ipa": "ʈ",
+                      "tags": [
+                        "plosive",
+                        "voiceless",
+                        "unaspirated",
+                        "retroflex",
+                        "virama"
+                      ]
+                    },
+                    {
+                      "ipa": "ʈ",
+                      "tags": [
+                        "plosive",
+                        "voiceless",
+                        "unaspirated",
+                        "retroflex"
+                      ]
+                    },
+                    {
+                      "ipa": "a",
+                      "tags": [
+                        "inherentvowel"
+                      ]
+                    },
+                    {
+                      "ipa": "m",
+                      "tags": [
+                        "anuswara"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ],
+        "uncovered_words": [],
+        "instruction": "Use these expected sounds, syllables and articulatory attributes to model the word. They do not describe what the learner pronounced. Accept valid variants; never infer an error, correctness, score or hidden tongue movement from this text reference."
+      },
+      "observation": {
+        "source": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+        "revision": "2c733782da5604684829819a5eb744c193fe9398",
+        "scope": "unvalidated_target_independent_phone_hypotheses",
+        "reference_text_supplied": false,
+        "phones": [
+          "p",
+          "a",
+          "t",
+          "m"
+        ],
+        "emissions": [
+          {
+            "phone": "p",
+            "emission_seconds": 0.08,
+            "alternatives": [
+              {
+                "phone": "p",
+                "posterior": 0.9508
+              },
+              {
+                "phone": "b",
+                "posterior": 0.03118
+              },
+              {
+                "phone": "k",
+                "posterior": 0.00267
+              }
+            ]
+          },
+          {
+            "phone": "a",
+            "emission_seconds": 0.12,
+            "alternatives": [
+              {
+                "phone": "a",
+                "posterior": 0.57805
+              },
+              {
+                "phone": "ɑ",
+                "posterior": 0.13248
+              },
+              {
+                "phone": "ʌ",
+                "posterior": 0.11412
+              }
+            ]
+          },
+          {
+            "phone": "t",
+            "emission_seconds": 0.3,
+            "alternatives": [
+              {
+                "phone": "t",
+                "posterior": 0.68929
+              },
+              {
+                "phone": "d",
+                "posterior": 0.10844
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.03055
+              }
+            ]
+          },
+          {
+            "phone": "m",
+            "emission_seconds": 0.4,
+            "alternatives": [
+              {
+                "phone": "m",
+                "posterior": 0.54947
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.42636
+              },
+              {
+                "phone": "n",
+                "posterior": 0.00757
+              }
+            ]
+          }
+        ],
+        "latency_seconds": 0.534,
+        "pronunciation_score": null,
+        "instruction": "These are fallible acoustic hypotheses, not verified errors or pronunciation scores. Posterior values are not pronunciation correctness probabilities. Do not infer hidden tongue movement."
+      }
+    },
+    {
+      "target": "പട്ടം",
+      "synthetic_spoken_text": "പടം",
+      "audio_sha256": "5dbc7e7532dbe34193731c5e21a3e7ce6538244c99efceea90df46e748385e8a",
+      "expected_pronunciation_reference": {
+        "source": "mlphon-3.1.3",
+        "source_url": "https://pypi.org/project/mlphon/",
+        "scope": "expected_pronunciation_reference_only",
+        "audio_assessed": false,
+        "words": [
+          {
+            "word": "പട്ടം",
+            "variants": [
+              [
+                "p",
+                "a",
+                "ʈ",
+                "ʈ",
+                "a",
+                "m"
+              ]
+            ],
+            "syllables": [
+              "പ",
+              "ട്ടം"
+            ],
+            "articulatory_variants": [
+              [
+                {
+                  "phonemes": [
+                    {
+                      "ipa": "p",
+                      "tags": [
+                        "plosive",
+                        "voiceless",
+                        "unaspirated",
+                        "labial"
+                      ]
+                    },
+                    {
+                      "ipa": "a",
+                      "tags": [
+                        "inherentvowel"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "phonemes": [
+                    {
+                      "ipa": "ʈ",
+                      "tags": [
+                        "plosive",
+                        "voiceless",
+                        "unaspirated",
+                        "retroflex",
+                        "virama"
+                      ]
+                    },
+                    {
+                      "ipa": "ʈ",
+                      "tags": [
+                        "plosive",
+                        "voiceless",
+                        "unaspirated",
+                        "retroflex"
+                      ]
+                    },
+                    {
+                      "ipa": "a",
+                      "tags": [
+                        "inherentvowel"
+                      ]
+                    },
+                    {
+                      "ipa": "m",
+                      "tags": [
+                        "anuswara"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ],
+        "uncovered_words": [],
+        "instruction": "Use these expected sounds, syllables and articulatory attributes to model the word. They do not describe what the learner pronounced. Accept valid variants; never infer an error, correctness, score or hidden tongue movement from this text reference."
+      },
+      "observation": {
+        "source": "facebook/wav2vec2-xlsr-53-espeak-cv-ft",
+        "revision": "2c733782da5604684829819a5eb744c193fe9398",
+        "scope": "unvalidated_target_independent_phone_hypotheses",
+        "reference_text_supplied": false,
+        "phones": [
+          "p",
+          "a",
+          "d",
+          "ə"
+        ],
+        "emissions": [
+          {
+            "phone": "p",
+            "emission_seconds": 0.1,
+            "alternatives": [
+              {
+                "phone": "p",
+                "posterior": 0.98162
+              },
+              {
+                "phone": "b",
+                "posterior": 0.00379
+              },
+              {
+                "phone": "<pad>",
+                "posterior": 0.0031
+              }
+            ]
+          },
+          {
+            "phone": "a",
+            "emission_seconds": 0.14,
+            "alternatives": [
+              {
+                "phone": "a",
+                "posterior": 0.61675
+              },
+              {
+                "phone": "ɑː",
+                "posterior": 0.14587
+              },
+              {
+                "phone": "ʌ",
+                "posterior": 0.0521
+              }
+            ]
+          },
+          {
+            "phone": "d",
+            "emission_seconds": 0.28,
+            "alternatives": [
+              {
+                "phone": "d",
+                "posterior": 0.90806
+              },
+              {
+                "phone": "t",
+                "posterior": 0.03888
+              },
+              {
+                "phone": "ð",
+                "posterior": 0.01291
+              }
+            ]
+          },
+          {
+            "phone": "ə",
+            "emission_seconds": 0.32,
+            "alternatives": [
+              {
+                "phone": "ə",
+                "posterior": 0.36278
+              },
+              {
+                "phone": "ʌ",
+                "posterior": 0.26379
+              },
+              {
+                "phone": "a",
+                "posterior": 0.14697
+              }
+            ]
+          }
+        ],
+        "latency_seconds": 0.627,
+        "pronunciation_score": null,
+        "instruction": "These are fallible acoustic hypotheses, not verified errors or pronunciation scores. Posterior values are not pronunciation correctness probabilities. Do not infer hidden tongue movement."
+      }
+    }
+  ]
+}

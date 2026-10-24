@@ -1,0 +1,166 @@
+{
+  "limitation": "Three generated reference samples, not representative child or dysarthric accuracy evaluation.",
+  "azure": [
+    {
+      "source": "public_reference_generated_voice",
+      "spoken": "see",
+      "target": "see",
+      "seconds": 2.07,
+      "configured": true,
+      "passes": true,
+      "concerns": 0,
+      "provider_words": [
+        {
+          "word": "see",
+          "provider_accuracy_score": 96.0,
+          "provider_error_type": "None",
+          "provider_phones": [
+            {
+              "provider_phone": "s",
+              "provider_accuracy_score": 96.0,
+              "provider_alternatives": [
+                {
+                  "phone": "s",
+                  "provider_score": 100.0
+                },
+                {
+                  "phone": "z",
+                  "provider_score": 18.0
+                },
+                {
+                  "phone": "o\u028a",
+                  "provider_score": 7.0
+                },
+                {
+                  "phone": "t",
+                  "provider_score": 6.0
+                },
+                {
+                  "phone": "\u0283",
+                  "provider_score": 6.0
+                }
+              ]
+            },
+            {
+              "provider_phone": "i",
+              "provider_accuracy_score": 95.0,
+              "provider_alternatives": [
+                {
+                  "phone": "i",
+                  "provider_score": 100.0
+                },
+                {
+                  "phone": "o\u028a",
+                  "provider_score": 43.0
+                },
+                {
+                  "phone": "\u026a",
+                  "provider_score": 27.0
+                },
+                {
+                  "phone": "e\u026a",
+                  "provider_score": 22.0
+                },
+                {
+                  "phone": "s",
+                  "provider_score": 21.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": "public_reference_generated_voice",
+      "spoken": "key",
+      "target": "see",
+      "seconds": 0.71,
+      "configured": true,
+      "passes": false,
+      "concerns": 1,
+      "provider_words": [
+        {
+          "word": "see",
+          "provider_accuracy_score": 39.0,
+          "provider_error_type": "Mispronunciation",
+          "provider_phones": [
+            {
+              "provider_phone": "s",
+              "provider_accuracy_score": 23.0,
+              "provider_alternatives": [
+                {
+                  "phone": "k",
+                  "provider_score": 100.0
+                },
+                {
+                  "phone": "i",
+                  "provider_score": 71.0
+                },
+                {
+                  "phone": "\u026a",
+                  "provider_score": 12.0
+                },
+                {
+                  "phone": "t",
+                  "provider_score": 6.0
+                },
+                {
+                  "phone": "t\u0283",
+                  "provider_score": 4.0
+                }
+              ]
+            },
+            {
+              "provider_phone": "i",
+              "provider_accuracy_score": 33.0,
+              "provider_alternatives": [
+                {
+                  "phone": "i",
+                  "provider_score": 100.0
+                },
+                {
+                  "phone": "\u026a",
+                  "provider_score": 45.0
+                },
+                {
+                  "phone": "o\u028a",
+                  "provider_score": 43.0
+                },
+                {
+                  "phone": "t",
+                  "provider_score": 42.0
+                },
+                {
+                  "phone": "e\u026a",
+                  "provider_score": 38.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": "public_reference_generated_voice",
+      "spoken": "ray",
+      "target": "see",
+      "seconds": 1.07,
+      "configured": true,
+      "passes": false,
+      "concerns": 1,
+      "provider_words": [
+        {
+          "word": "see",
+          "provider_accuracy_score": 0.0,
+          "provider_error_type": "Omission",
+          "provider_phones": []
+        }
+      ]
+    }
+  ],
+  "rhubarb": {
+    "available": true,
+    "cue_count": 5
+  }
+}

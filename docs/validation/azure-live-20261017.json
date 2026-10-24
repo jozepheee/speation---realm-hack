@@ -1,0 +1,150 @@
+[
+  {
+    "spoken_text": "ship",
+    "target": "ship",
+    "language": "en",
+    "audio_source": "adult_synthetic_not_gold_labels",
+    "assessment": {
+      "source": "azure_pronunciation_assessment",
+      "state": "provider_assessment",
+      "language": "en",
+      "phone_alphabet": "IPA",
+      "words": [
+        {
+          "word": "ship",
+          "provider_accuracy_score": 100.0,
+          "provider_error_type": "None",
+          "provider_phones": [
+            {
+              "provider_phone": "ʃ",
+              "provider_accuracy_score": 100.0
+            },
+            {
+              "provider_phone": "ɪ",
+              "provider_accuracy_score": 100.0
+            },
+            {
+              "provider_phone": "p",
+              "provider_accuracy_score": 100.0
+            }
+          ]
+        }
+      ],
+      "phone_detail_available": true,
+      "phone_scores_available": true,
+      "clinical_assessment": false,
+      "instruction": "These are dedicated-provider educational scores, not diagnoses or verified mastery. Hindi provider phone labels must not be reinterpreted as IPA. Do not invent produced sounds."
+    }
+  },
+  {
+    "spoken_text": "sheep",
+    "target": "ship",
+    "language": "en",
+    "audio_source": "adult_synthetic_not_gold_labels",
+    "assessment": {
+      "source": "azure_pronunciation_assessment",
+      "state": "provider_assessment",
+      "language": "en",
+      "phone_alphabet": "IPA",
+      "words": [
+        {
+          "word": "ship",
+          "provider_accuracy_score": 72.0,
+          "provider_error_type": "None",
+          "provider_phones": [
+            {
+              "provider_phone": "ʃ",
+              "provider_accuracy_score": 72.0
+            },
+            {
+              "provider_phone": "ɪ",
+              "provider_accuracy_score": 54.0
+            },
+            {
+              "provider_phone": "p",
+              "provider_accuracy_score": 61.0
+            }
+          ]
+        }
+      ],
+      "phone_detail_available": true,
+      "phone_scores_available": true,
+      "clinical_assessment": false,
+      "instruction": "These are dedicated-provider educational scores, not diagnoses or verified mastery. Hindi provider phone labels must not be reinterpreted as IPA. Do not invent produced sounds."
+    }
+  },
+  {
+    "spoken_text": "ताल",
+    "target": "ताल",
+    "language": "hi",
+    "audio_source": "adult_synthetic_not_gold_labels",
+    "assessment": {
+      "source": "azure_pronunciation_assessment",
+      "state": "provider_assessment",
+      "language": "hi",
+      "phone_alphabet": "provider_default_not_assumed_IPA",
+      "words": [
+        {
+          "word": "ताल",
+          "provider_accuracy_score": 90.0,
+          "provider_error_type": "None",
+          "provider_phones": [
+            {
+              "provider_phone": "",
+              "provider_accuracy_score": 95.0
+            },
+            {
+              "provider_phone": "",
+              "provider_accuracy_score": 100.0
+            },
+            {
+              "provider_phone": "",
+              "provider_accuracy_score": 78.0
+            }
+          ]
+        }
+      ],
+      "phone_detail_available": false,
+      "phone_scores_available": true,
+      "clinical_assessment": false,
+      "instruction": "These are dedicated-provider educational scores, not diagnoses or verified mastery. Hindi provider phone labels must not be reinterpreted as IPA. Do not invent produced sounds."
+    }
+  },
+  {
+    "spoken_text": "दाल",
+    "target": "ताल",
+    "language": "hi",
+    "audio_source": "adult_synthetic_not_gold_labels",
+    "assessment": {
+      "source": "azure_pronunciation_assessment",
+      "state": "provider_assessment",
+      "language": "hi",
+      "phone_alphabet": "provider_default_not_assumed_IPA",
+      "words": [
+        {
+          "word": "ताल",
+          "provider_accuracy_score": 82.0,
+          "provider_error_type": "None",
+          "provider_phones": [
+            {
+              "provider_phone": "",
+              "provider_accuracy_score": 44.0
+            },
+            {
+              "provider_phone": "",
+              "provider_accuracy_score": 91.0
+            },
+            {
+              "provider_phone": "",
+              "provider_accuracy_score": 79.0
+            }
+          ]
+        }
+      ],
+      "phone_detail_available": false,
+      "phone_scores_available": true,
+      "clinical_assessment": false,
+      "instruction": "These are dedicated-provider educational scores, not diagnoses or verified mastery. Hindi provider phone labels must not be reinterpreted as IPA. Do not invent produced sounds."
+    }
+  }
+]

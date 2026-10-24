@@ -1,0 +1,84 @@
+{
+  "source": "https://www.cs.toronto.edu/~complingweb/data/TORGO/torgo.html",
+  "population": "TORGO F01 sample, separate corpus from IEdysarthria adaptation",
+  "models": {
+    "baseline": {
+      "recognition": {
+        "utterances": 4,
+        "reference_words": 4,
+        "wer": 0.75,
+        "exact_match_rate": 0.25,
+        "substitutions": 3,
+        "deletions": 0,
+        "insertions": 0,
+        "clinical_validation": false
+      },
+      "utterances": [
+        {
+          "id": "F01/Session1/0064",
+          "reference_prompt": "raid",
+          "hypothesis": " Wait."
+        },
+        {
+          "id": "F01/Session1/0018",
+          "reference_prompt": "no",
+          "hypothesis": " No."
+        },
+        {
+          "id": "F01/Session1/0063",
+          "reference_prompt": "farm",
+          "hypothesis": " Bye."
+        },
+        {
+          "id": "F01/Session1/0011",
+          "reference_prompt": "meat",
+          "hypothesis": " me"
+        }
+      ]
+    },
+    "adapted": {
+      "recognition": {
+        "utterances": 4,
+        "reference_words": 4,
+        "wer": 0.5,
+        "exact_match_rate": 0.5,
+        "substitutions": 2,
+        "deletions": 0,
+        "insertions": 0,
+        "clinical_validation": false
+      },
+      "utterances": [
+        {
+          "id": "F01/Session1/0064",
+          "reference_prompt": "raid",
+          "hypothesis": " Right."
+        },
+        {
+          "id": "F01/Session1/0018",
+          "reference_prompt": "no",
+          "hypothesis": " No."
+        },
+        {
+          "id": "F01/Session1/0063",
+          "reference_prompt": "farm",
+          "hypothesis": " Farm"
+        },
+        {
+          "id": "F01/Session1/0011",
+          "reference_prompt": "meat",
+          "hypothesis": " May"
+        }
+      ]
+    }
+  },
+  "seconds": 2.28,
+  "protocol": "Shared baseline generation configuration for both models; greedy decode, cached weights, no expected-text prompt. WER against intended prompts only; actual produced-phoneme truth unavailable.",
+  "shared_generation_config_sha256": "f7531197c40aca945bbb8397f474f003044ecdcbdf74f86039ef159dd1744af8",
+  "representative_validation": false,
+  "child_validation": false,
+  "sound_error_validation": false,
+  "production_activation": false,
+  "license_scope": "academic non-profit only; cite Rudzicz, Namasivayam and Wolff (2012), The TORGO database of acoustic and articulatory speech from speakers with dysarthria",
+  "decoder_parity_verified": false,
+  "runtime_limitation": "Transformers emitted model-specific generation-default warnings despite the supplied shared configuration. Treat results as descriptive smoke observations, not a controlled efficacy comparison."
+}

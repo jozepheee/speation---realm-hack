@@ -1,0 +1,867 @@
+{
+  "method": "Allosaurus uni2005 + Mlphon 3.1.3",
+  "scope": "synthetic_adult_engineering_controls_not_gold_pronunciation",
+  "release_approved": false,
+  "clinical_validation": false,
+  "malayalam_inventory": [
+    "<blk>",
+    "a",
+    "aː",
+    "b",
+    "bʰ",
+    "c",
+    "cʰ",
+    "d",
+    "dʰ",
+    "d̪",
+    "e",
+    "eː",
+    "f",
+    "h",
+    "i",
+    "iː",
+    "j",
+    "k",
+    "kʰ",
+    "l",
+    "m",
+    "n",
+    "n̪",
+    "o",
+    "oː",
+    "p",
+    "pʰ",
+    "r",
+    "r̪",
+    "s",
+    "t",
+    "tʰ",
+    "t̪",
+    "u",
+    "uː",
+    "w",
+    "æ",
+    "ŋ",
+    "ɖ",
+    "ɖʰ",
+    "ə",
+    "ɟ",
+    "ɟʰ",
+    "ɡ",
+    "ɡʰ",
+    "ɨ",
+    "ɭ",
+    "ɲ",
+    "ɳ",
+    "ɾ",
+    "ʂ",
+    "ʃ",
+    "ʈ",
+    "ʈʰ",
+    "ʊ",
+    "ʋ",
+    "ʐ"
+  ],
+  "acoustic_model_inventory": [
+    "<blk>",
+    "I",
+    "a",
+    "aː",
+    "ã",
+    "ă",
+    "b",
+    "bʲ",
+    "bʲj",
+    "bʷ",
+    "bʼ",
+    "bː",
+    "b̞",
+    "b̤",
+    "b̥",
+    "c",
+    "d",
+    "dʒ",
+    "dʲ",
+    "dː",
+    "d̚",
+    "d̥",
+    "d̪",
+    "d̯",
+    "d͡z",
+    "d͡ʑ",
+    "d͡ʒ",
+    "d͡ʒː",
+    "d͡ʒ̤",
+    "e",
+    "eː",
+    "e̞",
+    "f",
+    "fʲ",
+    "fʷ",
+    "fː",
+    "g",
+    "gʲ",
+    "gʲj",
+    "gʷ",
+    "gː",
+    "h",
+    "hʷ",
+    "i",
+    "ij",
+    "iː",
+    "i̞",
+    "i̥",
+    "i̯",
+    "j",
+    "k",
+    "kx",
+    "kʰ",
+    "kʲ",
+    "kʲj",
+    "kʷ",
+    "kʷʼ",
+    "kʼ",
+    "kː",
+    "k̟ʲ",
+    "k̟̚",
+    "k͡p̚",
+    "l",
+    "lʲ",
+    "lː",
+    "l̪",
+    "m",
+    "mʲ",
+    "mʲj",
+    "mʷ",
+    "mː",
+    "n",
+    "nj",
+    "nʲ",
+    "nː",
+    "n̪",
+    "n̺",
+    "o",
+    "oː",
+    "o̞",
+    "o̥",
+    "p",
+    "pf",
+    "pʰ",
+    "pʲ",
+    "pʲj",
+    "pʷ",
+    "pʷʼ",
+    "pʼ",
+    "pː",
+    "p̚",
+    "q",
+    "r",
+    "rː",
+    "s",
+    "sʲ",
+    "sʼ",
+    "sː",
+    "s̪",
+    "t",
+    "ts",
+    "tsʰ",
+    "tɕ",
+    "tɕʰ",
+    "tʂ",
+    "tʂʰ",
+    "tʃ",
+    "tʰ",
+    "tʲ",
+    "tʷʼ",
+    "tʼ",
+    "tː",
+    "t̚",
+    "t̪",
+    "t̪ʰ",
+    "t̪̚",
+    "t͡s",
+    "t͡sʼ",
+    "t͡ɕ",
+    "t͡ɬ",
+    "t͡ʃ",
+    "t͡ʃʲ",
+    "t͡ʃʼ",
+    "t͡ʃː",
+    "u",
+    "uə",
+    "uː",
+    "u͡w",
+    "v",
+    "vʲ",
+    "vʷ",
+    "vː",
+    "v̞",
+    "v̞ʲ",
+    "w",
+    "x",
+    "x̟ʲ",
+    "y",
+    "z",
+    "zj",
+    "zʲ",
+    "z̪",
+    "ä",
+    "æ",
+    "ç",
+    "çj",
+    "ð",
+    "ø",
+    "ŋ",
+    "ŋ̟",
+    "ŋ͡m",
+    "œ",
+    "œ̃",
+    "ɐ",
+    "ɐ̞",
+    "ɑ",
+    "ɑ̱",
+    "ɒ",
+    "ɓ",
+    "ɔ",
+    "ɔ̃",
+    "ɕ",
+    "ɕː",
+    "ɖ̤",
+    "ɗ",
+    "ə",
+    "ɛ",
+    "ɛ̃",
+    "ɟ",
+    "ɡ",
+    "ɡʲ",
+    "ɡ̤",
+    "ɡ̥",
+    "ɣ",
+    "ɣj",
+    "ɤ",
+    "ɤɐ̞",
+    "ɤ̆",
+    "ɥ",
+    "ɦ",
+    "ɨ",
+    "ɪ",
+    "ɫ",
+    "ɯ",
+    "ɯ̟",
+    "ɯ̥",
+    "ɰ",
+    "ɱ",
+    "ɲ",
+    "ɳ",
+    "ɴ",
+    "ɵ",
+    "ɸ",
+    "ɹ",
+    "ɹ̩",
+    "ɻ",
+    "ɻ̩",
+    "ɽ",
+    "ɾ",
+    "ɾj",
+    "ɾʲ",
+    "ɾ̠",
+    "ʀ",
+    "ʁ",
+    "ʁ̝",
+    "ʂ",
+    "ʃ",
+    "ʃʲː",
+    "ʃ͡ɣ",
+    "ʈ",
+    "ʉ̞",
+    "ʊ",
+    "ʋ",
+    "ʋʲ",
+    "ʌ",
+    "ʎ",
+    "ʏ",
+    "ʐ",
+    "ʑ",
+    "ʒ",
+    "ʒ͡ɣ",
+    "ʔ",
+    "ʝ",
+    "ː",
+    "β",
+    "β̞",
+    "θ",
+    "χ",
+    "ә",
+    "ḁ"
+  ],
+  "results": [
+    {
+      "target": "മഴ",
+      "synthetic_spoken_text": "മഴ",
+      "expected_pronunciation_reference": {
+        "source": "mlphon-3.1.3",
+        "source_url": "https://pypi.org/project/mlphon/",
+        "scope": "expected_pronunciation_reference_only",
+        "audio_assessed": false,
+        "words": [
+          {
+            "word": "മഴ",
+            "variants": [
+              [
+                "m",
+                "a",
+                "ɻ",
+                "a"
+              ]
+            ],
+            "syllables": [
+              "മ",
+              "ഴ"
+            ],
+            "articulatory_variants": [
+              [
+                {
+                  "phonemes": [
+                    {
+                      "ipa": "m",
+                      "tags": [
+                        "nasal",
+                        "labial"
+                      ]
+                    },
+                    {
+                      "ipa": "a",
+                      "tags": [
+                        "inherentvowel"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "phonemes": [
+                    {
+                      "ipa": "ɻ",
+                      "tags": [
+                        "approximant",
+                        "retroflex"
+                      ]
+                    },
+                    {
+                      "ipa": "a",
+                      "tags": [
+                        "inherentvowel"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ],
+        "uncovered_words": [],
+        "instruction": "Use these expected sounds, syllables and articulatory attributes to model the word. They do not describe what the learner pronounced. Accept valid variants; never infer an error, correctness, score or hidden tongue movement from this text reference."
+      },
+      "audio_sha256": "095554ea8a9b785c4982085648a7d0567a781d06e3c85f6b838c2fe5b3affdf1",
+      "hypotheses": {
+        "mal": "0.090 0.045 m (0.992) <blk> (0.003) w (0.001)\n0.150 0.045 a (0.799) ɨ (0.046) o (0.042)\n0.330 0.045 u (0.340) ə (0.278) ɨ (0.195)",
+        "ipa": "0.090 0.045 m (0.930) mː (0.019) ɴ (0.013)\n0.150 0.045 ɑ (0.431) a (0.166) ɤ (0.161)\n0.210 0.045 ɹ (0.459) <blk> (0.308) j (0.102)\n0.240 0.045 ɻ (0.199) ij (0.158) ɹ (0.145)\n0.330 0.045 ɻ̩ (0.177) ɤ (0.170) u (0.129)"
+      },
+      "latency_seconds": 0.758
+    },
+    {
+      "target": "മഴ",
+      "synthetic_spoken_text": "മല",
+      "expected_pronunciation_reference": {
+        "source": "mlphon-3.1.3",
+        "source_url": "https://pypi.org/project/mlphon/",
+        "scope": "expected_pronunciation_reference_only",
+        "audio_assessed": false,
+        "words": [
+          {
+            "word": "മഴ",
+            "variants": [
+              [
+                "m",
+                "a",
+                "ɻ",
+                "a"
+              ]
+            ],
+            "syllables": [
+              "മ",
+              "ഴ"
+            ],
+            "articulatory_variants": [
+              [
+                {
+                  "phonemes": [
+                    {
+                      "ipa": "m",
+                      "tags": [
+                        "nasal",
+                        "labial"
+                      ]
+                    },
+                    {
+                      "ipa": "a",
+                      "tags": [
+                        "inherentvowel"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "phonemes": [
+                    {
+                      "ipa": "ɻ",
+                      "tags": [
+                        "approximant",
+                        "retroflex"
+                      ]
+                    },
+                    {
+                      "ipa": "a",
+                      "tags": [
+                        "inherentvowel"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ],
+        "uncovered_words": [],
+        "instruction": "Use these expected sounds, syllables and articulatory attributes to model the word. They do not describe what the learner pronounced. Accept valid variants; never infer an error, correctness, score or hidden tongue movement from this text reference."
+      },
+      "audio_sha256": "ed9e407c159dc5221d17c28269a526f73777da6cad68b968a317169e5c714e2e",
+      "hypotheses": {
+        "mal": "0.060 0.045 m (0.999) n (0.001) b (0.000)\n0.120 0.045 a (0.994) æ (0.002) ɨ (0.002)\n0.240 0.045 l (0.846) j (0.113) ɡ (0.013)\n0.300 0.045 a (0.969) æ (0.015) ə (0.011)",
+        "ipa": "0.060 0.045 m (0.992) mː (0.003) mʲ (0.002)\n0.120 0.045 a (0.874) ɑ (0.045) ʌ (0.039)\n0.240 0.045 lʲ (0.816) lː (0.125) l (0.033)\n0.300 0.045 a (0.874) ɑ (0.035) ʌ (0.025)"
+      },
+      "latency_seconds": 0.192
+    },
+    {
+      "target": "മഴ",
+      "synthetic_spoken_text": "മള",
+      "expected_pronunciation_reference": {
+        "source": "mlphon-3.1.3",
+        "source_url": "https://pypi.org/project/mlphon/",
+        "scope": "expected_pronunciation_reference_only",
+        "audio_assessed": false,
+        "words": [
+          {
+            "word": "മഴ",
+            "variants": [
+              [
+                "m",
+                "a",
+                "ɻ",
+                "a"
+              ]
+            ],
+            "syllables": [
+              "മ",
+              "ഴ"
+            ],
+            "articulatory_variants": [
+              [
+                {
+                  "phonemes": [
+                    {
+                      "ipa": "m",
+                      "tags": [
+                        "nasal",
+                        "labial"
+                      ]
+                    },
+                    {
+                      "ipa": "a",
+                      "tags": [
+                        "inherentvowel"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "phonemes": [
+                    {
+                      "ipa": "ɻ",
+                      "tags": [
+                        "approximant",
+                        "retroflex"
+                      ]
+                    },
+                    {
+                      "ipa": "a",
+                      "tags": [
+                        "inherentvowel"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ],
+        "uncovered_words": [],
+        "instruction": "Use these expected sounds, syllables and articulatory attributes to model the word. They do not describe what the learner pronounced. Accept valid variants; never infer an error, correctness, score or hidden tongue movement from this text reference."
+      },
+      "audio_sha256": "794b9b3587bb136efbf430ca0fd7901e2ed65e9f2401d289c39900194a204300",
+      "hypotheses": {
+        "mal": "0.090 0.045 m (0.998) b (0.001) n (0.000)\n0.150 0.045 a (0.984) <blk> (0.006) æ (0.005)\n0.240 0.045 l (0.576) ɾ (0.109) ɳ (0.102)\n0.300 0.045 a (0.741) æ (0.141) ə (0.095)",
+        "ipa": "0.090 0.045 m (0.987) mː (0.004) b̞ (0.002)\n0.150 0.045 a (0.816) ɑ (0.077) ʌ (0.034)\n0.240 0.045 lʲ (0.958) l̪ (0.014) lː (0.009)\n0.300 0.045 a (0.601) æ (0.114) ə (0.077)"
+      },
+      "latency_seconds": 0.16
+    },
+    {
+      "target": "മാല",
+      "synthetic_spoken_text": "മാല",
+      "expected_pronunciation_reference": {
+        "source": "mlphon-3.1.3",
+        "source_url": "https://pypi.org/project/mlphon/",
+        "scope": "expected_pronunciation_reference_only",
+        "audio_assessed": false,
+        "words": [
+          {
+            "word": "മാല",
+            "variants": [
+              [
+                "m",
+                "aː",
+                "l",
+                "a"
+              ]
+            ],
+            "syllables": [
+              "മാ",
+              "ല"
+            ],
+            "articulatory_variants": [
+              [
+                {
+                  "phonemes": [
+                    {
+                      "ipa": "m",
+                      "tags": [
+                        "nasal",
+                        "labial"
+                      ]
+                    },
+                    {
+                      "ipa": "aː",
+                      "tags": [
+                        "v_sign"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "phonemes": [
+                    {
+                      "ipa": "l",
+                      "tags": [
+                        "lateral",
+                        "alveolar"
+                      ]
+                    },
+                    {
+                      "ipa": "a",
+                      "tags": [
+                        "inherentvowel"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ],
+        "uncovered_words": [],
+        "instruction": "Use these expected sounds, syllables and articulatory attributes to model the word. They do not describe what the learner pronounced. Accept valid variants; never infer an error, correctness, score or hidden tongue movement from this text reference."
+      },
+      "audio_sha256": "212e4d18727198ee46a80492d86f23c9919e1d51b366dac0da2084d776c0be35",
+      "hypotheses": {
+        "mal": "0.060 0.045 m (0.980) n (0.008) ɳ (0.005)\n0.120 0.045 a (0.968) æ (0.012) i (0.006)\n0.270 0.045 n (0.510) l (0.232) ɳ (0.096)\n0.330 0.045 ə (0.722) a (0.122) e (0.067)",
+        "ipa": "0.060 0.045 m (0.858) ɴ (0.067) b̤ (0.018)\n0.120 0.045 a (0.835) ɑ (0.060) ɒ (0.044)\n0.270 0.045 lʲ (0.726) n (0.092) l (0.042)\n0.330 0.045 ə (0.425) ʌ (0.130) ɒ (0.091)"
+      },
+      "latency_seconds": 0.114
+    },
+    {
+      "target": "മാല",
+      "synthetic_spoken_text": "മല",
+      "expected_pronunciation_reference": {
+        "source": "mlphon-3.1.3",
+        "source_url": "https://pypi.org/project/mlphon/",
+        "scope": "expected_pronunciation_reference_only",
+        "audio_assessed": false,
+        "words": [
+          {
+            "word": "മാല",
+            "variants": [
+              [
+                "m",
+                "aː",
+                "l",
+                "a"
+              ]
+            ],
+            "syllables": [
+              "മാ",
+              "ല"
+            ],
+            "articulatory_variants": [
+              [
+                {
+                  "phonemes": [
+                    {
+                      "ipa": "m",
+                      "tags": [
+                        "nasal",
+                        "labial"
+                      ]
+                    },
+                    {
+                      "ipa": "aː",
+                      "tags": [
+                        "v_sign"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "phonemes": [
+                    {
+                      "ipa": "l",
+                      "tags": [
+                        "lateral",
+                        "alveolar"
+                      ]
+                    },
+                    {
+                      "ipa": "a",
+                      "tags": [
+                        "inherentvowel"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ],
+        "uncovered_words": [],
+        "instruction": "Use these expected sounds, syllables and articulatory attributes to model the word. They do not describe what the learner pronounced. Accept valid variants; never infer an error, correctness, score or hidden tongue movement from this text reference."
+      },
+      "audio_sha256": "ed9e407c159dc5221d17c28269a526f73777da6cad68b968a317169e5c714e2e",
+      "hypotheses": {
+        "mal": "0.060 0.045 m (0.999) n (0.001) b (0.000)\n0.120 0.045 a (0.994) æ (0.002) ɨ (0.002)\n0.240 0.045 l (0.846) j (0.113) ɡ (0.013)\n0.300 0.045 a (0.969) æ (0.015) ə (0.011)",
+        "ipa": "0.060 0.045 m (0.992) mː (0.003) mʲ (0.002)\n0.120 0.045 a (0.874) ɑ (0.045) ʌ (0.039)\n0.240 0.045 lʲ (0.816) lː (0.125) l (0.033)\n0.300 0.045 a (0.874) ɑ (0.035) ʌ (0.025)"
+      },
+      "latency_seconds": 0.122
+    },
+    {
+      "target": "പട്ടം",
+      "synthetic_spoken_text": "പട്ടം",
+      "expected_pronunciation_reference": {
+        "source": "mlphon-3.1.3",
+        "source_url": "https://pypi.org/project/mlphon/",
+        "scope": "expected_pronunciation_reference_only",
+        "audio_assessed": false,
+        "words": [
+          {
+            "word": "പട്ടം",
+            "variants": [
+              [
+                "p",
+                "a",
+                "ʈ",
+                "ʈ",
+                "a",
+                "m"
+              ]
+            ],
+            "syllables": [
+              "പ",
+              "ട്ടം"
+            ],
+            "articulatory_variants": [
+              [
+                {
+                  "phonemes": [
+                    {
+                      "ipa": "p",
+                      "tags": [
+                        "plosive",
+                        "voiceless",
+                        "unaspirated",
+                        "labial"
+                      ]
+                    },
+                    {
+                      "ipa": "a",
+                      "tags": [
+                        "inherentvowel"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "phonemes": [
+                    {
+                      "ipa": "ʈ",
+                      "tags": [
+                        "plosive",
+                        "voiceless",
+                        "unaspirated",
+                        "retroflex",
+                        "virama"
+                      ]
+                    },
+                    {
+                      "ipa": "ʈ",
+                      "tags": [
+                        "plosive",
+                        "voiceless",
+                        "unaspirated",
+                        "retroflex"
+                      ]
+                    },
+                    {
+                      "ipa": "a",
+                      "tags": [
+                        "inherentvowel"
+                      ]
+                    },
+                    {
+                      "ipa": "m",
+                      "tags": [
+                        "anuswara"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ],
+        "uncovered_words": [],
+        "instruction": "Use these expected sounds, syllables and articulatory attributes to model the word. They do not describe what the learner pronounced. Accept valid variants; never infer an error, correctness, score or hidden tongue movement from this text reference."
+      },
+      "audio_sha256": "1ef233060365b5504ae85a3ade7a0baf0ff02f44b85201620e53603df25d330a",
+      "hypotheses": {
+        "mal": "0.060 0.045 f (0.432) p (0.317) b (0.097)\n0.120 0.045 a (0.936) æ (0.038) <blk> (0.021)\n0.180 0.045 t̪ (0.351) n (0.280) <blk> (0.209)\n0.270 0.045 ʂ (0.399) aː (0.090) t̪ (0.089)\n0.330 0.045 a (0.406) æ (0.179) ɨ (0.137)\n0.390 0.045 ŋ (0.455) p (0.160) <blk> (0.148)",
+        "ipa": "0.060 0.045 f (0.180) x (0.165) p (0.132)\n0.120 0.045 a (0.751) ɒ (0.131) æ (0.031)\n0.180 0.045 t̪ (0.271) n (0.216) <blk> (0.161)\n0.270 0.045 t͡ɕ (0.397) tʂ (0.328) d͡ʒ (0.083)\n0.330 0.045 ʌ (0.620) ɒ (0.225) a (0.038)\n0.390 0.045 ŋ (0.299) ŋ̟ (0.109) p (0.106)"
+      },
+      "latency_seconds": 0.162
+    },
+    {
+      "target": "പട്ടം",
+      "synthetic_spoken_text": "പടം",
+      "expected_pronunciation_reference": {
+        "source": "mlphon-3.1.3",
+        "source_url": "https://pypi.org/project/mlphon/",
+        "scope": "expected_pronunciation_reference_only",
+        "audio_assessed": false,
+        "words": [
+          {
+            "word": "പട്ടം",
+            "variants": [
+              [
+                "p",
+                "a",
+                "ʈ",
+                "ʈ",
+                "a",
+                "m"
+              ]
+            ],
+            "syllables": [
+              "പ",
+              "ട്ടം"
+            ],
+            "articulatory_variants": [
+              [
+                {
+                  "phonemes": [
+                    {
+                      "ipa": "p",
+                      "tags": [
+                        "plosive",
+                        "voiceless",
+                        "unaspirated",
+                        "labial"
+                      ]
+                    },
+                    {
+                      "ipa": "a",
+                      "tags": [
+                        "inherentvowel"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "phonemes": [
+                    {
+                      "ipa": "ʈ",
+                      "tags": [
+                        "plosive",
+                        "voiceless",
+                        "unaspirated",
+                        "retroflex",
+                        "virama"
+                      ]
+                    },
+                    {
+                      "ipa": "ʈ",
+                      "tags": [
+                        "plosive",
+                        "voiceless",
+                        "unaspirated",
+                        "retroflex"
+                      ]
+                    },
+                    {
+                      "ipa": "a",
+                      "tags": [
+                        "inherentvowel"
+                      ]
+                    },
+                    {
+                      "ipa": "m",
+                      "tags": [
+                        "anuswara"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        ],
+        "uncovered_words": [],
+        "instruction": "Use these expected sounds, syllables and articulatory attributes to model the word. They do not describe what the learner pronounced. Accept valid variants; never infer an error, correctness, score or hidden tongue movement from this text reference."
+      },
+      "audio_sha256": "5dbc7e7532dbe34193731c5e21a3e7ce6538244c99efceea90df46e748385e8a",
+      "hypotheses": {
+        "mal": "0.090 0.045 f (0.558) t̪ (0.122) p (0.121)\n0.120 0.045 a (0.878) æ (0.071) <blk> (0.033)\n0.210 0.045 ɡ (0.756) ʊ (0.059) <blk> (0.055)\n0.270 0.045 ɾ (0.955) d (0.013) t (0.012)\n0.330 0.045 a (0.447) ə (0.408) o (0.057)",
+        "ipa": "0.090 0.045 f (0.465) t̪ (0.102) p (0.101)\n0.120 0.045 a (0.661) ɒ (0.192) æ (0.054)\n0.210 0.045 ɡ (0.366) ɪ (0.114) b̞ (0.072)\n0.270 0.045 ɾ (0.889) ɾʲ (0.028) tʂ (0.014)\n0.330 0.045 ʌ (0.455) ɒ (0.158) a (0.108)"
+      },
+      "latency_seconds": 0.255
+    }
+  ],
+  "missing_from_malayalam_inventory": [
+    "ɻ"
+  ],
+  "missing_from_acoustic_model_inventory": [
+    "ɭ"
+  ],
+  "decision": "Do not use this model for automatic Malayalam pronunciation grading.",
+  "limitations": [
+    "Synthetic intended text has not been verified as spoken-phone gold labels.",
+    "The Malayalam inventory omits ɻ; the acoustic model inventory omits ɭ.",
+    "Recognition posteriors are not calibrated pronunciation scores.",
+    "No child, dialect or impaired-speech validation; no timing spans validated as phone boundaries."
+  ]
+}
