@@ -163,6 +163,8 @@ app.include_router(care_router)
 app.include_router(learner_companion_router)
 from learners.learning_adventures import router as learning_adventures_router
 app.include_router(learning_adventures_router)
+from learners.wordy import router as wordy_router
+app.include_router(wordy_router)
 from learners.learning_sessions import router as learning_sessions_router
 app.include_router(learning_sessions_router)
 from learners.learning_demonstrations import router as learning_demonstrations_router

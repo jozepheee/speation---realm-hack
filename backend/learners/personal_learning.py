@@ -73,8 +73,9 @@ async def plan(db,learner_id,language):
     from learners.conversation_intent import public as meaning_public
     meanings=(await db.execute(select(MessageTranslation).join(SpeechRecording,SpeechRecording.id==MessageTranslation.recording_id)
         .where(MessageTranslation.learner_id==learner_id,SpeechRecording.language==language,MessageTranslation.confirmed_at.is_(None),
+            MessageTranslation.provenance['state'].as_string()=='proposed',
             MessageTranslation.provenance['automatically_queued'].as_boolean().is_(True))
-        .order_by(MessageTranslation.created_at).limit(8))).scalars().all()
+        .order_by(MessageTranslation.created_at.desc()).limit(8))).scalars().all()
     waiting=[{**meaning_public(item),'call_id':item.provenance['call_id']} for item in meanings if item.provenance.get('state')=='proposed']
     from models.speech_workflow import LiveCall
     latest=(await db.execute(select(LiveCall.id,LiveCall.status).where(LiveCall.learner_id==learner_id,LiveCall.language==language,

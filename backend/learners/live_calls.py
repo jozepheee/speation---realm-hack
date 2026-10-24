@@ -339,6 +339,9 @@ async def finalize_call(db, call_id):
             for item in details.get('transcript', [])[:300] if item.get('role') in ['user', 'agent'] and not (item.get('message') or '').startswith(('[SPEATION_AUDIO_RESULT]','[SPEATION_LESSON]','[SPEATION_MEANING]'))]
     if pending or timed_out:
         call.context = {**call.context, 'transcript_unavailable_reason': 'provider_processing_deadline'}
+    if permitted and call.transcript:
+        from learners.spoken_meaning_recovery import reconcile
+        await reconcile(db,call)
     queue_cleanup(db, call)
     call.status = 'ended' if permitted else 'revoked'
     call.ended_at = call.ended_at or now

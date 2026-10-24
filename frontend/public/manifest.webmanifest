@@ -1,0 +1,17 @@
+{
+  "id": "/",
+  "name": "Speation",
+  "short_name": "Speation",
+  "description": "A place for every voice. Multilingual communication, guided practice and human care.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f6f5ee",
+  "theme_color": "#173f38",
+  "icons": [{ "src": "/speation-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }],
+  "shortcuts": [
+    { "name": "Quick Words", "url": "/quick-words" },
+    { "name": "Talk with Maya", "url": "/companion" },
+    { "name": "Speech Arcade", "url": "/arcade" }
+  ]
+}

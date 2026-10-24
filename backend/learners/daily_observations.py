@@ -49,8 +49,9 @@ async def inspect_confirmed(data,language,duration,text):
     context={'language':language,'expected_text':text,'duration_seconds':min(duration,20),
         'pronunciation_reference':await run_in_threadpool(target_reference,text,language)}
     clip=await run_in_threadpool(crop,data,0,min(duration,20))
-    result,model,_,_=await analyze_audio(clip,context);result=validate_feedback(result,context)
+    result,model,phones,provider=await analyze_audio(clip,context);result=validate_feedback(result,context)
     return {**result.model_dump(),'models':[model],'indic_character_assessment':context.get('indic_character_assessment'),
+        'dedicated_provider_assessment':provider,'independent_phone_observation':phones,
         'assessment_scope':'confirmed_message_original_audio','reviewed_seconds':min(duration,20)}
 
 async def inspect(data,language,duration,hint):

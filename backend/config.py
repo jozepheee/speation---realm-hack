@@ -23,6 +23,7 @@ class Settings(BaseSettings):
     AZURE_SPEECH_KEY: str = ''
     AZURE_SPEECH_REGION: str = ''
     OPENROUTER_IMAGE_MODEL: str = 'google/gemini-2.5-flash-image'
+    OPENROUTER_VIDEO_MODEL: str = 'google/veo-3.1-lite'
     OPENAI_API_KEY: str = ""
     ELEVENLABS_API_KEY: str = ""
     VOICE_CLONING_PROVIDER: Literal['openrouter_fish','elevenlabs'] = 'openrouter_fish'

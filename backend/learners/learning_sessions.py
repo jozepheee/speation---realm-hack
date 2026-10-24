@@ -27,6 +27,7 @@ class StartLearning(BaseModel):
     lesson_version:int=Field(default=1,ge=1,le=2)
     language:Literal['en','ml','hi']='en'
     personalized:bool=False
+    feature:Literal['wordy']|None=None
     practice_words:list[str]=Field(default_factory=list,max_length=3)
 
     @model_validator(mode='after')

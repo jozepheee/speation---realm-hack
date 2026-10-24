@@ -1,0 +1,6 @@
+Phoniverse artwork and cosmetic catalogue are reused from the user-supplied
+Phoniverse-main project with the user's explicit reuse permission, October 22,
+2026. Original authorship belongs to the Phoniverse project team. Speation adapts
+the React Native concepts to a web journey, with authenticated server-derived
+participation rewards, transaction-safe purchases and per-learner equipment.
+The downloaded speech thresholds and incomplete mobile recording hook are not used.
